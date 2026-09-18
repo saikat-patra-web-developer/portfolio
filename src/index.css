@@ -162,7 +162,8 @@ h6 {
 
 /* Home page: refined margins and padding with fluid, responsive rhythm. */
 .home-mockup {
-  max-width: 80rem !important; /* 1280px (matches max-w-7xl) */
+  max-width: 80rem !important;
+  /* 1280px (matches max-w-7xl) */
   width: 100% !important;
   margin-inline: auto;
   padding-inline: 1rem !important;
@@ -658,7 +659,6 @@ h6 {
   border: 1px solid rgba(32, 206, 255, 0.5);
   border-radius: 12px;
   box-shadow: inset 0 0 25px rgba(15, 184, 255, 0.05), 0 0 15px rgba(0, 207, 255, 0.1);
-  background: linear-gradient(145deg, rgba(7, 54, 88, 0.75), rgba(7, 33, 73, 0.75));
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 

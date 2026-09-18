@@ -1219,15 +1219,12 @@ h6 {
   flex-direction: column;
   justify-content: space-between;
   padding: 12px 17px;
-  border: 1px solid #5f7bff;
   border-radius: 9px;
   color: #c9e3ff;
   font-family: 'Caveat', cursive;
   font-size: 20px;
   line-height: .91;
   text-align: center;
-  background: linear-gradient(145deg, #06375bea, #201160ed);
-  box-shadow: inset 0 0 22px #00dfff18, 0 0 20px #663cff66;
 }
 
 .services-vision-card span {

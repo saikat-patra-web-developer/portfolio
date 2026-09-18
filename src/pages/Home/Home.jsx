@@ -1,33 +1,44 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, BriefcaseBusiness, CheckCircle2, Clock3, Code2, Database, Globe2, Heart, Link2, MapPin, MessageSquare, Play, Settings, ShieldCheck, ShoppingCart, Star, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  BriefcaseBusiness,
+  CheckCircle2,
+  Clock3,
+  Heart,
+  MapPin,
+  MessageSquare,
+  Play,
+  ShieldCheck,
+  Star,
+  Users
+} from "lucide-react";
 import { PageLayout } from "../../components/layout/PageLayout";
+import { SectionHeading } from "../../components/ui/SectionHeading";
+import { NeonButton } from "../../components/ui/NeonButton";
+import { StatCard } from "../../components/ui/StatCard";
+import { ServiceCard } from "../../components/service/ServiceCard";
+import { ProjectCard } from "../../components/project/ProjectCard";
+import { TestimonialCard } from "../../components/testimonial/TestimonialCard";
 import { profileData } from "../../data/profile";
 import { servicesData } from "../../data/services";
 import { projectsData } from "../../data/projects";
 import { testimonialsData } from "../../data/testimonials";
 
-const serviceIcons = [Code2, Database, Globe2, Link2, ShoppingCart, Settings];
 const valueIcons = [Heart, MessageSquare, Star, Clock3];
 const statIcons = [Award, BriefcaseBusiness, Users, ShieldCheck];
-const technologies = [["⚛", "React", "#61dafb"], ["◈", "Laravel", "#ff4d4d"], ["php", "PHP", "#a78bfa"], ["MySQL", "MySQL", "#38bdf8"], ["W", "WordPress", "#60a5fa"], ["JS", "JavaScript", "#fde047"], ["≈", "Tailwind CSS", "#22d3ee"], ["aws", "AWS", "#fb923c"], ["◆", "Git", "#f43f5e"], ["F", "Figma", "#d946ef"]];
-
-const HomeHeading = ({ eyebrow, title, to, action }) => (
-  <div className="home-heading">
-    <div>
-      <span className="home-eyebrow">{eyebrow}</span>
-      <h2>
-        {title}
-        <i aria-hidden="true" />
-      </h2>
-    </div>
-    {to && (
-      <Link className="home-outline-button" to={to}>
-        <span>{action}</span>
-        <ArrowRight className="w-3.5 h-3.5" />
-      </Link>
-    )}
-  </div>
-);
+const technologies = [
+  ["⚛", "React", "#61dafb"],
+  ["◈", "Laravel", "#ff4d4d"],
+  ["php", "PHP", "#a78bfa"],
+  ["MySQL", "MySQL", "#38bdf8"],
+  ["W", "WordPress", "#60a5fa"],
+  ["JS", "JavaScript", "#fde047"],
+  ["≈", "Tailwind CSS", "#22d3ee"],
+  ["aws", "AWS", "#fb923c"],
+  ["◆", "Git", "#f43f5e"],
+  ["F", "Figma", "#d946ef"]
+];
 
 export const Home = () => {
   const projects = projectsData.filter((project) => project.featured).slice(0, 4);
@@ -45,27 +56,31 @@ export const Home = () => {
         {/* ======================================================== */}
         <section className="home-hero">
           <div className="home-hero-copy">
-            <span className="home-pill">👋 HELLO, I'M</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+              <span>HELLO, I'M</span>
+            </div>
             <h1>
               Saikat <span>Patra</span>
             </h1>
             <h2>Full Stack Web Developer</h2>
             <p>{profileData.bio}</p>
 
-            <div className="home-actions">
-              <Link className="home-primary-button" to="/contact">
-                <span>Let's Work Together</span>
-                <ArrowRight />
-              </Link>
-              <Link className="home-outline-button" to="/projects">
-                <Play />
-                <span>View My Work</span>
-              </Link>
-              <Link className="home-story" to="/about">
-                <b>
-                  <Play />
-                </b>
-                <span>Watch My Story</span>
+            <div className="flex flex-wrap items-center gap-3.5 mt-6">
+              <NeonButton to="/contact" variant="primary">
+                Let's Work Together
+              </NeonButton>
+              <NeonButton to="/projects" variant="secondary">
+                View My Work
+              </NeonButton>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white/80 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 group"
+              >
+                <span className="w-5 h-5 rounded-full bg-[#00E5FF]/20 border border-[#00E5FF]/40 flex items-center justify-center text-[#00E5FF] group-hover:scale-110 transition-transform">
+                  <Play className="w-2.5 h-2.5 fill-current ml-0.5" />
+                </span>
+                <span>My Story</span>
               </Link>
             </div>
 
@@ -135,28 +150,17 @@ export const Home = () => {
         {/* SERVICES                                                 */}
         {/* ======================================================== */}
         <section>
-          <HomeHeading
-            eyebrow="SERVICES"
+          <SectionHeading
+            badge="SERVICES"
             title="What I Do"
-            to="/services"
-            action="View All Services"
+            subtitle="I provide end-to-end web development solutions to help businesses grow online."
+            actionText="View All Services"
+            actionTo="/services"
           />
-          <p className="home-section-intro">
-            I provide end-to-end web development solutions to help businesses grow online.
-          </p>
-          <div className="home-services-grid">
-            {services.map((service, index) => {
-              const Icon = serviceIcons[index];
-              return (
-                <article className="home-card home-service" key={service.id}>
-                  <div className="home-icon">
-                    <Icon />
-                  </div>
-                  <h3>{service.title}</h3>
-                  <p>{service.shortDesc}</p>
-                </article>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
           </div>
         </section>
 
@@ -164,28 +168,16 @@ export const Home = () => {
         {/* FEATURED PROJECTS                                        */}
         {/* ======================================================== */}
         <section>
-          <HomeHeading
-            eyebrow="FEATURED PROJECTS"
+          <SectionHeading
+            badge="FEATURED PROJECTS"
             title="Some of My Work"
-            to="/projects"
-            action="View All Projects"
+            subtitle="Selected web applications, custom platforms, and high-performance digital products."
+            actionText="View All Projects"
+            actionTo="/projects"
           />
-          <div className="home-projects-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects.map((project) => (
-              <article className="home-card home-project" key={project.id}>
-                <div className="home-project-image">
-                  <img src={project.thumbnail} alt={project.title} />
-                  <span>{project.category}</span>
-                </div>
-                <div className="home-project-copy">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <Link to={`/projects/${project.slug}`}>
-                    <span>View Project</span>
-                    <ArrowRight />
-                  </Link>
-                </div>
-              </article>
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </section>
@@ -195,17 +187,19 @@ export const Home = () => {
         {/* ======================================================== */}
         <section className="home-about">
           <div className="home-about-copy">
-            <span className="home-eyebrow">ABOUT ME</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+              <span>ABOUT ME</span>
+            </div>
             <h2>
               A Passionate Developer
               <br />
               From Howrah, India
             </h2>
             <p>{profileData.aboutBio}</p>
-            <Link className="home-primary-button" to="/about">
-              <span>More About Me</span>
-              <ArrowRight />
-            </Link>
+            <NeonButton to="/about" variant="primary">
+              More About Me
+            </NeonButton>
           </div>
 
           <div className="home-portrait">
@@ -247,47 +241,37 @@ export const Home = () => {
         {/* ======================================================== */}
         {/* STATS                                                    */}
         {/* ======================================================== */}
-        <section className="home-stats">
-          {profileData.stats.slice(0, 4).map((stat, index) => {
-            const Icon = statIcons[index];
-            return (
-              <article key={stat.label}>
-                <i>
-                  <Icon />
-                </i>
-                <div>
-                  <b>{stat.value}</b>
-                  <span>{stat.label}</span>
-                </div>
-              </article>
-            );
-          })}
+        <section>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
+            {profileData.stats.slice(0, 4).map((stat, index) => {
+              const Icon = statIcons[index];
+              return (
+                <StatCard
+                  key={stat.label}
+                  value={stat.value}
+                  label={stat.label}
+                  icon={Icon}
+                  highlight={index === 3}
+                />
+              );
+            })}
+          </div>
         </section>
 
         {/* ======================================================== */}
         {/* TESTIMONIALS                                             */}
         {/* ======================================================== */}
         <section>
-          <HomeHeading
-            eyebrow="TESTIMONIALS"
+          <SectionHeading
+            badge="TESTIMONIALS"
             title="What Clients Say"
-            to="/about#testimonials"
-            action="View All Reviews"
+            subtitle="Genuine client feedback on working together."
+            actionText="View All Reviews"
+            actionTo="/about#testimonials"
           />
-          <div className="home-reviews-grid">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {reviews.map((review) => (
-              <article className="home-card home-review" key={review.id}>
-                <p>“{review.content}”</p>
-                <div className="home-stars">★★★★★</div>
-                <footer>
-                  <span>{review.avatar}</span>
-                  <div>
-                    <b>{review.author}</b>
-                    <small>{review.company}</small>
-                  </div>
-                  <strong>G</strong>
-                </footer>
-              </article>
+              <TestimonialCard key={review.id} testimonial={review} />
             ))}
           </div>
         </section>

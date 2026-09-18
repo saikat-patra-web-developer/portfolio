@@ -123,11 +123,12 @@ export const About = () => {
                 <p>
                   {profileData.story[2]}
                 </p>
-                <div className="p-4 rounded-xl bg-[#020B18]/80 border border-[#00E5FF]/20 mt-4">
-                  <div className="text-xs font-bold text-[#00E5FF] uppercase tracking-wider mb-1">
-                    Philosophy
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-[#073658]/90 via-[#072149]/90 to-[#22136f]/90 border border-[#00E5FF]/30 mt-4 shadow-lg">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#00E5FF] uppercase tracking-wider mb-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+                    <span>Philosophy</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-white/70 italic">
+                  <p className="text-xs sm:text-sm text-white/85 italic leading-relaxed">
                     &ldquo;Code should never be written for the sake of code. Great software solves human friction, accelerates workflows, and generates clear return on investment.&rdquo;
                   </p>
                 </div>
@@ -140,39 +141,47 @@ export const About = () => {
         {/* MY JOURNEY (HORIZONTAL TIMELINE)                         */}
         {/* ======================================================== */}
         <section>
-          <SectionHeading
-            badge="CAREER MILESTONES"
-            title="My Journey"
-            subtitle="How I evolved from building my first dynamic website into engineering full-stack platforms."
-          />
-
-          <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-3 xl:gap-4">
-              {profileData.journey.map((item) => (
-                <GlassCard
-                  key={item.year}
-                  glow="cyan"
-                  className="p-4 sm:p-5 flex flex-col justify-between border-[#00E5FF]/20 text-center relative group"
-                >
-                  <div>
-                    {/* Node indicator */}
-                    <div className="w-8 h-8 rounded-full bg-[#020B18] border-2 border-[#00E5FF] mx-auto mb-3 flex items-center justify-center shadow-[0_0_15px_rgba(0,229,255,0.4)] group-hover:scale-110 transition-transform">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#00E5FF]" />
-                    </div>
-
-                    <div className="text-lg font-black text-[#00E5FF] font-mono">
-                      {item.year}
-                    </div>
-                    <div className="text-sm font-bold text-white mt-1">
-                      {item.title}
-                    </div>
-                    <p className="text-xs text-white/60 mt-2 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </GlassCard>
-              ))}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+                <span>CAREER MILESTONES</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3">
+                <span>My Journey</span>
+                <span className="inline-block w-8 sm:w-12 h-1 bg-gradient-to-r from-[#00E5FF] to-[#7B3CFF] rounded-full" />
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-white/70">
+                How I evolved from building my first dynamic website into engineering full-stack platforms.
+              </p>
             </div>
+
+            <div className="font-handwriting text-2xl text-[#00E5FF]/80 -rotate-3 select-none self-start md:self-end">
+              Continuous Growth
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-3 xl:gap-4">
+            {profileData.journey.map((item) => (
+              <GlassCard
+                key={item.year}
+                glow="cyan"
+                className="p-5 flex flex-col justify-between border-[#00E5FF]/20 text-center relative group"
+              >
+                <div>
+                  {/* Step node indicator matching Services process badge */}
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 mx-auto mb-3 flex items-center justify-center font-mono font-bold text-xs text-[#00E5FF] group-hover:scale-110 group-hover:border-[#00E5FF] transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.2)]">
+                    {item.year}
+                  </div>
+                  <div className="text-sm font-bold text-white group-hover:text-[#00E5FF] transition-colors mt-1">
+                    {item.title}
+                  </div>
+                  <p className="text-xs text-white/60 mt-2 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </GlassCard>
+            ))}
           </div>
         </section>
 
@@ -190,11 +199,11 @@ export const About = () => {
             {profileData.values.map((val, idx) => {
               const IconComp = valueIcons[idx] || ShieldCheck;
               return (
-                <GlassCard key={val.title} className="p-5 sm:p-6 lg:p-7 border-[#00E5FF]/15">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] mb-4">
+                <GlassCard key={val.title} glow="cyan" className="p-5 sm:p-6 lg:p-7 border-[#00E5FF]/15 group">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00E5FF]/15 to-[#7B3CFF]/15 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] group-hover:scale-105 group-hover:border-[#00E5FF] transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.15)] mb-4">
                     <IconComp className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
+                  <h3 className="text-lg font-bold text-white group-hover:text-[#00E5FF] transition-colors mb-2">
                     {val.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
@@ -218,17 +227,20 @@ export const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {profileData.whyWorkWithMe.map((item) => (
-              <GlassCard key={item.title} glow="purple" className="p-5 sm:p-6 border-[#A855F7]/20">
-                <div className="flex items-center gap-2.5 text-emerald-400 mb-3">
-                  <CheckCircle2 className="w-5 h-5" />
-                  <h3 className="text-base font-bold text-white">
+              <div
+                key={item.title}
+                className="p-5 sm:p-6 rounded-2xl bg-[#03152B]/70 border border-[#00E5FF]/15 space-y-2 hover:border-[#00E5FF]/35 hover:shadow-[0_0_25px_rgba(0,229,255,0.1)] transition-all duration-300 group"
+              >
+                <div className="flex items-center gap-2.5 text-emerald-400">
+                  <CheckCircle2 className="w-5 h-5 text-[#00E5FF] group-hover:scale-110 transition-transform" />
+                  <h3 className="text-base font-bold text-white group-hover:text-[#00E5FF] transition-colors">
                     {item.title}
                   </h3>
                 </div>
                 <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
                   {item.description}
                 </p>
-              </GlassCard>
+              </div>
             ))}
           </div>
         </section>
@@ -237,20 +249,37 @@ export const About = () => {
         {/* MY APPROACH                                              */}
         {/* ======================================================== */}
         <section>
-          <SectionHeading
-            badge="METHODOLOGY"
-            title="My Approach"
-            subtitle="A structured 5-step methodology delivering predictability and excellence."
-          />
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+                <span>METHODOLOGY</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3">
+                <span>My Approach</span>
+                <span className="inline-block w-8 sm:w-12 h-1 bg-gradient-to-r from-[#00E5FF] to-[#7B3CFF] rounded-full" />
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-white/70">
+                A structured 5-step methodology delivering predictability and excellence.
+              </p>
+            </div>
+
+            <div className="font-handwriting text-2xl text-[#00E5FF]/80 -rotate-3 select-none self-start md:self-end">
+              From Concept to Launch
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
             {profileData.approach.map((app) => (
-              <GlassCard key={app.step} className="p-5 sm:p-6 border-[#00E5FF]/20 flex flex-col justify-between">
+              <GlassCard
+                key={app.step}
+                className="p-5 sm:p-6 border-[#00E5FF]/20 text-center flex flex-col justify-between group"
+              >
                 <div>
-                  <div className="text-2xl font-black font-mono text-gradient mb-2">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 mx-auto mb-3 flex items-center justify-center font-mono font-bold text-sm text-[#00E5FF] group-hover:scale-110 group-hover:border-[#00E5FF] transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.2)]">
                     {app.step}
                   </div>
-                  <h4 className="text-base font-bold text-white mb-2">
+                  <h4 className="text-base font-bold text-white group-hover:text-[#00E5FF] transition-colors mb-2">
                     {app.title}
                   </h4>
                   <p className="text-xs text-white/65 leading-relaxed">

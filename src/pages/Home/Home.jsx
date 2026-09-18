@@ -27,7 +27,14 @@ export const Home = () => {
           <div className="home-actions"><Link className="home-primary-button" to="/contact">Let's Work Together <ArrowRight /></Link><Link className="home-outline-button" to="/projects"><Play /> View My Work</Link><Link className="home-story" to="/about"><b><Play /></b><span>Watch My Story</span></Link></div>
           <div className="home-highlights">{profileData.highlights.map((item) => <span key={item.title}><CheckCircle2 />{item.title}</span>)}</div>
         </div>
-        <div className="home-hero-art"><img src="/assets/images/saikat-hero.webp" alt="Saikat Patra working on a web development project" /><div className="home-quote">“Ideas<br />Websites<br />Solutions”</div><div className="home-availability"><i />Available for new projects <span><MapPin />Howrah, India</span></div></div>
+        <div className="home-hero-art">
+          <div className="home-art-glow" aria-hidden="true" />
+          <div className="home-orbit home-orbit-one" aria-hidden="true" /><div className="home-orbit home-orbit-two" aria-hidden="true" />
+          <span className="home-build-note" aria-hidden="true">Build<br />Develop<br />Scale<br />Grow</span>
+          <img src="/assets/images/saikat-hero-cutout.png" alt="Saikat Patra working on a web development project" />
+          <div className="home-quote"><i aria-hidden="true" />“Ideas<br />Websites<br />Solutions”<b aria-hidden="true" /></div>
+          <div className="home-availability"><i />Available for new projects <span><MapPin />Howrah, India</span><ArrowRight /></div>
+        </div>
       </section>
 
       <section className="home-tech-strip"><strong>TECHNOLOGIES I WORK WITH</strong><div>{technologies.map(([mark, label, color]) => <span key={label} style={{ "--tech": color }}><b>{mark}</b><small>{label}</small></span>)}</div></section>

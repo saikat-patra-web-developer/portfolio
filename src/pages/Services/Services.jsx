@@ -82,7 +82,7 @@ export const Services = () => {
           <div className="services-hero-visual">
             <span className="services-code-note" aria-hidden="true">Code...</span>
             <img src="/assets/images/services-laptop-cutout.png" alt="Laptop displaying modern web application code" />
-            <div className="services-vision-card"><b>“</b><span>Your Vision<br />Our Code<br />Real Results</span><b>”</b></div>
+            <div className="services-vision-card"><span>Your Vision<br />Our Code<br />Real Results</span></div>
             <div className="services-quality-card">
               {["Clean Code", "Modern Technology", "On-Time Delivery", "Long-Term Partnership"].map((item) => <span key={item}><CheckCircle2 />{item}</span>)}
             </div>
@@ -247,11 +247,10 @@ export const Services = () => {
                   <GlassCard
                     key={index}
                     hoverEffect={false}
-                    className={`border-[#00E5FF]/20 overflow-hidden transition-all duration-300 ${
-                      isOpen
-                        ? "border-[#00E5FF]/45 bg-[#03152B]/85 shadow-[0_0_25px_rgba(0,229,255,0.1)]"
-                        : "hover:border-[#00E5FF]/35"
-                    }`}
+                    className={`border-[#00E5FF]/20 overflow-hidden transition-all duration-300 ${isOpen
+                      ? "border-[#00E5FF]/45 bg-[#03152B]/85 shadow-[0_0_25px_rgba(0,229,255,0.1)]"
+                      : "hover:border-[#00E5FF]/35"
+                      }`}
                   >
                     <button
                       onClick={() => toggleFaq(index)}
@@ -259,16 +258,14 @@ export const Services = () => {
                       aria-expanded={isOpen}
                     >
                       <span
-                        className={`text-sm sm:text-base font-bold transition-colors duration-200 ${
-                          isOpen ? "text-[#00E5FF]" : "text-white"
-                        }`}
+                        className={`text-sm sm:text-base font-bold transition-colors duration-200 ${isOpen ? "text-[#00E5FF]" : "text-white"
+                          }`}
                       >
                         {faq.q}
                       </span>
                       <ChevronDown
-                        className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-300 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
 
@@ -291,11 +288,10 @@ export const Services = () => {
                   <GlassCard
                     key={globalIndex}
                     hoverEffect={false}
-                    className={`border-[#00E5FF]/20 overflow-hidden transition-all duration-300 ${
-                      isOpen
-                        ? "border-[#00E5FF]/45 bg-[#03152B]/85 shadow-[0_0_25px_rgba(0,229,255,0.1)]"
-                        : "hover:border-[#00E5FF]/35"
-                    }`}
+                    className={`border-[#00E5FF]/20 overflow-hidden transition-all duration-300 ${isOpen
+                      ? "border-[#00E5FF]/45 bg-[#03152B]/85 shadow-[0_0_25px_rgba(0,229,255,0.1)]"
+                      : "hover:border-[#00E5FF]/35"
+                      }`}
                   >
                     <button
                       onClick={() => toggleFaq(globalIndex)}
@@ -303,16 +299,14 @@ export const Services = () => {
                       aria-expanded={isOpen}
                     >
                       <span
-                        className={`text-sm sm:text-base font-bold transition-colors duration-200 ${
-                          isOpen ? "text-[#00E5FF]" : "text-white"
-                        }`}
+                        className={`text-sm sm:text-base font-bold transition-colors duration-200 ${isOpen ? "text-[#00E5FF]" : "text-white"
+                          }`}
                       >
                         {faq.q}
                       </span>
                       <ChevronDown
-                        className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-300 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
 

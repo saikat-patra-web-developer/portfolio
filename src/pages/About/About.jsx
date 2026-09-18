@@ -36,7 +36,7 @@ export const About = () => {
       title="About Saikat Patra | Full Stack Developer"
       description="Learn about Saikat Patra, a passionate full stack developer from Howrah, India with 7+ years of experience engineering custom web applications, CRMs, and APIs."
     >
-      <div className="about-mockup max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 sm:space-y-32">
         {/* ======================================================== */}
         {/* HERO SECTION                                             */}
         {/* ======================================================== */}

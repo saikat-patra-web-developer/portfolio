@@ -50,7 +50,7 @@ export const Home = () => {
       title="Saikat Patra | Full Stack Web Developer"
       description={profileData.bio}
     >
-      <div className="home-mockup">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 sm:space-y-32">
         {/* ======================================================== */}
         {/* HERO SECTION                                             */}
         {/* ======================================================== */}
@@ -113,11 +113,11 @@ export const Home = () => {
             />
             <div className="home-quote">
               <i aria-hidden="true" />
-              “Ideas
+              Ideas
               <br />
               Websites
               <br />
-              Solutions”
+              Solutions
               <b aria-hidden="true" />
             </div>
             <div className="home-availability">

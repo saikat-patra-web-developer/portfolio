@@ -61,7 +61,7 @@ export const InnerPageHero = ({ pathname }) => {
       <div className="services-hero-visual">
         <span className="services-code-note" aria-hidden="true">{content.codeNote}</span>
         <img src="/assets/images/services-laptop-cutout.png" alt="Laptop displaying modern web application code" />
-        <div className="services-vision-card"><b>“</b><span>{content.vision.map((line) => <span key={line}>{line}<br /></span>)}</span><b>”</b></div>
+        <div className="services-vision-card"><span>{content.vision.map((line) => <span key={line}>{line}<br /></span>)}</span></div>
         <div className="services-quality-card">
           {content.quality.map((item) => <span key={item}><CheckCircle2 />{item}</span>)}
         </div>

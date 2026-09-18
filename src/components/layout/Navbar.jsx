@@ -44,11 +44,10 @@ export const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pointer-events-none">
       <nav
-        className={`pointer-events-auto w-full max-w-[1080px] transition-all duration-300 mt-3 rounded-2xl border flex items-center justify-between px-4 sm:px-6 ${
-          scrolled
-            ? "py-2.5 sm:py-3 bg-[#020B18]/85 backdrop-blur-2xl border-[#00E5FF]/30 shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.12)]"
-            : "py-3.5 sm:py-4 bg-[#03152B]/60 backdrop-blur-xl border-[#00E5FF]/20 shadow-[0_8px_30px_rgba(0,0,0,0.5),0_0_15px_rgba(0,229,255,0.06)]"
-        }`}
+        className={`pointer-events-auto w-full max-w-[1080px] transition-all duration-300 mt-3 rounded-2xl border flex items-center justify-between px-4 sm:px-6 ${scrolled
+          ? "py-2.5 sm:py-3 bg-[#020B18]/85 backdrop-blur-2xl border-[#00E5FF]/30 shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.12)]"
+          : "py-3.5 sm:py-4 bg-[#03152B]/60 backdrop-blur-xl border-[#00E5FF]/20 shadow-[0_8px_30px_rgba(0,0,0,0.5),0_0_15px_rgba(0,229,255,0.06)]"
+          }`}
       >
         {/* Left: Brand Logo */}
         <Link to="/" className="flex items-center gap-3 group select-none">
@@ -68,18 +67,17 @@ export const Navbar = () => {
         </Link>
 
         {/* Center: Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-[#020B18]/40 border border-white/5 px-2 py-1 rounded-full">
+        <div className="hidden lg:flex items-center gap-1 xl:gap-1.5 px-2 py-1 rounded-full">
           {navLinks.map((link) => {
             const active = isLinkActive(link.path);
             return (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`relative px-3.5 py-1.5 text-xs xl:text-sm font-semibold rounded-full transition-all duration-200 select-none ${
-                  active
-                    ? "text-white font-bold"
-                    : "text-white/70 hover:text-white hover:bg-white/5"
-                }`}
+                className={`relative px-3.5 py-1.5 text-xs xl:text-sm font-semibold rounded-full transition-all duration-200 select-none ${active
+                  ? "text-white font-bold"
+                  : "text-white/70 hover:text-white hover:bg-white/5"
+                  }`}
               >
                 {active && (
                   <motion.div
@@ -140,11 +138,10 @@ export const Navbar = () => {
                   <Link
                     key={link.name}
                     to={link.path}
-                    className={`py-3 px-3 text-sm font-semibold rounded-xl flex items-center justify-between transition-colors duration-200 ${
-                      active
-                        ? "text-[#00E5FF] bg-[#00E5FF]/10 font-bold"
-                        : "text-white/80 hover:text-white hover:bg-white/5"
-                    }`}
+                    className={`py-3 px-3 text-sm font-semibold rounded-xl flex items-center justify-between transition-colors duration-200 ${active
+                      ? "text-[#00E5FF] bg-[#00E5FF]/10 font-bold"
+                      : "text-white/80 hover:text-white hover:bg-white/5"
+                      }`}
                   >
                     <span>{link.name}</span>
                     {active && <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />}

@@ -146,11 +146,8 @@ export const About = () => {
             subtitle="How I evolved from building my first dynamic website into engineering full-stack platforms."
           />
 
-          <div className="relative">
-            {/* Connecting cyan/blue glowing line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#7B3CFF] -translate-y-1/2 shadow-[0_0_15px_rgba(0,229,255,0.5)] z-0" />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative z-10">
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
               {profileData.journey.map((item) => (
                 <GlassCard
                   key={item.year}

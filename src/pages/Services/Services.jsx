@@ -69,84 +69,32 @@ export const Services = () => {
         {/* ======================================================== */}
         {/* HERO SECTION                                             */}
         {/* ======================================================== */}
-        <section className="relative pt-6 sm:pt-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase">
-                <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
-                <span>SERVICES</span>
-              </div>
+        <section className="services-hero">
+          <div className="services-hero-copy">
+            <div className="services-hero-pill"><span /> SERVICES</div>
+            <h1>Services</h1>
+            <h2>Custom Web Solutions to Help Your<br className="services-desktop-break" /> Business Grow</h2>
+            <p>From idea to impact, I build modern, scalable and high-performing web solutions tailored to your business goals. Let's turn your vision into a powerful digital product.</p>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
-                <span className="text-gradient-cyan">Services</span>
-              </h1>
-
-              <p className="text-lg sm:text-xl font-semibold text-white/90">
-                Custom Web Solutions to Help Your Business Grow
-              </p>
-
-              <p className="text-sm sm:text-base text-white/75 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                From idea to impact, I build modern, scalable and high-performing web solutions tailored to your business goals. Let's turn your vision into a powerful digital product.
-              </p>
-
-              {/* Feature Badges Row */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
-                {[
-                  { title: "Business Focused", subtitle: "Solutions that solve real problems" },
-                  { title: "Modern & Scalable", subtitle: "Built for today and tomorrow" },
-                  { title: "Ongoing Support", subtitle: "Your success is my priority" }
-                ].map((badge) => (
-                  <div
-                    key={badge.title}
-                    className="p-3 rounded-xl bg-[#03152B]/80 border border-[#00E5FF]/20 text-left backdrop-blur-md"
-                  >
-                    <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
-                      <span>{badge.title}</span>
-                    </div>
-                    <div className="text-[11px] text-white/60 mt-0.5">
-                      {badge.subtitle}
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="services-hero-badges">
+              {[
+                { title: "Business Focused", subtitle: "Solutions that solve real problems", icon: Briefcase },
+                { title: "Modern & Scalable", subtitle: "Built for today and tomorrow", icon: Zap },
+                { title: "Ongoing Support", subtitle: "Your success is my priority", icon: ShieldCheck }
+              ].map((badge) => {
+                const Icon = badge.icon;
+                return <article key={badge.title}><i><Icon /></i><div><strong>{badge.title}</strong><small>{badge.subtitle}</small></div></article>;
+              })}
             </div>
+          </div>
 
-            {/* Right Visual */}
-            <div className="lg:col-span-5 relative flex justify-center">
-              <div className="relative w-full max-w-[420px] rounded-3xl p-1 bg-gradient-to-br from-[#00E5FF]/40 via-[#2787FF]/20 to-[#7B3CFF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.2)]">
-                <div className="relative rounded-[22px] overflow-hidden bg-[#020B18]">
-                  <img
-                    src="/assets/images/services-laptop.webp"
-                    alt="Services Engineering Visual"
-                    className="w-full h-auto object-cover"
-                  />
-                  <div className="p-4 bg-[#020B18]/90 border-t border-[#00E5FF]/20 flex items-center justify-between">
-                    <div className="text-xs font-bold text-white">Production Ready</div>
-                    <div className="text-[11px] text-[#00E5FF] font-mono">Modern Architecture</div>
-                  </div>
-                </div>
-
-                {/* Floating Quote */}
-                <div className="absolute -top-4 -right-4 sm:-right-6 p-3.5 rounded-2xl bg-[#03152B]/90 backdrop-blur-xl border border-[#A855F7]/40 shadow-[0_10px_30px_rgba(0,0,0,0.7),0_0_20px_rgba(168,85,247,0.2)] hidden sm:block">
-                  <div className="text-[10px] text-white/50 italic font-mono">&ldquo;</div>
-                  <div className="text-xs font-bold text-white tracking-wide">
-                    Your Vision <br /> Our Code <br /> Real Results
-                  </div>
-                  <div className="text-[10px] text-white/50 italic font-mono text-right">&rdquo;</div>
-                </div>
-
-                {/* Floating checklist */}
-                <div className="absolute -bottom-4 -left-4 p-3 rounded-xl bg-[#020B18]/90 border border-[#00E5FF]/30 text-white text-xs font-medium space-y-1 shadow-lg backdrop-blur-md hidden sm:block">
-                  <div className="flex items-center gap-1.5 text-[11px]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" /> Clean Code
-                  </div>
-                  <div className="flex items-center gap-1.5 text-[11px]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" /> On-Time Delivery
-                  </div>
-                </div>
-              </div>
+          <div className="services-hero-visual">
+            <span className="services-code-note" aria-hidden="true">Code...</span>
+            <img src="/assets/images/services-laptop-cutout.png" alt="Laptop displaying modern web application code" />
+            <div className="services-idea-card" aria-hidden="true">Ideas<br />Build<br />Scale<br />Grow</div>
+            <div className="services-vision-card"><b>“</b><span>Your Vision<br />Our Code<br />Real Results</span><b>”</b></div>
+            <div className="services-quality-card">
+              {["Clean Code", "Modern Technology", "On-Time Delivery", "Long-Term Partnership"].map((item) => <span key={item}><CheckCircle2 />{item}</span>)}
             </div>
           </div>
         </section>

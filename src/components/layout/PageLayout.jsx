@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { InnerPageHero } from "./InnerPageHero";
 
 export const PageLayout = ({
   children,
@@ -8,6 +9,7 @@ export const PageLayout = ({
   description = "Saikat Patra - Full Stack Web Developer based in Howrah, India. Specializing in React, Laravel, Custom CRM, WordPress and API integrations."
 }) => {
   const { pathname } = useLocation();
+  const hasSharedHero = ["/about", "/services", "/projects", "/skills", "/contact"].includes(pathname);
 
   useEffect(() => {
     if (window.location.hash) {
@@ -38,8 +40,9 @@ export const PageLayout = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="site-main relative z-10 pt-24 sm:pt-28 pb-10 flex-grow"
+      className={`site-main relative z-10 pt-24 sm:pt-28 pb-10 flex-grow${hasSharedHero ? " shared-inner-page" : ""}`}
     >
+      {hasSharedHero && <InnerPageHero pathname={pathname} />}
       {children}
     </motion.main>
   );

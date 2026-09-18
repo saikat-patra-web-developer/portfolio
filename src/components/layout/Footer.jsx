@@ -38,11 +38,11 @@ export const Footer = ({ showCta = true }) => {
   };
 
   return (
-    <footer className="relative z-10 mt-12 border-t border-[#00E5FF]/15">
+    <footer className="relative z-10 mt-12">
       {/* Optional Pre-Footer CTA Banner matching mockups */}
       {showCta && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 -translate-y-12">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#031c38]/90 via-[#03274e]/90 to-[#12082b]/90 border border-[#00E5FF]/35 p-5 sm:px-8 sm:py-6 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.15)] flex flex-col md:flex-row items-center justify-between gap-5">
+          <div className="relative overflow-hidden rounded-2xl border border-[#00E5FF]/35 p-5 sm:px-8 sm:py-6 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.15)] flex flex-col md:flex-row items-center justify-between gap-5">
             {/* Background cyan/violet glows */}
             <div className="absolute top-0 left-0 w-64 h-64 bg-[#00E5FF]/15 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#7B3CFF]/20 rounded-full blur-3xl pointer-events-none" />
@@ -252,7 +252,7 @@ export const Footer = ({ showCta = true }) => {
           <div className="flex items-center gap-6">
             <span className="hover:text-white/80 cursor-pointer">Privacy Policy</span>
             <span className="hover:text-white/80 cursor-pointer">Terms & Conditions</span>
-            
+
             {/* Back to top button */}
             <button
               onClick={scrollToTop}

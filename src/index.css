@@ -539,7 +539,6 @@ h6 {
   padding: 8px 20px;
   border: 1px solid #20dfffaa;
   border-radius: 12px;
-  background: #06284cc9;
   box-shadow: 0 0 22px #00d9ff33;
 }
 
@@ -613,7 +612,6 @@ h6 {
 .home-card {
   border: 1px solid #20ceff88;
   border-radius: 10px;
-  background: linear-gradient(145deg, #073658c9, #072149c9 70%, #22136fc9);
   box-shadow: inset 0 0 25px #0fb8ff0c, 0 0 15px #00cfff18;
 }
 
@@ -1120,6 +1118,9 @@ h6 {
   border: 1px solid #5f7bff;
   border-radius: 9px;
   color: #c9e3ff;
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  line-height: .91;
   text-align: center;
   background: linear-gradient(145deg, #06375bea, #201160ed);
   box-shadow: inset 0 0 22px #00dfff18, 0 0 20px #663cff66;
@@ -1127,8 +1128,8 @@ h6 {
 
 .services-vision-card span {
   font-family: 'Caveat', cursive;
-  font-size: 21px;
-  line-height: 1.05;
+  font-size: 20px;
+  line-height: .91;
 }
 
 .services-vision-card b {
@@ -1136,6 +1137,7 @@ h6 {
   font-size: 22px;
   line-height: .7;
   text-align: left;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .services-vision-card b:last-child {
@@ -1279,12 +1281,13 @@ h6 {
     top: 4%;
     width: 100px;
     min-height: 83px;
-    padding: 8px 9px
+    padding: 8px 9px;
+    font-size: 16px;
   }
 
   .services-vision-card span {
-    font-size: 14px;
-    line-height: 1.05;
+    font-size: 16px;
+    line-height: .91;
   }
 
   .services-vision-card b {

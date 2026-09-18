@@ -18,10 +18,7 @@ import {
 import {
   LinkedInIcon,
   GitHubIcon,
-  WhatsAppIcon,
-  YouTubeIcon,
-  TwitterIcon,
-  InstagramIcon
+  WhatsAppIcon
 } from "../../components/ui/SocialIcons";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
@@ -33,9 +30,6 @@ const socialIconMap = {
   linkedin: LinkedInIcon,
   github: GitHubIcon,
   whatsapp: WhatsAppIcon,
-  youtube: YouTubeIcon,
-  twitter: TwitterIcon,
-  instagram: InstagramIcon,
   mail: Mail
 };
 
@@ -314,7 +308,7 @@ export const Contact = () => {
                 Follow me on social media for updates, tips, and insights.
               </p>
 
-              <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                 {socialLinks.map((s) => {
                   const IconComp = socialIconMap[s.icon] || Mail;
                   return (

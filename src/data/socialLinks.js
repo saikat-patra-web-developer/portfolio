@@ -21,27 +21,6 @@ export const socialLinks = [
     username: "+91 90389 09382"
   },
   {
-    name: "YouTube",
-    url: "https://youtube.com/@saikatpatra",
-    icon: "youtube",
-    label: "Subscribe on YouTube",
-    username: "@saikatpatra"
-  },
-  {
-    name: "Instagram",
-    url: "https://instagram.com/saikatpatra",
-    icon: "instagram",
-    label: "Follow on Instagram",
-    username: "@saikatpatra"
-  },
-  {
-    name: "Twitter",
-    url: "https://x.com/saikatpatra",
-    icon: "twitter",
-    label: "Follow on X (Twitter)",
-    username: "@saikatpatra"
-  },
-  {
     name: "Email",
     url: "mailto:saikatpatraoffice@gmail.com",
     icon: "mail",

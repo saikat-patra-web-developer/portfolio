@@ -9,10 +9,7 @@ import {
 import {
   LinkedInIcon,
   GitHubIcon,
-  WhatsAppIcon,
-  YouTubeIcon,
-  TwitterIcon,
-  InstagramIcon
+  WhatsAppIcon
 } from "../ui/SocialIcons";
 import { profileData } from "../../data/profile";
 import { socialLinks } from "../../data/socialLinks";
@@ -21,9 +18,6 @@ const iconMap = {
   linkedin: LinkedInIcon,
   github: GitHubIcon,
   whatsapp: WhatsAppIcon,
-  youtube: YouTubeIcon,
-  twitter: TwitterIcon,
-  instagram: InstagramIcon,
   mail: Mail
 };
 

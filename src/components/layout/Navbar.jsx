@@ -1,7 +1,7 @@
-﻿import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, MessageSquare } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { profileData } from "../../data/profile";
 
 const navLinks = [
@@ -10,8 +10,6 @@ const navLinks = [
   { name: "Services", path: "/services" },
   { name: "Projects", path: "/projects" },
   { name: "Skills", path: "/skills" },
-  { name: "Testimonials", path: "/#testimonials" },
-  { name: "Blog", path: "/#blog" },
   { name: "Contact", path: "/contact" }
 ];
 

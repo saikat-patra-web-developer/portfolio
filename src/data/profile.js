@@ -1,4 +1,4 @@
-﻿export const profileData = {
+export const profileData = {
   name: "Saikat Patra",
   role: "Full Stack Web Developer",
   shortRole: "Web Developer",
@@ -7,8 +7,14 @@
   contactQuote: "Great Ideas Start With a Conversation",
   location: "Howrah, West Bengal, India",
   shortLocation: "Howrah, India",
-  email: "saikatpatraofficial@gmail.com",
-  phone: "+91 6290685426",
+  email: "saikatpatraoffice@gmail.com",
+  directEmail: "saikatpatra300@gmail.com",
+  phone: "+91 90389 09382",
+  secondaryPhone: "+91 89022 73136",
+  whatsapp: "https://wa.me/919038909382",
+  secondaryWhatsapp: "https://wa.me/918902273136",
+  linkedin: "https://www.linkedin.com/in/saikat-patra-web-developer",
+  github: "https://github.com/saikat-patra-web-developer",
   availability: "Currently Available",
   availabilityStatus: "Available for new projects",
   responseTime: "Usually within 24 hours",

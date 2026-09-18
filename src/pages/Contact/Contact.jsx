@@ -18,6 +18,7 @@ import {
 import {
   LinkedInIcon,
   GitHubIcon,
+  WhatsAppIcon,
   YouTubeIcon,
   TwitterIcon,
   InstagramIcon
@@ -31,6 +32,7 @@ import { socialLinks } from "../../data/socialLinks";
 const socialIconMap = {
   linkedin: LinkedInIcon,
   github: GitHubIcon,
+  whatsapp: WhatsAppIcon,
   youtube: YouTubeIcon,
   twitter: TwitterIcon,
   instagram: InstagramIcon,
@@ -158,15 +160,15 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <div className="space-y-4">
-                {/* Email */}
+              <div className="space-y-3.5">
+                {/* Business Enquiries Email */}
                 <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5 hover:border-[#00E5FF]/30 transition-colors">
                   <div className="w-8 h-8 rounded-lg bg-[#00E5FF]/10 text-[#00E5FF] flex items-center justify-center shrink-0 mt-0.5">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
-                      Email
+                      Business Enquiries
                     </div>
                     <a
                       href={`mailto:${profileData.email}`}
@@ -175,28 +177,92 @@ export const Contact = () => {
                       {profileData.email}
                     </a>
                     <div className="text-[10px] text-white/40 mt-0.5">
-                      Send me an email anytime
+                      New projects, proposals & partnerships
                     </div>
                   </div>
                 </div>
 
-                {/* Phone */}
+                {/* Direct Developer Email */}
                 <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5 hover:border-[#00E5FF]/30 transition-colors">
-                  <div className="w-8 h-8 rounded-lg bg-[#2787FF]/10 text-[#2787FF] flex items-center justify-center shrink-0 mt-0.5">
-                    <Phone className="w-4 h-4" />
+                  <div className="w-8 h-8 rounded-lg bg-[#A855F7]/10 text-[#A855F7] flex items-center justify-center shrink-0 mt-0.5">
+                    <Mail className="w-4 h-4" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
-                      Phone & WhatsApp
+                      Direct Email
+                    </div>
+                    <a
+                      href={`mailto:${profileData.directEmail}`}
+                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors break-all"
+                    >
+                      {profileData.directEmail}
+                    </a>
+                    <div className="text-[10px] text-white/40 mt-0.5">
+                      Direct developer communication
+                    </div>
+                  </div>
+                </div>
+
+                {/* Instant Chat (Primary) */}
+                <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5 hover:border-[#00E5FF]/30 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <WhatsAppIcon className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
+                        Instant Chat (Primary)
+                      </span>
+                      <a
+                        href={profileData.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 bg-emerald-500/10 hover:bg-emerald-500/20 px-2 py-0.5 rounded-md border border-emerald-500/20 transition-colors"
+                      >
+                        <span>WhatsApp</span>
+                        <ExternalLink className="w-2.5 h-2.5" />
+                      </a>
                     </div>
                     <a
                       href={`tel:${profileData.phone}`}
-                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors"
+                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors block mt-0.5"
                     >
                       {profileData.phone}
                     </a>
                     <div className="text-[10px] text-white/40 mt-0.5">
-                      Call or message on WhatsApp
+                      Call or chat on WhatsApp
+                    </div>
+                  </div>
+                </div>
+
+                {/* Instant Chat (Secondary) */}
+                <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5 hover:border-[#00E5FF]/30 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
+                        Instant Chat (Secondary)
+                      </span>
+                      <a
+                        href={profileData.secondaryWhatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 bg-emerald-500/10 hover:bg-emerald-500/20 px-2 py-0.5 rounded-md border border-emerald-500/20 transition-colors"
+                      >
+                        <span>WhatsApp</span>
+                        <ExternalLink className="w-2.5 h-2.5" />
+                      </a>
+                    </div>
+                    <a
+                      href={`tel:${profileData.secondaryPhone}`}
+                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors block mt-0.5"
+                    >
+                      {profileData.secondaryPhone}
+                    </a>
+                    <div className="text-[10px] text-white/40 mt-0.5">
+                      Alternate phone & WhatsApp contact
                     </div>
                   </div>
                 </div>
@@ -248,7 +314,7 @@ export const Contact = () => {
                 Follow me on social media for updates, tips, and insights.
               </p>
 
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                 {socialLinks.map((s) => {
                   const IconComp = socialIconMap[s.icon] || Mail;
                   return (
@@ -258,10 +324,10 @@ export const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 rounded-xl bg-[#020B18]/80 border border-[#00E5FF]/20 flex flex-col items-center justify-center gap-1.5 hover:border-[#00E5FF] hover:bg-[#00E5FF]/10 text-white/80 hover:text-white transition-all group"
-                      title={s.name}
+                      title={s.label || s.name}
                     >
                       <IconComp className="w-5 h-5 group-hover:scale-110 transition-transform text-[#00E5FF]" />
-                      <span className="text-[10px] font-medium">{s.name}</span>
+                      <span className="text-[10px] font-medium text-center truncate w-full">{s.name}</span>
                     </a>
                   );
                 })}

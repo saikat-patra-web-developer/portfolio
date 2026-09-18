@@ -340,10 +340,6 @@ h6 {
 .home-hero-art::before {
   content: "";
   position: absolute;
-  inset: 9% 6% 4% 9%;
-  z-index: -3;
-  border-radius: 50% 42% 22% 35%;
-  filter: blur(18px);
 }
 
 .home-art-glow {
@@ -1063,7 +1059,6 @@ h6 {
   z-index: 1;
   left: -10%;
   top: 5%;
-  width: 98%;
   height: 90%;
   object-fit: contain;
   object-position: center;

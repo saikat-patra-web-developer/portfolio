@@ -1,4 +1,4 @@
-﻿export const servicesData = [
+export const servicesData = [
   {
     id: "web-apps",
     number: "01",
@@ -282,6 +282,6 @@ export const faqList = [
   },
   {
     q: "How do we get started?",
-    a: "Simply reach out via the Contact page or email me at saikatpatraofficial@gmail.com. We will schedule a quick consultation call to understand your requirements, after which I will provide a detailed proposal, timeline, and quote."
+    a: "Simply reach out via the Contact page or email me at saikatpatraoffice@gmail.com. We will schedule a quick consultation call to understand your requirements, after which I will provide a detailed proposal, timeline, and quote."
   }
 ];

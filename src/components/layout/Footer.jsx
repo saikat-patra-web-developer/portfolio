@@ -9,6 +9,7 @@ import {
 import {
   LinkedInIcon,
   GitHubIcon,
+  WhatsAppIcon,
   YouTubeIcon,
   TwitterIcon,
   InstagramIcon
@@ -19,6 +20,7 @@ import { socialLinks } from "../../data/socialLinks";
 const iconMap = {
   linkedin: LinkedInIcon,
   github: GitHubIcon,
+  whatsapp: WhatsAppIcon,
   youtube: YouTubeIcon,
   twitter: TwitterIcon,
   instagram: InstagramIcon,

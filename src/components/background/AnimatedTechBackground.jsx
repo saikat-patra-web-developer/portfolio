@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { GlowOrbs } from "./GlowOrbs";
 import { HexGrid } from "./HexGrid";
 import { HudRings } from "./HudRings";
@@ -32,7 +32,7 @@ export const AnimatedTechBackground = () => {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 w-screen h-screen pointer-events-none select-none z-0 overflow-hidden"
+      className="fixed inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden"
       style={{ willChange: "transform" }}
     >
       {/* Dynamic gradient lighting atmosphere */}

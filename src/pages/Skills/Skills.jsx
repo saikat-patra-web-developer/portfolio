@@ -151,7 +151,7 @@ export const Skills = () => {
                 </p>
 
                 {/* Core Stack Icons Grid */}
-                <div className="grid grid-cols-4 gap-3 py-2">
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-3 py-2">
                   {skillsData.coreStack.map((tech) => (
                     <div
                       key={tech.name}

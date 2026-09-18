@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { GlassCard } from "./GlassCard";
 
 export const AnimatedCounter = ({ target, suffix = "", duration = 1500 }) => {
@@ -62,7 +62,7 @@ export const StatCard = ({
 }) => {
   return (
     <GlassCard
-      className={`p-5 sm:p-6 flex items-center gap-4 ${
+      className={`p-3.5 sm:p-5 md:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-4 ${
         highlight
           ? "border-[#00E5FF]/40 bg-[#031c38]/70 shadow-[0_0_30px_rgba(0,229,255,0.15)]"
           : "border-[#00E5FF]/15"
@@ -70,15 +70,15 @@ export const StatCard = ({
       hoverEffect={true}
     >
       {Icon && (
-        <div className="w-12 h-12 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shrink-0">
-          <Icon className="w-6 h-6" />
+        <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shrink-0">
+          <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
         </div>
       )}
-      <div>
-        <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+      <div className="min-w-0 w-full sm:w-auto">
+        <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
           <AnimatedCounter target={value} />
         </div>
-        <div className="text-xs sm:text-sm text-white/70 font-medium mt-0.5">
+        <div className="text-[11px] sm:text-xs md:text-sm text-white/70 font-medium mt-0.5 leading-snug break-words">
           {label}
         </div>
       </div>

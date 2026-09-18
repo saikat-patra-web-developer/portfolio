@@ -54,7 +54,7 @@ export const InnerPageHero = ({ pathname }) => {
         <div className="services-hero-badges">
           {content.benefits.map(([title, subtitle], index) => {
             const Icon = benefitIcons[index];
-            return <article key={title}><i><Icon /></i><div><strong>{title}</strong><small>{subtitle}</small></div></article>;
+            return <article key={title}><i><Icon /></i><div className="min-w-0"><strong>{title}</strong><small>{subtitle}</small></div></article>;
           })}
         </div>
       </div>

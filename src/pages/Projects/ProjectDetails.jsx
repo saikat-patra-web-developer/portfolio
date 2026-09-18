@@ -240,10 +240,10 @@ export const ProjectDetails = () => {
         <section className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <Link
             to={`/projects/${prevProject.slug}`}
-            className="flex items-center gap-3 p-4 rounded-2xl bg-[#03152B]/60 border border-[#00E5FF]/15 hover:border-[#00E5FF]/40 text-left w-full sm:w-1/2 transition-colors"
+            className="flex items-center gap-3 p-4 rounded-2xl bg-[#03152B]/60 border border-[#00E5FF]/15 hover:border-[#00E5FF]/40 text-left w-full sm:w-1/2 transition-colors min-w-0"
           >
             <ArrowLeft className="w-5 h-5 text-[#00E5FF] shrink-0" />
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="text-[11px] text-white/50 uppercase tracking-wider">
                 Previous Project
               </div>
@@ -255,9 +255,9 @@ export const ProjectDetails = () => {
 
           <Link
             to={`/projects/${nextProject.slug}`}
-            className="flex items-center justify-end gap-3 p-4 rounded-2xl bg-[#03152B]/60 border border-[#00E5FF]/15 hover:border-[#00E5FF]/40 text-right w-full sm:w-1/2 transition-colors"
+            className="flex items-center justify-end gap-3 p-4 rounded-2xl bg-[#03152B]/60 border border-[#00E5FF]/15 hover:border-[#00E5FF]/40 text-right w-full sm:w-1/2 transition-colors min-w-0"
           >
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="text-[11px] text-white/50 uppercase tracking-wider">
                 Next Project
               </div>

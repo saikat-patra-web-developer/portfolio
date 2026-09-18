@@ -31,6 +31,18 @@ export const Navbar = () => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const isLinkActive = (path) => {
     if (path === "/") {
       return location.pathname === "/";
@@ -42,25 +54,25 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-3 sm:px-6 pointer-events-none">
       <nav
-        className={`pointer-events-auto w-full max-w-[1080px] transition-all duration-300 mt-3 rounded-2xl border flex items-center justify-between px-4 sm:px-6 ${scrolled
-          ? "py-2.5 sm:py-3 bg-[#020B18]/85 backdrop-blur-2xl border-[#00E5FF]/30 shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.12)]"
-          : "py-3.5 sm:py-4 bg-[#03152B]/60 backdrop-blur-xl border-[#00E5FF]/20 shadow-[0_8px_30px_rgba(0,0,0,0.5),0_0_15px_rgba(0,229,255,0.06)]"
+        className={`pointer-events-auto w-full max-w-[1080px] transition-all duration-300 mt-2 sm:mt-3 rounded-2xl border flex items-center justify-between px-3 sm:px-6 ${scrolled
+          ? "py-2 sm:py-3 bg-[#020B18]/85 backdrop-blur-2xl border-[#00E5FF]/30 shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.12)]"
+          : "py-2.5 sm:py-4 bg-[#03152B]/60 backdrop-blur-xl border-[#00E5FF]/20 shadow-[0_8px_30px_rgba(0,0,0,0.5),0_0_15px_rgba(0,229,255,0.06)]"
           }`}
       >
         {/* Left: Brand Logo */}
-        <Link to="/" className="flex items-center gap-3 group select-none">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] p-[1.5px] shadow-[0_0_15px_rgba(0,229,255,0.35)] group-hover:shadow-[0_0_25px_rgba(0,229,255,0.6)] transition-all duration-300">
-            <div className="w-full h-full bg-[#020B18] rounded-[10px] flex items-center justify-center font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-[#A855F7] text-sm sm:text-base tracking-tighter">
+        <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group select-none min-w-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] p-[1.5px] shadow-[0_0_15px_rgba(0,229,255,0.35)] group-hover:shadow-[0_0_25px_rgba(0,229,255,0.6)] transition-all duration-300 shrink-0">
+            <div className="w-full h-full bg-[#020B18] rounded-[10px] flex items-center justify-center font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-[#A855F7] text-xs sm:text-base tracking-tighter">
               SP
             </div>
           </div>
-          <div className="flex flex-col">
-            <span className="font-extrabold text-sm sm:text-base text-white tracking-tight group-hover:text-[#00E5FF] transition-colors duration-200">
+          <div className="flex flex-col min-w-0">
+            <span className="font-extrabold text-xs sm:text-base text-white tracking-tight group-hover:text-[#00E5FF] transition-colors duration-200 truncate">
               {profileData.name}
             </span>
-            <span className="text-[10px] sm:text-[11px] font-medium text-white/50 -mt-1 tracking-wider uppercase">
+            <span className="hidden min-[380px]:block text-[10px] sm:text-[11px] font-medium text-white/50 -mt-1 tracking-wider uppercase truncate">
               {profileData.shortRole}
             </span>
           </div>
@@ -92,8 +104,8 @@ export const Navbar = () => {
           })}
         </div>
 
-        {/* Right: Desktop CTA Button */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Right: Desktop CTA Button (Visible on lg+) */}
+        <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] hover:opacity-95 shadow-[0_0_20px_rgba(0,229,255,0.35)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] border border-white/20 transition-all duration-300 group cursor-pointer"
@@ -103,17 +115,17 @@ export const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="flex sm:hidden items-center gap-2">
+        {/* Mobile & Tablet Controls (Shown below lg) */}
+        <div className="flex lg:hidden items-center gap-2 shrink-0">
           <Link
             to="/contact"
-            className="px-3 py-1.5 rounded-full text-xs font-bold text-white bg-[#00E5FF]/20 border border-[#00E5FF]/40 text-[#00E5FF]"
+            className="px-3 py-1.5 rounded-full text-xs font-bold text-[#00E5FF] bg-[#00E5FF]/15 border border-[#00E5FF]/40 hover:bg-[#00E5FF]/25 transition-colors"
           >
             Talk
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-xl bg-white/5 border border-white/10 text-white/90 hover:text-white"
+            className="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/90 hover:text-white transition-colors cursor-pointer"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5 text-[#00E5FF]" /> : <Menu className="w-5 h-5" />}
@@ -121,7 +133,7 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Glass Menu Drawer */}
+      {/* Mobile & Tablet Glass Menu Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -129,7 +141,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="pointer-events-auto absolute top-20 left-4 right-4 rounded-2xl bg-[#020B18]/95 backdrop-blur-2xl border border-[#00E5FF]/30 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(0,229,255,0.15)] flex flex-col gap-3 lg:hidden"
+            className="pointer-events-auto absolute top-16 sm:top-20 left-3 right-3 sm:left-6 sm:right-6 rounded-2xl bg-[#020B18]/95 backdrop-blur-2xl border border-[#00E5FF]/30 p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(0,229,255,0.15)] flex flex-col gap-3 lg:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto"
           >
             <div className="flex flex-col divide-y divide-white/5">
               {navLinks.map((link) => {

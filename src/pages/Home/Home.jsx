@@ -66,16 +66,16 @@ export const Home = () => {
             <h2>Full Stack Web Developer</h2>
             <p>{profileData.bio}</p>
 
-            <div className="flex flex-wrap items-center gap-3.5 mt-6">
-              <NeonButton to="/contact" variant="primary">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 mt-6">
+              <NeonButton to="/contact" variant="primary" className="w-full sm:w-auto">
                 Let's Work Together
               </NeonButton>
-              <NeonButton to="/projects" variant="secondary">
+              <NeonButton to="/projects" variant="secondary" className="w-full sm:w-auto">
                 View My Work
               </NeonButton>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white/80 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 group"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-semibold text-white/80 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 group w-full sm:w-auto"
               >
                 <span className="w-5 h-5 rounded-full bg-[#00E5FF]/20 border border-[#00E5FF]/40 flex items-center justify-center text-[#00E5FF] group-hover:scale-110 transition-transform">
                   <Play className="w-2.5 h-2.5 fill-current ml-0.5" />

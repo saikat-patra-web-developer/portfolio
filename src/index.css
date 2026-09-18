@@ -123,6 +123,12 @@ html {
   }
 }
 
+@media (max-width: 480px) {
+  .site-main>div {
+    width: min(100% - 0.75rem, 1320px);
+  }
+}
+
 h1,
 h2,
 h3,
@@ -1313,100 +1319,119 @@ h6 {
 
 @media (max-width:640px) {
   .services-hero {
-    padding-top: 0 !important
+    padding-top: 0 !important;
   }
 
   .services-hero h1 {
-    font-size: 43px !important
+    font-size: clamp(26px, 7.5vw, 40px) !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .services-hero h2 {
-    font-size: 20px
+    font-size: clamp(16px, 4.5vw, 20px);
+    overflow-wrap: break-word;
   }
 
   .services-desktop-break {
-    display: none
+    display: none;
   }
 
   .services-hero-copy>p {
-    font-size: 12px
+    font-size: 12px;
   }
 
   .services-hero-badges {
     grid-template-columns: 1fr;
-    max-width: 280px;
-    gap: 10px
+    max-width: 100%;
+    width: 100%;
+    gap: 10px;
   }
 
   .services-hero-badges strong {
-    font-size: 11px
+    font-size: 11px;
+    white-space: normal;
   }
 
   .services-hero-badges small {
-    font-size: 9px
+    font-size: 9px;
+    white-space: normal;
   }
 
   .services-hero-visual {
-    min-height: 310px;
-    margin-inline: -10px;
-    width: calc(100% + 20px)
+    min-height: 280px;
+    margin-inline: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
   }
 
   .services-hero-visual img {
-    left: -7%;
+    left: -4%;
     top: 5%;
-    width: 94%;
-    height: 86%
+    width: 96%;
+    height: 88%;
   }
 
   .services-code-note {
     left: 2%;
     top: 13%;
-    font-size: 19px
+    font-size: 18px;
   }
 
   .services-idea-card {
-    left: 49%;
+    left: 48%;
     top: 31%;
-    width: 78px;
-    padding: 10px 6px;
-    font-size: 16px
+    width: 76px;
+    padding: 8px 6px;
+    font-size: 15px;
   }
 
   .services-vision-card {
     right: 0;
     top: 4%;
-    width: 100px;
-    min-height: 83px;
-    padding: 8px 9px;
-    font-size: 16px;
+    width: 96px;
+    min-height: 80px;
+    padding: 8px 8px;
+    font-size: 15px;
   }
 
   .services-vision-card span {
-    font-size: 16px;
+    font-size: 15px;
     line-height: .91;
   }
 
   .services-vision-card b {
-    font-size: 14px
+    font-size: 13px;
   }
 
   .services-quality-card {
     right: 0;
     bottom: 4%;
-    width: 118px;
+    width: 116px;
     gap: 5px;
-    padding: 8px
+    padding: 8px;
   }
 
   .services-quality-card span {
     gap: 4px;
-    font-size: 7px
+    font-size: 7px;
   }
 
   .services-quality-card svg {
     width: 11px;
-    height: 11px
+    height: 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  .services-idea-card {
+    display: none;
+  }
+
+  .services-hero-visual {
+    min-height: 240px;
   }
 }
 
@@ -1637,6 +1662,19 @@ h6 {
 
   .home-hero-art {
     min-height: 320px;
+    overflow: hidden;
+    border-radius: 20px;
+    max-width: 100%;
+  }
+
+  .home-orbit-one {
+    width: min(280px, 80vw);
+    height: min(280px, 80vw);
+  }
+
+  .home-orbit-two {
+    width: min(340px, 95vw);
+    height: min(180px, 50vw);
   }
 
   .home-hero-art>img {
@@ -1667,6 +1705,13 @@ h6 {
     padding: 8px 10px;
     font-size: 9px;
     box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .home-availability span {
+    margin-left: 0;
   }
 
   .home-tech-strip>div {
@@ -1684,6 +1729,35 @@ h6 {
 
   .home-tech-strip small {
     font-size: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-tech-strip {
+    padding: 12px 14px;
+  }
+
+  .home-tech-strip>div {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+  }
+
+  .home-tech-strip small {
+    font-size: 7.5px;
+    line-height: 1.1;
+    text-align: center;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-tech-strip>div {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .home-tech-strip small {
+    font-size: 8.5px;
   }
 
   .home-services-grid {

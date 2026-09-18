@@ -91,28 +91,21 @@ export const ProjectCard = ({ project, compact = false }) => {
         )}
 
         {/* Action links */}
-        <div className="flex items-center gap-2.5 pt-2 border-t border-white/5">
+        <div className="flex items-center gap-2 pt-2 border-t border-white/5">
           <Link
             to={`/projects/${slug}`}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-[#2787FF]/80 to-[#00E5FF]/80 hover:from-[#2787FF] hover:to-[#00E5FF] text-white transition-all duration-200 shadow-[0_0_15px_rgba(0,229,255,0.2)]"
+            className="flex-1 min-h-[40px] inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#2787FF]/80 to-[#00E5FF]/80 hover:from-[#2787FF] hover:to-[#00E5FF] text-white transition-all duration-200 shadow-[0_0_15px_rgba(0,229,255,0.2)]"
           >
-            <span>View Project</span>
+            <span>View Details</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
-
-          {!compact && <Link
-            to={`/projects/${slug}`}
-            className="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-xl text-xs font-medium text-white/80 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors duration-200"
-          >
-            <span>Case Study</span>
-          </Link>}
 
           {website && (
             <a
               href={website}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl text-white/60 hover:text-[#00E5FF] hover:bg-[#00E5FF]/10 transition-colors duration-200"
+              className="w-10 h-10 shrink-0 rounded-xl bg-white/5 hover:bg-[#00E5FF]/15 border border-white/10 hover:border-[#00E5FF]/40 flex items-center justify-center text-white/70 hover:text-[#00E5FF] transition-all duration-200"
               title="Visit live website"
               aria-label={`Visit live website for ${title}`}
             >

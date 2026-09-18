@@ -32,7 +32,7 @@ export const NeonButton = ({
       "bg-transparent text-[#00E5FF] border border-[#00E5FF]/40 hover:bg-[#00E5FF]/10 hover:border-[#00E5FF]"
   };
 
-  const baseClasses = `inline-flex items-center justify-center rounded-xl transition-all duration-300 group cursor-pointer select-none active:scale-[0.98] ${
+  const baseClasses = `inline-flex items-center justify-center min-h-[42px] rounded-xl transition-all duration-300 group cursor-pointer select-none active:scale-[0.98] ${
     sizeStyles[size] || sizeStyles.md
   } ${variantStyles[variant] || variantStyles.primary} ${
     disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : ""

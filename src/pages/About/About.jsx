@@ -61,11 +61,11 @@ export const About = () => {
                 Specializing in building modern web applications, custom CRM platforms, robust WordPress websites, API integrations, and scalable digital products that deliver real measurable business impact.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                <NeonButton to="/contact" variant="primary">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+                <NeonButton to="/contact" variant="primary" className="w-full sm:w-auto">
                   Get in Touch
                 </NeonButton>
-                <NeonButton to="/projects" variant="secondary" icon={false}>
+                <NeonButton to="/projects" variant="secondary" icon={false} className="w-full sm:w-auto">
                   Explore Projects
                 </NeonButton>
               </div>

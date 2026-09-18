@@ -220,7 +220,7 @@ export const Services = () => {
             {/* Custom Solution Card matching mockup */}
             <GlassCard
               glow="purple"
-              className="p-6 sm:p-7 flex flex-col justify-between h-full border-[#A855F7]/30 bg-gradient-to-br from-[#0e0728]/80 to-[#03152B]/80"
+              className="p-6 sm:p-7 flex flex-col justify-between h-full border-[#A855F7]/30"
             >
               <div>
                 <div className="w-12 h-12 rounded-xl bg-[#7B3CFF]/20 border border-[#A855F7]/40 flex items-center justify-center text-[#A855F7] mb-4">

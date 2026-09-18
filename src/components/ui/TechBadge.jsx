@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 
 export const TechBadge = ({ name, icon, size = "md", variant = "pill" }) => {
   const sizeClasses = {
@@ -9,7 +9,7 @@ export const TechBadge = ({ name, icon, size = "md", variant = "pill" }) => {
 
   return (
     <div
-      className={`inline-flex items-center rounded-lg bg-[#03152B]/70 border border-[#00E5FF]/20 text-white/90 font-medium backdrop-blur-sm hover:border-[#00E5FF]/50 hover:bg-[#052A4A]/70 transition-all duration-200 select-none ${
+      className={`inline-flex items-center rounded-lg bg-gradient-to-r from-[#073658]/80 to-[#072149]/80 border border-[#00E5FF]/20 text-white/90 font-medium hover:border-[#00E5FF]/50 hover:from-[#052A4A] hover:to-[#073658] transition-all duration-200 select-none ${
         sizeClasses[size] || sizeClasses.md
       }`}
     >

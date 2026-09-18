@@ -100,7 +100,7 @@ export const Contact = () => {
                   />
 
                   {/* Availability badge */}
-                  <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[#020B18]/90 backdrop-blur-xl border border-[#00E5FF]/30 flex items-center justify-between shadow-lg">
+                  <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-gradient-to-br from-[#073658] via-[#072149] to-[#22136f] border border-[#00E5FF]/30 flex items-center justify-between shadow-lg">
                     <div className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
                       <span className="text-xs font-semibold text-white">
@@ -114,9 +114,9 @@ export const Contact = () => {
                 </div>
 
                 {/* Floating Quote */}
-                <div className="absolute -top-5 -right-5 sm:-right-8 p-3.5 rounded-2xl bg-[#03152B]/90 backdrop-blur-xl border border-[#A855F7]/40 shadow-[0_10px_30px_rgba(0,0,0,0.7),0_0_20px_rgba(168,85,247,0.2)] hidden sm:block">
+                <div className="absolute -top-5 -right-5 sm:-right-8 p-3.5 rounded-2xl bg-gradient-to-br from-[#073658] via-[#072149] to-[#22136f] border border-[#A855F7]/40 shadow-[0_10px_30px_rgba(0,0,0,0.7),0_0_20px_rgba(168,85,247,0.2)] hidden sm:block">
                   <div className="text-[10px] text-white/50 italic font-mono">&ldquo;</div>
-                  <div className="text-xs font-bold text-white tracking-wide">
+                  <div className="font-handwriting text-base font-bold text-white tracking-wide leading-snug">
                     Great Ideas <br /> Start With a <br /> Conversation
                   </div>
                   <div className="text-[10px] text-white/50 italic font-mono text-right">&rdquo;</div>

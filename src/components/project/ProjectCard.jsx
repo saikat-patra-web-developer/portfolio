@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { GlassCard } from "../ui/GlassCard";
@@ -33,7 +33,7 @@ export const ProjectCard = ({ project, compact = false }) => {
 
         {/* Category badge */}
         <div className="absolute top-3 left-3">
-          <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide uppercase bg-[#020B18]/85 text-[#00E5FF] border border-[#00E5FF]/30 backdrop-blur-md">
+          <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide uppercase bg-gradient-to-r from-[#073658] to-[#072149] text-[#00E5FF] border border-[#00E5FF]/30 shadow-md">
             {category}
           </span>
         </div>
@@ -41,7 +41,7 @@ export const ProjectCard = ({ project, compact = false }) => {
         {/* Featured indicator */}
         {featured && (
           <div className="absolute top-3 right-3">
-            <span className="px-2.5 py-1 rounded-md text-[11px] font-medium tracking-wide bg-[#7B3CFF]/85 text-white border border-[#A855F7]/40 backdrop-blur-md">
+            <span className="px-2.5 py-1 rounded-md text-[11px] font-medium tracking-wide bg-gradient-to-r from-[#7B3CFF] to-[#A855F7] text-white border border-[#A855F7]/40 shadow-md">
               Featured
             </span>
           </div>

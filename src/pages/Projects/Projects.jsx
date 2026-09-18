@@ -105,7 +105,7 @@ export const Projects = () => {
                 </div>
 
                 {/* Floating Quote */}
-                <div className="absolute -top-5 -right-5 sm:-right-8 p-3.5 rounded-2xl bg-[#03152B]/90 backdrop-blur-xl border border-[#A855F7]/40 shadow-[0_10px_30px_rgba(0,0,0,0.7),0_0_20px_rgba(168,85,247,0.2)] hidden sm:block">
+                <div className="absolute -top-5 -right-5 sm:-right-8 p-3.5 rounded-2xl bg-gradient-to-br from-[#073658] via-[#072149] to-[#22136f] border border-[#A855F7]/40 shadow-[0_10px_30px_rgba(0,0,0,0.7),0_0_20px_rgba(168,85,247,0.2)] hidden sm:block">
                   <div className="text-[10px] text-white/50 italic font-mono">&ldquo;</div>
                   <div className="text-xs font-bold text-white tracking-wide">
                     Every Project <br /> Solves a Real <br /> Problem

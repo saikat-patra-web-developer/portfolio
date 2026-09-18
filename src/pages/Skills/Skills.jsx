@@ -75,7 +75,7 @@ export const Skills = () => {
                 </div>
 
                 {/* Floating Quote Card */}
-                <div className="absolute -top-5 -right-5 sm:-right-8 p-3.5 rounded-2xl bg-[#03152B]/90 backdrop-blur-xl border border-[#A855F7]/40 shadow-[0_10px_30px_rgba(0,0,0,0.7),0_0_20px_rgba(168,85,247,0.2)] hidden sm:block">
+                <div className="absolute -top-5 -right-5 sm:-right-8 p-3.5 rounded-2xl bg-gradient-to-br from-[#073658] via-[#072149] to-[#22136f] border border-[#A855F7]/40 shadow-[0_10px_30px_rgba(0,0,0,0.7),0_0_20px_rgba(168,85,247,0.2)] hidden sm:block">
                   <div className="text-[10px] text-white/50 italic font-mono">&ldquo;</div>
                   <div className="text-xs font-bold text-white tracking-wide">
                     Technology <br /> Turns Ideas <br /> Into Impact
@@ -132,7 +132,7 @@ export const Skills = () => {
             {/* Card 8: My Core Stack Card matching mockup */}
             <GlassCard
               glow="both"
-              className="p-6 sm:p-7 flex flex-col justify-between h-full border-[#00E5FF]/25 bg-gradient-to-br from-[#031c38]/70 to-[#0e0728]/70"
+              className="p-6 sm:p-7 flex flex-col justify-between h-full border-[#00E5FF]/25"
             >
               <div>
                 <div className="flex items-center gap-3 mb-2.5">
@@ -277,7 +277,7 @@ export const Skills = () => {
             actionTo="/projects"
           />
 
-          <GlassCard className="p-6 sm:p-10 border-[#00E5FF]/30 bg-gradient-to-br from-[#03152B]/80 via-[#032042]/70 to-[#0e0728]/80">
+          <GlassCard className="p-6 sm:p-10 border-[#00E5FF]/30">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left Case Image */}
               <div className="lg:col-span-4 rounded-2xl overflow-hidden border border-[#00E5FF]/30 relative aspect-[16/10] bg-[#020B18]">

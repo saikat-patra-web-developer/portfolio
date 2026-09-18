@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
@@ -27,7 +27,7 @@ export const NeonButton = ({
     secondary:
       "bg-[#03152B]/80 text-white/90 border border-[#00E5FF]/30 hover:border-[#00E5FF] hover:bg-[#052A4A]/80 shadow-[0_0_20px_rgba(0,229,255,0.1)] hover:shadow-[0_0_25px_rgba(0,229,255,0.3)] hover:text-white",
     glass:
-      "bg-white/5 backdrop-blur-md text-white/90 border border-white/10 hover:border-[#A855F7]/50 hover:bg-white/10 shadow-[0_0_15px_rgba(168,85,247,0.1)]",
+      "bg-white/10 text-white/90 border border-white/15 hover:border-[#A855F7]/50 hover:bg-white/15 shadow-[0_0_15px_rgba(168,85,247,0.1)]",
     outline:
       "bg-transparent text-[#00E5FF] border border-[#00E5FF]/40 hover:bg-[#00E5FF]/10 hover:border-[#00E5FF]"
   };

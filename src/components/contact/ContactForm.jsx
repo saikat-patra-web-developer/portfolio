@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import {
   User,
   Mail,
@@ -101,7 +101,7 @@ export const ContactForm = ({ preselectedService = "" }) => {
   };
 
   return (
-    <div className="relative rounded-2xl bg-[#03152B]/75 backdrop-blur-xl border border-[#00E5FF]/25 p-6 sm:p-8 md:p-10 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.6),0_0_30px_rgba(0,229,255,0.08)]">
+    <div className="relative rounded-2xl bg-gradient-to-br from-[#073658]/90 via-[#072149]/90 to-[#22136f]/90 border border-[#00E5FF]/25 p-6 sm:p-8 md:p-10 shadow-[inset_0_0_25px_rgba(15,184,255,0.05),0_15px_40px_-10px_rgba(0,0,0,0.6),0_0_25px_rgba(0,229,255,0.1)]">
       {/* Card Header */}
       <div className="flex items-center gap-3.5 mb-6">
         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/35 flex items-center justify-center text-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]">

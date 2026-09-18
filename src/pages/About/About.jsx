@@ -87,11 +87,11 @@ export const About = () => {
                 </div>
 
                 {/* Floating pill badges matching specs */}
-                <div className="absolute -top-4 -left-6 px-3 py-1.5 rounded-xl bg-[#03152B]/90 border border-[#00E5FF]/30 text-white text-xs font-semibold shadow-lg backdrop-blur-md hidden sm:block">
+                <div className="absolute -top-4 -left-6 px-3 py-1.5 rounded-xl bg-gradient-to-br from-[#073658] via-[#072149] to-[#22136f] border border-[#00E5FF]/30 text-white text-xs font-semibold shadow-lg hidden sm:block">
                   Always Learning Always Improving
                 </div>
 
-                <div className="absolute -bottom-4 -right-4 px-3 py-1.5 rounded-xl bg-[#03152B]/90 border border-[#A855F7]/40 text-[#00E5FF] text-xs font-semibold shadow-lg backdrop-blur-md hidden sm:block">
+                <div className="absolute -bottom-4 -right-4 px-3 py-1.5 rounded-xl bg-gradient-to-br from-[#073658] via-[#072149] to-[#22136f] border border-[#A855F7]/40 text-[#00E5FF] text-xs font-semibold shadow-lg hidden sm:block">
                   Business Focused
                 </div>
               </div>

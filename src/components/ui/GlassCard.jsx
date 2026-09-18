@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 export const GlassCard = ({
@@ -27,7 +27,7 @@ export const GlassCard = ({
   return (
     <Component
       onClick={onClick}
-      className={`relative rounded-2xl bg-[#031428]/60 backdrop-blur-md border border-[#00E5FF]/15 transition-all duration-300 ${
+      className={`relative rounded-2xl bg-gradient-to-br from-[#073658]/80 via-[#072149]/80 to-[#22136f]/80 shadow-[inset_0_0_25px_rgba(15,184,255,0.05),0_0_15px_rgba(0,207,255,0.08)] border border-[#00E5FF]/20 transition-all duration-300 ${
         glowStyles[glow] || glowStyles.cyan
       } ${className}`}
       {...motionProps}

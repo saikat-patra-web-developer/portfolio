@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   CheckCircle2,
   ChevronDown,
-  ArrowRight,
-  Sparkles,
   ShieldCheck,
   Zap,
   HeartHandshake,
@@ -22,12 +19,10 @@ import {
 import { PageLayout } from "../../components/layout/PageLayout";
 import { SectionHeading } from "../../components/ui/SectionHeading";
 import { GlassCard } from "../../components/ui/GlassCard";
-import { NeonButton } from "../../components/ui/NeonButton";
 import { ServiceCard } from "../../components/service/ServiceCard";
 import { TestimonialCard } from "../../components/testimonial/TestimonialCard";
 import {
   servicesData,
-  pricingPlans,
   developmentProcess,
   industriesServed,
   faqList
@@ -48,24 +43,20 @@ const industryIcons = {
 };
 
 export const Services = () => {
-  const [billingCycle, setBillingCycle] = useState("projectBased"); // 'projectBased' | 'monthlyRetainer'
-  const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [openFaqIndexes, setOpenFaqIndexes] = useState([0]);
 
   const toggleFaq = (index) => {
-    setOpenFaqIndex(openFaqIndex === index ? -1 : index);
+    setOpenFaqIndexes((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
-
-  const activePlans =
-    billingCycle === "projectBased"
-      ? pricingPlans.projectBased
-      : pricingPlans.monthlyRetainer;
 
   return (
     <PageLayout
       title="Web Development Services | Saikat Patra"
       description="Custom web applications, bespoke CRM software, responsive WordPress development, API integrations, and ongoing support engineered by Saikat Patra."
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-24 sm:space-y-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 sm:space-y-32">
         {/* ======================================================== */}
         {/* HERO SECTION                                             */}
         {/* ======================================================== */}
@@ -247,36 +238,93 @@ export const Services = () => {
             subtitle="Answers to common questions about working with me."
           />
 
-          <div className="max-w-3xl mx-auto space-y-3">
-            {faqList.map((faq, index) => {
-              const isOpen = openFaqIndex === index;
-              return (
-                <GlassCard
-                  key={index}
-                  hoverEffect={false}
-                  className="border-[#00E5FF]/20 overflow-hidden"
-                >
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer select-none"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-start">
+            {/* Left Column (First 5 Questions) */}
+            <div className="space-y-3 sm:space-y-4">
+              {faqList.slice(0, 5).map((faq, index) => {
+                const isOpen = openFaqIndexes.includes(index);
+                return (
+                  <GlassCard
+                    key={index}
+                    hoverEffect={false}
+                    className={`border-[#00E5FF]/20 overflow-hidden transition-all duration-300 ${
+                      isOpen
+                        ? "border-[#00E5FF]/45 bg-[#03152B]/85 shadow-[0_0_25px_rgba(0,229,255,0.1)]"
+                        : "hover:border-[#00E5FF]/35"
+                    }`}
                   >
-                    <span className="text-sm sm:text-base font-bold text-white">
-                      {faq.q}
-                    </span>
-                    <ChevronDown
-                      className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer select-none"
+                      aria-expanded={isOpen}
+                    >
+                      <span
+                        className={`text-sm sm:text-base font-bold transition-colors duration-200 ${
+                          isOpen ? "text-[#00E5FF]" : "text-white"
                         }`}
-                    />
-                  </button>
+                      >
+                        {faq.q}
+                      </span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-300 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
 
-                  {isOpen && (
-                    <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-white/70 leading-relaxed border-t border-white/5 pt-3">
-                      {faq.a}
-                    </div>
-                  )}
-                </GlassCard>
-              );
-            })}
+                    {isOpen && (
+                      <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-white/70 leading-relaxed border-t border-white/5 pt-3">
+                        {faq.a}
+                      </div>
+                    )}
+                  </GlassCard>
+                );
+              })}
+            </div>
+
+            {/* Right Column (Next 5 Questions) */}
+            <div className="space-y-3 sm:space-y-4">
+              {faqList.slice(5, 10).map((faq, index) => {
+                const globalIndex = index + 5;
+                const isOpen = openFaqIndexes.includes(globalIndex);
+                return (
+                  <GlassCard
+                    key={globalIndex}
+                    hoverEffect={false}
+                    className={`border-[#00E5FF]/20 overflow-hidden transition-all duration-300 ${
+                      isOpen
+                        ? "border-[#00E5FF]/45 bg-[#03152B]/85 shadow-[0_0_25px_rgba(0,229,255,0.1)]"
+                        : "hover:border-[#00E5FF]/35"
+                    }`}
+                  >
+                    <button
+                      onClick={() => toggleFaq(globalIndex)}
+                      className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer select-none"
+                      aria-expanded={isOpen}
+                    >
+                      <span
+                        className={`text-sm sm:text-base font-bold transition-colors duration-200 ${
+                          isOpen ? "text-[#00E5FF]" : "text-white"
+                        }`}
+                      >
+                        {faq.q}
+                      </span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-300 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {isOpen && (
+                      <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-white/70 leading-relaxed border-t border-white/5 pt-3">
+                        {faq.a}
+                      </div>
+                    )}
+                  </GlassCard>
+                );
+              })}
+            </div>
           </div>
         </section>
 

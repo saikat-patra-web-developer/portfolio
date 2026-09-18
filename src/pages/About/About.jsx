@@ -36,7 +36,7 @@ export const About = () => {
       title="About Saikat Patra | Full Stack Developer"
       description="Learn about Saikat Patra, a passionate full stack developer from Howrah, India with 7+ years of experience engineering custom web applications, CRMs, and APIs."
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-24 sm:space-y-32">
+      <div className="about-mockup max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ======================================================== */}
         {/* HERO SECTION                                             */}
         {/* ======================================================== */}
@@ -109,7 +109,7 @@ export const About = () => {
             subtitle="My journey, technical philosophy, and why I care deeply about building software that actually works."
           />
 
-          <GlassCard className="p-8 sm:p-12 border-[#00E5FF]/20">
+          <GlassCard className="p-5 sm:p-8 lg:p-10 border-[#00E5FF]/20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm sm:text-base text-white/80 leading-relaxed">
               <div className="space-y-4">
                 <p>
@@ -147,12 +147,12 @@ export const About = () => {
           />
 
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-3 xl:gap-4">
               {profileData.journey.map((item) => (
                 <GlassCard
                   key={item.year}
                   glow="cyan"
-                  className="p-5 flex flex-col justify-between border-[#00E5FF]/20 text-center relative group"
+                  className="p-4 sm:p-5 flex flex-col justify-between border-[#00E5FF]/20 text-center relative group"
                 >
                   <div>
                     {/* Node indicator */}
@@ -186,11 +186,11 @@ export const About = () => {
             subtitle="The fundamental standards I uphold on every single project."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {profileData.values.map((val, idx) => {
               const IconComp = valueIcons[idx] || ShieldCheck;
               return (
-                <GlassCard key={val.title} className="p-6 sm:p-7 border-[#00E5FF]/15">
+                <GlassCard key={val.title} className="p-5 sm:p-6 lg:p-7 border-[#00E5FF]/15">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] mb-4">
                     <IconComp className="w-6 h-6" />
                   </div>
@@ -216,9 +216,9 @@ export const About = () => {
             subtitle="Combining business intelligence with senior technical execution."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {profileData.whyWorkWithMe.map((item) => (
-              <GlassCard key={item.title} glow="purple" className="p-6 border-[#A855F7]/20">
+              <GlassCard key={item.title} glow="purple" className="p-5 sm:p-6 border-[#A855F7]/20">
                 <div className="flex items-center gap-2.5 text-emerald-400 mb-3">
                   <CheckCircle2 className="w-5 h-5" />
                   <h3 className="text-base font-bold text-white">
@@ -243,7 +243,7 @@ export const About = () => {
             subtitle="A structured 5-step methodology delivering predictability and excellence."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
             {profileData.approach.map((app) => (
               <GlassCard key={app.step} className="p-5 sm:p-6 border-[#00E5FF]/20 flex flex-col justify-between">
                 <div>
@@ -272,7 +272,7 @@ export const About = () => {
             subtitle="Proven metrics accumulated over 7+ years of professional development."
           />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 [&>*:last-child]:col-span-2 md:[&>*:last-child]:col-span-1 lg:[&>*:last-child]:col-span-1">
             <StatCard value="7+" label="Years Experience" icon={Award} />
             <StatCard value="500+" label="Projects Completed" icon={Briefcase} />
             <StatCard value="100+" label="Happy Clients" icon={Users} />
@@ -291,7 +291,7 @@ export const About = () => {
             subtitle="Genuine client feedback on working together."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {testimonialsData.map((review) => (
               <TestimonialCard key={review.id} testimonial={review} />
             ))}

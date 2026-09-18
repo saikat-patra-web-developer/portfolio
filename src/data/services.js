@@ -283,5 +283,26 @@ export const faqList = [
   {
     q: "How do we get started?",
     a: "Simply reach out via the Contact page or email me at saikatpatraoffice@gmail.com. We will schedule a quick consultation call to understand your requirements, after which I will provide a detailed proposal, timeline, and quote."
+  },
+  {
+    q: "What is your pricing structure and payment terms?",
+    a: "I work with transparent fixed-price milestone contracts as well as monthly retainers. Projects typically involve a 30% to 50% initial deposit, milestone installments tied to clear deliverables, and final sign-off upon deployment."
+  },
+  {
+    q: "Will I have full ownership of the source code?",
+    a: "Yes, 100%. Upon project completion and final settlement, all intellectual property, source code, Git repositories, assets, and deployment credentials are completely transferred to you with zero recurring licensing fees."
+  },
+  {
+    q: "Can you develop custom CRM or portal solutions?",
+    a: "Yes, custom business management software is one of my core specializations. I build tailored CRMs, client portals, internal dashboards, and ERP tools with role-based access control, analytics, and automated workflows."
+  },
+  {
+    q: "How do you ensure code quality, performance, and SEO?",
+    a: "Every project is engineered with clean modular architecture, responsive mobile-first UI, strict TypeScript/JavaScript standards, fast Core Web Vitals, and technical on-page SEO best practices built right in."
+  },
+  {
+    q: "Do you handle domain setup, cloud hosting, and deployment?",
+    a: "Yes, I offer full end-to-end deployment support across platforms like AWS, DigitalOcean, Vercel, Hostinger, and cPanel. I configure custom domains, SSL certificates, automated backups, and CI/CD pipelines."
   }
 ];
+

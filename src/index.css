@@ -1419,9 +1419,23 @@ h6 {
 
 /* Shared non-home hero treatment. */
 .shared-hero-wrap {
-  width: min(100% - 2rem, 1280px);
-  margin: 0 auto;
-  padding-inline: 1rem;
+  max-width: 80rem !important;
+  width: 100% !important;
+  margin-inline: auto;
+  padding-inline: 1rem !important;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .shared-hero-wrap {
+    padding-inline: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shared-hero-wrap {
+    padding-inline: 2rem !important;
+  }
 }
 
 .shared-inner-page>div:not(.shared-hero-wrap)>section:first-child {
@@ -1433,37 +1447,78 @@ h6 {
   margin-block-start: 2.25rem !important;
 }
 
+/* About page container: mirrors .home-mockup spacing and horizontal padding */
+.about-mockup {
+  max-width: 80rem !important;
+  width: 100% !important;
+  margin-inline: auto;
+  padding-inline: 1rem !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+  margin-top: 4.5rem !important;
+  padding-bottom: 2.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .about-mockup {
+    padding-inline: 1.5rem !important;
+    gap: 5.5rem;
+    margin-top: 5.5rem !important;
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-mockup {
+    padding-inline: 2rem !important;
+    gap: 6.5rem;
+    margin-top: 6.5rem !important;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-mockup {
+    gap: 3.5rem;
+    margin-top: 3.5rem !important;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.about-mockup section,
+.about-mockup>section:first-child+section {
+  margin: 0 !important;
+  position: relative;
+}
+
 .shared-page-hero {
   width: 100%;
 }
 
 @media (min-width:1024px) {
-  .site-main>div:not(.home-mockup)>section:first-child>.grid {
+  .site-main>div:not(.home-mockup):not(.about-mockup)>section:first-child>.grid {
     grid-template-columns: 55% 45%;
     background: transparent;
   }
 
-  .site-main>div:not(.home-mockup)>section:first-child>.grid>div {
+  .site-main>div:not(.home-mockup):not(.about-mockup)>section:first-child>.grid>div {
     grid-column: auto;
     min-width: 0;
   }
 
-  .site-main>div:not(.home-mockup)>section:first-child>.grid>div:nth-child(2),
-  .site-main>div:not(.home-mockup)>section:first-child>.grid>div:nth-child(2)>div,
-  .site-main>div:not(.home-mockup)>section:first-child>.grid>div:nth-child(2)>div>div {
+  .site-main>div:not(.home-mockup):not(.about-mockup)>section:first-child>.grid>div:nth-child(2),
+  .site-main>div:not(.home-mockup):not(.about-mockup)>section:first-child>.grid>div:nth-child(2)>div,
+  .site-main>div:not(.home-mockup):not(.about-mockup)>section:first-child>.grid>div:nth-child(2)>div>div {
     background-color: transparent;
   }
 }
 
 @media (max-width:640px) {
-  .shared-hero-wrap {
-    width: min(100% - 1.25rem, 1280px);
-    padding-inline: 0
-  }
-
-  .shared-inner-page>div:not(.shared-hero-wrap)>section:first-child+section {
+  .shared-inner-page>div:not(.shared-hero-wrap):not(.about-mockup)>section:first-child+section {
     margin-top: 3.5rem !important;
-    margin-block-start: 3.5rem !important
+    margin-block-start: 3.5rem !important;
   }
 }
 

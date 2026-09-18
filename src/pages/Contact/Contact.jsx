@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Mail,
   Phone,
@@ -22,7 +22,6 @@ import {
 } from "../../components/ui/SocialIcons";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
-import { ContactForm } from "../../components/contact/ContactForm";
 import { profileData } from "../../data/profile";
 import { socialLinks } from "../../data/socialLinks";
 
@@ -34,8 +33,6 @@ const socialIconMap = {
 };
 
 export const Contact = () => {
-  const [searchParams] = useSearchParams();
-  const preselectedService = searchParams.get("service") || searchParams.get("plan") || "";
 
   return (
     <PageLayout
@@ -128,206 +125,250 @@ export const Contact = () => {
         </section>
 
         {/* ======================================================== */}
-        {/* MAIN INTERACTIVE CONTACT GRID                            */}
+        {/* DIRECT COMMUNICATION CHANNELS                            */}
         {/* ======================================================== */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Form (Cols 1-7) */}
-          <div className="lg:col-span-7">
-            <ContactForm preselectedService={preselectedService} />
-          </div>
-
-          {/* Right Column: Info & Connect (Cols 8-12) */}
-          <div className="lg:col-span-5 space-y-6">
-            {/* Contact Information Card */}
-            <GlassCard glow="cyan" className="p-6 sm:p-7 border-[#00E5FF]/25">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF]">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white">
-                    Contact Information
-                  </h3>
-                  <p className="text-xs text-white/60">
-                    Feel free to reach out through any of these channels.
-                  </p>
-                </div>
+        <section>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+                <span>DIRECT CHANNELS</span>
               </div>
-
-              <div className="space-y-3.5">
-                {/* Business Enquiries Email */}
-                <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5 hover:border-[#00E5FF]/30 transition-colors">
-                  <div className="w-8 h-8 rounded-lg bg-[#00E5FF]/10 text-[#00E5FF] flex items-center justify-center shrink-0 mt-0.5">
-                    <Mail className="w-4 h-4" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
-                      Business Enquiries
-                    </div>
-                    <a
-                      href={`mailto:${profileData.email}`}
-                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors break-words sm:whitespace-nowrap"
-                    >
-                      {profileData.email}
-                    </a>
-                    <div className="text-[10px] text-white/40 mt-0.5">
-                      New projects, proposals & partnerships
-                    </div>
-                  </div>
-                </div>
-
-                {/* Direct Developer Email */}
-                <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5 hover:border-[#00E5FF]/30 transition-colors">
-                  <div className="w-8 h-8 rounded-lg bg-[#A855F7]/10 text-[#A855F7] flex items-center justify-center shrink-0 mt-0.5">
-                    <Mail className="w-4 h-4" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
-                      Direct Email
-                    </div>
-                    <a
-                      href={`mailto:${profileData.directEmail}`}
-                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors break-words sm:whitespace-nowrap"
-                    >
-                      {profileData.directEmail}
-                    </a>
-                    <div className="text-[10px] text-white/40 mt-0.5">
-                      Direct developer communication
-                    </div>
-                  </div>
-                </div>
-
-                {/* Instant Chat (Primary) */}
-                <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5 hover:border-[#00E5FF]/30 transition-colors">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <WhatsAppIcon className="w-4 h-4" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
-                        Instant Chat (Primary)
-                      </span>
-                      <a
-                        href={profileData.whatsapp}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[10px] font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 bg-emerald-500/10 hover:bg-emerald-500/20 px-2 py-0.5 rounded-md border border-emerald-500/20 transition-colors"
-                      >
-                        <span>WhatsApp</span>
-                        <ExternalLink className="w-2.5 h-2.5" />
-                      </a>
-                    </div>
-                    <a
-                      href={`tel:${profileData.phone}`}
-                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors block mt-0.5"
-                    >
-                      {profileData.phone}
-                    </a>
-                    <div className="text-[10px] text-white/40 mt-0.5">
-                      Call or chat on WhatsApp
-                    </div>
-                  </div>
-                </div>
-
-                {/* Instant Chat (Secondary) */}
-                <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5 hover:border-[#00E5FF]/30 transition-colors">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
-                        Instant Chat (Secondary)
-                      </span>
-                      <a
-                        href={profileData.secondaryWhatsapp}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[10px] font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 bg-emerald-500/10 hover:bg-emerald-500/20 px-2 py-0.5 rounded-md border border-emerald-500/20 transition-colors"
-                      >
-                        <span>WhatsApp</span>
-                        <ExternalLink className="w-2.5 h-2.5" />
-                      </a>
-                    </div>
-                    <a
-                      href={`tel:${profileData.secondaryPhone}`}
-                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors block mt-0.5"
-                    >
-                      {profileData.secondaryPhone}
-                    </a>
-                    <div className="text-[10px] text-white/40 mt-0.5">
-                      Alternate phone & WhatsApp contact
-                    </div>
-                  </div>
-                </div>
-
-                {/* Location */}
-                <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5 hover:border-[#00E5FF]/30 transition-colors">
-                  <div className="w-8 h-8 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
-                      Location
-                    </div>
-                    <div className="text-xs sm:text-sm font-bold text-white">
-                      {profileData.location}
-                    </div>
-                    <div className="text-[10px] text-white/40 mt-0.5">
-                      Available for remote work worldwide
-                    </div>
-                  </div>
-                </div>
-
-                {/* Availability */}
-                <div className="flex items-start gap-3.5 p-3 rounded-xl bg-[#020B18]/60 border border-white/5">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <Clock className="w-4 h-4" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
-                      Response Time
-                    </div>
-                    <div className="text-xs sm:text-sm font-bold text-white">
-                      {profileData.responseTime}
-                    </div>
-                    <div className="text-[10px] text-white/40 mt-0.5">
-                      I'll get back to you promptly
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </GlassCard>
-
-            {/* Connect With Me Card */}
-            <GlassCard glow="purple" className="p-6 border-[#A855F7]/25">
-              <h3 className="text-base font-bold text-white mb-1">
-                Connect With Me
-              </h3>
-              <p className="text-xs text-white/60 mb-4">
-                Follow me on social media for updates, tips, and insights.
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3">
+                <span>Get in Touch Directly</span>
+                <span className="inline-block w-8 sm:w-12 h-1 bg-gradient-to-r from-[#00E5FF] to-[#7B3CFF] rounded-full" />
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-white/70">
+                Skip the long forms. Reach out directly through any of my verified communication channels.
               </p>
+            </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                {socialLinks.map((s) => {
-                  const IconComp = socialIconMap[s.icon] || Mail;
-                  return (
-                    <a
-                      key={s.name}
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-[#020B18]/80 border border-[#00E5FF]/20 flex flex-col items-center justify-center gap-1.5 hover:border-[#00E5FF] hover:bg-[#00E5FF]/10 text-white/80 hover:text-white transition-all group"
-                      title={s.label || s.name}
-                    >
-                      <IconComp className="w-5 h-5 group-hover:scale-110 transition-transform text-[#00E5FF]" />
-                      <span className="text-[10px] font-medium text-center truncate w-full">{s.name}</span>
-                    </a>
-                  );
-                })}
+            <div className="font-handwriting text-2xl text-[#00E5FF]/80 -rotate-3 select-none self-start md:self-end">
+              Fast Response Guaranteed
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            {/* 1. Primary WhatsApp & Phone */}
+            <GlassCard glow="cyan" className="p-6 flex flex-col justify-between border-[#00E5FF]/20 group">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-all shadow-[0_0_15px_rgba(16,185,129,0.15)] mb-4">
+                  <WhatsAppIcon className="w-6 h-6" />
+                </div>
+                <div className="text-[11px] font-semibold text-emerald-400 uppercase tracking-wider mb-1">
+                  Instant Chat (Primary)
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-[#00E5FF] transition-colors mb-2">
+                  {profileData.phone}
+                </h3>
+                <p className="text-xs text-white/65 leading-relaxed mb-5">
+                  Fastest response for new project discussions, urgent inquiries, and immediate consultation.
+                </p>
+              </div>
+
+              <div className="space-y-2 pt-3 border-t border-white/5">
+                <a
+                  href={`https://wa.me/919038909382?text=${encodeURIComponent("Hi Saikat, I'd like to discuss a web development project.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.2)] transition-all"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                  <span>Chat on WhatsApp</span>
+                  <ExternalLink className="w-3 h-3 ml-auto" />
+                </a>
+                <a
+                  href={`tel:${profileData.phone}`}
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-white/75 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#00E5FF]" />
+                  <span>Call Directly</span>
+                </a>
+              </div>
+            </GlassCard>
+
+            {/* 2. Secondary WhatsApp & Phone */}
+            <GlassCard glow="cyan" className="p-6 flex flex-col justify-between border-[#00E5FF]/20 group">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-all shadow-[0_0_15px_rgba(16,185,129,0.15)] mb-4">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div className="text-[11px] font-semibold text-emerald-400 uppercase tracking-wider mb-1">
+                  Instant Chat (Secondary)
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-[#00E5FF] transition-colors mb-2">
+                  {profileData.secondaryPhone}
+                </h3>
+                <p className="text-xs text-white/65 leading-relaxed mb-5">
+                  Alternate direct line for ongoing projects, technical support, and voice calls.
+                </p>
+              </div>
+
+              <div className="space-y-2 pt-3 border-t border-white/5">
+                <a
+                  href={`https://wa.me/918902273136?text=${encodeURIComponent("Hi Saikat, I'd like to discuss a web development project.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.2)] transition-all"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                  <span>Chat on WhatsApp</span>
+                  <ExternalLink className="w-3 h-3 ml-auto" />
+                </a>
+                <a
+                  href={`tel:${profileData.secondaryPhone}`}
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-white/75 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#00E5FF]" />
+                  <span>Call Directly</span>
+                </a>
+              </div>
+            </GlassCard>
+
+            {/* 3. Business Enquiries Email */}
+            <GlassCard glow="cyan" className="p-6 flex flex-col justify-between border-[#00E5FF]/20 group">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00E5FF]/15 to-[#2787FF]/15 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] group-hover:scale-105 transition-all shadow-[0_0_15px_rgba(0,229,255,0.15)] mb-4">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div className="text-[11px] font-semibold text-[#00E5FF] uppercase tracking-wider mb-1">
+                  Business Enquiries
+                </div>
+                <h3 className="text-xs sm:text-sm font-bold text-white group-hover:text-[#00E5FF] transition-colors mb-2 break-all">
+                  {profileData.email}
+                </h3>
+                <p className="text-xs text-white/65 leading-relaxed mb-5">
+                  Best for formal project briefs, RFPs, proposals, contracts, and agency partnerships.
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-white/5">
+                <a
+                  href={`mailto:${profileData.email}?subject=${encodeURIComponent("New Project Inquiry - Web Development")}`}
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] text-white shadow-[0_0_20px_rgba(0,229,255,0.25)] hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] transition-all"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Send Business Email</span>
+                  <ArrowRight className="w-3 h-3 ml-auto" />
+                </a>
+              </div>
+            </GlassCard>
+
+            {/* 4. Direct Developer Email */}
+            <GlassCard glow="cyan" className="p-6 flex flex-col justify-between border-[#00E5FF]/20 group">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7B3CFF]/15 to-[#A855F7]/15 border border-[#A855F7]/30 flex items-center justify-center text-[#A855F7] group-hover:scale-105 transition-all shadow-[0_0_15px_rgba(168,85,247,0.15)] mb-4">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div className="text-[11px] font-semibold text-[#A855F7] uppercase tracking-wider mb-1">
+                  Direct Email
+                </div>
+                <h3 className="text-xs sm:text-sm font-bold text-white group-hover:text-[#A855F7] transition-colors mb-2 break-all">
+                  {profileData.directEmail}
+                </h3>
+                <p className="text-xs text-white/65 leading-relaxed mb-5">
+                  Direct developer communication for technical consultations, code reviews, and scoping.
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-white/5">
+                <a
+                  href={`mailto:${profileData.directEmail}?subject=${encodeURIComponent("Direct Inquiry for Saikat Patra")}`}
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-[#03152B]/80 text-white/90 border border-[#00E5FF]/30 hover:border-[#00E5FF] hover:bg-[#052A4A]/80 transition-all"
+                >
+                  <Mail className="w-4 h-4 text-[#00E5FF]" />
+                  <span>Send Direct Email</span>
+                  <ArrowRight className="w-3 h-3 ml-auto text-[#00E5FF]" />
+                </a>
               </div>
             </GlassCard>
           </div>
+        </section>
+
+        {/* ======================================================== */}
+        {/* ROW 2: LOCATION & RESPONSE TIME + CONNECT                */}
+        {/* ======================================================== */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Working Details & Location */}
+          <GlassCard glow="cyan" className="p-6 sm:p-7 border-[#00E5FF]/20 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF]">
+                <Clock className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-white">
+                  Availability & Location
+                </h3>
+                <p className="text-xs text-white/60">
+                  Global remote delivery with prompt communication.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="p-3.5 rounded-xl bg-[#020B18]/70 border border-[#00E5FF]/15 space-y-1">
+                <div className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
+                  Location
+                </div>
+                <div className="text-sm font-bold text-white flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-rose-400" />
+                  <span>{profileData.location}</span>
+                </div>
+                <div className="text-[10px] text-white/40">
+                  Remote worldwide
+                </div>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-[#020B18]/70 border border-[#00E5FF]/15 space-y-1">
+                <div className="text-[11px] font-semibold text-white/50 uppercase tracking-wider">
+                  Response Time
+                </div>
+                <div className="text-sm font-bold text-white flex items-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>{profileData.responseTime}</span>
+                </div>
+                <div className="text-[10px] text-white/40">
+                  Usually within a few hours
+                </div>
+              </div>
+            </div>
+          </GlassCard>
+
+          {/* Connect With Me */}
+          <GlassCard glow="purple" className="p-6 sm:p-7 border-[#A855F7]/25 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#A855F7]/10 border border-[#A855F7]/30 flex items-center justify-center text-[#A855F7]">
+                <LinkedInIcon className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-white">
+                  Professional Networks
+                </h3>
+                <p className="text-xs text-white/60">
+                  Follow and connect with me across professional platforms.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
+              {socialLinks.map((s) => {
+                const IconComp = socialIconMap[s.icon] || Mail;
+                return (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-xl bg-[#020B18]/80 border border-[#00E5FF]/20 flex flex-col items-center justify-center gap-1.5 hover:border-[#00E5FF] hover:bg-[#00E5FF]/10 text-white/80 hover:text-white transition-all group"
+                    title={s.label || s.name}
+                  >
+                    <IconComp className="w-5 h-5 group-hover:scale-110 transition-transform text-[#00E5FF]" />
+                    <span className="text-[10px] font-medium text-center truncate w-full">{s.name}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </GlassCard>
         </section>
 
         {/* ======================================================== */}

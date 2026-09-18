@@ -179,7 +179,7 @@ export const skillsData = {
     category: "REAL ESTATE PLATFORM",
     description: "Built a custom WordPress platform with advanced search, property listing management, and CRM integration. Helped the client automate enquiries and grow business by 3x.",
     tags: ["WordPress", "Custom Plugin", "MySQL", "API Integration", "CRM"],
-    image: "/assets/projects/real-estate.jpg",
+    image: "/assets/projects/real-estate.webp",
     metrics: [
       { value: "3x", label: "Business Growth", icon: "trending-up" },
       { value: "80%", label: "Manual Work Reduced", icon: "file-text" },

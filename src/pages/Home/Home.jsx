@@ -35,7 +35,7 @@ export const Home = () => {
       title="Saikat Patra | Full Stack Web Developer"
       description="I build modern, high-performance web applications that help businesses grow. Specializing in React, Laravel, Custom CRM, WordPress and API integrations."
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-24 sm:space-y-32">
+      <div className="home-page max-w-7xl mx-auto px-4 sm:px-6 space-y-24 sm:space-y-32">
         {/* ======================================================== */}
         {/* HERO SECTION                                             */}
         {/* ======================================================== */}
@@ -109,7 +109,7 @@ export const Home = () => {
               <div className="relative w-full max-w-[420px] rounded-3xl p-1 bg-gradient-to-br from-[#00E5FF]/40 via-[#2787FF]/20 to-[#7B3CFF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.2)]">
                 <div className="relative rounded-[22px] overflow-hidden bg-[#020B18]">
                   <img
-                    src="/assets/images/saikat-hero.jpg"
+                    src="/assets/images/saikat-hero.webp"
                     alt="Saikat Patra - Full Stack Web Developer"
                     className="w-full h-auto object-cover object-center rounded-[22px]"
                   />
@@ -197,9 +197,9 @@ export const Home = () => {
             actionTo="/services"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
             {previewServices.map((service) => (
-              <ServiceCard key={service.id} service={service} />
+              <ServiceCard key={service.id} service={service} compact />
             ))}
           </div>
         </section>
@@ -218,7 +218,7 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} featuredLayout={true} />
+              <ProjectCard key={project.id} project={project} featuredLayout={true} compact />
             ))}
           </div>
         </section>
@@ -255,7 +255,7 @@ export const Home = () => {
                 <div className="relative rounded-2xl overflow-hidden border border-[#00E5FF]/30 p-1 bg-gradient-to-b from-[#00E5FF]/30 to-[#7B3CFF]/30 shadow-[0_0_30px_rgba(0,229,255,0.2)] max-w-[280px]">
                   <div className="relative rounded-xl overflow-hidden bg-[#020B18]">
                     <img
-                      src="/assets/images/saikat-portrait.jpg"
+                      src="/assets/images/saikat-portrait.webp"
                       alt="Saikat Patra Portrait"
                       className="w-full h-auto object-cover"
                     />

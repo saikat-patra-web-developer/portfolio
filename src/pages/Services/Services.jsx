@@ -79,7 +79,7 @@ export const Services = () => {
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
-                Services & <span className="text-gradient">Solutions</span>
+                <span className="text-gradient-cyan">Services</span>
               </h1>
 
               <p className="text-lg sm:text-xl font-semibold text-white/90">
@@ -118,7 +118,7 @@ export const Services = () => {
               <div className="relative w-full max-w-[420px] rounded-3xl p-1 bg-gradient-to-br from-[#00E5FF]/40 via-[#2787FF]/20 to-[#7B3CFF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.2)]">
                 <div className="relative rounded-[22px] overflow-hidden bg-[#020B18]">
                   <img
-                    src="/assets/images/services-laptop.jpg"
+                    src="/assets/images/services-laptop.webp"
                     alt="Services Engineering Visual"
                     className="w-full h-auto object-cover"
                   />

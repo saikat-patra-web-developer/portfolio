@@ -38,7 +38,7 @@ export const PageLayout = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="relative z-10 pt-28 sm:pt-32 pb-16 flex-grow"
+      className="site-main relative z-10 pt-24 sm:pt-28 pb-10 flex-grow"
     >
       {children}
     </motion.main>

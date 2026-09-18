@@ -44,7 +44,7 @@ export const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pointer-events-none">
       <nav
-        className={`pointer-events-auto w-full max-w-7xl transition-all duration-300 mt-3 sm:mt-5 rounded-2xl sm:rounded-full border flex items-center justify-between px-4 sm:px-6 ${
+        className={`pointer-events-auto w-full max-w-[1080px] transition-all duration-300 mt-3 rounded-2xl border flex items-center justify-between px-4 sm:px-6 ${
           scrolled
             ? "py-2.5 sm:py-3 bg-[#020B18]/85 backdrop-blur-2xl border-[#00E5FF]/30 shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.12)]"
             : "py-3.5 sm:py-4 bg-[#03152B]/60 backdrop-blur-xl border-[#00E5FF]/20 shadow-[0_8px_30px_rgba(0,0,0,0.5),0_0_15px_rgba(0,229,255,0.06)]"

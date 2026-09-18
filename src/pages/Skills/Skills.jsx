@@ -64,7 +64,7 @@ export const Skills = () => {
               <div className="relative w-full max-w-[380px] rounded-3xl p-1 bg-gradient-to-br from-[#00E5FF]/40 via-[#2787FF]/20 to-[#7B3CFF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.2)]">
                 <div className="relative rounded-[22px] overflow-hidden bg-[#020B18]">
                   <img
-                    src="/assets/images/saikat-hero.jpg"
+                    src="/assets/images/saikat-hero.webp"
                     alt="Saikat Patra Developer Visual"
                     className="w-full h-auto object-cover"
                   />

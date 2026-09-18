@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   Mail,
   ArrowUp,
@@ -26,26 +26,33 @@ const iconMap = {
 };
 
 export const Footer = ({ showCta = true }) => {
+  const { pathname } = useLocation();
+  const ctaCopy = {
+    "/about": ["LET'S BUILD TOGETHER", "Let's Build Something Great Together"],
+    "/services": ["READY TO START?", "Let's Build Something Great Together"],
+    "/projects": ["HAVE A PROJECT IN MIND?", "Let's Build Something Great Together"],
+    "/skills": ["LET'S BUILD TOGETHER", "Ready to Build Something Amazing?"]
+  }[pathname] || ["LET'S WORK TOGETHER", "Have a Project in Mind?"];
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer className="relative z-10 mt-20 border-t border-[#00E5FF]/15">
+    <footer className="relative z-10 mt-12 border-t border-[#00E5FF]/15">
       {/* Optional Pre-Footer CTA Banner matching mockups */}
       {showCta && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 -translate-y-12">
-          <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#031c38]/90 via-[#03274e]/90 to-[#12082b]/90 border border-[#00E5FF]/35 p-6 sm:p-10 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.15)] flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#031c38]/90 via-[#03274e]/90 to-[#12082b]/90 border border-[#00E5FF]/35 p-5 sm:px-8 sm:py-6 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.15)] flex flex-col md:flex-row items-center justify-between gap-5">
             {/* Background cyan/violet glows */}
             <div className="absolute top-0 left-0 w-64 h-64 bg-[#00E5FF]/15 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#7B3CFF]/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-xl text-center md:text-left">
               <span className="inline-block px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3">
-                LET'S WORK TOGETHER
+                {ctaCopy[0]}
               </span>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                Have a Project in Mind?
+                {ctaCopy[1]}
               </h3>
               <p className="mt-2 text-sm sm:text-base text-white/70">
                 Let's discuss how I can help you turn your ideas into reality.
@@ -75,7 +82,7 @@ export const Footer = ({ showCta = true }) => {
       )}
 
       {/* Main Footer Links */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-7 sm:py-9">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Brand & Bio (2 cols on desktop) */}
           <div className="lg:col-span-2 space-y-4">
@@ -237,7 +244,7 @@ export const Footer = ({ showCta = true }) => {
         </div>
 
         {/* Bottom copyright bar */}
-        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+        <div className="mt-7 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <div>
             &copy; {new Date().getFullYear()} {profileData.name}. All rights reserved.
           </div>

@@ -13,7 +13,7 @@ export const SectionHeading = ({
 }) => {
   return (
     <div
-      className={`flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 ${
+      className={`flex flex-col md:flex-row md:items-end justify-between gap-3 mb-5 ${
         centered ? "text-center md:text-center items-center justify-center" : ""
       } ${className}`}
     >
@@ -33,7 +33,7 @@ export const SectionHeading = ({
         </h2>
 
         {subtitle && (
-          <p className="mt-3 text-sm sm:text-base text-white/70 leading-relaxed">
+          <p className="mt-1 text-xs sm:text-sm text-white/70 leading-relaxed">
             {subtitle}
           </p>
         )}

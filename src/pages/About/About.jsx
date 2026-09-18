@@ -76,7 +76,7 @@ export const About = () => {
               <div className="relative w-full max-w-[380px] rounded-3xl p-1 bg-gradient-to-br from-[#00E5FF]/40 via-[#2787FF]/20 to-[#7B3CFF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.2)]">
                 <div className="relative rounded-[22px] overflow-hidden bg-[#020B18]">
                   <img
-                    src="/assets/images/saikat-portrait.jpg"
+                    src="/assets/images/saikat-hero.webp"
                     alt="Saikat Patra - About"
                     className="w-full h-auto object-cover"
                   />
@@ -151,7 +151,7 @@ export const About = () => {
             <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#7B3CFF] -translate-y-1/2 shadow-[0_0_15px_rgba(0,229,255,0.5)] z-0" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative z-10">
-              {profileData.journey.map((item, idx) => (
+              {profileData.journey.map((item) => (
                 <GlassCard
                   key={item.year}
                   glow="cyan"

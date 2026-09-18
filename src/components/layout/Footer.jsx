@@ -79,9 +79,9 @@ export const Footer = ({ showCta = true }) => {
 
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 sm:py-9">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
-          {/* Brand & Bio (2 cols on desktop) */}
-          <div className="lg:col-span-2 space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10">
+          {/* Brand & Bio (3 cols on desktop) */}
+          <div className="sm:col-span-2 lg:col-span-3 space-y-4">
             <Link to="/" className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] p-[1.5px] shadow-[0_0_15px_rgba(0,229,255,0.3)]">
                 <div className="w-full h-full bg-[#020B18] rounded-[10px] flex items-center justify-center font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-[#A855F7] text-sm tracking-tighter">
@@ -122,8 +122,8 @@ export const Footer = ({ showCta = true }) => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
+          {/* Quick Links (2 cols on desktop) */}
+          <div className="lg:col-span-2">
             <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-4 text-[#00E5FF]/90">
               Quick Links
             </h4>
@@ -161,8 +161,8 @@ export const Footer = ({ showCta = true }) => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
+          {/* Services (3 cols on desktop) */}
+          <div className="lg:col-span-3">
             <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-4 text-[#00E5FF]/90">
               Services
             </h4>
@@ -200,8 +200,8 @@ export const Footer = ({ showCta = true }) => {
             </ul>
           </div>
 
-          {/* Contact Details & Handwritten Tagline */}
-          <div className="space-y-4">
+          {/* Contact Details & Handwritten Tagline (4 cols on desktop) */}
+          <div className="sm:col-span-2 lg:col-span-4 space-y-4">
             <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-4 text-[#00E5FF]/90">
               Contact
             </h4>
@@ -214,18 +214,36 @@ export const Footer = ({ showCta = true }) => {
                 <Mail className="w-4 h-4 text-[#00E5FF] shrink-0" />
                 <a
                   href={`mailto:${profileData.email}`}
-                  className="hover:text-[#00E5FF] transition-colors break-all"
+                  className="hover:text-[#00E5FF] transition-colors whitespace-nowrap"
                 >
                   {profileData.email}
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#00E5FF]/70 shrink-0" />
+                <a
+                  href={`mailto:${profileData.directEmail}`}
+                  className="hover:text-[#00E5FF] transition-colors whitespace-nowrap"
+                >
+                  {profileData.directEmail}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#00E5FF] shrink-0" />
                 <a
                   href={`tel:${profileData.phone}`}
-                  className="hover:text-[#00E5FF] transition-colors"
+                  className="hover:text-[#00E5FF] transition-colors whitespace-nowrap"
                 >
                   {profileData.phone}
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-[#00E5FF]/70 shrink-0" />
+                <a
+                  href={`tel:${profileData.secondaryPhone}`}
+                  className="hover:text-[#00E5FF] transition-colors whitespace-nowrap"
+                >
+                  {profileData.secondaryPhone}
                 </a>
               </li>
             </ul>

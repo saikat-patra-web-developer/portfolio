@@ -166,7 +166,7 @@ export const Contact = () => {
                     </div>
                     <a
                       href={`mailto:${profileData.email}`}
-                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors break-all"
+                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors break-words sm:whitespace-nowrap"
                     >
                       {profileData.email}
                     </a>
@@ -187,7 +187,7 @@ export const Contact = () => {
                     </div>
                     <a
                       href={`mailto:${profileData.directEmail}`}
-                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors break-all"
+                      className="text-xs sm:text-sm font-bold text-white hover:text-[#00E5FF] transition-colors break-words sm:whitespace-nowrap"
                     >
                       {profileData.directEmail}
                     </a>

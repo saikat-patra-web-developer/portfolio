@@ -11,45 +11,64 @@ export const AnimatedTechBackground = () => {
     pixelX: 0,
     pixelY: 0
   });
-
-  const handleMouseMove = useCallback((e) => {
-    // Only track if screen is desktop (> 768px)
-    if (window.innerWidth >= 768) {
-      setMousePos({
-        x: e.clientX / window.innerWidth,
-        y: e.clientY / window.innerHeight,
-        pixelX: e.clientX,
-        pixelY: e.clientY
-      });
-    }
-  }, []);
+  const [isMobile, setIsMobile] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [handleMouseMove]);
+    const checkMotionAndScreen = () => {
+      setIsMobile(window.innerWidth < 768);
+      setPrefersReducedMotion(
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      );
+    };
+
+    checkMotionAndScreen();
+    window.addEventListener("resize", checkMotionAndScreen, { passive: true });
+    return () => window.removeEventListener("resize", checkMotionAndScreen);
+  }, []);
+
+  const handleMouseMove = useCallback(
+    (e) => {
+      // Only track mouse if desktop and user hasn't requested reduced motion
+      if (!isMobile && !prefersReducedMotion) {
+        setMousePos({
+          x: e.clientX / window.innerWidth,
+          y: e.clientY / window.innerHeight,
+          pixelX: e.clientX,
+          pixelY: e.clientY
+        });
+      }
+    },
+    [isMobile, prefersReducedMotion]
+  );
+
+  useEffect(() => {
+    if (!isMobile && !prefersReducedMotion) {
+      window.addEventListener("mousemove", handleMouseMove, { passive: true });
+      return () => window.removeEventListener("mousemove", handleMouseMove);
+    }
+  }, [handleMouseMove, isMobile, prefersReducedMotion]);
 
   return (
     <div
       aria-hidden="true"
       className="fixed inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden"
-      style={{ willChange: "transform" }}
     >
-      {/* Dynamic gradient lighting atmosphere */}
+      {/* 1. Dynamic atmospheric lighting with controlled opacity */}
       <GlowOrbs mousePos={mousePos} />
 
-      {/* Hexagonal cyber grid */}
+      {/* 2. Hexagonal cyber grid */}
       <HexGrid />
 
-      {/* Futuristic rotating technical HUD elements */}
-      <HudRings />
+      {/* 3. Subtle HUD rings (desktop only, disabled in reduced motion) */}
+      {!isMobile && !prefersReducedMotion && <HudRings />}
 
-      {/* Interactive connected particle network */}
-      <Particles mousePos={mousePos} />
+      {/* 4. Connected particle network (scaled down for performance) */}
+      <Particles mousePos={mousePos} isMobile={isMobile} prefersReducedMotion={prefersReducedMotion} />
 
-      {/* Subtle scanline overlay for high-tech SaaS feel */}
+      {/* 5. Clean vignette overlay ensuring high text readability */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
         style={{
           backgroundImage:
             "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 229, 255, 0.2) 3px, transparent 4px)"

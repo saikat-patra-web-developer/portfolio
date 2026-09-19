@@ -1,143 +1,88 @@
 import { Link, useLocation } from "react-router-dom";
-import {
-  Mail,
-  ArrowUp,
-  MapPin,
-  Phone,
-  ArrowRight
-} from "lucide-react";
-import {
-  LinkedInIcon,
-  GitHubIcon,
-  WhatsAppIcon
-} from "../ui/SocialIcons";
+import { Mail, ArrowUp, ArrowRight } from "lucide-react";
+import { LinkedInIcon, GitHubIcon, WhatsAppIcon } from "../ui/SocialIcons";
 import { profileData } from "../../data/profile";
-import { socialLinks } from "../../data/socialLinks";
-
-const iconMap = {
-  linkedin: LinkedInIcon,
-  github: GitHubIcon,
-  whatsapp: WhatsAppIcon,
-  mail: Mail
-};
 
 export const Footer = ({ showCta = true }) => {
   const { pathname } = useLocation();
-  const ctaCopy = {
-    "/about": ["LET'S BUILD TOGETHER", "Let's Build Something Great Together"],
-    "/services": ["READY TO START?", "Let's Build Something Great Together"],
-    "/projects": ["HAVE A PROJECT IN MIND?", "Let's Build Something Great Together"],
-    "/skills": ["LET'S BUILD TOGETHER", "Ready to Build Something Amazing?"]
-  }[pathname] || ["LET'S WORK TOGETHER", "Have a Project in Mind?"];
+  const isContactPage = pathname === "/contact";
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer className="relative z-10 mt-12">
-      {/* Optional Pre-Footer CTA Banner matching mockups */}
-      {showCta && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -translate-y-12">
-          <div className="relative overflow-hidden rounded-2xl border border-[#00E5FF]/35 p-5 sm:px-8 sm:py-6 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.15)] flex flex-col md:flex-row items-center justify-between gap-5">
-            {/* Background cyan/violet glows */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-[#00E5FF]/15 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#7B3CFF]/20 rounded-full blur-3xl pointer-events-none" />
+    <footer className="relative z-10 mt-16 sm:mt-24">
+      {/* Conversion Final Pre-Footer CTA (Shown on all pages except /contact) */}
+      {showCta && !isContactPage && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -translate-y-10 sm:-translate-y-14">
+          <div className="relative overflow-hidden rounded-3xl border border-[#00E5FF]/30 p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_35px_rgba(0,229,255,0.15)] flex flex-col lg:flex-row items-center justify-between gap-8">
+            {/* Ambient Lighting Orbs */}
+            <div className="absolute top-0 left-0 w-72 h-72 bg-[#00E5FF]/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#7B3CFF]/20 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 max-w-xl text-center md:text-left">
-              <span className="inline-block px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3">
-                {ctaCopy[0]}
+            <div className="relative z-10 max-w-2xl text-center lg:text-left space-y-3">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+                <span>START A CONVERSATION</span>
               </span>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                {ctaCopy[1]}
-              </h3>
-              <p className="mt-2 text-sm sm:text-base text-white/70">
-                Let's discuss how I can help you turn your ideas into reality.
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                Have a Project That Needs a Better System?
+              </h2>
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-xl">
+                Tell me what you are trying to build or improve, and we can discuss the best technical approach for your business.
               </p>
             </div>
 
-            <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 shrink-0">
+            <div className="relative z-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0 w-full lg:w-auto">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] hover:opacity-95 shadow-[0_0_25px_rgba(0,229,255,0.45)] hover:shadow-[0_0_35px_rgba(0,229,255,0.7)] border border-white/20 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] hover:opacity-95 shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] border border-white/20 transition-all duration-300"
               >
-                <span>Get in Touch</span>
+                <span>Discuss Your Project</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <div className="text-xs text-white/50 text-center sm:text-left">
-                Or email me at <br className="hidden sm:block" />
-                <a
-                  href={`mailto:${profileData.email}`}
-                  className="text-[#00E5FF] hover:underline font-mono"
-                >
-                  {profileData.email}
-                </a>
-              </div>
+              <a
+                href={`mailto:${profileData.email}`}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white/90 bg-[#03152B]/80 hover:bg-[#052A4A] border border-[#00E5FF]/30 hover:border-[#00E5FF] transition-all duration-200"
+              >
+                <Mail className="w-4 h-4 text-[#00E5FF]" />
+                <span>Email Me</span>
+              </a>
             </div>
           </div>
         </div>
       )}
 
-      {/* Main Footer Links */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 sm:py-9">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10">
-          {/* Brand & Bio (Spans 2 cols on tablet, 4 on desktop) */}
-          <div className="sm:col-span-2 lg:col-span-4 space-y-4">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] p-[1.5px] shadow-[0_0_15px_rgba(0,229,255,0.3)]">
-                <div className="w-full h-full bg-[#020B18] rounded-[10px] flex items-center justify-center font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-[#A855F7] text-sm tracking-tighter">
-                  SP
-                </div>
-              </div>
-              <div>
-                <span className="font-extrabold text-base text-white tracking-tight">
-                  {profileData.name}
-                </span>
-                <span className="block text-[10px] font-medium text-white/50 -mt-1 tracking-wider uppercase">
-                  {profileData.role}
-                </span>
-              </div>
+      {/* Simplified Footer Body */}
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${showCta && !isContactPage ? "pt-2 pb-10" : "py-12"}`}>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Brand & Positioning (Cols 1-5) */}
+          <div className="md:col-span-5 space-y-3.5">
+            <Link to="/" className="inline-flex flex-col group select-none">
+              <span className="font-extrabold text-lg text-white tracking-tight group-hover:text-[#00E5FF] transition-colors">
+                {profileData.name}
+              </span>
+              <span className="block text-[11px] font-medium text-white/50 -mt-0.5 tracking-wider uppercase">
+                {profileData.role}
+              </span>
             </Link>
 
-            <p className="text-xs sm:text-sm text-white/60 max-w-sm leading-relaxed">
-              Building modern, high-performance web applications and custom digital solutions for a better tomorrow.
+            <p className="text-xs sm:text-sm text-white/70 max-w-sm leading-relaxed">
+              Full Stack Developer specializing in Custom Web Applications, CRM Systems & Business Automation.
             </p>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-2.5 pt-2">
-              {socialLinks.map((social) => {
-                const IconComponent = iconMap[social.icon] || Mail;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    className="w-8 h-8 rounded-lg bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/70 hover:text-[#00E5FF] hover:border-[#00E5FF] hover:shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all duration-200"
-                  >
-                    <IconComponent className="w-4 h-4" />
-                  </a>
-                );
-              })}
+            <div className="text-xs text-white/50 pt-1">
+              Based in {profileData.location} &bull; Serving clients worldwide
             </div>
           </div>
 
-          {/* Quick Links (1 col on tablet, 2 cols on desktop) */}
-          <div className="sm:col-span-1 lg:col-span-2">
-            <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-4 text-[#00E5FF]/90">
-              Quick Links
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-white/65">
-              <li>
-                <Link to="/" className="hover:text-[#00E5FF] transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-[#00E5FF] transition-colors">
-                  About
-                </Link>
-              </li>
+          {/* Clean Navigation (Cols 6-8) */}
+          <div className="md:col-span-3">
+            <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-[#00E5FF]">
+              Navigation
+            </h3>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-white/75">
               <li>
                 <Link to="/services" className="hover:text-[#00E5FF] transition-colors">
                   Services
@@ -149,8 +94,8 @@ export const Footer = ({ showCta = true }) => {
                 </Link>
               </li>
               <li>
-                <Link to="/skills" className="hover:text-[#00E5FF] transition-colors">
-                  Skills
+                <Link to="/about" className="hover:text-[#00E5FF] transition-colors">
+                  About
                 </Link>
               </li>
               <li>
@@ -161,122 +106,81 @@ export const Footer = ({ showCta = true }) => {
             </ul>
           </div>
 
-          {/* Services (1 col on tablet, 3 cols on desktop) */}
-          <div className="sm:col-span-1 lg:col-span-3">
-            <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-4 text-[#00E5FF]/90">
-              Services
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-white/65">
-              <li>
-                <Link to="/services" className="hover:text-[#00E5FF] transition-colors">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-[#00E5FF] transition-colors">
-                  Custom CRM Solutions
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-[#00E5FF] transition-colors">
-                  WordPress Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-[#00E5FF] transition-colors">
-                  API Integration
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-[#00E5FF] transition-colors">
-                  E-commerce Solutions
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-[#00E5FF] transition-colors">
-                  Maintenance & Support
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Details & Handwritten Tagline (2 cols on tablet, 3 cols on desktop) */}
-          <div className="sm:col-span-2 lg:col-span-3 space-y-4">
-            <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-4 text-[#00E5FF]/90">
-              Contact
-            </h4>
-            <ul className="space-y-3 text-xs sm:text-sm text-white/65">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
-                <span>{profileData.location}</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#00E5FF] shrink-0" />
+          {/* Primary Contact & Social (Cols 9-12) */}
+          <div className="md:col-span-4 space-y-3.5">
+            <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-[#00E5FF]">
+              Direct Contact
+            </h3>
+            <div className="space-y-2 text-xs sm:text-sm">
+              <div>
+                <span className="text-white/50 block text-[11px]">Primary Business Email</span>
                 <a
                   href={`mailto:${profileData.email}`}
-                  className="hover:text-[#00E5FF] transition-colors break-all"
+                  className="text-white hover:text-[#00E5FF] transition-colors font-mono"
                 >
                   {profileData.email}
                 </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#00E5FF]/70 shrink-0" />
+              </div>
+              <div className="pt-1">
+                <span className="text-white/50 block text-[11px]">Direct WhatsApp / Phone</span>
                 <a
-                  href={`mailto:${profileData.directEmail}`}
-                  className="hover:text-[#00E5FF] transition-colors break-all"
-                >
-                  {profileData.directEmail}
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#00E5FF] shrink-0" />
-                <a
-                  href={`tel:${profileData.phone}`}
-                  className="hover:text-[#00E5FF] transition-colors"
+                  href={profileData.whatsappChatUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#00E5FF] transition-colors"
                 >
                   {profileData.phone}
                 </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#00E5FF]/70 shrink-0" />
-                <a
-                  href={`tel:${profileData.secondaryPhone}`}
-                  className="hover:text-[#00E5FF] transition-colors"
-                >
-                  {profileData.secondaryPhone}
-                </a>
-              </li>
-            </ul>
-
-            {/* Handwritten badge matching mockups */}
-            <div className="pt-2 text-left sm:text-right lg:text-right">
-              <div className="font-handwriting text-2xl sm:text-3xl text-[#00E5FF]/70 -rotate-3 select-none inline-block">
-                Code Create <br /> Solve Grow
               </div>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-2 pt-2">
+              <a
+                href={profileData.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Connect on LinkedIn"
+                className="w-9 h-9 rounded-xl bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/80 hover:text-[#00E5FF] hover:border-[#00E5FF] hover:shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all"
+              >
+                <LinkedInIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={profileData.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow on GitHub"
+                className="w-9 h-9 rounded-xl bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/80 hover:text-[#00E5FF] hover:border-[#00E5FF] hover:shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all"
+              >
+                <GitHubIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={profileData.whatsappChatUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+                className="w-9 h-9 rounded-xl bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/80 hover:text-emerald-400 hover:border-emerald-500/40 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom copyright bar */}
-        <div className="mt-7 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
-          <div className="text-center sm:text-left">
+        {/* Bottom Copyright & Back-to-Top */}
+        <div className="mt-10 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+          <div>
             &copy; {new Date().getFullYear()} {profileData.name}. All rights reserved.
           </div>
 
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6">
-            <span className="hover:text-white/80 cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-white/80 cursor-pointer">Terms & Conditions</span>
-
-            {/* Back to top button */}
-            <button
-              onClick={scrollToTop}
-              className="w-8 h-8 rounded-full bg-[#03152B] border border-[#00E5FF]/30 text-[#00E5FF] hover:bg-[#00E5FF]/20 hover:text-white flex items-center justify-center transition-all duration-200 cursor-pointer"
-              aria-label="Scroll back to top"
-              title="Back to Top"
-            >
-              <ArrowUp className="w-4 h-4" />
-            </button>
-          </div>
+          <button
+            onClick={scrollToTop}
+            className="w-8 h-8 rounded-full bg-[#03152B] border border-[#00E5FF]/30 text-[#00E5FF] hover:bg-[#00E5FF]/20 hover:text-white flex items-center justify-center transition-all cursor-pointer"
+            aria-label="Scroll back to top"
+            title="Back to Top"
+          >
+            <ArrowUp className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </footer>

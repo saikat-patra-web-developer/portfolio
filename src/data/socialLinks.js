@@ -10,21 +10,23 @@ export const socialLinks = [
     name: "GitHub",
     url: "https://github.com/saikat-patra-web-developer",
     icon: "github",
-    label: "Follow on GitHub",
+    label: "Review Code on GitHub",
     username: "saikat-patra-web-developer"
   },
   {
     name: "WhatsApp",
     url: "https://wa.me/919038909382",
     icon: "whatsapp",
-    label: "Chat on WhatsApp",
+    label: "Direct Chat on WhatsApp",
     username: "+91 90389 09382"
   },
   {
     name: "Email",
     url: "mailto:saikatpatraoffice@gmail.com",
     icon: "mail",
-    label: "Business Enquiries",
+    label: "Business Email",
     username: "saikatpatraoffice@gmail.com"
   }
 ];
+
+export default socialLinks;

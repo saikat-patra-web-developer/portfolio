@@ -2,12 +2,10 @@ import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
   ArrowRight,
-  ExternalLink,
   CheckCircle2,
-  Calendar,
-  Building,
-  Sparkles,
-  TrendingUp
+  AlertCircle,
+  TrendingUp,
+  Layers
 } from "lucide-react";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
@@ -22,15 +20,15 @@ export const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <PageLayout title="Project Not Found | Saikat Patra">
-        <div className="max-w-4xl mx-auto px-4 text-center py-20">
-          <h1 className="text-3xl font-bold text-white">Project Not Found</h1>
-          <p className="text-white/60 mt-3">
+      <PageLayout title="Case Study Not Found | Saikat Patra">
+        <div className="max-w-3xl mx-auto px-4 text-center py-20 space-y-4">
+          <h1 className="text-3xl font-bold text-white">Case Study Not Found</h1>
+          <p className="text-white/60 text-sm">
             The project case study you are looking for does not exist or has been relocated.
           </p>
-          <div className="mt-6">
+          <div className="pt-2">
             <NeonButton to="/projects" variant="primary">
-              Back to Projects
+              Return to Project Library
             </NeonButton>
           </div>
         </div>
@@ -38,98 +36,89 @@ export const ProjectDetails = () => {
     );
   }
 
-  // Next and previous project calculation
+  // Next and previous project navigation
   const prevProject =
-    projectIndex > 0 ? projectsData[projectIndex - 1] : projectsData[projectsData.length - 1];
+    projectsData[(projectIndex - 1 + projectsData.length) % projectsData.length];
   const nextProject =
-    projectIndex < projectsData.length - 1 ? projectsData[projectIndex + 1] : projectsData[0];
+    projectsData[(projectIndex + 1) % projectsData.length];
 
   return (
     <PageLayout
-      title={`${project.title} | Case Study - Saikat Patra`}
-      description={project.description}
+      title={`${project.title} | Case Study | Saikat Patra`}
+      description={project.shortSolution || project.description}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-16 sm:space-y-24">
-        {/* Back Link */}
-        <div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+        {/* ======================================================== */}
+        {/* BREADCRUMB & BACK BUTTON                                 */}
+        {/* ======================================================== */}
+        <div className="pt-2 sm:pt-4">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#00E5FF] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white/70 hover:text-[#00E5FF] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to All Projects</span>
+            <span>Back to Case Study Library</span>
           </Link>
         </div>
 
         {/* ======================================================== */}
-        {/* HERO SECTION                                             */}
+        {/* PROJECT HERO                                             */}
         {/* ======================================================== */}
         <section className="space-y-6">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/30">
-              {project.category}
-            </span>
-            {project.featured && (
-              <span className="px-3 py-1 rounded-full text-xs font-semibold tracking-wider bg-[#7B3CFF]/20 text-[#A855F7] border border-[#A855F7]/40">
-                Featured Case Study
-              </span>
-            )}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase">
+            <span>{project.category}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
             {project.title}
           </h1>
 
-          <p className="text-base sm:text-lg text-white/80 max-w-3xl leading-relaxed">
-            {project.longDescription || project.description}
+          <p className="text-base sm:text-lg text-white/85 max-w-3xl leading-relaxed">
+            {project.description}
           </p>
 
-          {/* Metadata Pills */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2 text-xs sm:text-sm text-white/70 border-y border-white/10 py-4">
+          {/* Metadata Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 border-y border-white/10 py-4 text-xs sm:text-sm text-white/75">
             {project.client && (
-              <div className="flex items-center gap-2">
-                <Building className="w-4 h-4 text-[#00E5FF]" />
-                <span className="text-white/50">Client:</span>
+              <div>
+                <span className="text-white/40 block text-[11px] uppercase tracking-wider">Client</span>
                 <span className="text-white font-medium">{project.client}</span>
               </div>
             )}
-            {project.year && (
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-[#00E5FF]" />
-                <span className="text-white/50">Timeline:</span>
-                <span className="text-white font-medium">{project.year}</span>
+            {project.industry && (
+              <div>
+                <span className="text-white/40 block text-[11px] uppercase tracking-wider">Industry</span>
+                <span className="text-white font-medium">{project.industry}</span>
               </div>
             )}
-            {project.website && (
-              <a
-                href={project.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-[#00E5FF] hover:underline font-medium"
-              >
-                <span>Live Website</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+            {project.role && (
+              <div>
+                <span className="text-white/40 block text-[11px] uppercase tracking-wider">My Role</span>
+                <span className="text-white font-medium">{project.role}</span>
+              </div>
             )}
           </div>
 
-          {/* Hero Image */}
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#00E5FF]/30 aspect-[16/9] shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.15)] bg-[#03152B]">
+          {/* Hero Screenshot */}
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#00E5FF]/30 aspect-[16/9] shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_35px_rgba(0,229,255,0.15)] bg-[#03152B]">
             <img
               src={project.thumbnail}
-              alt={project.title}
+              alt={`${project.title} screenshot`}
+              width="1280"
+              height="720"
               className="w-full h-full object-cover object-top"
+              loading="eager"
             />
           </div>
         </section>
 
         {/* ======================================================== */}
-        {/* METRICS ROW (IF AVAILABLE)                               */}
+        {/* QUANTITATIVE METRICS (IF AVAILABLE)                      */}
         {/* ======================================================== */}
         {project.metrics && project.metrics.length > 0 && (
           <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {project.metrics.map((m, idx) => (
-              <GlassCard key={idx} glow="cyan" className="p-6 text-center border-[#00E5FF]/20">
+              <GlassCard key={idx} glow="cyan" className="p-6 text-center border-[#00E5FF]/25">
                 <div className="text-3xl sm:text-4xl font-black text-[#00E5FF] font-mono">
                   {m.value}
                 </div>
@@ -142,47 +131,63 @@ export const ProjectDetails = () => {
         )}
 
         {/* ======================================================== */}
-        {/* CHALLENGE & SOLUTION                                     */}
+        {/* PROBLEM & SOLUTION SECTION                               */}
         {/* ======================================================== */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Challenge */}
-          <GlassCard className="p-6 sm:p-8 border-[#00E5FF]/20">
-            <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 mb-4">
-              <Sparkles className="w-5 h-5" />
+          <GlassCard className="p-6 sm:p-8 border-rose-500/30  space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 mb-2">
+              <AlertCircle className="w-5 h-5" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">
-              The Challenge
-            </h3>
-            <p className="text-xs sm:text-sm text-white/75 leading-relaxed">
-              {project.challenge ||
-                "Legacy software and manual operations caused severe bottlenecks, customer abandonment, and lack of real-time pipeline visibility."}
+            <h2 className="text-xl font-bold text-white">
+              The Problem & Operational Challenge
+            </h2>
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+              {project.challenge || project.shortChallenge}
             </p>
           </GlassCard>
 
-          {/* Solution */}
-          <GlassCard className="p-6 sm:p-8 border-[#00E5FF]/20">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+          {/* Engineering Solution */}
+          <GlassCard className="p-6 sm:p-8 border-emerald-500/30  space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-2">
               <CheckCircle2 className="w-5 h-5" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">
+            <h2 className="text-xl font-bold text-white">
               The Engineering Solution
-            </h3>
-            <p className="text-xs sm:text-sm text-white/75 leading-relaxed">
-              {project.solution ||
-                "Architected a custom full-stack web application tailored precisely to operational workflows, leveraging modern reactive state and performant backend APIs."}
+            </h2>
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+              {project.solution || project.shortSolution}
             </p>
           </GlassCard>
         </section>
+
+        {/* ======================================================== */}
+        {/* TECHNICAL ARCHITECTURE                                   */}
+        {/* ======================================================== */}
+        {project.architecture && (
+          <section className="p-6 sm:p-8 rounded-3xl bg-[#03152B]/80 border border-[#00E5FF]/25 space-y-3">
+            <div className="flex items-center gap-2 text-[#00E5FF] font-bold text-xs uppercase tracking-wider">
+              <Layers className="w-4 h-4" />
+              <span>Technical Architecture</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">
+              Under The Hood
+            </h2>
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+              {project.architecture}
+            </p>
+          </section>
+        )}
 
         {/* ======================================================== */}
         {/* KEY FEATURES                                             */}
         {/* ======================================================== */}
         {project.keyFeatures && project.keyFeatures.length > 0 && (
           <section className="space-y-6">
-            <h3 className="text-2xl font-bold text-white flex items-center gap-3">
-              <span>Key Features & Capabilities</span>
+            <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+              <span>Key Features & Functional Capabilities</span>
               <span className="w-10 h-1 bg-[#00E5FF] rounded-full" />
-            </h3>
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {project.keyFeatures.map((feat, i) => (
@@ -201,9 +206,9 @@ export const ProjectDetails = () => {
         {/* TECHNOLOGIES USED                                        */}
         {/* ======================================================== */}
         <section className="space-y-4">
-          <h3 className="text-xl font-bold text-white">
-            Technologies & Tools Used
-          </h3>
+          <h2 className="text-xl font-bold text-white">
+            Technologies & Tools Employed
+          </h2>
           <div className="flex flex-wrap gap-2">
             {project.technologies.map((t) => (
               <span
@@ -219,17 +224,17 @@ export const ProjectDetails = () => {
         {/* ======================================================== */}
         {/* RESULTS & BUSINESS IMPACT                                */}
         {/* ======================================================== */}
-        {project.results && (
-          <section className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#031c38]/90 to-[#0e0728]/90 border border-[#00E5FF]/35">
-            <div className="flex items-center gap-3 text-[#00E5FF] mb-2 font-bold text-sm uppercase tracking-wider">
-              <TrendingUp className="w-5 h-5" />
+        {(project.results || project.result) && (
+          <section className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#031c38]/95 to-[#0e0728]/95 border border-[#00E5FF]/35 space-y-3">
+            <div className="flex items-center gap-2 text-[#00E5FF] font-bold text-xs uppercase tracking-wider">
+              <TrendingUp className="w-4 h-4" />
               <span>Measurable Outcome</span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-black text-white mb-3">
+            <h2 className="text-xl sm:text-2xl font-black text-white">
               Real Business Results
-            </h3>
-            <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-              {project.results}
+            </h2>
+            <p className="text-sm sm:text-base text-white/85 leading-relaxed">
+              {project.results || project.result}
             </p>
           </section>
         )}
@@ -245,7 +250,7 @@ export const ProjectDetails = () => {
             <ArrowLeft className="w-5 h-5 text-[#00E5FF] shrink-0" />
             <div className="min-w-0 flex-1">
               <div className="text-[11px] text-white/50 uppercase tracking-wider">
-                Previous Project
+                Previous Case Study
               </div>
               <div className="text-sm font-bold text-white truncate">
                 {prevProject.title}
@@ -259,7 +264,7 @@ export const ProjectDetails = () => {
           >
             <div className="min-w-0 flex-1">
               <div className="text-[11px] text-white/50 uppercase tracking-wider">
-                Next Project
+                Next Case Study
               </div>
               <div className="text-sm font-bold text-white truncate">
                 {nextProject.title}
@@ -269,18 +274,22 @@ export const ProjectDetails = () => {
           </Link>
         </section>
 
-        {/* CTA */}
-        <section className="text-center pt-6">
-          <GlassCard className="p-8 sm:p-12 border-[#00E5FF]/30">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-              Interested in a Similar Solution?
-            </h3>
-            <p className="text-sm text-white/70 max-w-xl mx-auto mt-2 mb-6">
-              Let's talk about your business requirements and how we can architect a scalable solution for you.
+        {/* ======================================================== */}
+        {/* DISCUSS A SIMILAR PROJECT CTA                            */}
+        {/* ======================================================== */}
+        <section className="text-center pt-4">
+          <GlassCard className="p-8 sm:p-12 border-[#00E5FF]/30 space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+              Interested in a Similar Custom Solution?
+            </h2>
+            <p className="text-sm text-white/70 max-w-xl mx-auto leading-relaxed">
+              Let's talk about your operational challenges and how we can engineer a custom web application or CRM to streamline your workflow.
             </p>
-            <NeonButton to="/contact" variant="primary" size="lg">
-              Start a Conversation
-            </NeonButton>
+            <div className="pt-2">
+              <NeonButton to="/contact" variant="primary" size="lg">
+                Discuss Your Project
+              </NeonButton>
+            </div>
           </GlassCard>
         </section>
       </div>

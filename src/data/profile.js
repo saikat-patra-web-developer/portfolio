@@ -1,72 +1,91 @@
 export const profileData = {
   name: "Saikat Patra",
   role: "Full Stack Web Developer",
-  shortRole: "Web Developer",
-  tagline: "Build Develop Scale Grow",
-  quote: "Ideas Websites Solutions",
-  contactQuote: "Great Ideas Start With a Conversation",
+  shortRole: "Full Stack Developer",
+  positioning: "Full Stack Developer specializing in Custom Web Applications, CRM Systems & Business Automation.",
+  tagline: "Custom Web Applications, CRM Systems & Business Automation",
   location: "Howrah, West Bengal, India",
   shortLocation: "Howrah, India",
   email: "saikatpatraoffice@gmail.com",
-  directEmail: "saikatpatra300@gmail.com",
   phone: "+91 90389 09382",
-  secondaryPhone: "+91 89022 73136",
+  phoneFormatted: "+91 90389 09382",
   whatsapp: "https://wa.me/919038909382",
-  secondaryWhatsapp: "https://wa.me/918902273136",
+  whatsappChatUrl: "https://wa.me/919038909382?text=Hi%20Saikat%2C%20I%20would%20like%20to%20discuss%20a%20web%20development%20project.",
   linkedin: "https://www.linkedin.com/in/saikat-patra-web-developer",
   github: "https://github.com/saikat-patra-web-developer",
   availability: "Currently Available",
   availabilityStatus: "Available for new projects",
   responseTime: "Usually within 24 hours",
-  bio: "I build modern, high-performance web applications that help businesses grow. Specializing in React, Laravel, Custom CRM, WordPress and API integrations.",
-  aboutBio: "I am Saikat Patra, a Full Stack Web Developer with 7+ years of experience in building web applications, custom CRM systems, and business automation solutions. I love turning complex problems into simple, beautiful, and scalable solutions.",
+  bio: "I design and develop fast, scalable web applications, CRM platforms and automated business systems using modern technologies such as React and Laravel.",
+  aboutBio: "I am Saikat Patra, a Full Stack Web Developer with 7+ years of professional experience building custom web applications, bespoke CRM platforms, and business automation workflows. I help businesses replace fragmented tools and manual administration with clean, dependable digital systems.",
   stats: [
-    { value: "7+", label: "Years Experience" },
     { value: "500+", label: "Projects Completed" },
     { value: "100+", label: "Happy Clients" },
-    { value: "99%", label: "Client Satisfaction" },
-    { value: "20+", label: "Industries Served" },
+    { value: "7+", label: "Years Experience" },
+    { value: "5.0", label: "Google Review Rating" }
   ],
-  heroChips: ["React", "Laravel", "Custom CRM", "WordPress", "API Integration"],
+  heroChips: ["Custom Web Apps", "CRM Systems", "Business Automation", "React & Laravel", "API Integrations"],
   highlights: [
-    { title: "Clean Code", desc: "Structured, maintainable & performant" },
-    { title: "Scalable Solutions", desc: "Built to expand with your business" },
-    { title: "On-Time Delivery", desc: "Respecting deadlines with clear milestones" },
+    { title: "Business-First Development", desc: "Built around your operational workflows and revenue goals." },
+    { title: "Full-Stack Ownership", desc: "From architecture and database design to UI and deployment." },
+    { title: "Clear Communication", desc: "Milestone-driven progress updates with complete transparency." },
+    { title: "Ongoing Support", desc: "Long-term partnership to maintain, protect and scale your system." }
   ],
   story: [
-    "My path into web development started over 7 years ago when I built my first dynamic web application. What began as genuine curiosity quickly grew into a deep passion for designing robust software architectures, elegant user interfaces, and reliable systems.",
-    "Over the years, I have collaborated with entrepreneurs, growing startups, and established enterprises across India, New Zealand, the US, and Europe. Whether engineering a multi-tenant quoting platform, streamlining internal operations through a custom CRM, or creating high-conversion headless WordPress sites, I treat every project as a high-impact business partnership.",
-    "Today, based in Howrah, West Bengal, I continue to push technical limits by combining contemporary frameworks with reliable, tested backend patterns to deliver measurable business growth."
+    "My journey into web development began over 7 years ago, driven by curiosity about how software powers modern commerce and daily operations. What started with building dynamic web solutions quickly grew into engineering custom business applications, complex data pipelines, and scalable architectures.",
+    "Over the years, I have worked with founders, growing teams, and established enterprises across India, New Zealand, the US, and Europe. Whether building a multi-tenant quoting platform, replacing manual spreadsheets with a custom CRM, or developing a high-performance business website, I treat every project as a long-term business collaboration.",
+    "Based in Howrah, West Bengal, I deliver modern React frontends backed by robust Laravel and PHP architectures, ensuring every system is fast, secure, and straightforward for non-technical teams to use."
   ],
   journey: [
-    { year: "2016", title: "The Beginning", description: "Wrote first lines of code. Deep dived into core web standards, PHP, and JavaScript architecture." },
-    { year: "2018", title: "Freelancing Start", description: "Launched freelance practice. Delivered responsive websites and bespoke themes for international clients." },
-    { year: "2020", title: "Expanding Skills", description: "Mastered modern SPA architectures with React and modern Laravel backend services." },
-    { year: "2022", title: "Growing Clients", description: "Architected enterprise-grade custom CRM platforms and multi-tenant SaaS tools." },
-    { year: "2024", title: "Stronger Impact", description: "Shipped mission-critical applications generating 3x lead growth and massive operational savings." },
-    { year: "Today", title: "Still Building", description: "Creating cutting-edge, high-speed digital products for modern visionary businesses." }
+    { year: "2018", title: "Freelance Foundations", description: "Delivered responsive business websites, custom themes, and bespoke PHP applications for international clients." },
+    { year: "2020", title: "Full-Stack Architecture", description: "Focused on modern single-page applications with React, REST APIs, and scalable Laravel backend services." },
+    { year: "2022", title: "Custom CRMs & Automation", description: "Architected internal management tools, role-based client portals, and multi-tenant business systems." },
+    { year: "Present", title: "Business Systems & Scaling", description: "Engineering bespoke web applications, workflow automation pipelines, and mission-critical business platforms." }
   ],
-  values: [
-    { title: "Client Focused", description: "Your business objectives, growth, and ROI are at the very center of every architectural decision." },
-    { title: "Clear Communication", description: "Proactive, regular updates with absolute transparency throughout each milestone of the project." },
-    { title: "Quality Work", description: "Writing modular, readable, self-documenting code built for longevity and effortless scaling." },
-    { title: "Long-Term Support", description: "Continuous partnership, proactive updates, and peace of mind long after initial deployment." },
-    { title: "Problem Solving", description: "Transforming confusing workflows and manual friction into streamlined, intuitive automation." },
-    { title: "Scalable Thinking", description: "Engineered from day one to handle surge traffic, growing databases, and new features." }
+  differentiators: [
+    {
+      title: "Business-First Development",
+      description: "Every feature is planned around your business workflow, customer journey, and operational efficiency rather than technical vanity."
+    },
+    {
+      title: "Full-Stack Ownership",
+      description: "You deal with one senior engineer responsible for everything: database architecture, API design, frontend UI, and server deployment."
+    },
+    {
+      title: "Clear Communication",
+      description: "Direct, milestone-based communication with predictable sprint updates, clear documentation, and zero technical jargon."
+    },
+    {
+      title: "Ongoing Support",
+      description: "Post-launch warranty and dependable ongoing maintenance so your business software stays secure, updated, and high-performing."
+    }
   ],
-  whyWorkWithMe: [
-    { title: "Business-Oriented Approach", description: "I do not just write code; I craft technology that helps your enterprise generate revenue and save time." },
-    { title: "End-to-End Solutions", description: "From initial UX wireframing and database design to cloud hosting and post-launch maintenance." },
-    { title: "Modern Technologies", description: "Leveraging React, Laravel, Tailwind, MySQL, and cloud services for maximum speed and security." },
-    { title: "Reliable & On Time", description: "Predictable schedules, sprint updates, and disciplined delivery you can always count on." },
-    { title: "Ongoing Support", description: "Dedicated technical partner ready to assist whenever your business needs to adapt or expand." },
-    { title: "True Collaborator", description: "Working alongside you with empathy, dedication, and genuine pride in your collective achievements." }
-  ],
-  approach: [
-    { step: "01", title: "Understand", description: "Deeply explore your business goals, target audience, technical requirements, and core constraints." },
-    { step: "02", title: "Plan", description: "Map out system architecture, user journeys, database schemas, and establish milestone roadmaps." },
-    { step: "03", title: "Develop", description: "Build scalable code with modern standards, integrating APIs and creating interactive interfaces." },
-    { step: "04", title: "Test", description: "Comprehensive cross-browser testing, device compatibility, performance audits, and security validation." },
-    { step: "05", title: "Deliver", description: "Smooth deployment, server provisioning, client training, and establishing proactive ongoing monitoring." }
+  process: [
+    {
+      step: "01",
+      title: "Discovery",
+      subtitle: "Understand Goals",
+      description: "Understand your operational bottlenecks, business goals, user personas, and technical requirements in detail."
+    },
+    {
+      step: "02",
+      title: "Planning",
+      subtitle: "Architecture & UX",
+      description: "Define system architecture, database schema, user flows, and clear milestone deliverables."
+    },
+    {
+      step: "03",
+      title: "Build & Test",
+      subtitle: "Development & QA",
+      description: "Develop the frontend and backend with clean, maintainable code, rigorous cross-device testing, and milestone demonstrations."
+    },
+    {
+      step: "04",
+      title: "Launch & Support",
+      subtitle: "Deployment & Warranty",
+      description: "Smooth production deployment, domain and cloud configuration, training, and ongoing post-launch support."
+    }
   ]
 };
+
+export default profileData;

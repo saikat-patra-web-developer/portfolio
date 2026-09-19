@@ -1464,14 +1464,6 @@ h6 {
   }
 }
 
-.shared-inner-page>div:not(.shared-hero-wrap)>section:first-child {
-  display: none;
-}
-
-.shared-inner-page>div:not(.shared-hero-wrap)>section:first-child+section {
-  margin-top: 2.25rem !important;
-  margin-block-start: 2.25rem !important;
-}
 
 /* About page container: mirrors .home-mockup spacing and horizontal padding */
 .about-mockup {
@@ -1541,12 +1533,6 @@ h6 {
   }
 }
 
-@media (max-width:640px) {
-  .shared-inner-page>div:not(.shared-hero-wrap):not(.about-mockup)>section:first-child+section {
-    margin-top: 3.5rem !important;
-    margin-block-start: 3.5rem !important;
-  }
-}
 
 @media (max-width:1150px) {
   .home-services-grid {

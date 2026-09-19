@@ -1,308 +1,168 @@
-export const servicesData = [
+export const coreServices = [
   {
-    id: "web-apps",
+    id: "custom-web-apps",
     number: "01",
-    title: "Web Application Development",
-    shortDesc: "Modern and scalable web applications using React, Laravel and modern technologies.",
-    icon: "code",
-    features: [
-      "Custom web applications",
-      "Scalable architecture",
-      "Secure & high performance",
-      "Interactive dashboards",
-      "Role-based access control"
+    title: "Custom Web Applications",
+    shortDesc: "Tailored web applications that solve specific operational workflows, portals, booking systems, and internal tools.",
+    problem: "Off-the-shelf SaaS tools are often rigid, charge steep monthly per-user fees, or fail to support your specific business processes.",
+    whatIBuild: "Bespoke full-stack web applications with intuitive user portals, admin control centers, role-based permissions, and custom database architectures.",
+    businessBenefit: "Eliminates workarounds, accelerates staff workflows, and gives your business full software ownership without monthly per-seat license costs.",
+    typicalFunctionality: [
+      "Client portals & self-service account dashboards",
+      "Interactive booking & dimension calculation engines",
+      "Internal management tools & data dashboards",
+      "Multi-tenant architectures with role permissions"
     ],
-    detailedDescription: "End-to-end bespoke web application development tailored specifically to your company's operational bottlenecks. Utilizing modular frontend components in React and clean, robust backend APIs in Laravel, we guarantee blazingly fast load times and enterprise-grade security."
+    capabilities: [
+      "Client & Admin Portals",
+      "Interactive Calculators & Bookings",
+      "Internal Business Tools & Dashboards"
+    ],
+    technologies: ["React", "Laravel", "PHP", "MySQL", "Tailwind CSS"],
+    relatedCaseStudy: {
+      title: "Quote My Blinds",
+      slug: "quote-my-blinds",
+      result: "60% faster quote creation and 3x more inbound leads"
+    },
+    icon: "code"
   },
   {
-    id: "custom-crm",
+    id: "crm-business-automation",
     number: "02",
-    title: "Custom CRM Solutions",
-    shortDesc: "Tailored CRM software to manage leads, clients and business processes efficiently.",
-    icon: "database",
-    features: [
-      "Lead & customer management",
-      "Workflow automation",
-      "Reports & analytics",
-      "Invoice & quote generation",
-      "Custom communication logs"
+    title: "CRM & Business Automation",
+    shortDesc: "Custom CRM systems and automated workflows designed to replace spreadsheets and eliminate repetitive manual tasks.",
+    problem: "Tracking leads and customer jobs across fragmented spreadsheets causes lost inquiries, delayed follow-ups, and billing mistakes.",
+    whatIBuild: "Tailored CRM platforms that track deals through your exact pipeline, automate follow-up emails and SMS, and generate one-click quotes and invoices.",
+    businessBenefit: "Saves dozens of admin hours weekly, prevents missed customer inquiries, and gives leadership real-time visibility into operations.",
+    typicalFunctionality: [
+      "Kanban lead and deal pipeline tracking",
+      "Automated email & SMS notification triggers",
+      "One-click PDF quote and invoice generation",
+      "Client communications history and activity audit logs"
     ],
-    detailedDescription: "Say goodbye to rigid, expensive off-the-shelf software with features you don't use. We build lean, intuitive CRM solutions customized around your exact sales pipeline, client intake procedures, and automatic notification triggers."
+    capabilities: [
+      "Pipeline & Lead Management",
+      "Automated Invoicing & Quotes",
+      "Repetitive Admin Workflow Automation"
+    ],
+    technologies: ["Laravel", "MySQL", "Livewire", "React", "REST APIs"],
+    relatedCaseStudy: {
+      title: "Custom CRM System",
+      slug: "custom-crm-system",
+      result: "50% reduction in admin time and $40,000+ recovered in billables"
+    },
+    icon: "database"
   },
   {
-    id: "wordpress",
+    id: "high-performance-websites",
     number: "03",
-    title: "WordPress Development",
-    shortDesc: "Custom themes, plugins and fully responsive WordPress websites.",
-    icon: "wordpress",
-    features: [
-      "Custom theme development",
-      "Plugin customization",
-      "SEO & speed optimization",
-      "Elementor / ACF flexibility",
-      "Clean, maintainable code"
+    title: "High-Performance Business Websites",
+    shortDesc: "Modern, conversion-focused websites engineered for speed, search visibility, mobile responsiveness, and easy content management.",
+    problem: "Slow, outdated websites with poor mobile experiences frustrate potential buyers and rank poorly on Google search results.",
+    whatIBuild: "Fast, custom-coded websites built with clean markup, modern responsive UI, structured schema for SEO, and streamlined CMS controls.",
+    businessBenefit: "Improves your first impression, delivers sub-second load times that keep visitors engaged, and converts more visitors into inquiries.",
+    typicalFunctionality: [
+      "Mobile-first responsive design across all screen sizes",
+      "Fast Core Web Vitals (LCP < 2.5s, clean layouts)",
+      "Technical SEO markup and structured data",
+      "Lightweight custom WordPress or React content setups"
     ],
-    detailedDescription: "High-speed, SEO-optimized WordPress websites that don't rely on bloated plugins. We specialize in custom themes, tailored post types, WooCommerce stores, and headless architectures with effortless editing workflows."
+    capabilities: [
+      "Conversion-Focused Web Architecture",
+      "Core Web Vitals & Speed Optimization",
+      "Technical SEO & Structured Schema"
+    ],
+    technologies: ["React", "WordPress (Custom)", "Tailwind CSS", "PHP", "Vite"],
+    relatedCaseStudy: {
+      title: "IVC Valves Corporate Presence",
+      slug: "ivc-valves-client-project",
+      result: "40% increase in international B2B inquiries"
+    },
+    icon: "layout"
   },
   {
-    id: "api-integration",
+    id: "api-integrations",
     number: "04",
-    title: "API Integration",
-    shortDesc: "Connect third-party tools and services with seamless integrations.",
-    icon: "link",
-    features: [
-      "RESTful API integration",
-      "Payment gateway setup",
-      "Third-party service integration",
-      "Webhooks & real-time sync",
-      "Data pipeline automation"
+    title: "API & Third-Party Integrations",
+    shortDesc: "Reliable connections between your web software, payment gateways, external CRMs, and third-party cloud services.",
+    problem: "Operating separate software tools for billing, CRM, messaging, and fulfillment creates tedious double-data entry and human errors.",
+    whatIBuild: "Secure RESTful API integrations and webhook pipelines that automatically synchronize data across your external platforms in real time.",
+    businessBenefit: "Eliminates double entry, keeps your financial and customer records automatically synchronized, and ensures bank-grade transaction reliability.",
+    typicalFunctionality: [
+      "Payment gateway integration (Stripe, PayPal, Razorpay)",
+      "Automated transactional SMS and email delivery (Twilio, SendGrid)",
+      "CRM & ERP bi-directional data synchronization",
+      "Webhook listeners with automated retry and error logging"
     ],
-    detailedDescription: "Bridge the gap between your applications and external services like Stripe, PayPal, Razorpay, Twilio, Salesforce, Google APIs, and custom RESTful endpoints with bank-grade security and error recovery."
-  },
-  {
-    id: "ecommerce",
-    number: "05",
-    title: "E-commerce Solutions",
-    shortDesc: "Online stores that are fast, secure and easy to manage.",
-    icon: "shopping-cart",
-    features: [
-      "Custom e-commerce stores",
-      "Payment & shipping setup",
-      "Inventory & order management",
-      "Conversion rate optimization",
-      "Customer checkout experience"
+    capabilities: [
+      "Payment Gateways (Stripe, PayPal)",
+      "CRM & Cloud Database Synchronization",
+      "Webhook Event & Messaging Pipelines"
     ],
-    detailedDescription: "Complete digital storefronts engineered for high conversions. From lightning-fast product filtering to friction-free checkouts, multi-currency processing, and automatic shipping calculation."
-  },
-  {
-    id: "maintenance",
-    number: "06",
-    title: "Maintenance & Support",
-    shortDesc: "Ongoing support, updates and performance optimization.",
-    icon: "settings",
-    features: [
-      "Regular updates & monitoring",
-      "Bug fixes & performance tuning",
-      "Technical support & guidance",
-      "Scheduled cloud backups",
-      "Security patching"
-    ],
-    detailedDescription: "Peace of mind knowing your platform is monitored, updated, secured against vulnerabilities, and running with 99.9% uptime. Fast turnaround times for any sudden tweaks or questions."
-  },
-  {
-    id: "business-automation",
-    number: "07",
-    title: "Business Automation",
-    shortDesc: "Automate repetitive tasks and improve efficiency with smart solutions.",
-    icon: "bot",
-    features: [
-      "Workflow automation",
-      "Custom tools & scripts",
-      "Save time & reduce manual work",
-      "Automated email & SMS triggers",
-      "Cross-platform syncing"
-    ],
-    detailedDescription: "Eliminate repetitive manual data entry, quote generation, and status syncing with bespoke scripts, cloud queues, and automated workflows designed to save your staff dozens of hours every week."
-  },
-  {
-    id: "ui-ux",
-    number: "08",
-    title: "Responsive UI/UX Development",
-    shortDesc: "Create beautiful, user-friendly interfaces that work perfectly on all devices.",
-    icon: "layout",
-    features: [
-      "Modern & clean UI design",
-      "Mobile-first responsive design",
-      "Better user engagement",
-      "Figma to code fidelity",
-      "Micro-animations & transitions"
-    ],
-    detailedDescription: "Transforming design prototypes into pixel-perfect, accessible, and high-converting web applications. Clean typography, smooth CSS transitions, and deliberate visual hierarchy."
+    technologies: ["REST APIs", "Webhooks", "Laravel", "Node.js", "MySQL"],
+    relatedCaseStudy: {
+      title: "Real Estate Listing Platform",
+      slug: "real-estate-listing-platform",
+      result: "70% faster search response times and automated lead dispatch"
+    },
+    icon: "link"
   }
 ];
 
-export const pricingPlans = {
-  projectBased: [
-    {
-      name: "Starter",
-      popular: false,
-      price: "$499+",
-      period: "One-time project",
-      subtitle: "Perfect for small projects & startups",
-      features: [
-        "Basic features & custom design",
-        "Up to 2 revisions",
-        "Standard delivery time (1-2 weeks)",
-        "Email support",
-        "Mobile responsive layout",
-        "Basic SEO setup"
-      ]
-    },
-    {
-      name: "Growth",
-      popular: true,
-      price: "$999+",
-      period: "One-time project",
-      subtitle: "For growing businesses & scaling brands",
-      features: [
-        "Advanced features & custom logic",
-        "Up to 4 revisions",
-        "Faster delivery (2-4 weeks)",
-        "Priority support",
-        "API & database integration",
-        "Performance optimization",
-        "Analytics & conversion tracking"
-      ]
-    },
-    {
-      name: "Premium",
-      popular: false,
-      price: "$1,999+",
-      period: "One-time project",
-      subtitle: "For complex projects & enterprises",
-      features: [
-        "Full-featured custom solution",
-        "Unlimited revisions during build",
-        "Dedicated support",
-        "Long-term support (3 months included)",
-        "Custom CRM / automation logic",
-        "High availability cloud architecture",
-        "Complete technical documentation"
-      ]
-    }
-  ],
-  monthlyRetainer: [
-    {
-      name: "Maintenance Essential",
-      popular: false,
-      price: "$299",
-      period: "Per month",
-      subtitle: "Keep your website secure and updated",
-      features: [
-        "Up to 10 hours dedicated dev work",
-        "Weekly security & plugin updates",
-        "Cloud backups & uptime monitoring",
-        "Speed optimization",
-        "Email & chat support"
-      ]
-    },
-    {
-      name: "Dedicated Growth",
-      popular: true,
-      price: "$699",
-      period: "Per month",
-      subtitle: "Continuous feature development",
-      features: [
-        "Up to 30 hours dedicated dev work",
-        "New feature development & UI tweaks",
-        "Priority 4-hour response time",
-        "Database maintenance & API health",
-        "Dedicated Slack channel"
-      ]
-    },
-    {
-      name: "Full Partner",
-      popular: false,
-      price: "$1,399",
-      period: "Per month",
-      subtitle: "Your fractional lead engineer",
-      features: [
-        "Up to 60 hours dedicated dev work",
-        "Architectural consulting & planning",
-        "Immediate emergency hotfixes",
-        "Full-stack web & CRM oversight",
-        "Direct phone & video sprint calls"
-      ]
-    }
-  ]
-};
+export const servicesData = coreServices;
 
 export const developmentProcess = [
   {
     step: "01",
-    title: "Discover",
+    title: "Discovery",
     subtitle: "Understand Goals",
-    desc: "Understand your goals, requirements, constraints, and target user persona in depth."
+    desc: "We analyze your business workflows, current operational friction, user requirements, and technical constraints."
   },
   {
     step: "02",
-    title: "Plan",
-    subtitle: "Strategy & Architecture",
-    desc: "Create a detailed strategy, database model, UI wireframe, and milestone roadmap."
+    title: "Planning",
+    subtitle: "Architecture & UX",
+    desc: "We map out system architecture, database relationships, interface wireframes, and sprint milestone deliverables."
   },
   {
     step: "03",
-    title: "Develop",
-    subtitle: "Build & Iterate",
-    desc: "Build, test, and iterate with clean, scalable code and regular progress demonstrations."
+    title: "Build & Test",
+    subtitle: "Development & QA",
+    desc: "We build your solution using modern, tested technologies, running cross-device testing and milestone reviews."
   },
   {
     step: "04",
-    title: "Review",
-    subtitle: "Feedback & Tuning",
-    desc: "Collect client feedback, refine micro-interactions, and perform thorough QA audits."
-  },
-  {
-    step: "05",
-    title: "Launch",
-    subtitle: "Deploy & Support",
-    desc: "Deploy to production, configure domain and cloud services, and provide continuous support."
+    title: "Launch & Support",
+    subtitle: "Deployment & Warranty",
+    desc: "We deploy to your production server or cloud, configure domains and security, and provide dedicated post-launch support."
   }
-];
-
-export const industriesServed = [
-  { name: "Real Estate", icon: "home" },
-  { name: "Healthcare", icon: "heart" },
-  { name: "Education", icon: "graduation-cap" },
-  { name: "E-commerce", icon: "shopping-bag" },
-  { name: "Travel & Hospitality", icon: "plane" },
-  { name: "Finance", icon: "trending-up" },
-  { name: "Small Businesses", icon: "store" },
-  { name: "Startups", icon: "rocket" },
-  { name: "Manufacturing", icon: "cpu" },
-  { name: "Professional Services", icon: "briefcase" }
 ];
 
 export const faqList = [
   {
-    q: "How long does a typical project take?",
-    a: "Timelines depend on project complexity. A standard modern business or portfolio website typically takes 1 to 3 weeks, while comprehensive web applications or custom CRM platforms take between 4 to 8 weeks with sprint-based milestones."
+    q: "What types of projects do you build?",
+    a: "I specialize in custom web applications, bespoke CRM platforms, business automation tools, and high-performance business websites. Most of my work involves solving operational bottlenecks, replacing complex spreadsheets, or building custom client and admin portals using React and Laravel."
   },
   {
-    q: "Do you provide ongoing support?",
-    a: "Yes! Every project includes a post-launch warranty period (typically 30 to 90 days depending on the plan) covering bug fixes and minor adjustments. I also offer monthly maintenance retainers for long-term security, updates, and feature additions."
+    q: "Do you work with international clients?",
+    a: "Yes. Over the past 7+ years, I have collaborated with founders, businesses, and agency partners across India, New Zealand, the United States, the UK, and Europe. I maintain clear, asynchronous communication and coordinate sprint calls to accommodate different time zones."
   },
   {
-    q: "Can you work with my existing website?",
-    a: "Absolutely. I frequently modernize legacy PHP/WordPress systems, refactor messy codebases into clean React components, build custom APIs for existing databases, or migrate sites to high-performance cloud hosting."
+    q: "Can you improve or refactor an existing application?",
+    a: "Yes. I frequently help businesses modernize legacy PHP or WordPress platforms, refactor slow frontend code into fast React components, fix database query bottlenecks, and build custom APIs to connect older systems with modern cloud services."
   },
   {
-    q: "What technologies do you use?",
-    a: "My core expertise centers around modern React (with Next.js/Vite and Tailwind CSS) on the frontend, and robust Laravel (PHP), MySQL, REST APIs, and AWS on the backend. For CMS needs, I develop custom lightweight WordPress themes and plugins."
+    q: "Can you integrate with an existing CRM or third-party API?",
+    a: "Yes. I regularly integrate web platforms with third-party services including payment gateways (Stripe, PayPal, Razorpay), communication APIs (Twilio, SendGrid, WhatsApp Business), external CRMs, and custom RESTful endpoints with secure webhook handlers."
   },
   {
-    q: "How do we get started?",
-    a: "Simply reach out via the Contact page or email me at saikatpatraoffice@gmail.com. We will schedule a quick consultation call to understand your requirements, after which I will provide a detailed proposal, timeline, and quote."
+    q: "What technologies do you use most frequently?",
+    a: "My core production stack centers on modern React with Tailwind CSS on the frontend, and robust Laravel (PHP) with MySQL on the backend. For CMS projects, I build bespoke, lightweight WordPress themes and plugins without relying on bloated page builders."
   },
   {
-    q: "What is your pricing structure and payment terms?",
-    a: "I work with transparent fixed-price milestone contracts as well as monthly retainers. Projects typically involve a 30% to 50% initial deposit, milestone installments tied to clear deliverables, and final sign-off upon deployment."
-  },
-  {
-    q: "Will I have full ownership of the source code?",
-    a: "Yes, 100%. Upon project completion and final settlement, all intellectual property, source code, Git repositories, assets, and deployment credentials are completely transferred to you with zero recurring licensing fees."
-  },
-  {
-    q: "Can you develop custom CRM or portal solutions?",
-    a: "Yes, custom business management software is one of my core specializations. I build tailored CRMs, client portals, internal dashboards, and ERP tools with role-based access control, analytics, and automated workflows."
-  },
-  {
-    q: "How do you ensure code quality, performance, and SEO?",
-    a: "Every project is engineered with clean modular architecture, responsive mobile-first UI, strict TypeScript/JavaScript standards, fast Core Web Vitals, and technical on-page SEO best practices built right in."
-  },
-  {
-    q: "Do you handle domain setup, cloud hosting, and deployment?",
-    a: "Yes, I offer full end-to-end deployment support across platforms like AWS, DigitalOcean, Vercel, Hostinger, and cPanel. I configure custom domains, SSL certificates, automated backups, and CI/CD pipelines."
+    q: "How can I discuss a project with you?",
+    a: "You can submit an inquiry through the Contact page form, message me directly on WhatsApp at +91 90389 09382, or email saikatpatraoffice@gmail.com. I will review your requirements and respond within 24 hours to schedule a brief consultation."
   }
 ];
 
+export default coreServices;

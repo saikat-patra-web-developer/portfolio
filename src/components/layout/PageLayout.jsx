@@ -1,30 +1,26 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { InnerPageHero } from "./InnerPageHero";
 
 export const PageLayout = ({
   children,
   title = "Saikat Patra | Full Stack Web Developer",
-  description = "Saikat Patra - Full Stack Web Developer based in Howrah, India. Specializing in React, Laravel, Custom CRM, WordPress and API integrations."
+  description = "Full Stack Web Developer specializing in React, Laravel, custom CRM systems, business automation and high-performance web applications."
 }) => {
   const { pathname } = useLocation();
-  const hasSharedHero = ["/about", "/services", "/projects", "/skills", "/contact"].includes(pathname);
 
   useEffect(() => {
+    // Scroll restoration
     if (window.location.hash) {
-      setTimeout(() => {
-        const element = document.querySelector(window.location.hash);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-          return;
-        }
-      }, 100);
+      const element = document.querySelector(window.location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     } else {
       window.scrollTo(0, 0);
     }
 
-    // Update document title and meta description
+    // Dynamic Title & Meta Description update
     if (title) {
       document.title = title;
     }
@@ -32,17 +28,29 @@ export const PageLayout = ({
     if (metaDesc && description) {
       metaDesc.setAttribute("content", description);
     }
+
+    // Dynamic Canonical Link update
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = pathname === "/" ? "" : pathname;
+    canonical.setAttribute(
+      "href",
+      `https://portfolio.saikatpatraoffice.workers.dev${cleanPath}`
+    );
   }, [pathname, title, description]);
 
   return (
     <motion.main
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -16 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className={`site-main relative z-10 pt-24 sm:pt-28 pb-10 flex-grow${hasSharedHero ? " shared-inner-page" : ""}`}
+      exit={{ opacity: 0, y: -12 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="site-main relative z-10 pt-24 sm:pt-28 pb-10 flex-grow"
     >
-      {hasSharedHero && <InnerPageHero pathname={pathname} />}
       {children}
     </motion.main>
   );

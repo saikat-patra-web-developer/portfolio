@@ -1,8 +1,5 @@
-import { Sparkles } from "lucide-react";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { ProjectCard } from "../../components/project/ProjectCard";
-import { GlassCard } from "../../components/ui/GlassCard";
-import { NeonButton } from "../../components/ui/NeonButton";
 import {
   projectsData,
   projectImpactStats
@@ -63,37 +60,6 @@ export const Projects = () => {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* ======================================================== */}
-        {/* FINAL CTA                                                */}
-        {/* ======================================================== */}
-        <section className="text-center">
-          <GlassCard
-            glow="both"
-            className="p-8 sm:p-12 lg:p-14 border-[#00E5FF]/30 relative overflow-hidden"
-          >
-            <div className="max-w-2xl mx-auto space-y-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00E5FF]/15 border border-[#00E5FF]/35 text-[#00E5FF] text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>BUILD YOUR APPLICATION</span>
-              </span>
-
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                Need a Similar Solution for Your Business?
-              </h2>
-
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-                Whether you need a custom dimension calculator, an internal operations CRM, or a high-performance customer portal, let's discuss your requirements.
-              </p>
-
-              <div className="pt-3">
-                <NeonButton to="/contact" variant="primary" size="lg">
-                  Discuss Your Project
-                </NeonButton>
-              </div>
-            </div>
-          </GlassCard>
         </section>
       </div>
     </PageLayout>

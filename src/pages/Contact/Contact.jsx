@@ -82,37 +82,34 @@ export const Contact = () => {
       title="Get in Touch Directly | Saikat Patra - Full Stack Web Developer"
       description="Skip the long forms. Reach out directly to Saikat Patra via WhatsApp, direct phone, or email for web development, custom CRMs, and business automation."
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
 
         {/* ======================================================== */}
         {/* HEADER SECTION                                           */}
         {/* ======================================================== */}
-        <section className="relative pt-2 sm:pt-4">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-3 max-w-3xl">
-              {/* DIRECT CHANNELS BADGE */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(0,229,255,0.15)]">
-                <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
-                <span>DIRECT CHANNELS</span>
-              </div>
+        <section className="relative pt-4 sm:pt-8 text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+            <span>DIRECT CHANNELS</span>
+          </div>
 
-              {/* MAIN TITLE WITH ACCENT LINE */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight flex items-center flex-wrap gap-3">
-                <span>Get in Touch Directly</span>
-                <span className="inline-block w-9 sm:w-12 h-1 sm:h-1.5 rounded-full bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#A855F7] shadow-[0_0_10px_rgba(0,229,255,0.5)]" />
-              </h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+            Get in Touch{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#A855F7]">
+              Directly.
+            </span>
+          </h1>
 
-              <p className="text-sm sm:text-base text-white/75 leading-relaxed max-w-2xl">
-                Skip the long forms. Reach out directly through any of my verified communication channels.
-              </p>
-            </div>
+          <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto">
+            Skip the long forms. Reach out directly through any of my verified communication channels for immediate project consultation and fast response.
+          </p>
 
-            {/* FAST RESPONSE GUARANTEED SCRIPT ACCENT */}
-            <div className="hidden sm:flex items-center self-end md:pb-2">
-              <span className="font-handwriting text-2xl sm:text-3xl text-[#00E5FF] -rotate-6 tracking-wide drop-shadow-[0_0_12px_rgba(0,229,255,0.6)] select-none">
-                Fast Response Guaranteed
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70">
+            {["Fast Response Guaranteed", "Direct Senior Engineer", "WhatsApp & Direct Phone", "Remote Worldwide"].map((item) => (
+              <span key={item} className="px-3 py-1 rounded-full bg-[#03152B] border border-white/10">
+                &bull; {item}
               </span>
-            </div>
+            ))}
           </div>
         </section>
 

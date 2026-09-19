@@ -27,43 +27,62 @@ export const About = () => {
         {/* ======================================================== */}
         {/* HERO / INTRODUCTION                                      */}
         {/* ======================================================== */}
-        <section className="relative pt-4 sm:pt-8 lg:pt-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            {/* Left Copy */}
-            <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
-                <span>ABOUT SAIKAT PATRA</span>
-              </div>
+        {/* ======================================================== */}
+        {/* HERO SECTION                                             */}
+        {/* ======================================================== */}
+        <section className="relative pt-4 sm:pt-8 text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+            <span>ABOUT SAIKAT PATRA</span>
+          </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-white tracking-tight leading-[1.15]">
-                Full Stack Developer Specializing in{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#A855F7]">
-                  Custom Business Systems.
-                </span>
-              </h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+            Full Stack Developer Specializing in{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#A855F7]">
+              Custom Business Systems.
+            </span>
+          </h1>
 
-              <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                {profileData.aboutBio}
-              </p>
+          <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto">
+            {profileData.aboutBio}
+          </p>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
-                <NeonButton to="/contact" variant="primary" size="md">
-                  Discuss Your Project
-                </NeonButton>
-                <NeonButton to="/projects" variant="secondary" size="md">
-                  View My Work
-                </NeonButton>
-              </div>
-            </div>
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70">
+            {["7+ Years Experience", "80+ Projects Completed", "Direct Senior Engineer", "Based in Howrah, India"].map((item) => (
+              <span key={item} className="px-3 py-1 rounded-full bg-[#03152B] border border-white/10">
+                &bull; {item}
+              </span>
+            ))}
+          </div>
 
-            {/* Right Visual */}
-            <div className="lg:col-span-5 relative flex justify-center">
+          <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
+            <NeonButton to="/contact" variant="primary" size="md">
+              Discuss Your Project
+            </NeonButton>
+            <NeonButton to="/projects" variant="secondary" size="md">
+              View My Work
+            </NeonButton>
+          </div>
+        </section>
+
+        {/* ======================================================== */}
+        {/* SHORT STORY & BACKGROUND                                 */}
+        {/* ======================================================== */}
+        <section id="story">
+          <SectionHeading
+            badge="MY BACKGROUND"
+            title="Behind the Code"
+            subtitle="My philosophy, what I do, and why I focus on practical business impact."
+          />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Visual Photo Card (Cols 1-5) */}
+            <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-[360px] rounded-3xl p-1 bg-gradient-to-br from-[#00E5FF]/40 via-[#2787FF]/20 to-[#7B3CFF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.2)]">
                 <div className="relative rounded-[22px] overflow-hidden bg-[#020B18]">
                   <img
                     src="/assets/images/saikat-hero.webp"
-                    alt="Saikat Patra - About"
+                    alt="Saikat Patra - Full Stack Engineer"
                     width="600"
                     height="700"
                     fetchPriority="high"
@@ -82,28 +101,15 @@ export const About = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* ======================================================== */}
-        {/* SHORT STORY & BACKGROUND                                 */}
-        {/* ======================================================== */}
-        <section>
-          <SectionHeading
-            badge="MY BACKGROUND"
-            title="Behind the Code"
-            subtitle="My philosophy, what I do, and why I focus on practical business impact."
-          />
+            {/* Story & Philosophy (Cols 6-12) */}
+            <div className="lg:col-span-7">
+              <GlassCard className="p-6 sm:p-8 border-[#00E5FF]/20 space-y-4">
+                <p className="text-sm sm:text-base text-white/85 leading-relaxed">{profileData.story[0]}</p>
+                <p className="text-sm sm:text-base text-white/80 leading-relaxed">{profileData.story[1]}</p>
+                <p className="text-sm sm:text-base text-white/80 leading-relaxed">{profileData.story[2]}</p>
 
-          <GlassCard className="p-6 sm:p-10 border-[#00E5FF]/20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm sm:text-base text-white/80 leading-relaxed">
-              <div className="space-y-4">
-                <p>{profileData.story[0]}</p>
-                <p>{profileData.story[1]}</p>
-              </div>
-              <div className="space-y-4">
-                <p>{profileData.story[2]}</p>
-                <div className="p-5 rounded-2xl bg-gradient-to-br from-[#073658]/90 via-[#072149]/90 to-[#22136f]/90 border border-[#00E5FF]/30 mt-4 shadow-lg">
+                <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-[#073658]/90 via-[#072149]/90 to-[#22136f]/90 border border-[#00E5FF]/30 mt-4 shadow-lg">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#00E5FF] uppercase tracking-wider mb-2">
                     <Sparkles className="w-4 h-4" />
                     <span>My Development Philosophy</span>
@@ -112,9 +118,9 @@ export const About = () => {
                     &ldquo;Code should solve human friction and accelerate business operations. Clean architecture and modular components exist to ensure the software remains fast, dependable, and simple to maintain over time.&rdquo;
                   </p>
                 </div>
-              </div>
+              </GlassCard>
             </div>
-          </GlassCard>
+          </div>
         </section>
 
         {/* ======================================================== */}
@@ -259,37 +265,6 @@ export const About = () => {
           title="Client Reviews & Testimonials"
           subtitle="Real reviews and verifiable feedback from Google Business Profile and direct project clients."
         />
-
-        {/* ======================================================== */}
-        {/* FINAL CTA                                                */}
-        {/* ======================================================== */}
-        <section className="text-center">
-          <GlassCard
-            glow="both"
-            className="p-8 sm:p-12 lg:p-14 border-[#00E5FF]/30 relative overflow-hidden"
-          >
-            <div className="max-w-2xl mx-auto space-y-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00E5FF]/15 border border-[#00E5FF]/35 text-[#00E5FF] text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>LET'S CONNECT</span>
-              </span>
-
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                Let's Discuss How We Can Work Together
-              </h2>
-
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-                Whether you have an established product that needs senior engineering or a new application waiting to be built, I'd love to hear about it.
-              </p>
-
-              <div className="pt-3">
-                <NeonButton to="/contact" variant="primary" size="lg">
-                  Discuss Your Project
-                </NeonButton>
-              </div>
-            </div>
-          </GlassCard>
-        </section>
       </div>
     </PageLayout>
   );

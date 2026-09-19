@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Star, ShieldCheck, ArrowRight, Quote } from "lucide-react";
+import { Star, ShieldCheck, Quote } from "lucide-react";
 import { GlassCard } from "../ui/GlassCard";
 
 const GoogleGIcon = ({ className = "w-3.5 h-3.5" }) => (
@@ -32,8 +31,7 @@ export const TestimonialCard = ({ testimonial }) => {
     avatar,
     avatarBg,
     source,
-    ownerReply,
-    projectSlug
+    ownerReply
   } = testimonial;
 
   const isGoogle = source === "Google Review";
@@ -78,19 +76,6 @@ export const TestimonialCard = ({ testimonial }) => {
             &ldquo;{content}&rdquo;
           </p>
         </div>
-
-        {/* Project Link if available */}
-        {projectSlug && (
-          <div className="pt-1">
-            <Link
-              to={`/projects/${projectSlug}`}
-              className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#00E5FF] hover:text-white transition-colors group/link"
-            >
-              <span>View Case Study</span>
-              <ArrowRight className="w-3 h-3 group-hover/link:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-        )}
 
         {/* Optional Owner Reply */}
         {ownerReply && (

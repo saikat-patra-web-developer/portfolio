@@ -32,21 +32,24 @@ export const Footer = ({ showCta = true }) => {
               <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-xl">
                 Tell me what you are trying to build or improve, and we can discuss the best technical approach for your business.
               </p>
+              <div className="text-xs text-white/50 pt-1">
+                Usually responds within 24 hours &bull; No obligation consultation
+              </div>
             </div>
 
             <div className="relative z-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0 w-full lg:w-auto">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] hover:opacity-95 shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] border border-white/20 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] hover:opacity-95 shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] border border-white/20 transition-all duration-300 active:scale-[0.98] whitespace-nowrap group"
               >
                 <span>Discuss Your Project</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
               </Link>
               <a
                 href={`mailto:${profileData.email}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white/90 hover:bg-[#052A4A] border border-[#00E5FF]/30 hover:border-[#00E5FF] transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white/90 bg-[#03152B]/90 hover:bg-[#052A4A] border border-[#00E5FF]/30 hover:border-[#00E5FF] transition-all duration-200 active:scale-[0.98] whitespace-nowrap"
               >
-                <Mail className="w-4 h-4 text-[#00E5FF]" />
+                <Mail className="w-4 h-4 text-[#00E5FF] shrink-0" />
                 <span>Email Me</span>
               </a>
             </div>

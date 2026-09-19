@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronDown,
   HelpCircle,
-  MessageSquare,
-  ArrowRight
+  MessageSquare
 } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { GlassCard } from "../ui/GlassCard";
@@ -167,14 +166,18 @@ export const FaqSection = ({
             href={profileData.whatsappChatUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-[#00E5FF] hover:text-white bg-[#00E5FF]/10 hover:bg-[#00E5FF]/20 border border-[#00E5FF]/30 transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-semibold text-[#00E5FF] hover:text-white bg-[#00E5FF]/10 hover:bg-[#00E5FF]/20 border border-[#00E5FF]/30 transition-all duration-200 active:scale-[0.98] whitespace-nowrap"
           >
-            <MessageSquare className="w-4 h-4" />
+            <MessageSquare className="w-4 h-4 shrink-0" />
             <span>Chat on WhatsApp</span>
           </a>
-          <NeonButton to="/contact" variant="primary" size="sm" className="w-full sm:w-auto">
-            <span>Ask Your Question</span>
-            <ArrowRight className="w-3.5 h-3.5 ml-1" />
+          <NeonButton
+            to="/contact"
+            variant="primary"
+            size="md"
+            className="w-full sm:w-auto"
+          >
+            Ask Your Question
           </NeonButton>
         </div>
       </div>

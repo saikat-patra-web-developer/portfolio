@@ -6,10 +6,8 @@ import {
   Users,
   Star,
   CheckCircle2,
-  Mail,
   MapPin,
-  Play,
-  Sparkles
+  Play
 } from "lucide-react";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { SectionHeading } from "../../components/ui/SectionHeading";
@@ -317,48 +315,6 @@ export const Home = () => {
         {/* SECTION 9 — FAQ                                          */}
         {/* ======================================================== */}
         <FaqSection />
-
-        {/* ======================================================== */}
-        {/* SECTION 10 — FINAL HIGH-CONVERSION CTA                   */}
-        {/* ======================================================== */}
-        <section className="text-center">
-          <GlassCard
-            glow="both"
-            className="p-8 sm:p-12 lg:p-16 border-[#00E5FF]/30 relative overflow-hidden"
-          >
-            <div className="max-w-2xl mx-auto space-y-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00E5FF]/15 border border-[#00E5FF]/35 text-[#00E5FF] text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>READY TO GET STARTED?</span>
-              </span>
-
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                Have a Project That Needs a Better System?
-              </h2>
-
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-                Tell me what you are trying to build or improve, and we can discuss the best technical approach for your business.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
-                <NeonButton to="/contact" variant="primary" size="lg" className="w-full sm:w-auto">
-                  Discuss Your Project
-                </NeonButton>
-                <a
-                  href={`mailto:${profileData.email}`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white/90 bg-[#03152B]/90 hover:bg-[#052A4A] border border-[#00E5FF]/30 hover:border-[#00E5FF] transition-all duration-200"
-                >
-                  <Mail className="w-4 h-4 text-[#00E5FF]" />
-                  <span>Email Me</span>
-                </a>
-              </div>
-
-              <div className="text-xs text-white/50 pt-2">
-                Usually responds within 24 hours &bull; No obligation consultation
-              </div>
-            </div>
-          </GlassCard>
-        </section>
       </div>
     </PageLayout>
   );

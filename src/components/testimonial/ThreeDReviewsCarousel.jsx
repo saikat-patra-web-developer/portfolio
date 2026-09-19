@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Star,
   Quote,
-  ShieldCheck,
-  ArrowRight
+  ShieldCheck
 } from "lucide-react";
 
 const GoogleGIcon = ({ className = "w-3.5 h-3.5" }) => (
@@ -251,20 +249,6 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                       &ldquo;{testimonial.content}&rdquo;
                     </p>
                   </div>
-
-                  {/* Project Case Study Link */}
-                  {testimonial.projectSlug && (
-                    <div className="pt-1">
-                      <Link
-                        to={`/projects/${testimonial.projectSlug}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00E5FF] hover:text-white transition-colors group/link"
-                      >
-                        <span>View Project Case Study</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#00E5FF] group-hover/link:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  )}
                 </div>
 
                 {/* Author Footer */}

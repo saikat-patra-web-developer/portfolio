@@ -4,7 +4,6 @@ import {
   AlertCircle,
   TrendingUp,
   ArrowRight,
-  Sparkles,
   Code,
   Database,
   Layout,
@@ -16,7 +15,6 @@ import {
 import { PageLayout } from "../../components/layout/PageLayout";
 import { SectionHeading } from "../../components/ui/SectionHeading";
 import { GlassCard } from "../../components/ui/GlassCard";
-import { NeonButton } from "../../components/ui/NeonButton";
 import { FaqSection } from "../../components/faq/FaqSection";
 import { coreServices, developmentProcess } from "../../data/services";
 
@@ -251,37 +249,6 @@ export const Services = () => {
           title="Service & Project Questions"
           subtitle="Answers to common questions about timelines, code ownership, and technical stacks."
         />
-
-        {/* ======================================================== */}
-        {/* FINAL CTA                                                */}
-        {/* ======================================================== */}
-        <section className="text-center">
-          <GlassCard
-            glow="both"
-            className="p-8 sm:p-12 lg:p-14 border-[#00E5FF]/30 relative overflow-hidden"
-          >
-            <div className="max-w-2xl mx-auto space-y-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00E5FF]/15 border border-[#00E5FF]/35 text-[#00E5FF] text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>LET'S DISCUSS YOUR SYSTEM</span>
-              </span>
-
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                Ready to Upgrade Your Software Infrastructure?
-              </h2>
-
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-                Whether you need a custom web application from scratch or want to automate repetitive workflows, let's schedule a consultation to explore your technical requirements.
-              </p>
-
-              <div className="pt-3">
-                <NeonButton to="/contact" variant="primary" size="lg">
-                  Discuss Your Project
-                </NeonButton>
-              </div>
-            </div>
-          </GlassCard>
-        </section>
       </div>
     </PageLayout>
   );

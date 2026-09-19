@@ -280,25 +280,6 @@ export const ProjectDetails = () => {
             <ArrowRight className="w-5 h-5 text-[#00E5FF] shrink-0" />
           </Link>
         </section>
-
-        {/* ======================================================== */}
-        {/* DISCUSS A SIMILAR PROJECT CTA                            */}
-        {/* ======================================================== */}
-        <section className="text-center pt-4">
-          <GlassCard className="p-8 sm:p-12 border-[#00E5FF]/30 space-y-4">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-              Interested in a Similar Custom Solution?
-            </h2>
-            <p className="text-sm text-white/70 max-w-xl mx-auto leading-relaxed">
-              Let's talk about your operational challenges and how we can engineer a custom web application or CRM to streamline your workflow.
-            </p>
-            <div className="pt-2">
-              <NeonButton to="/contact" variant="primary" size="lg">
-                Discuss Your Project
-              </NeonButton>
-            </div>
-          </GlassCard>
-        </section>
       </div>
     </PageLayout>
   );

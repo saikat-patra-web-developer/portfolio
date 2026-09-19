@@ -1,9 +1,8 @@
-import { Sparkles, Layers } from "lucide-react";
+import { Layers } from "lucide-react";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { SectionHeading } from "../../components/ui/SectionHeading";
 import { SkillCard } from "../../components/skills/SkillCard";
 import { GlassCard } from "../../components/ui/GlassCard";
-import { NeonButton } from "../../components/ui/NeonButton";
 import { skillsData } from "../../data/skills";
 
 export const Skills = () => {
@@ -102,37 +101,6 @@ export const Skills = () => {
                   </span>
                 </div>
               ))}
-            </div>
-          </GlassCard>
-        </section>
-
-        {/* ======================================================== */}
-        {/* FINAL CTA                                                */}
-        {/* ======================================================== */}
-        <section className="text-center">
-          <GlassCard
-            glow="both"
-            className="p-8 sm:p-12 border-[#00E5FF]/30 relative overflow-hidden"
-          >
-            <div className="max-w-2xl mx-auto space-y-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00E5FF]/15 border border-[#00E5FF]/35 text-[#00E5FF] text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>TECHNICAL COLLABORATION</span>
-              </span>
-
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                Have a Technical Project in Mind?
-              </h2>
-
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-                Let's discuss which architecture, database schema, and frontend framework best fit your business objectives.
-              </p>
-
-              <div className="pt-3">
-                <NeonButton to="/contact" variant="primary" size="lg">
-                  Discuss Your Project
-                </NeonButton>
-              </div>
             </div>
           </GlassCard>
         </section>

@@ -102,22 +102,7 @@ const routes = [
             <h3>High-Performance Business Websites</h3>
             <p>Modern, conversion-focused websites engineered for lightning speed, Google SEO rankings, sub-second load times, and smooth mobile experiences.</p>
           </article>
-          <article>
-            <h3>API & Third-Party Integrations</h3>
-            <p>Reliable connections linking your software with payment gateways (Stripe, PayPal), SMS/email APIs (Twilio, SendGrid), and external cloud databases.</p>
-          </article>
-          <article>
-            <h3>AI Tool Implementation & Smart Automation</h3>
-            <p>Production-ready LLM integrations, private RAG knowledge bases, and autonomous workflow agents built on OpenAI, Claude, and Gemini.</p>
-          </article>
-          <article>
-            <h3>Cross-Platform Mobile Apps (iOS & Android)</h3>
-            <p>High-performance React Native and Expo mobile apps with offline-first synchronization, push notifications, and native device hardware access.</p>
-          </article>
-          <article>
-            <h3>SEO & GEO (Generative Engine Optimization)</h3>
-            <p>Dual-engine search dominance engineered to rank #1 on Google and ensure your business is recommended and cited by ChatGPT, Perplexity, and AI search engines.</p>
-          </article>
+          <p><a href="/services">Explore All 7 Specialized Services (AI Automation, Mobile Apps, SEO/GEO &amp; more) &rarr;</a></p>
         </section>
 
         <section>

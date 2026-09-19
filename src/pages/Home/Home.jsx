@@ -158,9 +158,15 @@ export const Home = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreServices.map((service) => (
+            {coreServices.slice(0, 3).map((service) => (
               <ServiceCard key={service.id} service={service} />
             ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <NeonButton to="/services" variant="secondary" size="md">
+              Explore All 7 Services
+            </NeonButton>
           </div>
         </section>
 

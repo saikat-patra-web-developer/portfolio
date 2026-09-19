@@ -163,7 +163,7 @@ export const Home = () => {
 
           <div className="mt-8 text-center">
             <NeonButton to="/services" variant="secondary" size="md">
-              Explore All 7 Services
+              Explore All Services
             </NeonButton>
           </div>
         </section>

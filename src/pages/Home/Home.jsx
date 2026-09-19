@@ -129,12 +129,12 @@ export const Home = () => {
         <section aria-label="Verified Track Record">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
             <StatCard
-              value="500+"
+              value="80+"
               label="Projects Completed"
               icon={Briefcase}
             />
             <StatCard
-              value="100+"
+              value="50+"
               label="Happy Clients"
               icon={Users}
             />

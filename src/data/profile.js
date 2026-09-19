@@ -19,8 +19,8 @@ export const profileData = {
   bio: "I design and develop fast, scalable web applications, CRM platforms and automated business systems using modern technologies such as React and Laravel.",
   aboutBio: "I am Saikat Patra, a Full Stack Web Developer with 7+ years of professional experience building custom web applications, bespoke CRM platforms, and business automation workflows. I help businesses replace fragmented tools and manual administration with clean, dependable digital systems.",
   stats: [
-    { value: "500+", label: "Projects Completed" },
-    { value: "100+", label: "Happy Clients" },
+    { value: "80+", label: "Projects Completed" },
+    { value: "50+", label: "Happy Clients" },
     { value: "7+", label: "Years Experience" },
     { value: "5.0", label: "Google Review Rating" }
   ],

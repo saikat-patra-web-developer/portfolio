@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, TrendingUp, ExternalLink } from "lucide-react";
+import { ArrowRight, TrendingUp } from "lucide-react";
 import { GlassCard } from "../ui/GlassCard";
 
 export const ProjectCard = ({ project, featuredLayout = false }) => {
@@ -15,8 +15,7 @@ export const ProjectCard = ({ project, featuredLayout = false }) => {
     shortSolution,
     result,
     technologies = [],
-    featured,
-    website
+    featured
   } = project;
 
   return (
@@ -116,26 +115,14 @@ export const ProjectCard = ({ project, featuredLayout = false }) => {
         </div>
 
         {/* Action Link */}
-        <div className="pt-3 border-t border-white/5 flex items-center gap-2">
+        <div className="pt-3 border-t border-white/5">
           <Link
             to={`/projects/${slug}`}
-            className="flex-1 min-h-[40px] inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#2787FF]/80 to-[#00E5FF]/80 hover:from-[#2787FF] hover:to-[#00E5FF] text-white transition-all duration-200 shadow-[0_0_15px_rgba(0,229,255,0.2)]"
+            className="w-full min-h-[40px] inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#2787FF]/80 to-[#00E5FF]/80 hover:from-[#2787FF] hover:to-[#00E5FF] text-white transition-all duration-200 shadow-[0_0_15px_rgba(0,229,255,0.2)]"
           >
             <span>View Case Study</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
-          {website && (
-            <a
-              href={website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="min-h-[40px] px-3 inline-flex items-center justify-center rounded-xl text-xs font-semibold border border-[#00E5FF]/30 bg-[#03152B] hover:bg-[#00E5FF]/15 text-[#00E5FF] transition-all duration-200"
-              title={`Visit live site: ${title}`}
-              aria-label={`Visit live website for ${title}`}
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          )}
         </div>
       </div>
     </GlassCard>

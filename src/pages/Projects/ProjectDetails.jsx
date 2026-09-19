@@ -5,8 +5,7 @@ import {
   CheckCircle2,
   AlertCircle,
   TrendingUp,
-  Layers,
-  ExternalLink
+  Layers
 } from "lucide-react";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
@@ -86,7 +85,7 @@ export const ProjectDetails = () => {
           </p>
 
           {/* Metadata Row */}
-          <div className={`grid grid-cols-1 ${project.website ? 'sm:grid-cols-4' : 'sm:grid-cols-3'} gap-4 pt-2 border-y border-white/10 py-4 text-xs sm:text-sm text-white/75`}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 border-y border-white/10 py-4 text-xs sm:text-sm text-white/75">
             {project.client && (
               <div>
                 <span className="text-white/40 block text-[11px] uppercase tracking-wider">Client</span>
@@ -105,36 +104,7 @@ export const ProjectDetails = () => {
                 <span className="text-white font-medium">{project.role}</span>
               </div>
             )}
-            {project.website && (
-              <div>
-                <span className="text-white/40 block text-[11px] uppercase tracking-wider">Live System</span>
-                <a
-                  href={project.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#00E5FF] hover:text-white hover:underline font-semibold inline-flex items-center gap-1.5 transition-colors mt-0.5"
-                >
-                  <span>Visit Website</span>
-                  <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                </a>
-              </div>
-            )}
           </div>
-
-          {/* Action button if website exists */}
-          {project.website && (
-            <div className="pt-1">
-              <a
-                href={project.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-gradient-to-r from-[#2787FF] to-[#00E5FF] hover:from-[#2787FF]/90 hover:to-[#00E5FF]/90 text-white shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-200"
-              >
-                <span>Visit Live Website / System</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          )}
 
           {/* Hero Screenshot */}
           <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#00E5FF]/30 aspect-[16/9] shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_35px_rgba(0,229,255,0.15)] bg-[#03152B]">

@@ -1,8 +1,8 @@
 export const skillsData = {
   heroStats: [
     { value: "7+", label: "Years Experience" },
-    { value: "500+", label: "Projects Completed" },
-    { value: "100+", label: "Happy Clients" },
+    { value: "80+", label: "Projects Completed" },
+    { value: "50+", label: "Happy Clients" },
     { value: "5.0", label: "Google Review Rating" }
   ],
   clusters: [

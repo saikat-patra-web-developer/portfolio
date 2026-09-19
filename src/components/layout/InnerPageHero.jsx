@@ -5,7 +5,7 @@ const heroContent = {
     badge: "ABOUT ME", title: "About Me", heading: "A Passionate Full Stack Developer from Howrah, India",
     copy: "Specializing in modern web applications, custom CRM platforms, WordPress websites, API integrations and scalable products that deliver measurable business impact.",
     codeNote: "Always learning...", idea: ["Learn", "Build", "Improve", "Grow"], vision: ["Passion", "Experience", "Real Impact"],
-    quality: ["7+ Years Experience", "500+ Projects", "100+ Happy Clients", "Based in Howrah"],
+    quality: ["7+ Years Experience", "80+ Projects", "50+ Happy Clients", "Based in Howrah"],
     benefits: [["Experienced Developer", "7+ years building solutions"], ["Always Improving", "Learning modern technologies"], ["Business Focused", "Creating measurable impact"]]
   },
   "/services": {
@@ -26,7 +26,7 @@ const heroContent = {
     badge: "MY EXPERTISE", title: "Skills & Technologies", heading: "Building Modern, Scalable Web Solutions",
     copy: "I combine modern technologies, clean code and creative thinking to build high-performance web applications that solve real business problems and create real impact.",
     codeNote: "Build...", idea: ["Build", "Develop", "Solve", "Grow"], vision: ["Technology", "Turns Ideas", "Into Impact"],
-    quality: ["7+ Years Experience", "50+ Technologies", "100+ Projects", "Always Learning"],
+    quality: ["7+ Years Experience", "50+ Technologies", "80+ Projects", "Always Learning"],
     benefits: [["Frontend Expertise", "Responsive modern interfaces"], ["Backend Architecture", "Secure scalable systems"], ["Full Stack Delivery", "From concept to deployment"]]
   },
   "/contact": {

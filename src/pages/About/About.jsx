@@ -129,8 +129,8 @@ export const About = () => {
           />
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
-            <StatCard value="500+" label="Projects Completed" icon={Briefcase} />
-            <StatCard value="100+" label="Happy Clients" icon={Users} />
+            <StatCard value="80+" label="Projects Completed" icon={Briefcase} />
+            <StatCard value="50+" label="Happy Clients" icon={Users} />
             <StatCard value="7+" label="Years Experience" icon={Award} />
             <StatCard value="5.0" label="Google Review Rating" icon={Star} highlight={true} />
           </div>

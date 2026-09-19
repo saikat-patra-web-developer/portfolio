@@ -72,11 +72,10 @@ export const FaqSection = ({
       <GlassCard
         key={faq.id}
         hoverEffect={false}
-        className={`border transition-all duration-200 overflow-hidden ${
-          isOpen
-            ? "border-[#00E5FF]/50 bg-[#03152B]/95 shadow-[0_0_25px_rgba(0,229,255,0.12)]"
+        className={`border transition-all duration-200 overflow-hidden ${isOpen
+            ? "border-[#00E5FF]/50  shadow-[0_0_25px_rgba(0,229,255,0.12)]"
             : "border-[#00E5FF]/20 hover:border-[#00E5FF]/40 bg-[#03152B]/60"
-        }`}
+          }`}
       >
         <button
           onClick={() => toggleQuestion(faq.id)}
@@ -89,17 +88,15 @@ export const FaqSection = ({
               {displayIndex}
             </span>
             <span
-              className={`text-xs sm:text-sm font-bold transition-colors leading-snug ${
-                isOpen ? "text-[#00E5FF]" : "text-white hover:text-[#00E5FF]/90"
-              }`}
+              className={`text-xs sm:text-sm font-bold transition-colors leading-snug ${isOpen ? "text-[#00E5FF]" : "text-white hover:text-[#00E5FF]/90"
+                }`}
             >
               {faq.q}
             </span>
           </div>
           <ChevronDown
-            className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-300 ease-out ${
-              isOpen ? "rotate-180" : ""
-            }`}
+            className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-300 ease-out ${isOpen ? "rotate-180" : ""
+              }`}
           />
         </button>
 

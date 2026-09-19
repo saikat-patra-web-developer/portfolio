@@ -210,8 +210,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                   cursor: isActive ? "default" : "pointer"
                 }}
                 className={`absolute inset-0 rounded-2xl p-6 sm:p-7 flex flex-col justify-between border transition-colors duration-300 backdrop-blur-xl ${isActive
-                    ? "bg-[#03152B]/95 border-[#00E5FF]/50 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.25),inset_0_0_30px_rgba(0,229,255,0.06)]"
-                    : "border-white/10 hover:border-[#00E5FF]/30 shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
+                  ? " border-[#00E5FF]/50 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.25),inset_0_0_30px_rgba(0,229,255,0.06)]"
+                  : "border-white/10 hover:border-[#00E5FF]/30 shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
                   }`}
               >
                 {/* Header: Stars & Source Badge */}
@@ -305,8 +305,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
             key={idx}
             onClick={() => setActiveIndex(idx)}
             className={`h-2 rounded-full transition-all duration-200 cursor-pointer ${idx === activeIndex
-                ? "w-7 bg-gradient-to-r from-[#00E5FF] to-[#2787FF] shadow-[0_0_12px_rgba(0,229,255,0.7)]"
-                : "w-2 bg-white/20 hover:bg-white/40"
+              ? "w-7 bg-gradient-to-r from-[#00E5FF] to-[#2787FF] shadow-[0_0_12px_rgba(0,229,255,0.7)]"
+              : "w-2 bg-white/20 hover:bg-white/40"
               }`}
             title={`Go to review ${idx + 1}`}
             aria-label={`Go to review ${idx + 1}`}

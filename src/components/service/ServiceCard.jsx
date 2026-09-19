@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Code, Database, Layout, Link as LinkIcon, Check, ArrowRight } from "lucide-react";
+import { Code, Database, Layout, Link as LinkIcon, Bot, Smartphone, Search, Check, ArrowRight } from "lucide-react";
 import { GlassCard } from "../ui/GlassCard";
 
 const iconMap = {
   code: Code,
   database: Database,
   layout: Layout,
-  link: LinkIcon
+  link: LinkIcon,
+  bot: Bot,
+  smartphone: Smartphone,
+  search: Search
 };
 
 export const ServiceCard = ({ service }) => {

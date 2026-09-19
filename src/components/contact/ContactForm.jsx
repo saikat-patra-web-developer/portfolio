@@ -226,6 +226,9 @@ export const ContactForm = ({ preselectedService = "" }) => {
               >
                 <option value="Custom Web Application">Custom Web Application</option>
                 <option value="Custom CRM & Business Automation">Custom CRM & Business Automation</option>
+                <option value="AI Tool Implementation & Smart Automation">AI Tool Implementation & Smart Automation</option>
+                <option value="Cross-Platform Mobile App (iOS & Android)">Cross-Platform Mobile App (iOS & Android)</option>
+                <option value="SEO & GEO (Generative Engine Optimization)">SEO & GEO (Generative Engine Optimization)</option>
                 <option value="High-Performance Business Website">High-Performance Business Website</option>
                 <option value="API & Third-Party Integration">API & Third-Party Integration</option>
                 <option value="WordPress / E-Commerce">WordPress / E-Commerce</option>

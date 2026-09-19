@@ -106,6 +106,87 @@ export const coreServices = [
       result: "75% faster invoice creation with automated payment tracking"
     },
     icon: "link"
+  },
+  {
+    id: "ai-tool-implementation",
+    number: "05",
+    title: "AI Tool Implementation & Smart Automation",
+    shortDesc: "Custom LLM integrations, private RAG knowledge bases, intelligent workflow agents, and smart copilot tools embedded directly into your software.",
+    problem: "Teams lose hundreds of billable hours to repetitive manual data extraction, document analysis, and standard client correspondence, while generic public AI tools lack proprietary company context and expose sensitive data.",
+    whatIBuild: "Production-ready OpenAI, Anthropic Claude, and Gemini API integrations, private RAG (Retrieval-Augmented Generation) vector knowledge bases, autonomous multi-step workflow agents, and custom conversational assistants built directly into your internal dashboards.",
+    businessBenefit: "Automates 60–80% of routine manual triage, shrinks operational response times from hours to seconds, and safeguards proprietary company IP with private, enterprise-grade API pipelines.",
+    typicalFunctionality: [
+      "Private RAG pipelines & semantic document vector search (Pinecone / pgvector)",
+      "Autonomous multi-step business workflow agents & scheduled tasks",
+      "Conversational customer support copilots & internal team assistants",
+      "Automated text synthesis, structured JSON data extraction & sentiment classification"
+    ],
+    capabilities: [
+      "Custom LLM & Agent Integrations",
+      "Private RAG & Vector Knowledge Bases",
+      "Intelligent Document & Data Automation"
+    ],
+    technologies: ["OpenAI API", "Anthropic Claude", "Gemini API", "LangChain", "Vector DBs", "Python / Node.js", "React"],
+    relatedCaseStudy: {
+      title: "Quote My Blinds SaaS Operations & CRM Platform",
+      slug: "quote-my-blinds",
+      result: "Accelerated algorithmic pricing calculations and automated quoting workflows"
+    },
+    icon: "bot"
+  },
+  {
+    id: "mobile-app-development",
+    number: "06",
+    title: "Cross-Platform Mobile Apps (iOS & Android)",
+    shortDesc: "High-performance, native-feel iOS and Android mobile applications built with React Native and Expo for customer portals and field operations.",
+    problem: "Building and maintaining separate native iOS and Android apps doubles development budgets, drags out release cycles, and creates inconsistent user experiences and fragmented bug tracking across app stores.",
+    whatIBuild: "Cross-platform mobile apps engineered with React Native, Expo, and TypeScript. Features offline-first local SQLite caching, seamless biometric authentication, real-time push notifications, camera/GPS hardware access, and synchronized REST backends.",
+    businessBenefit: "Cuts mobile development timelines and maintenance costs by up to 50% with a single robust codebase, giving field staff and customers an instant, responsive mobile experience anywhere.",
+    typicalFunctionality: [
+      "Cross-platform release to Apple App Store & Google Play Store",
+      "Offline-first data synchronization with local SQLite / MMKV caching",
+      "Native device hardware access (Camera scanning, GPS tracking, Biometrics)",
+      "Real-time push notifications & background event sync (Firebase Cloud Messaging)"
+    ],
+    capabilities: [
+      "React Native & Expo Ecosystem",
+      "Offline-First Sync & Field Workflows",
+      "App Store & Google Play Deployment"
+    ],
+    technologies: ["React Native", "Expo", "TypeScript", "Tailwind CSS", "REST APIs", "SQLite / MMKV"],
+    relatedCaseStudy: {
+      title: "Purge Electrical Solutions & Invoicing System",
+      slug: "purge-electrical",
+      result: "Field contractor mobile workflows cutting invoice preparation by 75%"
+    },
+    icon: "smartphone"
+  },
+  {
+    id: "seo-and-geo",
+    number: "07",
+    title: "SEO & GEO (Generative Engine Optimization)",
+    shortDesc: "Dual-engine organic discovery engineered to rank #1 on Google and ensure your business is recommended and cited by ChatGPT, Perplexity, and AI Search engines.",
+    problem: "Traditional keyword stuffing is obsolete. As searchers switch to conversational AI engines (ChatGPT, Perplexity, Google AI Overviews), businesses with flat content and weak technical architecture disappear from both organic SERPs and AI citations.",
+    whatIBuild: "Dual-engine organic discovery architectures: Technical on-page SEO, sub-second Core Web Vitals, rich Schema.org / JSON-LD entity graphs, and Generative Engine Optimization (GEO) structured for AI crawler comprehension and citation authority.",
+    businessBenefit: "Dominates high-intent commercial Google search queries while capturing early-mover market share in conversational AI search, driving high-converting inbound leads without continuous ad spend.",
+    typicalFunctionality: [
+      "Generative Engine Optimization (GEO) formatted for ChatGPT, Perplexity & AI Overviews",
+      "Deep Technical SEO audit, structured JSON-LD Entity Graphs & semantic markup",
+      "Core Web Vitals engineering achieving 95+ PageSpeed scores on mobile and desktop",
+      "Local search dominance (Google Business Profile & localized landing page clusters)"
+    ],
+    capabilities: [
+      "Generative Engine Optimization (GEO)",
+      "Technical SEO & Knowledge Graph Schema",
+      "Core Web Vitals & Speed Optimization"
+    ],
+    technologies: ["Technical SEO", "GEO (AI Search)", "JSON-LD / Schema.org", "Google Search Console", "Lighthouse (99+)", "Vite SSR"],
+    relatedCaseStudy: {
+      title: "Purge Window Shades & Blinds",
+      slug: "purge-window-shades-blinds",
+      result: "2.5x increase in qualified quote inquiries and 98+ Google Lighthouse performance"
+    },
+    icon: "search"
   }
 ];
 
@@ -175,6 +256,24 @@ export const faqList = [
     category: "tech",
     q: "Do you handle server setup, cloud hosting, and deployments?",
     a: "Yes. I manage end-to-end production hosting and deployments across Cloudflare Workers, AWS, DigitalOcean, Hetzner, Vercel, and Linux VPS environments. I configure automated CI/CD deployment pipelines, SSL certificates, automated daily database backups, and caching layers so your application runs at peak speed."
+  },
+  {
+    id: "tech-ai-implementation",
+    category: "tech",
+    q: "How do you implement AI tools without risking my proprietary business data?",
+    a: "I integrate enterprise LLM endpoints (OpenAI, Anthropic Claude, Google Gemini) using private, stateless API configurations with zero-data-retention agreements where company data is never used to train public models. For sensitive internal operations, I build private Retrieval-Augmented Generation (RAG) pipelines with isolated vector databases (pgvector / Pinecone) and strict role-based access."
+  },
+  {
+    id: "tech-cross-platform-mobile",
+    category: "tech",
+    q: "Why choose React Native for iOS and Android instead of building two separate native apps?",
+    a: "React Native enables up to 90%+ code sharing across iOS and Android while compiling to true native UI components at 60fps. This cuts upfront development timelines and ongoing maintenance budgets in half, ensures 100% consistent business logic and UI behavior across platforms, and allows rapid over-the-air updates for bug fixes."
+  },
+  {
+    id: "tech-geo-vs-seo",
+    category: "tech",
+    q: "What is GEO (Generative Engine Optimization) and why is it essential alongside traditional SEO?",
+    a: "While traditional SEO focuses on ranking blue links on Google for search keywords, Generative Engine Optimization (GEO) ensures your brand, products, and technical authority are cited and recommended by conversational AI search engines like ChatGPT, Perplexity, and Google AI Overviews. I achieve this through structured JSON-LD entity schema, fact-dense modular architecture, and technical signals that LLM retrieval bots prioritize."
   },
 
   // SECTION 2: Process, Pricing & Collaboration

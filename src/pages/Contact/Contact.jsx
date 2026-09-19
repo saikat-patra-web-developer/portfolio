@@ -42,13 +42,14 @@ export const Contact = () => {
   };
 
   const projectInquiries = [
-    "Custom Website Development",
-    "Business / Portfolio Website",
-    "E-commerce Solutions",
-    "Web Application (React, Laravel, etc.)",
-    "API Integration & Automation",
-    "Website Redesign & Optimization",
-    "Other (Let's Discuss)"
+    "Custom Web Applications (React, Laravel)",
+    "Bespoke CRM & Business Automation",
+    "AI Tool Implementation & Smart Automation",
+    "iOS & Android Mobile Applications",
+    "SEO & GEO (Generative Engine Optimization)",
+    "High-Performance Business Websites",
+    "API & Third-Party Integrations",
+    "Other Consultation (Let's Discuss)"
   ];
 
   const commitmentCards = [

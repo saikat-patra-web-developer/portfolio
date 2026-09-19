@@ -106,6 +106,18 @@ const routes = [
             <h3>API & Third-Party Integrations</h3>
             <p>Reliable connections linking your software with payment gateways (Stripe, PayPal), SMS/email APIs (Twilio, SendGrid), and external cloud databases.</p>
           </article>
+          <article>
+            <h3>AI Tool Implementation & Smart Automation</h3>
+            <p>Production-ready LLM integrations, private RAG knowledge bases, and autonomous workflow agents built on OpenAI, Claude, and Gemini.</p>
+          </article>
+          <article>
+            <h3>Cross-Platform Mobile Apps (iOS & Android)</h3>
+            <p>High-performance React Native and Expo mobile apps with offline-first synchronization, push notifications, and native device hardware access.</p>
+          </article>
+          <article>
+            <h3>SEO & GEO (Generative Engine Optimization)</h3>
+            <p>Dual-engine search dominance engineered to rank #1 on Google and ensure your business is recommended and cited by ChatGPT, Perplexity, and AI search engines.</p>
+          </article>
         </section>
 
         <section>
@@ -167,14 +179,14 @@ const routes = [
   },
   {
     path: "/services",
-    title: "Web Development & Custom CRM Services | Saikat Patra",
-    description: "Commercial web application development, bespoke CRM systems, business automation, and high-performance websites built using React and Laravel.",
+    title: "Web, Mobile, AI & SEO Engineering Services | Saikat Patra",
+    description: "Full-stack web applications, custom CRM platforms, AI tool implementation, cross-platform iOS & Android mobile apps, and SEO/GEO search optimization.",
     schema: sharedFaqSchema,
     bodyContent: `
       <main>
         <header>
-          <h1>Custom Web Software Built to Accelerate Your Business.</h1>
-          <p>I help businesses replace manual spreadsheets, fragmented SaaS subscriptions, and slow websites with fast, dependable custom software built on React and Laravel.</p>
+          <h1>Custom Web & Mobile Software Built to Accelerate Your Business.</h1>
+          <p>I help businesses replace manual spreadsheets, fragmented SaaS subscriptions, and slow websites with fast, dependable custom software built on React, Laravel, AI, and mobile frameworks.</p>
         </header>
 
         <section>
@@ -198,6 +210,21 @@ const routes = [
             <h3>04. API & Third-Party Integrations</h3>
             <p>Direct integrations with payment gateways (Stripe, PayPal), messaging endpoints, and two-way CRM/ERP database sync.</p>
             <p><strong>Business ROI:</strong> Eliminates duplicate data entry and prevents human accounting errors.</p>
+          </article>
+          <article>
+            <h3>05. AI Tool Implementation & Smart Automation</h3>
+            <p>Production-ready LLM integrations, private RAG knowledge bases, and autonomous workflow agents embedded into your software.</p>
+            <p><strong>Business ROI:</strong> Automates 60–80% of routine manual triage, speeds up operational response times, and protects internal company data.</p>
+          </article>
+          <article>
+            <h3>06. Cross-Platform Mobile Apps (iOS & Android)</h3>
+            <p>Cross-platform mobile applications engineered with React Native and Expo, featuring offline caching and native device access.</p>
+            <p><strong>Business ROI:</strong> Reduces mobile app development time and costs by 50% while delivering consistent native user experiences.</p>
+          </article>
+          <article>
+            <h3>07. SEO & GEO (Generative Engine Optimization)</h3>
+            <p>Technical on-page SEO, rich JSON-LD schema graphs, and Generative Engine Optimization for ChatGPT, Perplexity, and AI search visibility.</p>
+            <p><strong>Business ROI:</strong> Captures high-intent organic Google traffic while securing early-mover visibility in AI-generated answers.</p>
           </article>
         </section>
       </main>

@@ -8,7 +8,10 @@ import {
   Code,
   Database,
   Layout,
-  Link as LinkIcon
+  Link as LinkIcon,
+  Bot,
+  Smartphone,
+  Search
 } from "lucide-react";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { SectionHeading } from "../../components/ui/SectionHeading";
@@ -21,15 +24,18 @@ const serviceIcons = {
   code: Code,
   database: Database,
   layout: Layout,
-  link: LinkIcon
+  link: LinkIcon,
+  bot: Bot,
+  smartphone: Smartphone,
+  search: Search
 };
 
 export const Services = () => {
 
   return (
     <PageLayout
-      title="Web Development & Custom CRM Services | Saikat Patra"
-      description="Commercial web application development, custom CRM systems, business automation, and high-performance websites built using React and Laravel."
+      title="Web, Mobile, AI & SEO Engineering Services | Saikat Patra"
+      description="Full-stack web applications, custom CRM platforms, AI tool implementation, cross-platform iOS & Android mobile apps, and SEO/GEO search optimization."
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
         {/* ======================================================== */}
@@ -42,18 +48,18 @@ export const Services = () => {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
-            Custom Web Software Built to{" "}
+            Custom Web &amp; Mobile Software Built to{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#A855F7]">
               Accelerate Your Business.
             </span>
           </h1>
 
           <p className="text-base sm:text-lg text-white/80 leading-relaxed">
-            I help businesses replace manual spreadsheets, fragmented SaaS subscriptions, and slow websites with fast, dependable custom software built on React and Laravel.
+            I help businesses replace manual spreadsheets, fragmented SaaS subscriptions, and slow websites with fast, dependable custom software built on React, Laravel, AI, and mobile frameworks.
           </p>
 
           <div className="pt-3 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70">
-            {["No Per-User Licensing", "Full Code Ownership", "Fast Turnaround", "Direct Senior Engineer"].map((item) => (
+            {["Full Code Ownership", "No Per-User Licensing", "AI & Workflow Automation", "iOS & Android Apps", "SEO & GEO", "Direct Senior Engineer"].map((item) => (
               <span key={item} className="px-3 py-1 rounded-full bg-[#03152B] border border-white/10">
                 &bull; {item}
               </span>

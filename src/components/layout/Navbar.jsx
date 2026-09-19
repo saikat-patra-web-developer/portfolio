@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { profileData } from "../../data/profile";
+import { useNavigation } from "../../context/useNavigation";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -16,6 +17,7 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { triggerTransition } = useNavigation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +53,14 @@ export const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleNavClick = (path) => {
+    closeMobileMenu();
+    // If clicking current route while scrolled down, immediately snap to top and show transition loader
+    if (location.pathname === path && window.scrollY > 20) {
+      triggerTransition();
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-350 ease-out border-0 border-none">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-350 ease-out">
@@ -66,7 +76,7 @@ export const Navbar = () => {
           <div className="flex-1 flex items-center justify-start min-w-0">
             <Link
               to="/"
-              onClick={closeMobileMenu}
+              onClick={() => handleNavClick("/")}
               className="flex flex-col min-w-0 group select-none"
             >
               <span className="font-extrabold text-sm sm:text-lg text-white tracking-tight group-hover:text-[#00E5FF] transition-colors duration-200 truncate">
@@ -86,6 +96,7 @@ export const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
+                  onClick={() => handleNavClick(link.path)}
                   className={`relative px-4 py-1.5 text-xs xl:text-sm font-semibold rounded-full transition-all duration-200 select-none ${
                     active
                       ? "text-white font-bold"
@@ -111,6 +122,7 @@ export const Navbar = () => {
             <div className="hidden lg:flex items-center">
               <Link
                 to="/contact"
+                onClick={() => handleNavClick("/contact")}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] hover:opacity-95 shadow-[0_0_20px_rgba(0,229,255,0.35)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] border border-white/20 transition-all duration-300 group cursor-pointer"
               >
                 <span>Discuss Your Project</span>
@@ -122,7 +134,7 @@ export const Navbar = () => {
             <div className="flex lg:hidden items-center gap-2 shrink-0">
               <Link
                 to="/contact"
-                onClick={closeMobileMenu}
+                onClick={() => handleNavClick("/contact")}
                 className="px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#2787FF] to-[#00E5FF] border border-[#00E5FF]/40 shadow-sm"
               >
                 Discuss Project
@@ -162,7 +174,7 @@ export const Navbar = () => {
                     <Link
                       key={link.name}
                       to={link.path}
-                      onClick={closeMobileMenu}
+                      onClick={() => handleNavClick(link.path)}
                       className={`py-3 px-3 text-sm font-semibold rounded-xl flex items-center justify-between transition-colors duration-200 ${
                         active
                           ? "text-[#00E5FF] bg-[#00E5FF]/10 font-bold"
@@ -181,7 +193,7 @@ export const Navbar = () => {
               <div className="pt-2">
                 <Link
                   to="/contact"
-                  onClick={closeMobileMenu}
+                  onClick={() => handleNavClick("/contact")}
                   className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] shadow-[0_0_25px_rgba(0,229,255,0.35)]"
                 >
                   <span>Discuss Your Project</span>

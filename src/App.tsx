@@ -4,6 +4,9 @@ import { AnimatePresence } from "framer-motion";
 import { AnimatedTechBackground } from "./components/background/AnimatedTechBackground";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
+import { NavigationProvider } from "./context/NavigationContext";
+import { useNavigation } from "./context/useNavigation";
+import { RouteLoader } from "./components/ui/RouteLoader";
 
 // Lazy-load pages for optimal code splitting & fast initial render
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -27,9 +30,15 @@ const PageLoader = () => (
 
 const AppContent = () => {
   const location = useLocation();
+  const { isTransitioning } = useNavigation();
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between overflow-x-hidden bg-[#020B18] text-white">
+      {/* Route Transition Loader */}
+      <AnimatePresence>
+        {isTransitioning && <RouteLoader isVisible={isTransitioning} />}
+      </AnimatePresence>
+
       {/* 1. Global Persistent Animated Background */}
       <AnimatedTechBackground />
 
@@ -64,7 +73,9 @@ const AppContent = () => {
 export function App() {
   return (
     <BrowserRouter>
-      <AppContent />
+      <NavigationProvider>
+        <AppContent />
+      </NavigationProvider>
     </BrowserRouter>
   );
 }

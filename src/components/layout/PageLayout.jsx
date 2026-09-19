@@ -17,7 +17,9 @@ export const PageLayout = ({
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
     }
 
     // Dynamic Title & Meta Description update

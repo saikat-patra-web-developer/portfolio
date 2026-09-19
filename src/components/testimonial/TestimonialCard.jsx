@@ -27,15 +27,11 @@ const GoogleGIcon = ({ className = "w-3.5 h-3.5" }) => (
 export const TestimonialCard = ({ testimonial }) => {
   const {
     author,
-    role,
-    badge,
-    company,
     rating = 5,
     content,
     avatar,
     avatarBg,
     source,
-    timeAgo,
     ownerReply,
     projectSlug
   } = testimonial;
@@ -122,20 +118,11 @@ export const TestimonialCard = ({ testimonial }) => {
             {avatar || author.charAt(0)}
           </div>
           <div className="min-w-0">
-            <div className="text-xs sm:text-[13px] font-bold text-white tracking-tight truncate flex items-center gap-1.5">
-              <span>{author}</span>
-            </div>
-            <div className="text-[11px] text-white/60 truncate">
-              {badge || (role ? `${role} · ${company}` : company)}
+            <div className="text-xs sm:text-[13px] font-bold text-white tracking-tight truncate">
+              {author}
             </div>
           </div>
         </div>
-
-        {timeAgo && (
-          <div className="text-[10px] text-white/40 font-mono shrink-0 whitespace-nowrap">
-            {timeAgo}
-          </div>
-        )}
       </div>
     </GlassCard>
   );

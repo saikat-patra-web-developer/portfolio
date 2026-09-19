@@ -137,15 +137,15 @@ const routes = [
         <section>
           <h2>Client Feedback & Verified Google Reviews (4.9 Rating, 51 Reviews)</h2>
           <article>
-            <h3>Christoph Gawenda (Local Guide · 25 reviews)</h3>
+            <h3>Christoph Gawenda</h3>
             <p>Outstanding development service! The custom CRM is packed with useful features, and the admin panel is clean, fast, and easy to navigate. Highly recommended for businesses looking for a tailored solution.</p>
           </article>
           <article>
-            <h3>Dream Big Group (Real Estate Developer)</h3>
+            <h3>Dream Big Group</h3>
             <p>We're very satisfied with the website developed by Saikat Patra. The project was completed on time, every requirement was handled professionally, and the final website gives our business a strong online presence. Five stars!</p>
           </article>
           <article>
-            <h3>Michael Carter (Quote My Blinds NZ)</h3>
+            <h3>Michael Carter</h3>
             <p>Saikat delivered a reliable, custom web application for our blinds business. The automated quote calculator works seamlessly and has brought us consistent new inbound leads.</p>
           </article>
           <article>
@@ -517,11 +517,11 @@ const routes = [
           <section>
             <h2>Verified Google Reviews & Client Feedback (4.9 Rating, 51 Reviews)</h2>
             <article>
-              <h3>Christoph Gawenda (Local Guide · 25 reviews)</h3>
+              <h3>Christoph Gawenda</h3>
               <p>Outstanding development service! The custom CRM is packed with useful features, and the admin panel is clean, fast, and easy to navigate. Highly recommended for businesses looking for a tailored solution.</p>
             </article>
             <article>
-              <h3>Dream Big Group (Real Estate Developer)</h3>
+              <h3>Dream Big Group</h3>
               <p>We're very satisfied with the website developed by Saikat Patra. The project was completed on time, every requirement was handled professionally, and the final website gives our business a strong online presence. Five stars!</p>
             </article>
             <article>

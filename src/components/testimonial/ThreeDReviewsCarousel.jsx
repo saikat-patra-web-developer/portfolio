@@ -280,17 +280,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                       <h4 className="text-sm font-bold text-white tracking-tight truncate">
                         {testimonial.author}
                       </h4>
-                      <p className="text-[11px] text-white/60 truncate">
-                        {testimonial.badge || (testimonial.role ? `${testimonial.role} · ${testimonial.company}` : testimonial.company)}
-                      </p>
                     </div>
                   </div>
-
-                  {testimonial.timeAgo && (
-                    <span className="text-[10px] text-white/40 font-mono shrink-0">
-                      {testimonial.timeAgo}
-                    </span>
-                  )}
                 </div>
               </motion.div>
             );

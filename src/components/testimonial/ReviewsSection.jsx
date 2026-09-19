@@ -184,21 +184,6 @@ export const ReviewsSection = ({
           )}
         </>
       )}
-
-      {/* Footer Subtext */}
-      <div className="text-center pt-2">
-        <p className="text-xs text-white/50">
-          Showing verified client reviews • Plus 32 additional 5-star ratings logged on{" "}
-          <a
-            href={googleReviewStats.profileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#00E5FF] hover:underline"
-          >
-            Google Business Profile
-          </a>
-        </p>
-      </div>
     </section>
   );
 };

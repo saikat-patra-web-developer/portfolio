@@ -49,7 +49,7 @@ export const Home = () => {
               <span>Make Businesses Run Better.</span>
             </h1>
             <p>
-              I design and develop fast, scalable web applications, CRM platforms and automated business systems using modern technologies such as React and Laravel.
+              {profileData.bio}
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 mt-6">

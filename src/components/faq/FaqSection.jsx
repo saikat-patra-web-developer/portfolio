@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronDown,
@@ -20,6 +20,40 @@ export const FaqSection = ({
 }) => {
   // Track open question ID (defaults to the first question)
   const [openId, setOpenId] = useState(faqList[0]?.id || "tech-projects");
+
+  // Inject Schema.org FAQPage JSON-LD for rich snippets & AI search engines
+  useEffect(() => {
+    const scriptId = "faq-structured-data";
+    let scriptTag = document.getElementById(scriptId);
+    if (!scriptTag) {
+      scriptTag = document.createElement("script");
+      scriptTag.id = scriptId;
+      scriptTag.type = "application/ld+json";
+      document.head.appendChild(scriptTag);
+    }
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqList.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    };
+
+    scriptTag.textContent = JSON.stringify(faqSchema);
+
+    return () => {
+      const existing = document.getElementById(scriptId);
+      if (existing) {
+        existing.remove();
+      }
+    };
+  }, []);
 
   const toggleQuestion = (id) => {
     setOpenId((prev) => (prev === id ? null : id));

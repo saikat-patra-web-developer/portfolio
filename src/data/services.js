@@ -3,15 +3,15 @@ export const coreServices = [
     id: "custom-web-apps",
     number: "01",
     title: "Custom Web Applications",
-    shortDesc: "Tailored web applications that solve specific operational workflows, portals, booking systems, and internal tools.",
-    problem: "Off-the-shelf SaaS tools are often rigid, charge steep monthly per-user fees, or fail to support your specific business processes.",
-    whatIBuild: "Bespoke full-stack web applications with intuitive user portals, admin control centers, role-based permissions, and custom database architectures.",
-    businessBenefit: "Eliminates workarounds, accelerates staff workflows, and gives your business full software ownership without monthly per-seat license costs.",
+    shortDesc: "Bespoke full-stack web applications built around your exact operational workflows, portals, and internal tools.",
+    problem: "Generic SaaS tools are either too rigid, miss the specific features your workflow needs, or charge punishing per-user monthly fees that eat into your profit margins.",
+    whatIBuild: "Tailor-made web applications featuring intuitive customer portals, admin back-offices, role-based access, automated calculation tools, and high-performance databases.",
+    businessBenefit: "Eliminates messy workarounds, speeds up your team's daily output, and gives your company 100% software ownership with zero recurring per-user licensing costs.",
     typicalFunctionality: [
-      "Client portals & self-service account dashboards",
-      "Interactive booking & dimension calculation engines",
-      "Internal management tools & data dashboards",
-      "Multi-tenant architectures with role permissions"
+      "Customer portals & self-service account dashboards",
+      "Interactive quoting, pricing & dimension calculation engines",
+      "Internal back-office tools & operational dashboards",
+      "Multi-tenant architectures with role-based security"
     ],
     capabilities: [
       "Client & Admin Portals",
@@ -22,23 +22,23 @@ export const coreServices = [
     relatedCaseStudy: {
       title: "Industrial PLT Cutting File Generator",
       slug: "plt-file-generator",
-      result: "Cut coordinate file preparation from 15 minutes to under 20 seconds"
+      result: "Reduced CNC cutting file preparation time from 15 minutes to under 20 seconds"
     },
     icon: "code"
   },
   {
     id: "crm-business-automation",
     number: "02",
-    title: "CRM & Business Automation",
-    shortDesc: "Custom CRM systems and automated workflows designed to replace spreadsheets and eliminate repetitive manual tasks.",
-    problem: "Tracking leads and customer jobs across fragmented spreadsheets causes lost inquiries, delayed follow-ups, and billing mistakes.",
-    whatIBuild: "Tailored CRM platforms that track deals through your exact pipeline, automate follow-up emails and SMS, and generate one-click quotes and invoices.",
-    businessBenefit: "Saves dozens of admin hours weekly, prevents missed customer inquiries, and gives leadership real-time visibility into operations.",
+    title: "Bespoke CRM & Business Automation",
+    shortDesc: "Custom CRM systems and automated workflows designed to replace cluttered spreadsheets and eliminate manual admin busywork.",
+    problem: "Tracking sales leads, customer jobs, and invoices across disconnected spreadsheets leads to lost inquiries, missed follow-ups, and billing headaches.",
+    whatIBuild: "Custom CRM platforms that follow your company's exact sales pipeline, trigger automatic email and SMS notifications, and generate professional quotes and invoices with one click.",
+    businessBenefit: "Saves dozens of administrative hours every week, prevents missed customer inquiries, and gives company leadership real-time visibility into operations.",
     typicalFunctionality: [
-      "Kanban lead and deal pipeline tracking",
-      "Automated email & SMS notification triggers",
-      "One-click PDF quote and invoice generation",
-      "Client communications history and activity audit logs"
+      "Visual Kanban deal and project pipelines",
+      "Automated client email and SMS notifications",
+      "One-click branded PDF quote and invoice generation",
+      "Client communication timelines and audit records"
     ],
     capabilities: [
       "Pipeline & Lead Management",
@@ -49,7 +49,7 @@ export const coreServices = [
     relatedCaseStudy: {
       title: "Quote My Blinds SaaS Operations & CRM Platform",
       slug: "quote-my-blinds",
-      result: "65% faster quote-to-invoice cycles and unified booking schedules"
+      result: "65% faster quote-to-invoice cycles with unified booking schedules"
     },
     icon: "database"
   },
@@ -57,14 +57,14 @@ export const coreServices = [
     id: "high-performance-websites",
     number: "03",
     title: "High-Performance Business Websites",
-    shortDesc: "Modern, conversion-focused websites engineered for speed, search visibility, mobile responsiveness, and easy content management.",
-    problem: "Slow, outdated websites with poor mobile experiences frustrate potential buyers and rank poorly on Google search results.",
-    whatIBuild: "Fast, custom-coded websites built with clean markup, modern responsive UI, structured schema for SEO, and streamlined CMS controls.",
-    businessBenefit: "Improves your first impression, delivers sub-second load times that keep visitors engaged, and converts more visitors into inquiries.",
+    shortDesc: "Modern, conversion-focused websites engineered for lightning speed, Google SEO visibility, and smooth mobile experiences.",
+    problem: "Slow, clunky websites with bloated themes frustrate potential buyers, drop conversion rates, and get penalized on Google search results.",
+    whatIBuild: "Clean, custom-engineered websites with sub-second load times, mobile-first responsive interfaces, structured SEO schema, and intuitive content management controls.",
+    businessBenefit: "Creates an immediate impression of trust and authority, keeps bounce rates near zero, and converts casual visitors into paying customers.",
     typicalFunctionality: [
-      "Mobile-first responsive design across all screen sizes",
-      "Fast Core Web Vitals (LCP < 2.5s, clean layouts)",
-      "Technical SEO markup and structured data",
+      "Mobile-first responsive design across phones, tablets, and desktops",
+      "Blazing Core Web Vitals (sub-second LCP and zero layout shifts)",
+      "Technical SEO markup, OpenGraph metadata, and structured schema",
       "Lightweight custom WordPress or React content setups"
     ],
     capabilities: [
@@ -84,15 +84,15 @@ export const coreServices = [
     id: "api-integrations",
     number: "04",
     title: "API & Third-Party Integrations",
-    shortDesc: "Reliable connections between your web software, payment gateways, external CRMs, and third-party cloud services.",
-    problem: "Operating separate software tools for billing, CRM, messaging, and fulfillment creates tedious double-data entry and human errors.",
-    whatIBuild: "Secure RESTful API integrations and webhook pipelines that automatically synchronize data across your external platforms in real time.",
-    businessBenefit: "Eliminates double entry, keeps your financial and customer records automatically synchronized, and ensures bank-grade transaction reliability.",
+    shortDesc: "Seamless, secure connections linking your web software with payment gateways, external CRMs, and third-party cloud tools.",
+    problem: "Juggling disconnected tools for billing, messaging, customer records, and fulfillment forces manual copy-pasting and introduces costly human mistakes.",
+    whatIBuild: "Robust RESTful API connections and webhook pipelines that automatically synchronize data across your external tools in real time.",
+    businessBenefit: "Eliminates repetitive data entry, keeps accounting and customer records completely synced, and ensures reliable, bank-grade transaction handling.",
     typicalFunctionality: [
-      "Payment gateway integration (Stripe, PayPal, Razorpay)",
+      "Payment gateway integrations (Stripe, PayPal, Razorpay)",
       "Automated transactional SMS and email delivery (Twilio, SendGrid)",
-      "CRM & ERP bi-directional data synchronization",
-      "Webhook listeners with automated retry and error logging"
+      "Two-way CRM and cloud database synchronization",
+      "Resilient webhook listeners with automated retries and error alerts"
     ],
     capabilities: [
       "Payment Gateways (Stripe, PayPal)",
@@ -115,26 +115,26 @@ export const developmentProcess = [
   {
     step: "01",
     title: "Discovery",
-    subtitle: "Understand Goals",
-    desc: "We analyze your business workflows, current operational friction, user requirements, and technical constraints."
+    subtitle: "Understand Bottlenecks",
+    desc: "We analyze your existing workflows, identify time-consuming pain points, and define clear business goals."
   },
   {
     step: "02",
     title: "Planning",
     subtitle: "Architecture & UX",
-    desc: "We map out system architecture, database relationships, interface wireframes, and sprint milestone deliverables."
+    desc: "We map out database architecture, user flows, and wireframes with clear deliverables and sprint milestones."
   },
   {
     step: "03",
     title: "Build & Test",
     subtitle: "Development & QA",
-    desc: "We build your solution using modern, tested technologies, running cross-device testing and milestone reviews."
+    desc: "I write clean, maintainable code across frontend and backend, rigorously test every feature, and share weekly progress demos."
   },
   {
     step: "04",
     title: "Launch & Support",
     subtitle: "Deployment & Warranty",
-    desc: "We deploy to your production server or cloud, configure domains and security, and provide dedicated post-launch support."
+    desc: "Smooth production deployment to your cloud servers, team walkthroughs, and a 30-day post-launch warranty."
   }
 ];
 
@@ -143,38 +143,38 @@ export const faqList = [
   {
     id: "tech-projects",
     category: "tech",
-    q: "What types of projects do you build?",
-    a: "I specialize in custom web applications, bespoke CRM platforms, business automation tools, and high-performance client portals. Most of my work involves solving operational bottlenecks, replacing unwieldy spreadsheets, and building scalable full-stack web software using React and Laravel."
+    q: "What types of web development projects do you build?",
+    a: "I specialize in custom full-stack web applications, bespoke CRM systems, business automation tools, and high-performance commercial websites. The majority of my work involves helping business owners replace clunky spreadsheets, eliminate recurring SaaS subscription fees, and build fast, reliable web software using React, Laravel, and MySQL."
+  },
+  {
+    id: "tech-crm-vs-saas",
+    category: "tech",
+    q: "Why should I build a custom CRM instead of subscribing to tools like HubSpot or Zoho?",
+    a: "Commercial CRM subscriptions quickly become expensive as your team expands—often costing thousands of dollars annually in per-seat fees—while forcing you to adapt your business to their rigid structures. A custom CRM is designed exclusively around your specific pipeline and quoting formulas. You own the code 100%, pay zero ongoing user licensing fees, and can modify features whenever your business evolves."
   },
   {
     id: "tech-stack",
     category: "tech",
     q: "What technologies do you use most frequently?",
-    a: "My core production stack centers on modern React, TypeScript, and Tailwind CSS on the frontend, and robust Laravel (PHP) with MySQL or PostgreSQL on the backend. For CMS needs, I develop lightweight, custom WordPress themes and plugins without bloated page builders."
+    a: "My primary production stack is modern React with TypeScript and Tailwind CSS on the frontend, combined with Laravel (PHP) and MySQL or PostgreSQL on the backend. When a project calls for a content-managed website, I build lightweight, custom WordPress themes and plugins without using sluggish visual page builders."
   },
   {
     id: "tech-refactoring",
     category: "tech",
-    q: "Can you improve, modernize, or refactor an existing application?",
-    a: "Yes. I frequently help businesses modernize legacy PHP or WordPress platforms, refactor slow frontend code into high-speed React components, optimize sluggish database queries, and build custom RESTful APIs to bridge legacy databases with modern cloud tools."
+    q: "Can you modernize or speed up an existing application?",
+    a: "Yes. I frequently help clients refactor legacy PHP or WordPress platforms, upgrade sluggish user interfaces into fast React components, optimize bottlenecked database queries, and build clean REST APIs to connect older systems with modern cloud services."
   },
   {
     id: "tech-integrations",
     category: "tech",
-    q: "Can you integrate with third-party APIs, CRMs, and payment gateways?",
-    a: "Yes. I regularly integrate web platforms with third-party ecosystems including payment gateways (Stripe, PayPal, Razorpay), communication APIs (Twilio, SendGrid, WhatsApp Business API), external CRMs (HubSpot, Zoho, Salesforce), and custom webhooks with resilient error handling."
+    q: "Can you integrate with third-party APIs, payment gateways, and messaging services?",
+    a: "Yes. I routinely connect applications with major payment gateways (Stripe, PayPal, Razorpay), messaging APIs (Twilio SMS, WhatsApp Business API, SendGrid), third-party CRMs, and custom webhooks with automatic retries and error logging."
   },
   {
     id: "tech-devops",
     category: "tech",
-    q: "Can you handle cloud deployment, server setup, and DevOps?",
-    a: "Yes. I manage end-to-end production hosting and deployments across AWS, DigitalOcean, Hetzner, Vercel, and traditional Linux VPS environments. This includes setting up automated CI/CD deployment pipelines, SSL certificates, automated database backups, and Redis caching for peak performance."
-  },
-  {
-    id: "tech-design",
-    category: "tech",
-    q: "Do I need ready-made UI/UX designs before we start?",
-    a: "Not necessarily. If you already have Figma or Adobe XD designs, I will translate them into responsive, pixel-perfect code. If you only have an idea, wireframe, or business requirement document, I design clean, intuitive, and modern UI interfaces directly tailored to your end users."
+    q: "Do you handle server setup, cloud hosting, and deployments?",
+    a: "Yes. I manage end-to-end production hosting and deployments across Cloudflare Workers, AWS, DigitalOcean, Hetzner, Vercel, and Linux VPS environments. I configure automated CI/CD deployment pipelines, SSL certificates, automated daily database backups, and caching layers so your application runs at peak speed."
   },
 
   // SECTION 2: Process, Pricing & Collaboration
@@ -182,37 +182,37 @@ export const faqList = [
     id: "process-pricing",
     category: "process",
     q: "How do you structure project pricing and payments?",
-    a: "I provide transparent, milestone-based fixed pricing for scoped projects, and hourly or monthly retainer arrangements for continuous feature sprints. Projects typically split into structured milestones (e.g., 30% kickoff, 40% functional beta demo, 30% final launch). There are zero hidden costs."
+    a: "I work with transparent, milestone-based fixed pricing for defined project scopes, and monthly retainers for ongoing development sprints. Projects are typically split into clear milestones (e.g., 30% kickoff, 40% functional beta demo, 30% production launch). You will never encounter unexpected fees."
   },
   {
     id: "process-turnaround",
     category: "process",
-    q: "What is your typical project turnaround time?",
-    a: "Delivery depends on technical scope. Focused landing applications and business utilities typically take 1–2 weeks. Custom CRM portals, multi-role web apps, and complete business platforms typically take 3–6 weeks. You receive staging preview links and milestone demos every week."
+    q: "What is your typical project delivery turnaround time?",
+    a: "Turnaround depends on the technical complexity of the build. Focused business utilities and marketing sites typically take 1 to 2 weeks. Custom CRM portals, multi-role web apps, and full business operations systems generally take 3 to 6 weeks. You receive staging preview links and milestone updates every week."
   },
   {
     id: "process-ownership",
     category: "process",
-    q: "Who owns the code and intellectual property after completion?",
-    a: "You retain 100% full intellectual property and code ownership. Upon final milestone completion and sign-off, full source code repositories, deployment scripts, database schemas, and documentation are transferred to your accounts with zero vendor lock-in."
+    q: "Who owns the code and intellectual property once the project is finished?",
+    a: "You own 100% of the intellectual property, source code, database architecture, and deployment configurations from day one. When the final milestone is signed off, full repository access and documentation are handed over to your team with zero vendor lock-in."
   },
   {
     id: "process-warranty",
     category: "process",
-    q: "Do you offer post-launch warranty and ongoing maintenance?",
-    a: "Yes. Every custom build includes a complimentary 30-day post-launch warranty covering bug fixes, performance monitoring, and handover adjustments. For long-term continuity, I also provide monthly maintenance retainers covering security patches, backups, and feature enhancements."
+    q: "Do you provide a warranty or ongoing support after the site goes live?",
+    a: "Yes. Every custom build includes a complimentary 30-day post-launch warranty covering bug fixes, performance monitoring, and handover adjustments. For long-term peace of mind, I also offer monthly support retainers covering security updates, database backups, and new feature development."
   },
   {
     id: "process-international",
     category: "process",
     q: "Do you work with international clients across different time zones?",
-    a: "Yes. Over the past 7+ years, I have collaborated with founders, startups, and agencies across India, the United States, the UK, Europe, and New Zealand. I maintain prompt asynchronous communication, detailed sprint updates, and schedule crossover calls that fit your time zone."
+    a: "Yes. Over the past 7+ years, I have worked with business owners and agencies across India, New Zealand, the United States, the UK, and Europe. I maintain fast asynchronous communication, provide detailed progress reports, and schedule overlap video calls that fit your working hours."
   },
   {
     id: "process-contact",
     category: "process",
-    q: "How can I discuss my project and get started?",
-    a: "You can submit an inquiry through the Contact page, message me directly on WhatsApp at +91 90389 09382, or email saikatpatraoffice@gmail.com. I review your requirements and respond within 24 hours to arrange an introductory consultation or preliminary technical estimate."
+    q: "How can I discuss my project and get an estimate?",
+    a: "You can submit an inquiry through the Contact page, message me directly on WhatsApp at +91 90389 09382, or email saikatpatraoffice@gmail.com. I review your requirements and respond within 24 hours with honest feedback and preliminary scope estimates."
   }
 ];
 

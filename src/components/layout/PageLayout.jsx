@@ -37,10 +37,30 @@ export const PageLayout = ({
       document.head.appendChild(canonical);
     }
     const cleanPath = pathname === "/" ? "" : pathname;
-    canonical.setAttribute(
-      "href",
-      `https://portfolio.saikatpatraoffice.workers.dev${cleanPath}`
-    );
+    const currentUrl = `https://portfolio.saikatpatraoffice.workers.dev${cleanPath}`;
+    canonical.setAttribute("href", currentUrl);
+
+    // Dynamic Open Graph & Twitter meta updates
+    const updateMeta = (attr, key, content) => {
+      let tag = document.querySelector(`meta[${attr}="${key}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attr, key);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
+
+    if (title) {
+      updateMeta("property", "og:title", title);
+      updateMeta("name", "twitter:title", title);
+    }
+    if (description) {
+      updateMeta("property", "og:description", description);
+      updateMeta("name", "twitter:description", description);
+    }
+    updateMeta("property", "og:url", currentUrl);
+    updateMeta("name", "twitter:url", currentUrl);
   }, [pathname, title, description]);
 
   return (

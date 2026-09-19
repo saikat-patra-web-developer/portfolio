@@ -17,10 +17,10 @@ const ProjectDetails = lazy(() => import("./pages/Projects/ProjectDetails"));
 const Contact = lazy(() => import("./pages/Contact/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
-// Accessible page loading fallback — same spinner shown on hard refresh
-const PageLoader = () => (
-  <div className="min-h-[60vh] flex items-center justify-center">
-    <div className="relative w-12 h-12" role="status" aria-label="Loading page content">
+// Full-screen loader — used for both hard refresh & menu route transitions
+const FullScreenLoader = () => (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020B18]">
+    <div className="relative w-12 h-12" role="status" aria-label="Loading page">
       <div className="absolute inset-0 rounded-full border-2 border-[#00E5FF]/20 border-t-[#00E5FF] animate-spin" />
       <div className="absolute inset-2 rounded-full border-2 border-[#7B3CFF]/20 border-b-[#A855F7] animate-spin [animation-direction:reverse]" />
     </div>
@@ -33,15 +33,8 @@ const AppContent = () => {
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between overflow-x-hidden bg-[#020B18] text-white">
-      {/* Route Transition Loader — same spinner as hard refresh, centered full-screen */}
-      {isTransitioning && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020B18]">
-          <div className="relative w-12 h-12" role="status" aria-label="Loading page">
-            <div className="absolute inset-0 rounded-full border-2 border-[#00E5FF]/20 border-t-[#00E5FF] animate-spin" />
-            <div className="absolute inset-2 rounded-full border-2 border-[#7B3CFF]/20 border-b-[#A855F7] animate-spin [animation-direction:reverse]" />
-          </div>
-        </div>
-      )}
+      {/* Route Transition Loader — covers header & footer, identical to hard refresh */}
+      {isTransitioning && <FullScreenLoader />}
 
       {/* 1. Global Persistent Animated Background */}
       <AnimatedTechBackground />
@@ -51,7 +44,7 @@ const AppContent = () => {
 
       {/* 3. Foreground Content with Smooth Page Transitions */}
       <div className="flex-grow flex flex-col">
-        <Suspense fallback={<PageLoader />}>
+        <Suspense fallback={<FullScreenLoader />}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />

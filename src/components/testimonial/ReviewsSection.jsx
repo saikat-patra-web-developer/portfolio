@@ -6,7 +6,7 @@ import {
   ChevronUp,
   MapPin,
   CheckCircle2,
-  Boxes,
+  Layers,
   LayoutGrid
 } from "lucide-react";
 import { GlassCard } from "../ui/GlassCard";
@@ -68,11 +68,11 @@ export const ReviewsSection = ({
                 ? "bg-gradient-to-r from-[#00E5FF] to-[#2787FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
                 : "text-white/70 hover:text-white hover:bg-white/5"
             }`}
-            title="3D Rotating Showcase"
-            aria-label="3D Rotating Showcase"
+            title="Showcase Slider"
+            aria-label="Showcase Slider"
           >
-            <Boxes className="w-3.5 h-3.5" />
-            <span>3D Showcase</span>
+            <Layers className="w-3.5 h-3.5" />
+            <span>Showcase</span>
           </button>
 
           <button
@@ -172,7 +172,7 @@ export const ReviewsSection = ({
                 <span>
                   {isExpanded
                     ? "Show Fewer Reviews"
-                    : `View All ${filteredReviews.length} Reviews`}
+                    : `View All ${testimonialsData.length} Reviews`}
                 </span>
                 {isExpanded ? (
                   <ChevronUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />

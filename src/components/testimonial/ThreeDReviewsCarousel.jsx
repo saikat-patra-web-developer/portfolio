@@ -33,15 +33,14 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const isAutoPlaying = true;
   const [isHovered, setIsHovered] = useState(false);
-  const [tilt, setTilt] = useState({ x: 0, y: 0, glareX: 50, glareY: 50 });
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
 
   const containerRef = useRef(null);
-  const cardRef = useRef(null);
+  const isPanningRef = useRef(false);
 
-  // Responsive window width tracking for 3D spacing
+  // Responsive window width tracking
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -60,15 +59,16 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
     setActiveIndex((prev) => (prev - 1 + count) % count);
   }, [count]);
 
-  // Autoplay loop with auto-pause on hover/interaction
+  // Autoplay loop with auto-pause on hover/interaction & browser tab visibility
   useEffect(() => {
     if (!isAutoPlaying || isHovered || count <= 1) return;
     const timer = setInterval(() => {
-      next();
-    }, 4500);
+      if (typeof document !== "undefined" && !document.hidden) {
+        next();
+      }
+    }, 2200);
     return () => clearInterval(timer);
   }, [isAutoPlaying, isHovered, count, next]);
-
 
   // Keyboard navigation
   const handleKeyDown = (e) => {
@@ -79,36 +79,15 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
     }
   };
 
-  // Interactive 3D tilt tracking for the active center card
-  const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * -9; // Max 9 deg tilt
-    const rotateY = ((x - centerX) / centerX) * 9;
-    const glareX = (x / rect.width) * 100;
-    const glareY = (y / rect.height) * 100;
-
-    setTilt({ x: rotateX, y: rotateY, glareX, glareY });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0, glareX: 50, glareY: 50 });
-  };
-
   if (count === 0) {
     return (
       <div className="text-center py-12 text-white/50 text-sm">
-        No reviews available for this filter.
+        No reviews available.
       </div>
     );
   }
 
-  // Calculate 3D transformation values for each card relative to activeIndex
+  // Calculate clean flat horizontal transform values relative to activeIndex (NO 3D perspective or angles)
   const getCardStyle = (index) => {
     let offset = (index - activeIndex + count) % count;
     if (offset > count / 2) offset -= count;
@@ -117,38 +96,31 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
     const isMobile = windowWidth < 640;
     const isTablet = windowWidth < 1024;
 
-    // Lateral distance between 3D cards
-    const stepX = isMobile ? 180 : isTablet ? 260 : 340;
+    // Clean, responsive horizontal step
+    const stepX = isMobile
+      ? Math.min(Math.max(windowWidth * 0.65, 210), 250)
+      : isTablet
+      ? 310
+      : 380;
     const translateX = offset * stepX;
 
-    // Depth pushback into Z space
-    const translateZ = -absOffset * (isMobile ? 100 : 150);
+    // Scale down smoothly
+    const scale = absOffset === 0 ? 1 : Math.max(0.76, 1 - absOffset * 0.12);
 
-    // 3D Y-axis rotation angle: cards face inward toward active card
-    const rotateY = offset * (isMobile ? -20 : -26);
-
-    // Scale down cards as they recede
-    const scale = Math.max(0.65, 1 - absOffset * 0.15);
-
-    // Opacity fade based on distance: smooth buffer at slot 3
+    // Opacity fade: active = 1, flanking = 0.45, buffer slot = 0 (ensures zero popping on enter/exit)
     const opacity =
       absOffset === 0
         ? 1
         : absOffset === 1
-        ? 0.65
-        : absOffset === 2
-        ? 0.25
+        ? 0.45
         : 0;
 
-    // Stacking order (active is topmost)
     const zIndex = 30 - absOffset * 10;
-
-    const isVisible = absOffset <= 3;
+    // Keep offset <= 2 mounted so entries and exits fade seamlessly with opacity: 0
+    const isVisible = absOffset <= 2;
 
     return {
       translateX,
-      translateZ,
-      rotateY,
       scale,
       opacity,
       zIndex,
@@ -163,41 +135,44 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
       onKeyDown={handleKeyDown}
       tabIndex={0}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => {
-        setIsHovered(false);
-        handleMouseLeave();
-      }}
-      onPanEnd={(_e, info) => {
-        if (info.offset.x > 30 || info.velocity.x > 200) {
-          prev();
-        } else if (info.offset.x < -30 || info.velocity.x < -200) {
-          next();
+      onMouseLeave={() => setIsHovered(false)}
+      onPan={(_e, info) => {
+        if (Math.abs(info.offset.x) > 6 || Math.abs(info.offset.y) > 6) {
+          isPanningRef.current = true;
         }
       }}
-      className="relative w-full select-none focus:outline-none py-6 sm:py-10 touch-pan-y cursor-grab active:cursor-grabbing"
-      aria-label="3D Rotating Reviews Showcase"
+      onPanEnd={(_e, info) => {
+        const absX = Math.abs(info.offset.x);
+        const absY = Math.abs(info.offset.y);
+        const absVx = Math.abs(info.velocity.x);
+
+        // Directional lock: ignore gestures that are predominantly vertical so page scroll is unaffected
+        if (absX >= absY * 1.25) {
+          if (info.offset.x > 25 || (absVx > 180 && info.velocity.x > 0)) {
+            prev();
+          } else if (info.offset.x < -25 || (absVx > 180 && info.velocity.x < 0)) {
+            next();
+          }
+        }
+
+        // Delay clearing panning flag so child onClick doesn't immediately fire upon swipe release
+        setTimeout(() => {
+          isPanningRef.current = false;
+        }, 100);
+      }}
+      className="relative w-full select-none focus:outline-none py-6 sm:py-10 touch-pan-y cursor-grab active:cursor-grabbing overflow-hidden"
+      aria-label="Reviews Showcase Slider"
     >
-      {/* 3D Perspective Stage */}
-      <div
-        className="relative w-full h-[480px] sm:h-[460px] flex items-center justify-center overflow-visible"
-        style={{
-          perspective: windowWidth < 640 ? "800px" : "1200px",
-          perspectiveOrigin: "50% 50%"
-        }}
-      >
+      {/* Clean Flat Layered Slider Stage (No 3D skew / No perspective) */}
+      <div className="relative w-full h-[450px] sm:h-[430px] flex items-center justify-center overflow-visible">
         {/* Subtle Ambient Radial Glow */}
         <div className="absolute w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-gradient-to-tr from-[#00E5FF]/10 via-[#2787FF]/10 to-[#7B3CFF]/15 blur-3xl pointer-events-none -z-10" />
 
-        {/* 3D Cards Stack */}
-        <div
-          className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] h-[390px] sm:h-[370px] flex items-center justify-center"
-          style={{ transformStyle: "preserve-3d" }}
-        >
+        {/* Cards Stack */}
+        <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] h-[380px] sm:h-[360px] flex items-center justify-center">
           {reviews.map((testimonial, index) => {
             const {
               translateX,
-              translateZ,
-              rotateY,
               scale,
               opacity,
               zIndex,
@@ -210,42 +185,31 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
             const isActive = offset === 0;
             const isGoogle = testimonial.source === "Google Review";
 
-            // If active, combine base transform with mouse interactive tilt
-            const finalRotateX = isActive ? tilt.x : 0;
-            const finalRotateY = isActive ? rotateY + tilt.y : rotateY;
-
             return (
               <motion.div
                 key={testimonial.id}
-                ref={isActive ? cardRef : null}
                 initial={false}
                 onClick={() => {
+                  if (isPanningRef.current) return;
                   if (offset < 0) {
                     prev();
                   } else if (offset > 0) {
                     next();
                   }
                 }}
-                onMouseMove={isActive ? handleMouseMove : undefined}
                 animate={{
                   x: translateX,
-                  z: translateZ,
-                  rotateY: finalRotateY,
-                  rotateX: finalRotateX,
                   scale: scale,
                   opacity: opacity
                 }}
                 transition={{
-                  type: "spring",
-                  stiffness: 280,
-                  damping: 30,
-                  mass: 0.8
+                  duration: 0.28,
+                  ease: [0.16, 1, 0.3, 1]
                 }}
                 style={{
                   zIndex,
-                  transformStyle: "preserve-3d",
                   willChange: "transform, opacity",
-                  pointerEvents: Math.abs(offset) > 2 ? "none" : "auto",
+                  pointerEvents: Math.abs(offset) > 1 ? "none" : "auto",
                   cursor: isActive ? "default" : "pointer"
                 }}
                 className={`absolute inset-0 rounded-2xl p-6 sm:p-7 flex flex-col justify-between border transition-colors duration-300 backdrop-blur-xl ${
@@ -254,21 +218,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                     : "bg-[#03152B]/75 border-white/10 hover:border-[#00E5FF]/30 shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
                 }`}
               >
-                {/* Specular Glare Reflection on Active Card */}
-                {isActive && (
-                  <div
-                    className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-300 opacity-60"
-                    style={{
-                      background: `radial-gradient(circle at ${tilt.glareX}% ${tilt.glareY}%, rgba(0,229,255,0.18) 0%, rgba(255,255,255,0.04) 40%, transparent 70%)`
-                    }}
-                  />
-                )}
-
-                {/* 3D Pop-out Layer: Header (Stars + Source Badge) */}
-                <div
-                  className="space-y-3.5"
-                  style={{ transform: isActive ? "translateZ(20px)" : "none" }}
-                >
+                {/* Header: Stars & Source Badge */}
+                <div className="space-y-3.5">
                   <div className="flex items-center justify-between gap-2">
                     {/* Star Rating */}
                     <div className="flex items-center gap-1">
@@ -297,7 +248,7 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                     )}
                   </div>
 
-                  {/* Quote Content with 3D Depth */}
+                  {/* Quote Content */}
                   <div className="relative pt-1">
                     <Quote className="w-8 h-8 text-[#00E5FF]/20 absolute -top-3 -left-2 pointer-events-none" />
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed italic relative z-10 line-clamp-5">
@@ -320,11 +271,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                   )}
                 </div>
 
-                {/* 3D Pop-out Layer: Author Footer */}
-                <div
-                  className="pt-4 border-t border-white/10 flex items-center justify-between gap-3"
-                  style={{ transform: isActive ? "translateZ(25px)" : "none" }}
-                >
+                {/* Author Footer */}
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3 min-w-0">
                     <div
                       className={`w-10 h-10 rounded-full bg-gradient-to-br ${
@@ -361,7 +309,7 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
           <button
             key={idx}
             onClick={() => setActiveIndex(idx)}
-            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+            className={`h-2 rounded-full transition-all duration-200 cursor-pointer ${
               idx === activeIndex
                 ? "w-7 bg-gradient-to-r from-[#00E5FF] to-[#2787FF] shadow-[0_0_12px_rgba(0,229,255,0.7)]"
                 : "w-2 bg-white/20 hover:bg-white/40"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Star, ShieldCheck, ArrowRight, Quote } from "lucide-react";
 import { GlassCard } from "../ui/GlassCard";
@@ -25,8 +25,6 @@ const GoogleGIcon = ({ className = "w-3.5 h-3.5" }) => (
 );
 
 export const TestimonialCard = ({ testimonial }) => {
-  const [tilt, setTilt] = useState({ x: 0, y: 0, glareX: 50, glareY: 50, isHovered: false });
-
   const {
     author,
     role,
@@ -44,150 +42,103 @@ export const TestimonialCard = ({ testimonial }) => {
 
   const isGoogle = source === "Google Review";
 
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    setTilt({
-      x: ((y - centerY) / centerY) * -7,
-      y: ((x - centerX) / centerX) * 7,
-      glareX: (x / rect.width) * 100,
-      glareY: (y / rect.height) * 100,
-      isHovered: true
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0, glareX: 50, glareY: 50, isHovered: false });
-  };
-
   return (
-    <div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: tilt.isHovered
-          ? `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateY(-4px)`
-          : "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)",
-        transition: tilt.isHovered ? "transform 0.1s ease-out" : "transform 0.5s ease-out",
-        transformStyle: "preserve-3d"
-      }}
-      className="relative h-full"
+    <GlassCard
+      glow={isGoogle ? "cyan" : "blue"}
+      className="p-5 sm:p-6 flex flex-col justify-between h-full border-[#00E5FF]/15 hover:border-[#00E5FF]/50 group transition-all duration-300 relative overflow-hidden bg-[#03152B]/85"
     >
-      <GlassCard
-        glow={isGoogle ? "cyan" : "blue"}
-        hoverEffect={false}
-        className="p-5 sm:p-6 flex flex-col justify-between h-full border-[#00E5FF]/15 hover:border-[#00E5FF]/50 group transition-all duration-300 relative overflow-hidden bg-[#03152B]/85"
-      >
-        {/* Dynamic Glare Reflection Overlay */}
-        {tilt.isHovered && (
-          <div
-            className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-300 opacity-60"
-            style={{
-              background: `radial-gradient(circle at ${tilt.glareX}% ${tilt.glareY}%, rgba(0,229,255,0.14) 0%, transparent 65%)`
-            }}
-          />
+      <div className="space-y-3.5">
+        {/* Top Header: Rating & Source Badge */}
+        <div className="flex items-center justify-between gap-2">
+          {/* Star Rating */}
+          <div className="flex items-center gap-1">
+            {[...Array(rating)].map((_, i) => (
+              <Star
+                key={i}
+                className="w-3.5 h-3.5 fill-amber-400 text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.3)]"
+              />
+            ))}
+            <span className="text-[11px] font-bold text-amber-400 ml-1 font-mono">5.0</span>
+          </div>
+
+          {/* Verification / Source Pill */}
+          {isGoogle ? (
+            <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold text-white/80 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full shadow-sm">
+              <GoogleGIcon className="w-3 h-3 shrink-0" />
+              <span>Google Review</span>
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2.5 py-0.5 rounded-full shadow-sm">
+              <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" />
+              <span>{source || "Verified Client"}</span>
+            </span>
+          )}
+        </div>
+
+        {/* Quote Content */}
+        <div className="relative">
+          <Quote className="w-6 h-6 text-[#00E5FF]/20 absolute -top-1.5 -left-1 pointer-events-none" />
+          <p className="text-xs sm:text-[13px] text-white/90 leading-relaxed relative z-10 italic">
+            &ldquo;{content}&rdquo;
+          </p>
+        </div>
+
+        {/* Project Link if available */}
+        {projectSlug && (
+          <div className="pt-1">
+            <Link
+              to={`/projects/${projectSlug}`}
+              className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#00E5FF] hover:text-white transition-colors group/link"
+            >
+              <span>View Case Study</span>
+              <ArrowRight className="w-3 h-3 group-hover/link:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
         )}
 
-        <div className="space-y-3.5" style={{ transform: tilt.isHovered ? "translateZ(15px)" : "none" }}>
-          {/* Top Header: Rating & Source Badge */}
-          <div className="flex items-center justify-between gap-2">
-            {/* Star Rating */}
-            <div className="flex items-center gap-1">
-              {[...Array(rating)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-3.5 h-3.5 fill-amber-400 text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.3)]"
-                />
-              ))}
-              <span className="text-[11px] font-bold text-amber-400 ml-1 font-mono">5.0</span>
-            </div>
-
-            {/* Verification / Source Pill */}
-            {isGoogle ? (
-              <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold text-white/80 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full shadow-sm">
-                <GoogleGIcon className="w-3 h-3 shrink-0" />
-                <span>Google Review</span>
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2.5 py-0.5 rounded-full shadow-sm">
-                <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" />
-                <span>{source || "Verified Client"}</span>
-              </span>
-            )}
-          </div>
-
-          {/* Quote Content */}
-          <div className="relative">
-            <Quote className="w-6 h-6 text-[#00E5FF]/20 absolute -top-1.5 -left-1 pointer-events-none" />
-            <p className="text-xs sm:text-[13px] text-white/90 leading-relaxed relative z-10 italic">
-              &ldquo;{content}&rdquo;
-            </p>
-          </div>
-
-          {/* Project Link if available */}
-          {projectSlug && (
-            <div className="pt-1">
-              <Link
-                to={`/projects/${projectSlug}`}
-                className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#00E5FF] hover:text-white transition-colors group/link"
-              >
-                <span>View Case Study</span>
-                <ArrowRight className="w-3 h-3 group-hover/link:translate-x-0.5 transition-transform" />
-              </Link>
-            </div>
-          )}
-
-          {/* Optional Owner Reply */}
-          {ownerReply && (
-            <div className="pt-2">
-              <div className="bg-white/[0.03] border border-white/5 rounded-lg p-2.5 text-[11px] text-white/70 space-y-0.5">
-                <div className="flex items-center gap-1.5 text-[#00E5FF] font-medium text-[10px] uppercase tracking-wider">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
-                  <span>Response from Owner</span>
-                </div>
-                <p className="text-white/60 italic text-[11px]">
-                  &ldquo;{ownerReply}&rdquo;
-                </p>
+        {/* Optional Owner Reply */}
+        {ownerReply && (
+          <div className="pt-2">
+            <div className="bg-white/[0.03] border border-white/5 rounded-lg p-2.5 text-[11px] text-white/70 space-y-0.5">
+              <div className="flex items-center gap-1.5 text-[#00E5FF] font-medium text-[10px] uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
+                <span>Response from Owner</span>
               </div>
+              <p className="text-white/60 italic text-[11px]">
+                &ldquo;{ownerReply}&rdquo;
+              </p>
             </div>
-          )}
+          </div>
+        )}
+      </div>
+
+      {/* Author Footer */}
+      <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3 min-w-0">
+          <div
+            className={`w-9 h-9 rounded-full bg-gradient-to-br ${
+              avatarBg || "from-blue-600 to-cyan-500"
+            } flex items-center justify-center text-white font-bold text-xs shadow-md shrink-0 border border-white/20`}
+          >
+            {avatar || author.charAt(0)}
+          </div>
+          <div className="min-w-0">
+            <div className="text-xs sm:text-[13px] font-bold text-white tracking-tight truncate flex items-center gap-1.5">
+              <span>{author}</span>
+            </div>
+            <div className="text-[11px] text-white/60 truncate">
+              {badge || (role ? `${role} · ${company}` : company)}
+            </div>
+          </div>
         </div>
 
-        {/* Author Footer */}
-        <div
-          className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between gap-3"
-          style={{ transform: tilt.isHovered ? "translateZ(20px)" : "none" }}
-        >
-          <div className="flex items-center gap-3 min-w-0">
-            <div
-              className={`w-9 h-9 rounded-full bg-gradient-to-br ${
-                avatarBg || "from-blue-600 to-cyan-500"
-              } flex items-center justify-center text-white font-bold text-xs shadow-md shrink-0 border border-white/20`}
-            >
-              {avatar || author.charAt(0)}
-            </div>
-            <div className="min-w-0">
-              <div className="text-xs sm:text-[13px] font-bold text-white tracking-tight truncate flex items-center gap-1.5">
-                <span>{author}</span>
-              </div>
-              <div className="text-[11px] text-white/60 truncate">
-                {badge || (role ? `${role} · ${company}` : company)}
-              </div>
-            </div>
+        {timeAgo && (
+          <div className="text-[10px] text-white/40 font-mono shrink-0 whitespace-nowrap">
+            {timeAgo}
           </div>
-
-          {timeAgo && (
-            <div className="text-[10px] text-white/40 font-mono shrink-0 whitespace-nowrap">
-              {timeAgo}
-            </div>
-          )}
-        </div>
-      </GlassCard>
-    </div>
+        )}
+      </div>
+    </GlassCard>
   );
 };
 

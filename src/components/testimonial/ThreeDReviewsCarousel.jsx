@@ -125,18 +125,25 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
     const translateZ = -absOffset * (isMobile ? 100 : 150);
 
     // 3D Y-axis rotation angle: cards face inward toward active card
-    const rotateY = offset * (isMobile ? -22 : -28);
+    const rotateY = offset * (isMobile ? -20 : -26);
 
     // Scale down cards as they recede
-    const scale = Math.max(0.68, 1 - absOffset * 0.16);
+    const scale = Math.max(0.65, 1 - absOffset * 0.15);
 
-    // Opacity fade based on distance
-    const opacity = absOffset === 0 ? 1 : absOffset === 1 ? 0.6 : absOffset === 2 ? 0.22 : 0;
+    // Opacity fade based on distance: smooth buffer at slot 3
+    const opacity =
+      absOffset === 0
+        ? 1
+        : absOffset === 1
+        ? 0.65
+        : absOffset === 2
+        ? 0.25
+        : 0;
 
     // Stacking order (active is topmost)
     const zIndex = 30 - absOffset * 10;
 
-    const isVisible = absOffset <= 2;
+    const isVisible = absOffset <= 3;
 
     return {
       translateX,
@@ -150,9 +157,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
     };
   };
 
-
   return (
-    <div
+    <motion.div
       ref={containerRef}
       onKeyDown={handleKeyDown}
       tabIndex={0}
@@ -161,7 +167,14 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
         setIsHovered(false);
         handleMouseLeave();
       }}
-      className="relative w-full select-none focus:outline-none py-6 sm:py-10"
+      onPanEnd={(_e, info) => {
+        if (info.offset.x > 30 || info.velocity.x > 200) {
+          prev();
+        } else if (info.offset.x < -30 || info.velocity.x < -200) {
+          next();
+        }
+      }}
+      className="relative w-full select-none focus:outline-none py-6 sm:py-10 touch-pan-y cursor-grab active:cursor-grabbing"
       aria-label="3D Rotating Reviews Showcase"
     >
       {/* 3D Perspective Stage */}
@@ -192,7 +205,7 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
               offset
             } = getCardStyle(index);
 
-            if (!isVisible && Math.abs(offset) > 2) return null;
+            if (!isVisible) return null;
 
             const isActive = offset === 0;
             const isGoogle = testimonial.source === "Google Review";
@@ -205,9 +218,12 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
               <motion.div
                 key={testimonial.id}
                 ref={isActive ? cardRef : null}
+                initial={false}
                 onClick={() => {
-                  if (!isActive) {
-                    setActiveIndex(index);
+                  if (offset < 0) {
+                    prev();
+                  } else if (offset > 0) {
+                    next();
                   }
                 }}
                 onMouseMove={isActive ? handleMouseMove : undefined}
@@ -221,27 +237,17 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: 240,
-                  damping: 26,
+                  stiffness: 280,
+                  damping: 30,
                   mass: 0.8
-                }}
-                drag={isActive ? "x" : false}
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(e, info) => {
-                  if (info.offset.x > 50) {
-                    prev();
-                  } else if (info.offset.x < -50) {
-                    next();
-                  }
                 }}
                 style={{
                   zIndex,
                   transformStyle: "preserve-3d",
                   willChange: "transform, opacity",
-                  cursor: isActive ? "grab" : "pointer"
+                  pointerEvents: Math.abs(offset) > 2 ? "none" : "auto",
+                  cursor: isActive ? "default" : "pointer"
                 }}
-                whileDrag={{ cursor: "grabbing" }}
                 className={`absolute inset-0 rounded-2xl p-6 sm:p-7 flex flex-col justify-between border transition-colors duration-300 backdrop-blur-xl ${
                   isActive
                     ? "bg-[#03152B]/95 border-[#00E5FF]/50 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.25),inset_0_0_30px_rgba(0,229,255,0.06)]"
@@ -365,7 +371,7 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

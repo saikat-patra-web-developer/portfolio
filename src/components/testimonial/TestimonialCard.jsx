@@ -45,7 +45,7 @@ export const TestimonialCard = ({ testimonial }) => {
   return (
     <GlassCard
       glow={isGoogle ? "cyan" : "blue"}
-      className="p-5 sm:p-6 flex flex-col justify-between h-full border-[#00E5FF]/15 hover:border-[#00E5FF]/50 group transition-all duration-300 relative overflow-hidden bg-[#03152B]/85"
+      className="p-5 sm:p-6 flex flex-col justify-between h-full border-[#00E5FF]/15 hover:border-[#00E5FF]/50 group transition-all duration-300 relative overflow-hidden"
     >
       <div className="space-y-3.5">
         {/* Top Header: Rating & Source Badge */}
@@ -116,9 +116,8 @@ export const TestimonialCard = ({ testimonial }) => {
       <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
           <div
-            className={`w-9 h-9 rounded-full bg-gradient-to-br ${
-              avatarBg || "from-blue-600 to-cyan-500"
-            } flex items-center justify-center text-white font-bold text-xs shadow-md shrink-0 border border-white/20`}
+            className={`w-9 h-9 rounded-full bg-gradient-to-br ${avatarBg || "from-blue-600 to-cyan-500"
+              } flex items-center justify-center text-white font-bold text-xs shadow-md shrink-0 border border-white/20`}
           >
             {avatar || author.charAt(0)}
           </div>

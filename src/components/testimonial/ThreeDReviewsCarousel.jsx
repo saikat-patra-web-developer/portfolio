@@ -99,8 +99,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
     const stepX = isMobile
       ? Math.min(Math.max(windowWidth * 0.65, 210), 250)
       : isTablet
-      ? 310
-      : 380;
+        ? 310
+        : 380;
     const translateX = offset * stepX;
 
     // Scale down smoothly
@@ -111,8 +111,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
       absOffset === 0
         ? 1
         : absOffset === 1
-        ? 0.45
-        : 0;
+          ? 0.45
+          : 0;
 
     const zIndex = 30 - absOffset * 10;
     // Keep offset <= 2 mounted so entries and exits fade seamlessly with opacity: 0
@@ -209,11 +209,10 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                   pointerEvents: Math.abs(offset) > 1 ? "none" : "auto",
                   cursor: isActive ? "default" : "pointer"
                 }}
-                className={`absolute inset-0 rounded-2xl p-6 sm:p-7 flex flex-col justify-between border transition-colors duration-300 backdrop-blur-xl ${
-                  isActive
+                className={`absolute inset-0 rounded-2xl p-6 sm:p-7 flex flex-col justify-between border transition-colors duration-300 backdrop-blur-xl ${isActive
                     ? "bg-[#03152B]/95 border-[#00E5FF]/50 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.25),inset_0_0_30px_rgba(0,229,255,0.06)]"
-                    : "bg-[#03152B]/75 border-white/10 hover:border-[#00E5FF]/30 shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
-                }`}
+                    : "border-white/10 hover:border-[#00E5FF]/30 shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
+                  }`}
               >
                 {/* Header: Stars & Source Badge */}
                 <div className="space-y-3.5">
@@ -272,9 +271,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3 min-w-0">
                     <div
-                      className={`w-10 h-10 rounded-full bg-gradient-to-br ${
-                        testimonial.avatarBg || "from-blue-600 to-cyan-500"
-                      } flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(0,229,255,0.3)] shrink-0 border border-white/25`}
+                      className={`w-10 h-10 rounded-full bg-gradient-to-br ${testimonial.avatarBg || "from-blue-600 to-cyan-500"
+                        } flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(0,229,255,0.3)] shrink-0 border border-white/25`}
                     >
                       {testimonial.avatar || testimonial.author?.charAt(0)}
                     </div>
@@ -306,11 +304,10 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
           <button
             key={idx}
             onClick={() => setActiveIndex(idx)}
-            className={`h-2 rounded-full transition-all duration-200 cursor-pointer ${
-              idx === activeIndex
+            className={`h-2 rounded-full transition-all duration-200 cursor-pointer ${idx === activeIndex
                 ? "w-7 bg-gradient-to-r from-[#00E5FF] to-[#2787FF] shadow-[0_0_12px_rgba(0,229,255,0.7)]"
                 : "w-2 bg-white/20 hover:bg-white/40"
-            }`}
+              }`}
             title={`Go to review ${idx + 1}`}
             aria-label={`Go to review ${idx + 1}`}
           />

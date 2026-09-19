@@ -71,7 +71,7 @@ export const Services = () => {
               <div
                 key={service.id}
                 id={service.id}
-                className="scroll-mt-28 p-6 sm:p-10 rounded-3xl bg-[#03152B]/80 border border-[#00E5FF]/25 shadow-[0_15px_40px_rgba(0,0,0,0.6)]"
+                className="scroll-mt-28 p-6 sm:p-10 rounded-3xl border border-[#00E5FF]/25 shadow-[0_15px_40px_rgba(0,0,0,0.6)]"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   {/* Left Column: Overview & Problem/Solution (Cols 1-7) */}

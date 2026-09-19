@@ -122,7 +122,7 @@ export const Contact = () => {
           {/* CARD 1: INSTANT CHAT (PRIMARY) */}
           <GlassCard
             glow="cyan"
-            className="p-5 sm:p-6 bg-[#03152B]/85 border-[#00E5FF]/20 hover:border-[#00E5FF]/50 flex flex-col justify-between space-y-4 rounded-2xl"
+            className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/50 flex flex-col justify-between space-y-4 rounded-2xl"
           >
             <div className="space-y-3.5">
               <div className="flex items-center justify-between">
@@ -181,7 +181,7 @@ export const Contact = () => {
           {/* CARD 2: INSTANT CHAT (SECONDARY) */}
           <GlassCard
             glow="cyan"
-            className="p-5 sm:p-6 bg-[#03152B]/85 border-[#00E5FF]/20 hover:border-[#00E5FF]/50 flex flex-col justify-between space-y-4 rounded-2xl"
+            className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/50 flex flex-col justify-between space-y-4 rounded-2xl"
           >
             <div className="space-y-3.5">
               <div className="flex items-center justify-between">
@@ -240,7 +240,7 @@ export const Contact = () => {
           {/* CARD 3: BUSINESS ENQUIRIES */}
           <GlassCard
             glow="both"
-            className="p-5 sm:p-6 bg-[#03152B]/85 border-[#00E5FF]/20 hover:border-[#00E5FF]/50 flex flex-col justify-between space-y-4 rounded-2xl"
+            className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/50 flex flex-col justify-between space-y-4 rounded-2xl"
           >
             <div className="space-y-3.5">
               <div className="flex items-center justify-between">
@@ -289,7 +289,7 @@ export const Contact = () => {
           {/* CARD 4: DIRECT EMAIL */}
           <GlassCard
             glow="purple"
-            className="p-5 sm:p-6 bg-[#03152B]/85 border-[#A855F7]/20 hover:border-[#A855F7]/50 flex flex-col justify-between space-y-4 rounded-2xl"
+            className="p-5 sm:p-6 border-[#A855F7]/20 hover:border-[#A855F7]/50 flex flex-col justify-between space-y-4 rounded-2xl"
           >
             <div className="space-y-3.5">
               <div className="flex items-center justify-between">
@@ -343,7 +343,7 @@ export const Contact = () => {
           {/* AVAILABILITY & LOCATION */}
           <GlassCard
             glow="cyan"
-            className="p-5 sm:p-6 bg-[#03152B]/85 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
+            className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="flex items-start gap-3.5">
               <div className="w-11 h-11 rounded-xl bg-[#00E5FF]/15 border border-[#00E5FF]/35 flex items-center justify-center text-[#00E5FF] shrink-0 shadow-[0_0_15px_rgba(0,229,255,0.15)]">
@@ -401,7 +401,7 @@ export const Contact = () => {
           {/* PROFESSIONAL NETWORKS */}
           <GlassCard
             glow="purple"
-            className="p-5 sm:p-6 bg-[#03152B]/85 border-[#A855F7]/20 hover:border-[#A855F7]/40 rounded-2xl flex flex-col justify-between space-y-4"
+            className="p-5 sm:p-6 border-[#A855F7]/20 hover:border-[#A855F7]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="flex items-start gap-3.5">
               <div className="w-11 h-11 rounded-xl bg-[#A855F7]/15 border border-[#A855F7]/35 flex items-center justify-center text-[#A855F7] shrink-0 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
@@ -478,7 +478,7 @@ export const Contact = () => {
           {/* CARD 1: BOOK A MEETING */}
           <GlassCard
             glow="cyan"
-            className="p-5 sm:p-6 bg-[#03152B]/85 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
+            className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3.5">
               <div className="w-11 h-11 rounded-xl bg-[#00E5FF]/15 border border-[#00E5FF]/35 flex items-center justify-center text-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.15)]">
@@ -516,7 +516,7 @@ export const Contact = () => {
           {/* CARD 2: PROJECT INQUIRY TYPES */}
           <GlassCard
             glow="cyan"
-            className="p-5 sm:p-6 bg-[#03152B]/85 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
+            className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3.5">
               <div className="w-11 h-11 rounded-xl bg-[#00E5FF]/15 border border-[#00E5FF]/35 flex items-center justify-center text-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.15)]">
@@ -545,7 +545,7 @@ export const Contact = () => {
           {/* CARD 3: MY LOCATION */}
           <GlassCard
             glow="both"
-            className="p-5 sm:p-6 bg-[#03152B]/85 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
+            className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3">
               <div className="flex items-start justify-between">
@@ -640,7 +640,7 @@ export const Contact = () => {
               <GlassCard
                 key={card.title}
                 glow="cyan"
-                className="p-5 bg-[#03152B]/75 border-[#00E5FF]/15 hover:border-[#00E5FF]/40 rounded-xl space-y-3"
+                className="p-5 border-[#00E5FF]/15 hover:border-[#00E5FF]/40 rounded-xl space-y-3"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#00E5FF]/10 border border-[#00E5FF]/25 flex items-center justify-center">
                   {card.icon}

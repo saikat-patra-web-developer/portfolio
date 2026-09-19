@@ -44,7 +44,7 @@ export const Footer = ({ showCta = true }) => {
               </Link>
               <a
                 href={`mailto:${profileData.email}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white/90 bg-[#03152B]/80 hover:bg-[#052A4A] border border-[#00E5FF]/30 hover:border-[#00E5FF] transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white/90 hover:bg-[#052A4A] border border-[#00E5FF]/30 hover:border-[#00E5FF] transition-all duration-200"
               >
                 <Mail className="w-4 h-4 text-[#00E5FF]" />
                 <span>Email Me</span>

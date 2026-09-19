@@ -25,18 +25,16 @@ export const NeonButton = ({
     primary:
       "bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] text-white shadow-[0_0_25px_rgba(0,229,255,0.35)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] border border-white/20 hover:scale-[1.02]",
     secondary:
-      "bg-[#03152B]/80 text-white/90 border border-[#00E5FF]/30 hover:border-[#00E5FF] hover:bg-[#052A4A]/80 shadow-[0_0_20px_rgba(0,229,255,0.1)] hover:shadow-[0_0_25px_rgba(0,229,255,0.3)] hover:text-white",
+      "text-white/90 border border-[#00E5FF]/30 hover:border-[#00E5FF] hover:bg-[#052A4A]/80 shadow-[0_0_20px_rgba(0,229,255,0.1)] hover:shadow-[0_0_25px_rgba(0,229,255,0.3)] hover:text-white",
     glass:
       "bg-white/10 text-white/90 border border-white/15 hover:border-[#A855F7]/50 hover:bg-white/15 shadow-[0_0_15px_rgba(168,85,247,0.1)]",
     outline:
       "bg-transparent text-[#00E5FF] border border-[#00E5FF]/40 hover:bg-[#00E5FF]/10 hover:border-[#00E5FF]"
   };
 
-  const baseClasses = `inline-flex items-center justify-center min-h-[42px] rounded-xl transition-all duration-300 group cursor-pointer select-none active:scale-[0.98] ${
-    sizeStyles[size] || sizeStyles.md
-  } ${variantStyles[variant] || variantStyles.primary} ${
-    disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
-  } ${className}`;
+  const baseClasses = `inline-flex items-center justify-center min-h-[42px] rounded-xl transition-all duration-300 group cursor-pointer select-none active:scale-[0.98] ${sizeStyles[size] || sizeStyles.md
+    } ${variantStyles[variant] || variantStyles.primary} ${disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
+    } ${className}`;
 
   const content = (
     <>

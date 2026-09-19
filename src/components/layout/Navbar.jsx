@@ -52,14 +52,14 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-350 ease-out">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-350 ease-out border-0 border-none">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-350 ease-out">
         <nav
           aria-label="Main Navigation"
-          className={`pointer-events-auto w-full transition-all duration-350 ease-out flex items-center justify-between ${
+          className={`pointer-events-auto w-full transition-all duration-350 ease-out flex items-center justify-between border-0 border-none ${
             isScrolled
-              ? "mt-3 sm:mt-3.5 py-2 sm:py-2.5 px-4 sm:px-6 bg-[#031326]/75 border border-[#00E5FF]/25 shadow-[0_8px_30px_rgba(0,0,0,0.55)] backdrop-blur-xl rounded-2xl min-h-[62px] sm:min-h-[66px]"
-              : "mt-2 sm:mt-3.5 py-3 sm:py-4 px-0 bg-transparent border-0 border-transparent shadow-none backdrop-blur-none rounded-2xl min-h-[62px] sm:min-h-[66px]"
+              ? "mt-3 sm:mt-3.5 py-2 sm:py-2.5 px-4 sm:px-6 bg-[#031326]/75 shadow-[0_8px_30px_rgba(0,0,0,0.55)] backdrop-blur-xl rounded-2xl min-h-[62px] sm:min-h-[66px]"
+              : "mt-2 sm:mt-3.5 py-3 sm:py-4 px-0 bg-transparent shadow-none backdrop-blur-none rounded-2xl min-h-[62px] sm:min-h-[66px]"
           }`}
         >
           {/* Left: Brand Logo & Title Area */}

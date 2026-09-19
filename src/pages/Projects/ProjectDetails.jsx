@@ -172,7 +172,7 @@ export const ProjectDetails = () => {
         {/* TECHNICAL ARCHITECTURE                                   */}
         {/* ======================================================== */}
         {project.architecture && (
-          <section className="p-6 sm:p-8 rounded-3xl bg-[#03152B]/80 border border-[#00E5FF]/25 space-y-3">
+          <section className="p-6 sm:p-8 rounded-3xl border border-[#00E5FF]/25 space-y-3">
             <div className="flex items-center gap-2 text-[#00E5FF] font-bold text-xs uppercase tracking-wider">
               <Layers className="w-4 h-4" />
               <span>Technical Architecture</span>

@@ -111,26 +111,45 @@ export const Footer = ({ showCta = true }) => {
             <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4 text-[#00E5FF]">
               Direct Contact
             </h3>
-            <div className="space-y-2 text-xs sm:text-sm">
-              <div>
-                <span className="text-white/50 block text-[11px]">Primary Business Email</span>
-                <a
-                  href={`mailto:${profileData.email}`}
-                  className="text-white hover:text-[#00E5FF] transition-colors font-mono"
-                >
-                  {profileData.email}
-                </a>
+            <div className="space-y-3 text-xs sm:text-sm">
+              <div className="space-y-1">
+                <span className="text-white/50 block text-[11px] font-medium uppercase tracking-wider">Email Inboxes</span>
+                <div className="flex flex-col gap-0.5">
+                  <a
+                    href={`mailto:${profileData.directEmail || "saikatpatra300@gmail.com"}`}
+                    className="text-white hover:text-[#00E5FF] transition-colors font-mono text-xs"
+                  >
+                    {profileData.directEmail || "saikatpatra300@gmail.com"} <span className="text-[10px] text-white/40 font-sans">(Direct)</span>
+                  </a>
+                  <a
+                    href={`mailto:${profileData.businessEmail || "saikatpatraoffice@gmail.com"}`}
+                    className="text-white hover:text-[#00E5FF] transition-colors font-mono text-xs"
+                  >
+                    {profileData.businessEmail || "saikatpatraoffice@gmail.com"} <span className="text-[10px] text-white/40 font-sans">(Business)</span>
+                  </a>
+                </div>
               </div>
-              <div className="pt-1">
-                <span className="text-white/50 block text-[11px]">Direct WhatsApp / Phone</span>
-                <a
-                  href={profileData.whatsappChatUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-[#00E5FF] transition-colors"
-                >
-                  {profileData.phone}
-                </a>
+
+              <div className="space-y-1 pt-1 border-t border-white/5">
+                <span className="text-white/50 block text-[11px] font-medium uppercase tracking-wider">WhatsApp & Direct Calls</span>
+                <div className="flex flex-col gap-0.5">
+                  <a
+                    href={profileData.whatsappChatUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-[#00E5FF] transition-colors text-xs"
+                  >
+                    {profileData.primaryPhone || "+91 90389 09382"} <span className="text-[10px] text-emerald-400 font-sans">(Primary)</span>
+                  </a>
+                  <a
+                    href={profileData.whatsappSecondaryChatUrl || "https://wa.me/918902273136"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-[#00E5FF] transition-colors text-xs"
+                  >
+                    {profileData.secondaryPhone || "+91 89022 73136"} <span className="text-[10px] text-white/40 font-sans">(Secondary)</span>
+                  </a>
+                </div>
               </div>
             </div>
 

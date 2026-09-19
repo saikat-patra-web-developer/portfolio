@@ -13,10 +13,9 @@ import { SectionHeading } from "../../components/ui/SectionHeading";
 import { GlassCard } from "../../components/ui/GlassCard";
 import { NeonButton } from "../../components/ui/NeonButton";
 import { StatCard } from "../../components/ui/StatCard";
-import { TestimonialCard } from "../../components/testimonial/TestimonialCard";
+import { ReviewsSection } from "../../components/testimonial/ReviewsSection";
 import { profileData } from "../../data/profile";
 import { skillsData } from "../../data/skills";
-import { featuredTestimonials } from "../../data/testimonials";
 
 export const About = () => {
   return (
@@ -132,7 +131,7 @@ export const About = () => {
             <StatCard value="80+" label="Projects Completed" icon={Briefcase} />
             <StatCard value="50+" label="Happy Clients" icon={Users} />
             <StatCard value="7+" label="Years Experience" icon={Award} />
-            <StatCard value="5.0" label="Google Review Rating" icon={Star} highlight={true} />
+            <StatCard value="4.9" label="Google Rating (51 Reviews)" icon={Star} highlight={true} />
           </div>
         </section>
 
@@ -251,21 +250,15 @@ export const About = () => {
         </section>
 
         {/* ======================================================== */}
-        {/* SELECTED TESTIMONIALS                                    */}
+        {/* REVIEWS & TESTIMONIALS                                   */}
         {/* ======================================================== */}
-        <section id="testimonials">
-          <SectionHeading
-            badge="AUTHENTIC FEEDBACK"
-            title="What Clients Say"
-            subtitle="Real reviews from founders and marketing heads."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredTestimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-            ))}
-          </div>
-        </section>
+        <ReviewsSection
+          initialCount={6}
+          showFilters={true}
+          badge="AUTHENTIC FEEDBACK"
+          title="Client Reviews & Testimonials"
+          subtitle="Real reviews and verifiable feedback from Google Business Profile and direct project clients."
+        />
 
         {/* ======================================================== */}
         {/* FINAL CTA                                                */}

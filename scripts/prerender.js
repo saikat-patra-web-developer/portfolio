@@ -133,8 +133,28 @@ const routes = [
             <li><strong>7+ Years Experience</strong> delivering production web software</li>
             <li><strong>80+ Projects Completed</strong> for clients globally</li>
             <li><strong>50+ Satisfied Clients</strong> across India, New Zealand, USA, and Europe</li>
-            <li><strong>5.0 Google Review Rating</strong></li>
+            <li><strong>4.9 Google Review Rating (51 Verified Reviews)</strong></li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Client Feedback & Verified Google Reviews (4.9 Rating, 51 Reviews)</h2>
+          <article>
+            <h3>Christoph Gawenda (Local Guide · 25 reviews)</h3>
+            <p>Outstanding development service! The custom CRM is packed with useful features, and the admin panel is clean, fast, and easy to navigate. Highly recommended for businesses looking for a tailored solution.</p>
+          </article>
+          <article>
+            <h3>Dream Big Group (Real Estate Developer)</h3>
+            <p>We're very satisfied with the website developed by Saikat Patra. The project was completed on time, every requirement was handled professionally, and the final website gives our business a strong online presence. Five stars!</p>
+          </article>
+          <article>
+            <h3>Michael Carter (Quote My Blinds NZ)</h3>
+            <p>Saikat delivered a reliable, custom web application for our blinds business. The automated quote calculator works seamlessly and has brought us consistent new inbound leads.</p>
+          </article>
+          <article>
+            <h3>Ayan Das</h3>
+            <p>Saikat Patra is a skilled and dedicated web developer who delivers clean, responsive, and user-friendly websites. He has strong technical knowledge and pays great attention to detail. His problem-solving skills and commitment to meeting deadlines make him reliable and professional. Highly recommended for quality web development work.</p>
+          </article>
         </section>
 
         <section>
@@ -483,6 +503,22 @@ const routes = [
           </section>
 
           <section>
+            <h2>Verified Google Reviews & Client Feedback (4.9 Rating, 51 Reviews)</h2>
+            <article>
+              <h3>Christoph Gawenda (Local Guide · 25 reviews)</h3>
+              <p>Outstanding development service! The custom CRM is packed with useful features, and the admin panel is clean, fast, and easy to navigate. Highly recommended for businesses looking for a tailored solution.</p>
+            </article>
+            <article>
+              <h3>Dream Big Group (Real Estate Developer)</h3>
+              <p>We're very satisfied with the website developed by Saikat Patra. The project was completed on time, every requirement was handled professionally, and the final website gives our business a strong online presence. Five stars!</p>
+            </article>
+            <article>
+              <h3>Subrata Bhowmik</h3>
+              <p>His professionalism, responsiveness, and commitment to delivering high-quality work on time make him a pleasure to work with. I highly recommend Saikat to anyone looking for a skilled and reliable web designer who combines creativity with technical expertise.</p>
+            </article>
+          </section>
+
+          <section>
             <h2>Contact Saikat Patra</h2>
             <p>Email: saikatpatraoffice@gmail.com | WhatsApp: +91 90389 09382 | Location: Howrah, West Bengal, India.</p>
           </section>
@@ -517,22 +553,52 @@ const routes = [
   },
   {
     path: "/contact",
-    title: "Contact Saikat Patra | Full Stack Web Developer & Custom CRM Specialist",
-    description: "Let's discuss your web project. Contact Saikat Patra for custom web applications, bespoke CRM software, workflow automation, or technical consulting.",
+    title: "Get in Touch Directly | Saikat Patra - Full Stack Web Developer",
+    description: "Skip the long forms. Reach out directly to Saikat Patra via WhatsApp, direct phone, or email for web development, custom CRMs, and business automation.",
     bodyContent: `
       <main>
         <header>
-          <h1>Let's Discuss Your Web Project.</h1>
-          <p>Tell me what you are trying to build or improve, and we can discuss the best technical architecture and milestone roadmap for your business.</p>
+          <p>DIRECT CHANNELS</p>
+          <h1>Get in Touch Directly</h1>
+          <p>Skip the long forms. Reach out directly through any of my verified communication channels.</p>
         </header>
 
         <section>
-          <h2>Direct Contact Channels</h2>
+          <h2>Direct Communication Channels</h2>
           <ul>
-            <li><strong>WhatsApp (Fastest Response):</strong> +91 90389 09382</li>
-            <li><strong>Email:</strong> saikatpatraoffice@gmail.com</li>
-            <li><strong>Location:</strong> Howrah, West Bengal, India (Available for remote contracts worldwide)</li>
-            <li><strong>Response Time:</strong> Usually within 24 hours (Monday to Saturday)</li>
+            <li><strong>Instant Chat (Primary):</strong> +91 90389 09382 (WhatsApp & Direct Call)</li>
+            <li><strong>Instant Chat (Secondary):</strong> +91 89022 73136 (WhatsApp & Direct Call)</li>
+            <li><strong>Business Enquiries:</strong> saikatpatraoffice@gmail.com</li>
+            <li><strong>Direct Email:</strong> saikatpatra300@gmail.com</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Availability & Location</h2>
+          <p>Location: Howrah, West Bengal, India (Remote worldwide)</p>
+          <p>Response Time: Usually within 24 hours</p>
+        </section>
+
+        <section>
+          <h2>Project Inquiry Types</h2>
+          <ul>
+            <li>Custom Website Development</li>
+            <li>Business / Portfolio Website</li>
+            <li>E-commerce Solutions</li>
+            <li>Web Application (React, Laravel, etc.)</li>
+            <li>API Integration & Automation</li>
+            <li>Website Redesign & Optimization</li>
+            <li>Other (Let's Discuss)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Why Work With Me?</h2>
+          <ul>
+            <li><strong>Clear Communication:</strong> Regular updates and transparent process.</li>
+            <li><strong>Client Focused:</strong> Your goals are my priority.</li>
+            <li><strong>Reliable Support:</strong> On-time delivery and post-launch support.</li>
+            <li><strong>Long-Term Partnership:</strong> Not just a project, but a lasting relationship.</li>
           </ul>
         </section>
       </main>

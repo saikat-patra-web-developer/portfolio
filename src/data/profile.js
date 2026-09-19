@@ -7,10 +7,59 @@ export const profileData = {
   location: "Howrah, West Bengal, India",
   shortLocation: "Howrah, India",
   email: "saikatpatraoffice@gmail.com",
+  directEmail: "saikatpatra300@gmail.com",
+  businessEmail: "saikatpatraoffice@gmail.com",
   phone: "+91 90389 09382",
   phoneFormatted: "+91 90389 09382",
+  primaryPhone: "+91 90389 09382",
+  secondaryPhone: "+91 89022 73136",
   whatsapp: "https://wa.me/919038909382",
+  primaryWhatsapp: "https://wa.me/919038909382",
+  secondaryWhatsapp: "https://wa.me/918902273136",
   whatsappChatUrl: "https://wa.me/919038909382?text=Hi%20Saikat%2C%20I%20would%20like%20to%20discuss%20a%20web%20development%20project.",
+  whatsappSecondaryChatUrl: "https://wa.me/918902273136?text=Hi%20Saikat%2C%20I%20would%20like%20to%20discuss%20a%20web%20development%20project.",
+  emails: [
+    {
+      id: "direct-email",
+      type: "direct",
+      label: "Direct Email",
+      value: "saikatpatra300@gmail.com",
+      href: "mailto:saikatpatra300@gmail.com",
+      description: "Direct personal & developer inbox",
+      badge: "Direct Contact"
+    },
+    {
+      id: "business-email",
+      type: "business",
+      label: "Business Enquiries",
+      value: "saikatpatraoffice@gmail.com",
+      href: "mailto:saikatpatraoffice@gmail.com",
+      description: "Official agency & business proposals",
+      badge: "Official Inquiries"
+    }
+  ],
+  phones: [
+    {
+      id: "primary-phone",
+      type: "primary",
+      label: "Instant Chat (Primary)",
+      value: "+91 90389 09382",
+      whatsappUrl: "https://wa.me/919038909382",
+      telUrl: "tel:+919038909382",
+      description: "Fastest response via WhatsApp or call",
+      badge: "Primary Line"
+    },
+    {
+      id: "secondary-phone",
+      type: "secondary",
+      label: "Instant Chat (Secondary)",
+      value: "+91 89022 73136",
+      whatsappUrl: "https://wa.me/918902273136",
+      telUrl: "tel:+918902273136",
+      description: "Direct secondary line for queries",
+      badge: "Secondary Line"
+    }
+  ],
   linkedin: "https://www.linkedin.com/in/saikat-patra-web-developer",
   github: "https://github.com/saikat-patra-web-developer",
   availability: "Currently Available",
@@ -22,7 +71,7 @@ export const profileData = {
     { value: "80+", label: "Projects Completed" },
     { value: "50+", label: "Happy Clients" },
     { value: "7+", label: "Years Experience" },
-    { value: "5.0", label: "Google Review Rating" }
+    { value: "4.9", label: "Google Rating (51 Reviews)" }
   ],
   heroChips: ["Custom Web Apps", "Bespoke CRM Systems", "Business Automation", "React & Laravel", "API Integrations"],
   highlights: [

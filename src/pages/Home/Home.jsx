@@ -17,13 +17,12 @@ import { NeonButton } from "../../components/ui/NeonButton";
 import { StatCard } from "../../components/ui/StatCard";
 import { ServiceCard } from "../../components/service/ServiceCard";
 import { ProjectCard } from "../../components/project/ProjectCard";
-import { TestimonialCard } from "../../components/testimonial/TestimonialCard";
+import { ReviewsSection } from "../../components/testimonial/ReviewsSection";
 import { GlassCard } from "../../components/ui/GlassCard";
 import { FaqSection } from "../../components/faq/FaqSection";
 import { profileData } from "../../data/profile";
 import { coreServices } from "../../data/services";
 import { projectsData } from "../../data/projects";
-import { featuredTestimonials } from "../../data/testimonials";
 
 export const Home = () => {
   // Top 3 featured case studies
@@ -138,8 +137,8 @@ export const Home = () => {
               icon={Award}
             />
             <StatCard
-              value="5.0"
-              label="Google Review Rating"
+              value="4.9"
+              label="Google Rating (51 Reviews)"
               icon={Star}
               highlight={true}
             />
@@ -259,23 +258,15 @@ export const Home = () => {
         </section>
 
         {/* ======================================================== */}
-        {/* SECTION 7 — TESTIMONIALS                                 */}
+        {/* SECTION 7 — REVIEWS & TESTIMONIALS                       */}
         {/* ======================================================== */}
-        <section>
-          <SectionHeading
-            badge="CLIENT FEEDBACK"
-            title="What Clients Say"
-            subtitle="Authentic feedback from business owners and founders."
-            actionText="View About & Reviews"
-            actionTo="/about"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredTestimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-            ))}
-          </div>
-        </section>
+        <ReviewsSection
+          initialCount={6}
+          showFilters={true}
+          badge="CLIENT FEEDBACK"
+          title="What Clients Say"
+          subtitle="Authentic feedback and verified reviews from business owners, founders, and teams."
+        />
 
         {/* ======================================================== */}
         {/* SECTION 8 — ABOUT PREVIEW                                */}

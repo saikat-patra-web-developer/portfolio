@@ -14,17 +14,31 @@ export const socialLinks = [
     username: "saikat-patra-web-developer"
   },
   {
-    name: "WhatsApp",
+    name: "WhatsApp (Primary)",
     url: "https://wa.me/919038909382",
     icon: "whatsapp",
-    label: "Direct Chat on WhatsApp",
+    label: "Direct Chat on WhatsApp (Primary)",
     username: "+91 90389 09382"
   },
   {
-    name: "Email",
+    name: "WhatsApp (Secondary)",
+    url: "https://wa.me/918902273136",
+    icon: "whatsapp",
+    label: "Direct Chat on WhatsApp (Secondary)",
+    username: "+91 89022 73136"
+  },
+  {
+    name: "Direct Email",
+    url: "mailto:saikatpatra300@gmail.com",
+    icon: "mail",
+    label: "Direct Email",
+    username: "saikatpatra300@gmail.com"
+  },
+  {
+    name: "Business Email",
     url: "mailto:saikatpatraoffice@gmail.com",
     icon: "mail",
-    label: "Business Email",
+    label: "Business Enquiries",
     username: "saikatpatraoffice@gmail.com"
   }
 ];

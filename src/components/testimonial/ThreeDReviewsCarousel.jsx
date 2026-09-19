@@ -32,7 +32,6 @@ const GoogleGIcon = ({ className = "w-3.5 h-3.5" }) => (
 export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const isAutoPlaying = true;
-  const [isHovered, setIsHovered] = useState(false);
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
@@ -59,16 +58,16 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
     setActiveIndex((prev) => (prev - 1 + count) % count);
   }, [count]);
 
-  // Autoplay loop with auto-pause on hover/interaction & browser tab visibility
+  // Autoplay loop: ALWAYS moving continuously, never paused on hover or touch
   useEffect(() => {
-    if (!isAutoPlaying || isHovered || count <= 1) return;
+    if (!isAutoPlaying || count <= 1) return;
     const timer = setInterval(() => {
       if (typeof document !== "undefined" && !document.hidden) {
         next();
       }
-    }, 2200);
+    }, 1600);
     return () => clearInterval(timer);
-  }, [isAutoPlaying, isHovered, count, next]);
+  }, [isAutoPlaying, count, next, activeIndex]);
 
   // Keyboard navigation
   const handleKeyDown = (e) => {
@@ -134,8 +133,6 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
       ref={containerRef}
       onKeyDown={handleKeyDown}
       tabIndex={0}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onPan={(_e, info) => {
         if (Math.abs(info.offset.x) > 6 || Math.abs(info.offset.y) > 6) {
           isPanningRef.current = true;

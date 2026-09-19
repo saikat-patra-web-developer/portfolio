@@ -160,12 +160,6 @@ export const Home = () => {
               <ServiceCard key={service.id} service={service} />
             ))}
           </div>
-
-          <div className="mt-8 text-center">
-            <NeonButton to="/services" variant="secondary" size="md">
-              Explore All Services
-            </NeonButton>
-          </div>
         </section>
 
         {/* ======================================================== */}
@@ -184,12 +178,6 @@ export const Home = () => {
             {featuredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} featuredLayout={true} />
             ))}
-          </div>
-
-          <div className="mt-8 text-center">
-            <NeonButton to="/projects" variant="secondary" size="md">
-              View Complete Project Library
-            </NeonButton>
           </div>
         </section>
 

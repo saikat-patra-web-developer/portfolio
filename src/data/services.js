@@ -139,29 +139,80 @@ export const developmentProcess = [
 ];
 
 export const faqList = [
+  // SECTION 1: Technical & Capabilities
   {
+    id: "tech-projects",
+    category: "tech",
     q: "What types of projects do you build?",
-    a: "I specialize in custom web applications, bespoke CRM platforms, business automation tools, and high-performance business websites. Most of my work involves solving operational bottlenecks, replacing complex spreadsheets, or building custom client and admin portals using React and Laravel."
+    a: "I specialize in custom web applications, bespoke CRM platforms, business automation tools, and high-performance client portals. Most of my work involves solving operational bottlenecks, replacing unwieldy spreadsheets, and building scalable full-stack web software using React and Laravel."
   },
   {
-    q: "Do you work with international clients?",
-    a: "Yes. Over the past 7+ years, I have collaborated with founders, businesses, and agency partners across India, New Zealand, the United States, the UK, and Europe. I maintain clear, asynchronous communication and coordinate sprint calls to accommodate different time zones."
-  },
-  {
-    q: "Can you improve or refactor an existing application?",
-    a: "Yes. I frequently help businesses modernize legacy PHP or WordPress platforms, refactor slow frontend code into fast React components, fix database query bottlenecks, and build custom APIs to connect older systems with modern cloud services."
-  },
-  {
-    q: "Can you integrate with an existing CRM or third-party API?",
-    a: "Yes. I regularly integrate web platforms with third-party services including payment gateways (Stripe, PayPal, Razorpay), communication APIs (Twilio, SendGrid, WhatsApp Business), external CRMs, and custom RESTful endpoints with secure webhook handlers."
-  },
-  {
+    id: "tech-stack",
+    category: "tech",
     q: "What technologies do you use most frequently?",
-    a: "My core production stack centers on modern React with Tailwind CSS on the frontend, and robust Laravel (PHP) with MySQL on the backend. For CMS projects, I build bespoke, lightweight WordPress themes and plugins without relying on bloated page builders."
+    a: "My core production stack centers on modern React, TypeScript, and Tailwind CSS on the frontend, and robust Laravel (PHP) with MySQL or PostgreSQL on the backend. For CMS needs, I develop lightweight, custom WordPress themes and plugins without bloated page builders."
   },
   {
-    q: "How can I discuss a project with you?",
-    a: "You can submit an inquiry through the Contact page form, message me directly on WhatsApp at +91 90389 09382, or email saikatpatraoffice@gmail.com. I will review your requirements and respond within 24 hours to schedule a brief consultation."
+    id: "tech-refactoring",
+    category: "tech",
+    q: "Can you improve, modernize, or refactor an existing application?",
+    a: "Yes. I frequently help businesses modernize legacy PHP or WordPress platforms, refactor slow frontend code into high-speed React components, optimize sluggish database queries, and build custom RESTful APIs to bridge legacy databases with modern cloud tools."
+  },
+  {
+    id: "tech-integrations",
+    category: "tech",
+    q: "Can you integrate with third-party APIs, CRMs, and payment gateways?",
+    a: "Yes. I regularly integrate web platforms with third-party ecosystems including payment gateways (Stripe, PayPal, Razorpay), communication APIs (Twilio, SendGrid, WhatsApp Business API), external CRMs (HubSpot, Zoho, Salesforce), and custom webhooks with resilient error handling."
+  },
+  {
+    id: "tech-devops",
+    category: "tech",
+    q: "Can you handle cloud deployment, server setup, and DevOps?",
+    a: "Yes. I manage end-to-end production hosting and deployments across AWS, DigitalOcean, Hetzner, Vercel, and traditional Linux VPS environments. This includes setting up automated CI/CD deployment pipelines, SSL certificates, automated database backups, and Redis caching for peak performance."
+  },
+  {
+    id: "tech-design",
+    category: "tech",
+    q: "Do I need ready-made UI/UX designs before we start?",
+    a: "Not necessarily. If you already have Figma or Adobe XD designs, I will translate them into responsive, pixel-perfect code. If you only have an idea, wireframe, or business requirement document, I design clean, intuitive, and modern UI interfaces directly tailored to your end users."
+  },
+
+  // SECTION 2: Process, Pricing & Collaboration
+  {
+    id: "process-pricing",
+    category: "process",
+    q: "How do you structure project pricing and payments?",
+    a: "I provide transparent, milestone-based fixed pricing for scoped projects, and hourly or monthly retainer arrangements for continuous feature sprints. Projects typically split into structured milestones (e.g., 30% kickoff, 40% functional beta demo, 30% final launch). There are zero hidden costs."
+  },
+  {
+    id: "process-turnaround",
+    category: "process",
+    q: "What is your typical project turnaround time?",
+    a: "Delivery depends on technical scope. Focused landing applications and business utilities typically take 1–2 weeks. Custom CRM portals, multi-role web apps, and complete business platforms typically take 3–6 weeks. You receive staging preview links and milestone demos every week."
+  },
+  {
+    id: "process-ownership",
+    category: "process",
+    q: "Who owns the code and intellectual property after completion?",
+    a: "You retain 100% full intellectual property and code ownership. Upon final milestone completion and sign-off, full source code repositories, deployment scripts, database schemas, and documentation are transferred to your accounts with zero vendor lock-in."
+  },
+  {
+    id: "process-warranty",
+    category: "process",
+    q: "Do you offer post-launch warranty and ongoing maintenance?",
+    a: "Yes. Every custom build includes a complimentary 30-day post-launch warranty covering bug fixes, performance monitoring, and handover adjustments. For long-term continuity, I also provide monthly maintenance retainers covering security patches, backups, and feature enhancements."
+  },
+  {
+    id: "process-international",
+    category: "process",
+    q: "Do you work with international clients across different time zones?",
+    a: "Yes. Over the past 7+ years, I have collaborated with founders, startups, and agencies across India, the United States, the UK, Europe, and New Zealand. I maintain prompt asynchronous communication, detailed sprint updates, and schedule crossover calls that fit your time zone."
+  },
+  {
+    id: "process-contact",
+    category: "process",
+    q: "How can I discuss my project and get started?",
+    a: "You can submit an inquiry through the Contact page, message me directly on WhatsApp at +91 90389 09382, or email saikatpatraoffice@gmail.com. I review your requirements and respond within 24 hours to arrange an introductory consultation or preliminary technical estimate."
   }
 ];
 

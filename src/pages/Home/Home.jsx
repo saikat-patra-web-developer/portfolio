@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -7,7 +6,6 @@ import {
   Users,
   Star,
   CheckCircle2,
-  ChevronDown,
   Mail,
   MapPin,
   Play,
@@ -21,19 +19,15 @@ import { ServiceCard } from "../../components/service/ServiceCard";
 import { ProjectCard } from "../../components/project/ProjectCard";
 import { TestimonialCard } from "../../components/testimonial/TestimonialCard";
 import { GlassCard } from "../../components/ui/GlassCard";
+import { FaqSection } from "../../components/faq/FaqSection";
 import { profileData } from "../../data/profile";
-import { coreServices, faqList } from "../../data/services";
+import { coreServices } from "../../data/services";
 import { projectsData } from "../../data/projects";
 import { featuredTestimonials } from "../../data/testimonials";
 
 export const Home = () => {
   // Top 3 featured case studies
   const featuredProjects = projectsData.filter((p) => p.featured).slice(0, 3);
-  const [openFaq, setOpenFaq] = useState(0);
-
-  const toggleFaq = (index) => {
-    setOpenFaq((prev) => (prev === index ? -1 : index));
-  };
 
   return (
     <PageLayout
@@ -325,52 +319,7 @@ export const Home = () => {
         {/* ======================================================== */}
         {/* SECTION 9 — FAQ                                          */}
         {/* ======================================================== */}
-        <section>
-          <SectionHeading
-            badge="FREQUENTLY ASKED QUESTIONS"
-            title="Common Questions"
-            subtitle="Straightforward answers to help you decide if we are the right fit for your project."
-          />
-
-          <div className="max-w-3xl mx-auto space-y-3.5 pt-2">
-            {faqList.map((faq, idx) => {
-              const isOpen = openFaq === idx;
-              return (
-                <GlassCard
-                  key={idx}
-                  hoverEffect={false}
-                  className={`border-[#00E5FF]/20 overflow-hidden transition-all duration-200 ${isOpen
-                    ? "border-[#00E5FF]/50 bg-[#03152B]/90 shadow-[0_0_20px_rgba(0,229,255,0.1)]"
-                    : "hover:border-[#00E5FF]/35"
-                    }`}
-                >
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer select-none"
-                    aria-expanded={isOpen}
-                  >
-                    <span
-                      className={`text-sm sm:text-base font-bold transition-colors ${isOpen ? "text-[#00E5FF]" : "text-white"
-                        }`}
-                    >
-                      {faq.q}
-                    </span>
-                    <ChevronDown
-                      className={`w-4 h-4 text-[#00E5FF] shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
-                        }`}
-                    />
-                  </button>
-
-                  {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-white/75 leading-relaxed border-t border-white/5 pt-3">
-                      {faq.a}
-                    </div>
-                  )}
-                </GlassCard>
-              );
-            })}
-          </div>
-        </section>
+        <FaqSection />
 
         {/* ======================================================== */}
         {/* SECTION 10 — FINAL HIGH-CONVERSION CTA                   */}

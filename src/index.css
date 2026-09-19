@@ -564,7 +564,7 @@ h6 {
 
 .home-tech-strip {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 220px 1fr;
   align-items: center;
   min-height: 84px;
   padding: 18px 28px;
@@ -586,7 +586,6 @@ h6 {
 .home-tech-strip>div {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 14px;
 }
 
 .home-tech-strip span {
@@ -599,8 +598,17 @@ h6 {
 
 .home-tech-strip b {
   color: var(--tech);
-  font-size: 26px;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+
+.home-tech-strip b svg {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 .home-tech-strip small {
@@ -1587,7 +1595,6 @@ h6 {
 
   .home-tech-strip>div {
     grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
   }
 
   .home-services-grid {
@@ -1716,7 +1723,6 @@ h6 {
 
   .home-tech-strip>div {
     grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
   }
 
   .home-tech-strip span {
@@ -1739,7 +1745,6 @@ h6 {
 
   .home-tech-strip>div {
     grid-template-columns: repeat(5, 1fr);
-    gap: 6px;
   }
 
   .home-tech-strip small {
@@ -1753,7 +1758,6 @@ h6 {
 @media (max-width: 360px) {
   .home-tech-strip>div {
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
   }
 
   .home-tech-strip small {

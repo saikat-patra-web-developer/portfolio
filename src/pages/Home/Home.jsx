@@ -24,20 +24,32 @@ import { profileData } from "../../data/profile";
 import { servicesData } from "../../data/services";
 import { projectsData } from "../../data/projects";
 import { testimonialsData } from "../../data/testimonials";
+import {
+  ReactIcon,
+  LaravelIcon,
+  PhpIcon,
+  MysqlIcon,
+  WordpressIcon,
+  JavascriptIcon,
+  TailwindIcon,
+  AwsIcon,
+  GitIcon,
+  FigmaIcon
+} from "../../components/ui/TechIcons";
 
 const valueIcons = [Heart, MessageSquare, Star, Clock3];
 const statIcons = [Award, BriefcaseBusiness, Users, ShieldCheck];
 const technologies = [
-  ["⚛", "React", "#61dafb"],
-  ["◈", "Laravel", "#ff4d4d"],
-  ["php", "PHP", "#a78bfa"],
-  ["MySQL", "MySQL", "#38bdf8"],
-  ["W", "WordPress", "#60a5fa"],
-  ["JS", "JavaScript", "#fde047"],
-  ["≈", "Tailwind CSS", "#22d3ee"],
-  ["aws", "AWS", "#fb923c"],
-  ["◆", "Git", "#f43f5e"],
-  ["F", "Figma", "#d946ef"]
+  [ReactIcon, "React", "#61dafb"],
+  [LaravelIcon, "Laravel", "#ff4d4d"],
+  [PhpIcon, "PHP", "#a78bfa"],
+  [MysqlIcon, "MySQL", "#38bdf8"],
+  [WordpressIcon, "WordPress", "#60a5fa"],
+  [JavascriptIcon, "JavaScript", "#fde047"],
+  [TailwindIcon, "Tailwind CSS", "#22d3ee"],
+  [AwsIcon, "AWS", "#fb923c"],
+  [GitIcon, "Git", "#f43f5e"],
+  [FigmaIcon, "Figma", "#d946ef"]
 ];
 
 export const Home = () => {
@@ -137,9 +149,11 @@ export const Home = () => {
         <section className="home-tech-strip">
           <strong>TECHNOLOGIES I WORK WITH</strong>
           <div>
-            {technologies.map(([mark, label, color]) => (
+            {technologies.map(([IconComponent, label, color]) => (
               <span key={label} style={{ "--tech": color }}>
-                <b>{mark}</b>
+                <b>
+                  <IconComponent />
+                </b>
                 <small>{label}</small>
               </span>
             ))}

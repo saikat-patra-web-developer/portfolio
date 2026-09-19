@@ -1,8 +1,18 @@
-import React, { useState, useMemo } from "react";
-import { Star, ExternalLink, ChevronDown, ChevronUp, MapPin, CheckCircle2 } from "lucide-react";
+import React, { useState } from "react";
+import {
+  Star,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
+  MapPin,
+  CheckCircle2,
+  Boxes,
+  LayoutGrid
+} from "lucide-react";
 import { GlassCard } from "../ui/GlassCard";
 import { SectionHeading } from "../ui/SectionHeading";
 import { TestimonialCard } from "./TestimonialCard";
+import { ThreeDReviewsCarousel } from "./ThreeDReviewsCarousel";
 import { testimonialsData, googleReviewStats } from "../../data/testimonials";
 
 const GoogleGIcon = ({ className = "w-5 h-5" }) => (
@@ -28,34 +38,58 @@ const GoogleGIcon = ({ className = "w-5 h-5" }) => (
 
 export const ReviewsSection = ({
   initialCount = 6,
-  showFilters = true,
   badge = "CLIENT FEEDBACK",
   title = "What Clients Say",
   subtitle = "Authentic feedback and verified reviews from business owners, founders, and teams."
 }) => {
-  const [activeCategory, setActiveCategory] = useState("all");
   const [isExpanded, setIsExpanded] = useState(false);
-
-  const filteredReviews = useMemo(() => {
-    if (activeCategory === "all") return testimonialsData;
-    if (activeCategory === "google") {
-      return testimonialsData.filter((t) => t.source === "Google Review");
-    }
-    return testimonialsData.filter((t) => t.category === activeCategory);
-  }, [activeCategory]);
+  const [viewMode, setViewMode] = useState("3d"); // '3d' | 'grid'
 
   const displayedReviews = isExpanded
-    ? filteredReviews
-    : filteredReviews.slice(0, initialCount);
+    ? testimonialsData
+    : testimonialsData.slice(0, initialCount);
 
   return (
     <section id="reviews" className="space-y-8">
-      {/* Section Header */}
-      <SectionHeading
-        badge={badge}
-        title={title}
-        subtitle={subtitle}
-      />
+      {/* Section Header with View Mode Switcher */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <SectionHeading
+          badge={badge}
+          title={title}
+          subtitle={subtitle}
+        />
+
+        {/* View Mode Toggle: 3D Rotating Showcase vs Grid View */}
+        <div className="inline-flex items-center p-1 rounded-xl bg-[#03152B]/90 border border-white/10 self-start sm:self-auto shadow-inner">
+          <button
+            onClick={() => setViewMode("3d")}
+            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+              viewMode === "3d"
+                ? "bg-gradient-to-r from-[#00E5FF] to-[#2787FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
+                : "text-white/70 hover:text-white hover:bg-white/5"
+            }`}
+            title="3D Rotating Showcase"
+            aria-label="3D Rotating Showcase"
+          >
+            <Boxes className="w-3.5 h-3.5" />
+            <span>3D Showcase</span>
+          </button>
+
+          <button
+            onClick={() => setViewMode("grid")}
+            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+              viewMode === "grid"
+                ? "bg-gradient-to-r from-[#00E5FF] to-[#2787FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
+                : "text-white/70 hover:text-white hover:bg-white/5"
+            }`}
+            title="Classic Grid View"
+            aria-label="Classic Grid View"
+          >
+            <LayoutGrid className="w-3.5 h-3.5" />
+            <span>Grid View</span>
+          </button>
+        </div>
+      </div>
 
       {/* Google Business Credibility Banner */}
       <GlassCard
@@ -117,72 +151,38 @@ export const ReviewsSection = ({
         </div>
       </GlassCard>
 
-      {/* Filter Tabs */}
-      {showFilters && (
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-          {googleReviewStats.tags.map((tag) => {
-            const count =
-              tag.key === "all"
-                ? testimonialsData.length
-                : tag.key === "google"
-                ? testimonialsData.filter((t) => t.source === "Google Review").length
-                : testimonialsData.filter((t) => t.category === tag.key).length;
+      {/* Main Review Content: 3D Showcase vs Grid View */}
+      {viewMode === "3d" ? (
+        <ThreeDReviewsCarousel reviews={testimonialsData} />
+      ) : (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {displayedReviews.map((testimonial) => (
+              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+            ))}
+          </div>
 
-            const isActive = activeCategory === tag.key;
-
-            return (
+          {/* Show More / Show Less Controls for Grid View */}
+          {testimonialsData.length > initialCount && (
+            <div className="text-center pt-2">
               <button
-                key={tag.key}
-                onClick={() => {
-                  setActiveCategory(tag.key);
-                  setIsExpanded(false);
-                }}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all duration-200 flex items-center gap-1.5 ${
-                  isActive
-                    ? "bg-[#00E5FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
-                    : "bg-white/5 text-white/70 hover:text-white hover:bg-white/10 border border-white/10"
-                }`}
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-[#00E5FF] bg-[#00E5FF]/10 hover:bg-[#00E5FF]/20 border border-[#00E5FF]/30 transition-all duration-200 shadow-sm group cursor-pointer"
               >
-                <span>{tag.label}</span>
-                <span
-                  className={`px-1.5 py-0.2 rounded-full text-[10px] ${
-                    isActive ? "bg-[#020B18]/30 text-[#020B18]" : "bg-white/10 text-white/50"
-                  }`}
-                >
-                  {count}
+                <span>
+                  {isExpanded
+                    ? "Show Fewer Reviews"
+                    : `View All ${filteredReviews.length} Reviews`}
                 </span>
+                {isExpanded ? (
+                  <ChevronUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                )}
               </button>
-            );
-          })}
-        </div>
-      )}
-
-      {/* Reviews Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-        {displayedReviews.map((testimonial) => (
-          <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-        ))}
-      </div>
-
-      {/* Show More / Show Less Controls */}
-      {filteredReviews.length > initialCount && (
-        <div className="text-center pt-2">
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-[#00E5FF] bg-[#00E5FF]/10 hover:bg-[#00E5FF]/20 border border-[#00E5FF]/30 transition-all duration-200 shadow-sm group"
-          >
-            <span>
-              {isExpanded
-                ? "Show Fewer Reviews"
-                : `View All ${filteredReviews.length} Reviews`}
-            </span>
-            {isExpanded ? (
-              <ChevronUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-            ) : (
-              <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-            )}
-          </button>
-        </div>
+            </div>
+          )}
+        </>
       )}
 
       {/* Footer Subtext */}

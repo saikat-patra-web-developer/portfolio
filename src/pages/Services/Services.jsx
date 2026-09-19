@@ -193,7 +193,14 @@ export const Services = () => {
                     )}
 
                     {/* Direct CTA */}
-                    <div className="pt-2">
+                    <div className="pt-2 flex flex-col gap-2">
+                      <Link
+                        to={`/services/${service.slug}`}
+                        className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white border border-[#00E5FF]/30 hover:border-[#00E5FF] hover:bg-[#052A4A]/80 transition-all"
+                      >
+                        <span>View Full Details</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
                       <Link
                         to={`/contact?service=${encodeURIComponent(service.title)}`}
                         className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#2787FF] to-[#7B3CFF] hover:opacity-95 shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all"

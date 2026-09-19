@@ -1,6 +1,7 @@
 export const coreServices = [
   {
     id: "custom-web-apps",
+    slug: "custom-web-applications",
     number: "01",
     title: "Custom Web Applications",
     shortDesc: "Bespoke full-stack web applications built around your exact operational workflows, portals, and internal tools.",
@@ -28,6 +29,7 @@ export const coreServices = [
   },
   {
     id: "crm-business-automation",
+    slug: "crm-business-automation",
     number: "02",
     title: "Bespoke CRM & Business Automation",
     shortDesc: "Custom CRM systems and automated workflows designed to replace cluttered spreadsheets and eliminate manual admin busywork.",
@@ -55,6 +57,7 @@ export const coreServices = [
   },
   {
     id: "high-performance-websites",
+    slug: "high-performance-business-websites",
     number: "03",
     title: "High-Performance Business Websites",
     shortDesc: "Modern, conversion-focused websites engineered for lightning speed, Google SEO visibility, and smooth mobile experiences.",
@@ -82,6 +85,7 @@ export const coreServices = [
   },
   {
     id: "api-integrations",
+    slug: "api-third-party-integrations",
     number: "04",
     title: "API & Third-Party Integrations",
     shortDesc: "Seamless, secure connections linking your web software with payment gateways, external CRMs, and third-party cloud tools.",
@@ -109,6 +113,7 @@ export const coreServices = [
   },
   {
     id: "ai-tool-implementation",
+    slug: "ai-tool-implementation",
     number: "05",
     title: "AI Tool Implementation & Smart Automation",
     shortDesc: "Custom LLM integrations, private RAG knowledge bases, intelligent workflow agents, and smart copilot tools embedded directly into your software.",
@@ -136,6 +141,7 @@ export const coreServices = [
   },
   {
     id: "mobile-app-development",
+    slug: "mobile-app-development",
     number: "06",
     title: "Cross-Platform Mobile Apps (iOS & Android)",
     shortDesc: "High-performance, native-feel iOS and Android mobile applications built with React Native and Expo for customer portals and field operations.",
@@ -163,6 +169,7 @@ export const coreServices = [
   },
   {
     id: "seo-and-geo",
+    slug: "seo-geo-optimization",
     number: "07",
     title: "SEO & GEO (Generative Engine Optimization)",
     shortDesc: "Dual-engine organic discovery engineered to rank #1 on Google and ensure your business is recommended and cited by ChatGPT, Perplexity, and AI Search engines.",

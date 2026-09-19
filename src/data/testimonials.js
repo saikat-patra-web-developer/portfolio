@@ -12,28 +12,28 @@ export const testimonialsData = [
     projectSlug: "quote-my-blinds"
   },
   {
-    id: "ivc-valves-review",
-    author: "David Thompson",
-    role: "Marketing Head",
-    company: "IVC Valves Manufacturing",
+    id: "sspr-valve-review",
+    author: "Prasenjit Dey",
+    role: "Managing Director",
+    company: "SSPR Valve Manufacturing Pvt Ltd",
     rating: 5,
-    avatar: "D",
+    avatar: "P",
     avatarBg: "from-cyan-600 to-blue-800",
-    content: "Clear communication, disciplined delivery, and excellent technical execution. Our technical catalog looks modern, loads quickly, and has noticeably increased our B2B quotation inquiries.",
+    content: "Clear communication, disciplined delivery, and excellent technical execution. Our industrial valve catalog looks modern, loads quickly on Cloudflare edge, and has noticeably increased our inquiries across infrastructure sectors.",
     source: "Verified Client",
-    projectSlug: "ivc-valves-client-project"
+    projectSlug: "sspr-valve-manufacturing"
   },
   {
-    id: "real-estate-review",
-    author: "Sarah Mitchell",
-    role: "Director",
-    company: "Prime Realty Group",
+    id: "dream-big-group-review",
+    author: "Dream Big Group",
+    role: "Management Team",
+    company: "Dream Big Group (Howrah)",
     rating: 5,
-    avatar: "S",
+    avatar: "D",
     avatarBg: "from-purple-600 to-indigo-700",
-    content: "Professional, highly responsive, and technically strong in React and Laravel. The property platform search is lightning fast and our buyers love the mobile experience.",
+    content: "Saikat engineered a stunning, ultra-fast website for our residential housing projects. Homebuyer inquiries have surged and the mobile presentation is flawless.",
     source: "Verified Client",
-    projectSlug: "real-estate-listing-platform"
+    projectSlug: "dream-big-group"
   },
   {
     id: "google-review-1",

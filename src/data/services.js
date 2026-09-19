@@ -20,9 +20,9 @@ export const coreServices = [
     ],
     technologies: ["React", "Laravel", "PHP", "MySQL", "Tailwind CSS"],
     relatedCaseStudy: {
-      title: "Quote My Blinds",
-      slug: "quote-my-blinds",
-      result: "60% faster quote creation and 3x more inbound leads"
+      title: "Industrial PLT Cutting File Generator",
+      slug: "plt-file-generator",
+      result: "Cut coordinate file preparation from 15 minutes to under 20 seconds"
     },
     icon: "code"
   },
@@ -47,9 +47,9 @@ export const coreServices = [
     ],
     technologies: ["Laravel", "MySQL", "Livewire", "React", "REST APIs"],
     relatedCaseStudy: {
-      title: "Custom CRM System",
-      slug: "custom-crm-system",
-      result: "50% reduction in admin time and $40,000+ recovered in billables"
+      title: "Quote My Blinds SaaS Operations & CRM Platform",
+      slug: "quote-my-blinds",
+      result: "65% faster quote-to-invoice cycles and unified booking schedules"
     },
     icon: "database"
   },
@@ -74,9 +74,9 @@ export const coreServices = [
     ],
     technologies: ["React", "WordPress (Custom)", "Tailwind CSS", "PHP", "Vite"],
     relatedCaseStudy: {
-      title: "IVC Valves Corporate Presence",
-      slug: "ivc-valves-client-project",
-      result: "40% increase in international B2B inquiries"
+      title: "SSPR Valve Manufacturing Industrial Catalog",
+      slug: "sspr-valve-manufacturing",
+      result: "45% increase in domestic and export valve inquiries"
     },
     icon: "layout"
   },
@@ -101,9 +101,9 @@ export const coreServices = [
     ],
     technologies: ["REST APIs", "Webhooks", "Laravel", "Node.js", "MySQL"],
     relatedCaseStudy: {
-      title: "Real Estate Listing Platform",
-      slug: "real-estate-listing-platform",
-      result: "70% faster search response times and automated lead dispatch"
+      title: "Purge Electrical Solutions & Invoicing System",
+      slug: "purge-electrical",
+      result: "75% faster invoice creation with automated payment tracking"
     },
     icon: "link"
   }

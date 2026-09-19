@@ -103,52 +103,137 @@ const routes = [
     `
   },
   {
+    path: "/projects/plt-file-generator",
+    title: "Industrial PLT Cutting File Generator Case Study | Saikat Patra",
+    description: "Industrial web application translating blind dimensions into machine-executable HPGL/PLT cutting files for automated CNC fabric cutting tables.",
+    h1: "Industrial PLT Cutting File Generator Case Study",
+    bodyContent: `
+      <main>
+        <article>
+          <h1>Industrial PLT Cutting File Generator Case Study</h1>
+          <p>Client: Purge Window Shades & Industrial Automation | Technologies: React, JavaScript, Cloudflare Workers, HPGL/PLT Vector Engine, Tailwind CSS</p>
+          <p>Challenge: Factory operators manually drafted coordinates and hem allowances for CNC cutting tables, causing fabric waste and machine downtime.</p>
+          <p>Solution: Engineered an edge-hosted PLT vector generator that computes cutting coordinates, offsets, and allowances into CNC-ready .plt files.</p>
+          <p>Results: Eliminated operator errors, cut file preparation from 15 minutes to under 20 seconds, and improved fabric yield.</p>
+        </article>
+      </main>
+    `
+  },
+  {
     path: "/projects/quote-my-blinds",
-    title: "Quote My Blinds Case Study | Saikat Patra",
-    description: "Multi-tenant quote and lead management platform for New Zealand window blinds enterprise. 60% faster quotes and 3x lead growth.",
-    h1: "Quote My Blinds - Custom Web Application Case Study",
+    title: "Quote My Blinds SaaS Operations & CRM Case Study | Saikat Patra",
+    description: "SaaS operations workspace for window treatment businesses managing customer inquiries, calendar bookings, measurements, quotes, and instant invoices.",
+    h1: "Quote My Blinds SaaS Operations & CRM Case Study",
     bodyContent: `
       <main>
         <article>
-          <h1>Quote My Blinds - Custom Web Application Case Study</h1>
-          <p>Client: Window Blinds NZ Ltd | Technologies: Laravel, PHP, MySQL, JavaScript, Tailwind CSS</p>
-          <p>Challenge: Manual dimension calculations took up to 45 minutes, resulting in pricing errors and lost leads.</p>
-          <p>Solution: Engineered an automated dimension configurator with real-time margins and PDF quotation dispatch.</p>
-          <p>Results: 60% faster quote generation, monthly inquiries tripled, and 12,000+ quotes generated with zero errors.</p>
+          <h1>Quote My Blinds SaaS Operations & CRM Case Study</h1>
+          <p>Client: Quote My Blinds | Technologies: React, Node.js, MySQL, Tailwind CSS, REST APIs, SaaS Architecture</p>
+          <p>Challenge: Window treatment contractors struggled with fragmented tools—losing hours managing bookings, manual fabric calculations, and delayed paper invoices.</p>
+          <p>Solution: Built an all-in-one SaaS platform featuring customer enquiry intake, booking schedules, dynamic pricing formulas, one-click PDF quoting, instant invoices, and payment tracking.</p>
+          <p>Results: Accelerated quote-to-invoice turnaround by 65%, eliminated measurement calculation errors, and unified bookings under a single dashboard.</p>
         </article>
       </main>
     `
   },
   {
-    path: "/projects/custom-crm-system",
-    title: "Custom CRM & Operations System Case Study | Saikat Patra",
-    description: "Bespoke operations CRM consolidating client communications, project sprints, staff time tracking, and automated invoice dispatch.",
-    h1: "Custom CRM System - Business Automation Case Study",
+    path: "/projects/the-drapery-cupboard",
+    title: "The Drapery Cupboard E-Commerce Case Study | Saikat Patra",
+    description: "E-commerce and consultation platform for custom curtains, blinds, and shutters with online parts store and lead scheduling.",
+    h1: "The Drapery Cupboard E-Commerce & Consultation Case Study",
     bodyContent: `
       <main>
         <article>
-          <h1>Custom CRM System - Business Automation Case Study</h1>
-          <p>Client: Apex Enterprise Services | Technologies: Laravel, Livewire, MySQL, Tailwind CSS</p>
-          <p>Challenge: Managing operations across disconnected spreadsheets led to lost follow-ups and unbilled client hours.</p>
-          <p>Solution: Custom operations platform with Kanban pipeline tracking, automated invoicing, and role-based permissions.</p>
-          <p>Results: 50% reduction in weekly admin time, $40,000+ recovered in unbilled hours, and 3 paid SaaS subscriptions replaced.</p>
+          <h1>The Drapery Cupboard E-Commerce & Consultation Case Study</h1>
+          <p>Client: The Drapery Cupboard Ltd | Technologies: React, Cloudflare Workers, Tailwind CSS, JavaScript, E-Commerce</p>
+          <p>Challenge: Selling bespoke window coverings online was hindered by complex sizing options and disconnected consultation booking.</p>
+          <p>Solution: Engineered a high-performance modern web application deployed on Cloudflare Workers with product category filtering and in-home consultation booking.</p>
+          <p>Results: 45% increase in online consultation bookings and rapid sub-second page loads across New Zealand.</p>
         </article>
       </main>
     `
   },
   {
-    path: "/projects/real-estate-listing-platform",
-    title: "Real Estate Listing Platform Case Study | Saikat Patra",
-    description: "Property directory portal featuring instant spatial multi-filter search, user bookmarks, and automated agent lead assignment.",
-    h1: "Real Estate Listing Platform Case Study",
+    path: "/projects/purge-window-shades-blinds",
+    title: "Purge Window Shades & Blinds Case Study | Saikat Patra",
+    description: "High-conversion digital platform for Auckland custom blinds and shades manufacturer offering rapid 5-day turnaround.",
+    h1: "Purge Window Shades & Blinds Case Study",
     bodyContent: `
       <main>
         <article>
-          <h1>Real Estate Listing Platform Case Study</h1>
-          <p>Client: Prime Realty Group | Technologies: React, Laravel, MySQL, REST APIs</p>
-          <p>Challenge: Slow database queries and poor mobile responsiveness caused high buyer drop-off rates.</p>
-          <p>Solution: React frontend backed by indexed MySQL queries, interactive maps, and automated lead dispatch.</p>
-          <p>Results: 70% faster search response times and 180% growth in mobile buyer engagement.</p>
+          <h1>Purge Window Shades & Blinds Case Study</h1>
+          <p>Client: Purge Ltd | Technologies: WordPress, PHP, Tailwind CSS, JavaScript, SEO</p>
+          <p>Challenge: Differentiating from drop-shipped imports by promoting local Auckland 5-day manufacturing turnaround.</p>
+          <p>Solution: Built a high-converting commercial website with measure-and-quote scheduling, product galleries, and Auckland SEO.</p>
+          <p>Results: 2.5x more monthly quote inquiries and 98+ Google Lighthouse performance score.</p>
+        </article>
+      </main>
+    `
+  },
+  {
+    path: "/projects/purge-electrical",
+    title: "Purge Electrical Solutions & Invoicing Case Study | Saikat Patra",
+    description: "Commercial electrical services platform integrated with a bespoke custom invoicing and billing management system (purge-invoice-system).",
+    h1: "Purge Electrical Solutions & Invoicing Case Study",
+    bodyContent: `
+      <main>
+        <article>
+          <h1>Purge Electrical Solutions & Invoicing Case Study</h1>
+          <p>Client: Purge Electrical NZ | Technologies: WordPress, PHP, Custom Invoicing Plugin, MySQL, JavaScript</p>
+          <p>Challenge: Managing job quotes, material costs, and paper invoicing caused billing delays and administrative backlogs.</p>
+          <p>Solution: Commercial web platform with proprietary custom WordPress invoicing system (purge-invoice-system) for rapid digital invoice generation.</p>
+          <p>Results: 75% reduction in invoice preparation time and 3x faster payment collection cycles.</p>
+        </article>
+      </main>
+    `
+  },
+  {
+    path: "/projects/purge-cleaning",
+    title: "Purge Cleaning Services Platform Case Study | Saikat Patra",
+    description: "Service platform for residential, commercial, and post-construction cleaning services across New Zealand with transparent pricing packages.",
+    h1: "Purge Cleaning Services Platform Case Study",
+    bodyContent: `
+      <main>
+        <article>
+          <h1>Purge Cleaning Services Platform Case Study</h1>
+          <p>Client: Purge Cleaning NZ | Technologies: WordPress, PHP, JavaScript, Tailwind CSS, Lead Generation</p>
+          <p>Challenge: Customers experienced booking friction due to opaque service tiers and ambiguous pricing.</p>
+          <p>Solution: Transparent service package breakdowns with comprehensive cleaning checklists and instant quote request workflow.</p>
+          <p>Results: Doubled online booking conversion rates and cut lead response times to under 1 hour.</p>
+        </article>
+      </main>
+    `
+  },
+  {
+    path: "/projects/sspr-valve-manufacturing",
+    title: "SSPR Valve Manufacturing Industrial Web Presence Case Study | Saikat Patra",
+    description: "High-speed industrial digital platform and engineering product catalog for SSPR Valve Manufacturing Pvt Ltd (SR Valve).",
+    h1: "SSPR Valve Manufacturing Industrial Web Presence Case Study",
+    bodyContent: `
+      <main>
+        <article>
+          <h1>SSPR Valve Manufacturing Industrial Web Presence Case Study</h1>
+          <p>Client: SSPR Valve Manufacturing Private Limited (SR Valve) | Technologies: React, Cloudflare Workers, Tailwind CSS, JavaScript</p>
+          <p>Challenge: Industrial procurement teams needed instant access to valve specifications, ISO compliance credentials, and project references without heavy catalog downloads.</p>
+          <p>Solution: Engineered an edge-deployed, mobile-responsive web catalog showcasing industrial valves, penstocks, ISO/NSIC/MSME certifications, and direct RFQ workflows.</p>
+          <p>Results: Expanded domestic and export valve inquiries by 45%, with sub-second edge loading on Cloudflare Workers.</p>
+        </article>
+      </main>
+    `
+  },
+  {
+    path: "/projects/dream-big-group",
+    title: "Dream Big Group Real Estate Platform Case Study | Saikat Patra",
+    description: "Cinematic digital presence and residential property showcase for Dream Big Group, premier real estate developer in Howrah.",
+    h1: "Dream Big Group Real Estate Platform Case Study",
+    bodyContent: `
+      <main>
+        <article>
+          <h1>Dream Big Group Real Estate Platform Case Study</h1>
+          <p>Client: Dream Big Group | Technologies: React, Tailwind CSS, JavaScript, Local SEO</p>
+          <p>Challenge: Outdated legacy website resulted in high mobile bounce rates and low inquiry conversion for residential real estate developments.</p>
+          <p>Solution: Engineered a high-performance web platform with dark cinematic visuals, interactive project showcases, buyer reviews, and immediate contact booking.</p>
+          <p>Results: Boosted qualified property inquiries by 180%, achieved sub-second mobile page loads, and secured top local search visibility across Howrah.</p>
         </article>
       </main>
     `

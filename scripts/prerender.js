@@ -763,7 +763,7 @@ for (const route of routes) {
   // Inject semantic fallback content into #root for search bots & AI crawlers
   html = html.replace(
     /<div id="root"><\/div>/,
-    `<div id="root">${route.bodyContent}</div>`
+    `<div id="root" data-prerendered>${route.bodyContent}</div>`
   );
 
   // Output location

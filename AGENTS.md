@@ -43,3 +43,14 @@ parsing it wastes the session budget and drowns out real results.
   shell listing is the easiest way to accidentally recurse.
 - When a recursive scan is genuinely required, scope it to a named source
   directory in the command itself, never to the repository root.
+
+## Dev server: exactly one, on port 5174
+
+- `npm run dev` is pinned to **5174** (`vite --port 5174`); port 5173 belongs
+  to the unrelated `qmb-project`.
+- Never run two portfolio dev servers at once — they share
+  `node_modules/.vite`, and mismatched dep hashes surface in the browser as
+  `Illegal constructor` errors.
+- Locked files in `public/` no longer kill the server: the
+  `watcher-error-resilience` plugin in `vite.config.ts` catches the watcher's
+  `EBUSY`/`EPERM` error and logs a warning instead. Don't remove it.

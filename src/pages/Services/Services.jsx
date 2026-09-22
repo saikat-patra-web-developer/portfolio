@@ -262,9 +262,6 @@ export const Services = () => {
                 className="p-6 text-center border-[#00E5FF]/20 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 mx-auto mb-3.5 flex items-center justify-center font-mono font-bold text-sm text-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]">
-                    {item.step}
-                  </div>
                   <h3 className="text-base font-bold text-white mb-1">
                     {item.title}
                   </h3>

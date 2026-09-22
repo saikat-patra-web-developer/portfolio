@@ -137,10 +137,11 @@ export default function Reviews() {
     <motion.section
       id="reviews"
       data-no-translate
-      className="relative py-20 overflow-hidden"
+      className="relative overflow-hidden"
       {...revealProps({ amount: 0.08 })}
     >
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes marqueeVertical {
           0% { transform: translateY(0); }
           100% { transform: translateY(-50%); }
@@ -170,16 +171,16 @@ export default function Reviews() {
         }
       `}} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-8 pb-8 border-b border-white/10">
           <div>
-            <p className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-bold tracking-widest uppercase">
+            <p className="inline-flex items-center gap-2 px-3 py-1 mb-3.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-bold tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
               {'Proven Performance'}
             </p>
-            <h2 className="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4 text-white flex flex-wrap items-center gap-x-4 gap-y-3">
+            <h2 className="font-sans font-extrabold text-2xl sm:text-3xl md:text-4xl tracking-tight leading-tight mb-1 text-white flex flex-wrap items-center gap-2.5 sm:gap-3">
               <span>{'Built for Scale | Backed by Trust'}</span>
-              <span aria-hidden="true" className="h-[6px] w-16 sm:w-24 rounded-full bg-gradient-to-r from-[#00E5FF] to-[#7B3CFF] shrink-0" />
+              <span aria-hidden="true" className="h-1 w-8 sm:w-12 rounded-full bg-gradient-to-r from-[#00E5FF] to-[#7B3CFF] shrink-0" />
             </h2>
             <div className="mt-1 flex flex-wrap items-center gap-y-3 gap-x-4 sm:gap-x-6 text-xs sm:text-sm text-white/70">
               <span className="flex items-center gap-1.5 text-white">

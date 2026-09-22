@@ -239,9 +239,6 @@ export const Home = () => {
                 className="p-6 flex flex-col justify-between border-[#00E5FF]/20"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 flex items-center justify-center font-mono font-bold text-sm text-[#00E5FF] mb-4">
-                    0{idx + 1}
-                  </div>
                   <h3 className="text-base font-bold text-white mb-2">
                     {diff.title}
                   </h3>
@@ -272,9 +269,6 @@ export const Home = () => {
                 className="p-6 text-center border-[#00E5FF]/20 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 mx-auto mb-3.5 flex items-center justify-center font-mono font-bold text-sm text-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]">
-                    {step.step}
-                  </div>
                   <h3 className="text-base font-bold text-white mb-1">
                     {step.title}
                   </h3>
@@ -308,10 +302,10 @@ export const Home = () => {
             <div className="lg:col-span-4 flex justify-center">
               <div className="relative w-48 sm:w-56 aspect-square rounded-2xl overflow-hidden border-2 border-[#00E5FF]/30 shadow-[0_0_30px_rgba(0,229,255,0.2)]">
                 <img
-                  src="/assets/images/saikat-portrait.webp"
+                  src="/assets/images/saikat-about.png"
                   alt="Saikat Patra Portrait"
-                  width="300"
-                  height="300"
+                  width="520"
+                  height="520"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

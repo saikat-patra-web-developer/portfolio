@@ -159,12 +159,14 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
       aria-label="Reviews Showcase Slider"
     >
       {/* Clean Flat Layered Slider Stage (No 3D skew / No perspective) */}
-      <div className="relative w-full h-[450px] sm:h-[430px] flex items-center justify-center overflow-visible">
+      <div className="relative w-full h-[400px] sm:h-[430px] flex items-center justify-center overflow-visible">
         {/* Subtle Ambient Radial Glow */}
         <div className="absolute w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-gradient-to-tr from-[#00E5FF]/10 via-[#2787FF]/10 to-[#7B3CFF]/15 blur-3xl pointer-events-none -z-10" />
 
-        {/* Cards Stack */}
-        <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] h-[380px] sm:h-[360px] flex items-center justify-center">
+        {/* Cards Stack — mobile: 330px fits the worst-case card (2-row
+            header + 5-line clamped quote + author footer ≈ 270px) with
+            room to spare; taller than that just adds empty space. */}
+        <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] h-[330px] sm:h-[360px] flex items-center justify-center">
           {reviews.map((testimonial, index) => {
             const {
               translateX,
@@ -212,8 +214,12 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                   : "border-white/10 hover:border-[#00E5FF]/30 shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
                   }`}
               >
-                {/* Header: Stars & Source Badge */}
-                <div className="space-y-3.5">
+                {/* Header + Quote. On phones the block flexes to fill the
+                    card and the quote centers in the leftover space, so
+                    short quotes don't leave a dead zone above the footer.
+                    At >=640px it stays a plain block (quote sits directly
+                    under the header) — desktop layout unchanged. */}
+                <div className="space-y-3.5 max-sm:flex max-sm:flex-col max-sm:flex-1">
                   {/* flex-wrap: at ~320-340px the 5 stars + source pill exceed
                       the card width, so the pill drops to its own line. */}
                   <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5">
@@ -244,8 +250,8 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
                     )}
                   </div>
 
-                  {/* Quote Content */}
-                  <div className="relative pt-1">
+                  {/* Quote Content — vertically centered on phones only */}
+                  <div className="relative pt-1 max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:flex-1">
                     <Quote className="w-8 h-8 text-[#00E5FF]/20 absolute -top-3 -left-2 pointer-events-none" />
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed italic relative z-10 line-clamp-5">
                       &ldquo;{testimonial.content}&rdquo;

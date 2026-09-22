@@ -43,7 +43,7 @@ export const PageLayout = ({
       document.head.appendChild(canonical);
     }
     const cleanPath = pathname === "/" ? "" : pathname;
-    const currentUrl = `https://portfolio.saikatpatraoffice.workers.dev${cleanPath}`;
+    const currentUrl = `https://inqly.online${cleanPath}`;
     canonical.setAttribute("href", currentUrl);
 
     // Dynamic Open Graph & Twitter meta updates

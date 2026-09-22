@@ -620,7 +620,7 @@ const routes = [
 
 for (const route of routes) {
   const cleanPath = route.path === "/" ? "" : route.path;
-  const canonicalUrl = `https://portfolio.saikatpatraoffice.workers.dev${cleanPath}`;
+  const canonicalUrl = `https://inqly.online${cleanPath}`;
 
   let html = template;
 

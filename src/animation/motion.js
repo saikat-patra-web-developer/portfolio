@@ -66,6 +66,18 @@ export const revealProps = ({
  * At >= 1024px the caller's amount is returned unchanged, so desktop
  * reveal timing is pixel-identical to before.
  *
+ * IMPORTANT — a numeric amount is only reachable while the element can
+ * physically fill that fraction of the screen:
+ *
+ *     elementHeight <= innerHeight / amount
+ *
+ * Wrapping several tall blocks in ONE Reveal (e.g. the Services deep-dives,
+ * ~8000px total, at amount 0.12) can never satisfy the threshold on
+ * desktop — the section then stays at opacity: 0 forever and the whole
+ * area renders blank. Reveal those blocks individually instead of gating
+ * them behind one wrapper, and keep numeric amounts for normal-height
+ * sections only.
+ *
  * @param {number|"some"|"all"} amount Fraction of the element that must
  *        be visible at >= 1024px.
  * @returns {{ once: true, amount: number|"some" }}

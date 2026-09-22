@@ -93,7 +93,7 @@ export const Services = () => {
         {/* ======================================================== */}
         {/* DEEP-DIVE INTO 4 CORE SERVICES                           */}
         {/* ======================================================== */}
-        <Reveal as="section" amount={0.12} className="space-y-12 sm:space-y-16">
+        <section className="space-y-12 sm:space-y-16">
           {coreServices.map((service) => {
             const IconComp = serviceIcons[service.icon] || Code;
             return (
@@ -245,7 +245,7 @@ export const Services = () => {
               </Reveal>
             );
           })}
-        </Reveal>
+        </section>
 
         {/* ======================================================== */}
         {/* 4-STEP PROCESS ROADMAP                                   */}

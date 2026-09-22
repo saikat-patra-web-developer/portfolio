@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   revealProps,
+  inViewViewport,
   staggerContainer,
   staggerItem
 } from "../../animation/motion";
@@ -69,7 +70,7 @@ export const Stagger = ({
         ? { animate: "visible" }
         : {
           whileInView: "visible",
-          viewport: { once: true, amount }
+          viewport: inViewViewport(amount)
         })}
       className={className}
       {...props}

@@ -48,9 +48,37 @@ export const revealProps = ({
     ? { animate: { opacity: 1, y: 0, x: 0 } }
     : {
       whileInView: { opacity: 1, y: 0, x: 0 },
-      viewport: { once: true, amount }
+      viewport: inViewViewport(amount)
     }),
   transition: { duration, delay, ease: EASE }
+});
+
+/**
+ * Viewport options for scroll reveals — safe on every screen size.
+ *
+ * framer-motion's `amount` is a fraction of the ELEMENT's height, not of
+ * the viewport. A tall single-column section on a phone (e.g. the 9-card
+ * project grid at ~6000-9000px vs a ~700px viewport) can never satisfy
+ * `amount`, so the IntersectionObserver threshold would never be reached
+ * and the section would stay at `opacity: 0` forever — content rendered
+ * but completely blank.
+ *
+ * Below 1024px, where layouts stack vertically and sections grow very
+ * tall, fall back to `"some"` (reveal as soon as any part of the element
+ * enters the viewport) — this is guaranteed to fire regardless of how
+ * tall the element is.
+ *
+ * At >= 1024px the caller's amount is returned unchanged, so desktop
+ * reveal timing is pixel-identical to before.
+ *
+ * @param {number|"some"|"all"} amount Fraction of the element that must
+ *        be visible at >= 1024px.
+ * @returns {{ once: true, amount: number|"some" }}
+ */
+export const inViewViewport = (amount = 0.2) => ({
+  once: true,
+  amount:
+    typeof window !== "undefined" && window.innerWidth < 1024 ? "some" : amount
 });
 
 /**

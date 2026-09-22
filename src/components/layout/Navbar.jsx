@@ -220,12 +220,14 @@ export const Navbar = () => {
               </Link>
             </div>
 
-            {/* Mobile controls */}
+            {/* Mobile controls — CTA hidden on phones (<=640px) where the
+                navbar gets cramped; it stays available in the drawer below
+                and on tablets via sm:inline-flex. */}
             <div className="flex lg:hidden items-center gap-2 shrink-0">
               <Link
                 to="/contact"
                 onClick={() => handleNavClick("/contact")}
-                className="min-h-[42px] inline-flex items-center justify-center px-3.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#2787FF] to-[#00E5FF] border border-[#00E5FF]/40 shadow-sm"
+                className="hidden sm:inline-flex min-h-[42px] items-center justify-center px-3.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#2787FF] to-[#00E5FF] border border-[#00E5FF]/40 shadow-sm"
               >
                 Discuss Project
               </Link>

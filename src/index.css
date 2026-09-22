@@ -164,7 +164,7 @@ h6 {
   position: absolute;
   inset: -18px -40px -8px;
   pointer-events: none;
-  background: radial-gradient(circle at 68% 44%, rgba(0, 181, 255, .13), transparent 34%), linear-gradient(90deg, transparent 49.8%, rgba(70, 222, 255, .07) 50%, transparent 50.2%);
+  background: radial-gradient(circle at 68% 44%, rgba(0, 181, 255, .13), transparent 34%);
   mask-image: linear-gradient(to bottom, #000 72%, transparent);
 }
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import { GlassCard } from "../ui/GlassCard";
+import { NeonButton } from "../ui/NeonButton";
 
 export const ProjectCard = ({ project, featuredLayout = false, delay = 0 }) => {
   const {
@@ -117,13 +118,14 @@ export const ProjectCard = ({ project, featuredLayout = false, delay = 0 }) => {
 
         {/* Action Link */}
         <div className="pt-3 border-t border-white/5">
-          <Link
+          <NeonButton
             to={`/projects/${slug}`}
-            className="w-full min-h-[40px] inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#2787FF]/80 to-[#00E5FF]/80 hover:from-[#2787FF] hover:to-[#00E5FF] text-white transition-all duration-200 shadow-[0_0_15px_rgba(0,229,255,0.2)]"
+            variant="primary"
+            size="sm"
+            className="w-full"
           >
-            <span>View Case Study</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+            View Case Study
+          </NeonButton>
         </div>
       </div>
     </GlassCard>

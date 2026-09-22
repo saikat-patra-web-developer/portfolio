@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
@@ -28,6 +27,7 @@ import {
 import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
 import { Reveal } from "../../components/ui/Reveal";
+import { NeonButton } from "../../components/ui/NeonButton";
 import { profileData } from "../../data/profile";
 import {
   EASE,
@@ -185,24 +185,28 @@ export const Contact = () => {
             </div>
 
             <div className="pt-2 border-t border-white/5 space-y-2">
-              <a
+              <NeonButton
                 href={profileData.whatsappChatUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#020B18]/90 hover:bg-[#00E5FF]/15 border border-[#00E5FF]/30 hover:border-[#00E5FF]/60 hover:text-[#00E5FF] shadow-[0_0_12px_rgba(0,229,255,0.1)] transition-all"
+                variant="secondary"
+                size="sm"
+                icon={false}
+                className="w-full"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Chat on WhatsApp</span>
                 <ExternalLink className="w-3 h-3 text-white/50" />
-              </a>
+              </NeonButton>
 
-              <a
+              <NeonButton
                 href={`tel:${(profileData.primaryPhone || "+91 90389 09382").replace(/\s+/g, "")}`}
-                className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-white/80 hover:text-white bg-[#020B18]/60 hover:bg-white/5 border border-white/10 hover:border-white/25 transition-all"
+                variant="secondary"
+                size="sm"
+                icon={false}
+                className="w-full"
               >
                 <Phone className="w-3 h-3 text-[#00E5FF]" />
                 <span>Call Directly</span>
-              </a>
+              </NeonButton>
             </div>
           </GlassCard>
 
@@ -245,24 +249,28 @@ export const Contact = () => {
             </div>
 
             <div className="pt-2 border-t border-white/5 space-y-2">
-              <a
+              <NeonButton
                 href={profileData.whatsappSecondaryChatUrl || "https://wa.me/918902273136"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#020B18]/90 hover:bg-[#00E5FF]/15 border border-[#00E5FF]/30 hover:border-[#00E5FF]/60 hover:text-[#00E5FF] shadow-[0_0_12px_rgba(0,229,255,0.1)] transition-all"
+                variant="secondary"
+                size="sm"
+                icon={false}
+                className="w-full"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Chat on WhatsApp</span>
                 <ExternalLink className="w-3 h-3 text-white/50" />
-              </a>
+              </NeonButton>
 
-              <a
+              <NeonButton
                 href={`tel:${(profileData.secondaryPhone || "+91 89022 73136").replace(/\s+/g, "")}`}
-                className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-white/80 hover:text-white bg-[#020B18]/60 hover:bg-white/5 border border-white/10 hover:border-white/25 transition-all"
+                variant="secondary"
+                size="sm"
+                icon={false}
+                className="w-full"
               >
                 <Phone className="w-3 h-3 text-[#00E5FF]" />
                 <span>Call Directly</span>
-              </a>
+              </NeonButton>
             </div>
           </GlassCard>
 
@@ -305,14 +313,15 @@ export const Contact = () => {
             </div>
 
             <div className="pt-2 border-t border-white/5">
-              <a
+              <NeonButton
                 href={`mailto:${profileData.businessEmail || "saikatpatraoffice@gmail.com"}?subject=${encodeURIComponent("Business Inquiry / Proposal - Web Development")}`}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#2787FF] via-[#7B3CFF] to-[#A855F7] hover:brightness-110 shadow-[0_0_20px_rgba(39,135,255,0.35)] transition-all"
+                variant="primary"
+                size="sm"
+                className="w-full"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>Send Business Email</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              </NeonButton>
             </div>
           </GlassCard>
 
@@ -355,14 +364,15 @@ export const Contact = () => {
             </div>
 
             <div className="pt-2 border-t border-white/5">
-              <a
+              <NeonButton
                 href={`mailto:${profileData.directEmail || "saikatpatra300@gmail.com"}?subject=${encodeURIComponent("Technical Consultation - Web Development")}`}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#020B18]/90 hover:bg-[#A855F7]/15 border border-[#A855F7]/30 hover:border-[#A855F7]/60 hover:text-[#A855F7] shadow-[0_0_12px_rgba(168,85,247,0.1)] transition-all"
+                variant="secondary"
+                size="sm"
+                className="w-full"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>Send Direct Email</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              </NeonButton>
             </div>
           </GlassCard>
         </Reveal>
@@ -537,21 +547,27 @@ export const Contact = () => {
             </div>
 
             <div className="pt-3 border-t border-white/5 space-y-2.5">
-              <Link
+              <NeonButton
                 to="/about#story"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#020B18]/80 hover:bg-white/5 border border-white/15 hover:border-white/30 transition-all"
+                variant="secondary"
+                size="sm"
+                icon={false}
+                className="w-full"
               >
                 <Play className="w-3.5 h-3.5 fill-current text-[#00E5FF]" />
                 <span>Watch My Story</span>
-              </Link>
+              </NeonButton>
 
-              <button
+              <NeonButton
                 onClick={() => setShowBookingModal(true)}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#2787FF] via-[#7B3CFF] to-[#A855F7] hover:brightness-110 shadow-[0_0_20px_rgba(123,60,255,0.35)] transition-all cursor-pointer"
+                variant="primary"
+                size="sm"
+                icon={false}
+                className="w-full"
               >
                 <Calendar className="w-3.5 h-3.5" />
                 <span>Book a Call</span>
-              </button>
+              </NeonButton>
             </div>
           </GlassCard>
 
@@ -678,13 +694,14 @@ export const Contact = () => {
               </p>
             </div>
 
-            <Link
+            <NeonButton
               to="/projects"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-[#020B18]/80 hover:bg-[#00E5FF]/10 border border-white/10 hover:border-[#00E5FF]/40 transition-all self-start sm:self-auto group"
+              variant="secondary"
+              size="md"
+              className="self-start sm:self-auto"
             >
-              <span>View My Work</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#00E5FF] group-hover:translate-x-1 transition-transform" />
-            </Link>
+              View My Work
+            </NeonButton>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

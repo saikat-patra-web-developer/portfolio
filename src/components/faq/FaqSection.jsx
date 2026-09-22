@@ -170,15 +170,16 @@ export const FaqSection = ({
         </div>
 
         <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto justify-center">
-          <a
+          <NeonButton
             href={profileData.whatsappChatUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-semibold text-[#00E5FF] hover:text-white bg-[#00E5FF]/10 hover:bg-[#00E5FF]/20 border border-[#00E5FF]/30 transition-all duration-200 active:scale-[0.98] whitespace-nowrap"
+            variant="secondary"
+            size="md"
+            icon={false}
+            className="w-full sm:w-auto"
           >
             <MessageSquare className="w-4 h-4 shrink-0" />
             <span>Chat on WhatsApp</span>
-          </a>
+          </NeonButton>
           <NeonButton
             to="/contact"
             variant="primary"

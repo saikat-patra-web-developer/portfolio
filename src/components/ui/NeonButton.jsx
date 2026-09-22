@@ -47,7 +47,7 @@ export const NeonButton = ({
 
   if (to) {
     return (
-      <Link to={to} className={baseClasses} {...props}>
+      <Link to={to} onClick={onClick} className={baseClasses} {...props}>
         {content}
       </Link>
     );
@@ -59,6 +59,7 @@ export const NeonButton = ({
         href={href}
         target={href.startsWith("http") ? "_blank" : undefined}
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        onClick={onClick}
         className={baseClasses}
         {...props}
       >

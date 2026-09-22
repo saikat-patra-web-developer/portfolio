@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Star,
@@ -9,11 +8,11 @@ import {
   Check,
   ShieldCheck,
   Zap,
-  CheckCircle2,
-  ArrowRight
+  CheckCircle2
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { revealProps } from "../../animation/motion";
+import { NeonButton } from "../ui/NeonButton";
 
 /** Multi-color Google "G" mark (same paths used across the site). */
 const GoogleGIcon = ({ className = "w-4 h-4" }) => (
@@ -204,23 +203,25 @@ export default function Reviews() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
-            <a
+            <NeonButton
               href={googleBusinessProfileUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold py-3.5 px-6 rounded-xl border border-white/20 shadow-sm hover:shadow transition-all duration-200 text-sm w-full sm:w-auto"
+              variant="secondary"
+              size="md"
+              icon={false}
+              className="w-full sm:w-auto"
             >
               <GoogleGIcon className="w-4 h-4" />
               {'View Google Reviews'}
-            </a>
+            </NeonButton>
 
-            <Link
+            <NeonButton
               to={ctaUrl}
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] text-white font-bold py-3.5 px-6 rounded-xl shadow-[0_0_20px_rgba(0,229,255,0.35)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] transition-all duration-200 text-sm hover:-translate-y-0.5 w-full sm:w-auto"
+              variant="primary"
+              size="md"
+              className="w-full sm:w-auto"
             >
               {'Get a Free Quote'}
-              <ArrowRight className="w-[18px] h-[18px]" />
-            </Link>
+            </NeonButton>
           </div>
         </div>
 

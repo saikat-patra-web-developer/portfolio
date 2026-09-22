@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Mail, ArrowUp, ArrowRight } from "lucide-react";
+import { Mail, ArrowUp } from "lucide-react";
 import { LinkedInIcon, GitHubIcon, WhatsAppIcon } from "../ui/SocialIcons";
+import { NeonButton } from "../ui/NeonButton";
 import { profileData } from "../../data/profile";
 import { revealProps } from "../../animation/motion";
 
@@ -43,20 +44,18 @@ export const Footer = ({ showCta = true }) => {
             </div>
 
             <div className="relative z-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0 w-full lg:w-auto">
-              <Link
-                to="/contact"
-                className="cta-shine inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] hover:opacity-95 shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] border border-white/20 transition-all duration-300 active:scale-[0.98] whitespace-normal sm:whitespace-nowrap group"
-              >
-                <span>Discuss Your Project</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
-              </Link>
-              <a
+              <NeonButton to="/contact" variant="primary" size="lg">
+                Discuss Your Project
+              </NeonButton>
+              <NeonButton
                 href={`mailto:${profileData.email}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white/90 hover:bg-[#052A4A] border border-[#00E5FF]/30 hover:border-[#00E5FF] transition-all duration-200 active:scale-[0.98] whitespace-nowrap"
+                variant="secondary"
+                size="lg"
+                icon={false}
               >
                 <Mail className="w-4 h-4 text-[#00E5FF] shrink-0" />
                 <span>Email Me</span>
-              </a>
+              </NeonButton>
             </div>
           </div>
         </motion.div>

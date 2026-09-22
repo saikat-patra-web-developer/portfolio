@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { NeonButton } from "./NeonButton";
 import {
   EASE,
   staggerContainer,
@@ -69,13 +68,9 @@ export const SectionHeading = ({
 
       {actionText && actionTo && (
         <motion.div variants={staggerItem} className="self-start md:self-end shrink-0">
-          <Link
-            to={actionTo}
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#00E5FF] hover:text-white hover:bg-[#00E5FF]/20 px-4 py-2 rounded-xl border border-[#00E5FF]/30 transition-all duration-200 group"
-          >
-            <span>{actionText}</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-          </Link>
+          <NeonButton to={actionTo} variant="secondary" size="md">
+            {actionText}
+          </NeonButton>
         </motion.div>
       )}
     </motion.div>

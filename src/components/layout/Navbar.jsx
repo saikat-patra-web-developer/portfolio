@@ -5,6 +5,7 @@ import { Menu, X, ArrowRight, ChevronDown, Code, Database, Layout, Link as LinkI
 import { profileData } from "../../data/profile";
 import { useNavigation } from "../../context/useNavigation";
 import { coreServices } from "../../data/services";
+import { NeonButton } from "../ui/NeonButton";
 
 const serviceIcons = {
   code: Code,
@@ -216,27 +217,30 @@ export const Navbar = () => {
           {/* Right CTA */}
           <div className="flex-1 flex items-center justify-end gap-3">
             <div className="hidden lg:flex items-center">
-              <Link
+              <NeonButton
                 to="/contact"
+                variant="primary"
+                size="md"
                 onClick={() => handleNavClick("/contact")}
-                className="cta-shine inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] hover:opacity-95 shadow-[0_0_20px_rgba(0,229,255,0.35)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] border border-white/20 transition-all duration-300 group cursor-pointer"
               >
-                <span>Discuss Your Project</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
+                Discuss Your Project
+              </NeonButton>
             </div>
 
             {/* Mobile controls — CTA hidden on phones (<=640px) where the
                 navbar gets cramped; it stays available in the drawer below
                 and on tablets via sm:inline-flex. */}
             <div className="flex lg:hidden items-center gap-2 shrink-0">
-              <Link
-                to="/contact"
-                onClick={() => handleNavClick("/contact")}
-                className="hidden sm:inline-flex min-h-[42px] items-center justify-center px-3.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#2787FF] to-[#00E5FF] border border-[#00E5FF]/40 shadow-sm"
-              >
-                Discuss Project
-              </Link>
+              <span className="hidden sm:block">
+                <NeonButton
+                  to="/contact"
+                  variant="primary"
+                  size="sm"
+                  onClick={() => handleNavClick("/contact")}
+                >
+                  Discuss Project
+                </NeonButton>
+              </span>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-3 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/90 hover:text-white transition-colors cursor-pointer"
@@ -289,14 +293,17 @@ export const Navbar = () => {
                             >
                               <div className="py-2 px-2 space-y-1">
                                 {/* All Services link */}
-                                <Link
+                                <NeonButton
                                   to="/services"
+                                  variant="secondary"
+                                  size="sm"
+                                  icon={false}
+                                  className="w-full"
                                   onClick={() => handleNavClick("/services")}
-                                  className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-bold text-[#00E5FF] bg-[#00E5FF]/8 border border-[#00E5FF]/20 hover:bg-[#00E5FF]/15 transition-colors"
                                 >
                                   <ArrowRight className="w-3.5 h-3.5" />
-                                  View All Services
-                                </Link>
+                                  <span>View All Services</span>
+                                </NeonButton>
                                 {coreServices.map((svc) => {
                                   const Icon = serviceIcons[svc.icon] || Code;
                                   return (
@@ -347,14 +354,15 @@ export const Navbar = () => {
               </div>
 
               <div className="pt-2">
-                <Link
+                <NeonButton
                   to="/contact"
+                  variant="primary"
+                  size="md"
+                  className="w-full"
                   onClick={() => handleNavClick("/contact")}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#2787FF] via-[#00E5FF] to-[#7B3CFF] shadow-[0_0_25px_rgba(0,229,255,0.35)]"
                 >
-                  <span>Discuss Your Project</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                  Discuss Your Project
+                </NeonButton>
               </div>
             </motion.div>
           )}

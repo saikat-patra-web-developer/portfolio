@@ -104,7 +104,7 @@ export default function Reviews() {
       bottomLeftImg: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=300&auto=format&fit=crop",
       bottomLeftTitle: "Gawenda Studio",
       bottomLeftSub: "Germans + Gawenda Studio",
-      centerAvatar: "/assets/images/review-1.png",
+      centerAvatar: "/assets/images/review-1.webp",
       badgeTitle: "Gawenda Studio",
       badgeMessage: "Hello. I already have a CRM. Can you create a booking system and integrate it with my existing CRM?",
       badgeEmoji: "bi-whatsapp"
@@ -115,7 +115,7 @@ export default function Reviews() {
       bottomLeftImg: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=300&auto=format&fit=crop",
       bottomLeftTitle: "Purge Wholesale Blinds",
       bottomLeftSub: "New Zealanders + Windows Blinds",
-      centerAvatar: "/assets/images/review-2.png",
+      centerAvatar: "/assets/images/review-2.webp",
       badgeTitle: "Windows Blinds",
       badgeMessage: "Hi, Saikat. I have a blinds business. Can you create a website for me?",
       badgeEmoji: "bi-whatsapp"
@@ -230,7 +230,7 @@ export default function Reviews() {
             <div className={`w-full h-full preserve-3d smooth-card-turn ${isFlipped ? 'rotate-y-180' : ''}`}>
               <div className="absolute inset-0 w-full h-full backface-hidden flex items-center justify-center">
                 <img
-                  src="/assets/images/mobile.png"
+                  src="/assets/images/mobile.webp"
                   alt="Mobile Frame"
                   className="absolute h-full object-contain z-0 pointer-events-none drop-shadow-lg"
                 />
@@ -342,7 +342,7 @@ export default function Reviews() {
 
               <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 flex items-center justify-center">
                 <img
-                  src="/assets/images/mobile.png"
+                  src="/assets/images/mobile.webp"
                   alt="Mobile Frame"
                   className="absolute h-full object-contain z-0 pointer-events-none drop-shadow-lg"
                 />

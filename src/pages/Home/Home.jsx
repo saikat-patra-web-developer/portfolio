@@ -121,7 +121,7 @@ export const Home = () => {
               Grow
             </span>
             <img
-              src="/assets/images/saikat-hero-cutout.png"
+              src="/assets/images/saikat-hero-cutout.webp"
               alt="Saikat Patra working on a web development project"
             />
             <div className="home-quote">
@@ -302,7 +302,7 @@ export const Home = () => {
             <div className="lg:col-span-4 flex justify-center">
               <div className="relative w-48 sm:w-56 aspect-square rounded-2xl overflow-hidden border-2 border-[#00E5FF]/30 shadow-[0_0_30px_rgba(0,229,255,0.2)]">
                 <img
-                  src="/assets/images/saikat-about.png"
+                  src="/assets/images/saikat-about.webp"
                   alt="Saikat Patra Portrait"
                   width="520"
                   height="520"

@@ -17,6 +17,7 @@ import {
 import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
 import { NeonButton } from "../../components/ui/NeonButton";
+import { TechIcon } from "../../components/ui/TechIcon";
 import { coreServices } from "../../data/services";
 
 const serviceIcons = {
@@ -138,8 +139,9 @@ export const ServiceDetails = () => {
               {service.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#020B18] text-white/70 border border-white/10"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-[#020B18] text-white/70 border border-white/10"
                 >
+                  <TechIcon name={tech} className="w-3.5 h-3.5 text-[#00E5FF]/85" />
                   {tech}
                 </span>
               ))}

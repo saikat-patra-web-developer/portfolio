@@ -159,7 +159,7 @@ export const Contact = () => {
                 </div>
                 <button
                   onClick={() => handleCopy(profileData.primaryPhone || "+91 90389 09382", "primary-phone")}
-                  className="p-2 rounded-lg bg-[#020B18] border border-white/10 hover:border-[#00E5FF]/40 text-white/60 hover:text-[#00E5FF] transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center w-11 h-11 sm:w-auto sm:h-auto sm:p-2 rounded-lg bg-[#020B18] border border-white/10 hover:border-[#00E5FF]/40 text-white/60 hover:text-[#00E5FF] transition-all cursor-pointer"
                   title="Copy Phone Number"
                   aria-label="Copy primary phone number"
                 >
@@ -219,7 +219,7 @@ export const Contact = () => {
                 </div>
                 <button
                   onClick={() => handleCopy(profileData.secondaryPhone || "+91 89022 73136", "secondary-phone")}
-                  className="p-2 rounded-lg bg-[#020B18] border border-white/10 hover:border-[#00E5FF]/40 text-white/60 hover:text-[#00E5FF] transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center w-11 h-11 sm:w-auto sm:h-auto sm:p-2 rounded-lg bg-[#020B18] border border-white/10 hover:border-[#00E5FF]/40 text-white/60 hover:text-[#00E5FF] transition-all cursor-pointer"
                   title="Copy Phone Number"
                   aria-label="Copy secondary phone number"
                 >
@@ -279,7 +279,7 @@ export const Contact = () => {
                 </div>
                 <button
                   onClick={() => handleCopy(profileData.businessEmail || "saikatpatraoffice@gmail.com", "business-email")}
-                  className="p-2 rounded-lg bg-[#020B18] border border-white/10 hover:border-[#00E5FF]/40 text-white/60 hover:text-[#00E5FF] transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center w-11 h-11 sm:w-auto sm:h-auto sm:p-2 rounded-lg bg-[#020B18] border border-white/10 hover:border-[#00E5FF]/40 text-white/60 hover:text-[#00E5FF] transition-all cursor-pointer"
                   title="Copy Business Email"
                   aria-label="Copy business email"
                 >
@@ -329,7 +329,7 @@ export const Contact = () => {
                 </div>
                 <button
                   onClick={() => handleCopy(profileData.directEmail || "saikatpatra300@gmail.com", "direct-email")}
-                  className="p-2 rounded-lg bg-[#020B18] border border-white/10 hover:border-[#A855F7]/40 text-white/60 hover:text-[#A855F7] transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center w-11 h-11 sm:w-auto sm:h-auto sm:p-2 rounded-lg bg-[#020B18] border border-white/10 hover:border-[#A855F7]/40 text-white/60 hover:text-[#A855F7] transition-all cursor-pointer"
                   title="Copy Direct Email"
                   aria-label="Copy direct email"
                 >
@@ -734,11 +734,11 @@ export const Contact = () => {
               role="dialog"
               aria-modal="true"
               aria-label="Schedule an Intro Call"
-              className="relative w-full max-w-md p-6 rounded-3xl bg-[#03152B] border border-[#00E5FF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(0,229,255,0.2)] space-y-5"
+              className="relative w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto p-6 rounded-3xl bg-[#03152B] border border-[#00E5FF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(0,229,255,0.2)] space-y-5"
             >
             <button
               onClick={() => setShowBookingModal(false)}
-              className="absolute top-5 right-5 p-2 rounded-full bg-[#020B18] border border-white/10 text-white/60 hover:text-white transition-colors cursor-pointer"
+              className="absolute top-5 right-5 inline-flex items-center justify-center w-11 h-11 sm:w-auto sm:h-auto sm:p-2 rounded-full bg-[#020B18] border border-white/10 text-white/60 hover:text-white transition-colors cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-4 h-4" />
@@ -807,7 +807,7 @@ export const Contact = () => {
             <div className="pt-2 text-center">
               <button
                 onClick={() => setShowBookingModal(false)}
-                className="text-xs text-white/50 hover:text-white transition-colors cursor-pointer"
+                className="text-xs text-white/50 hover:text-white transition-colors cursor-pointer py-3 sm:py-0"
               >
                 Cancel and close
               </button>

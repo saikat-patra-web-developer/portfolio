@@ -225,13 +225,13 @@ export const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => handleNavClick("/contact")}
-                className="px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#2787FF] to-[#00E5FF] border border-[#00E5FF]/40 shadow-sm"
+                className="min-h-[42px] inline-flex items-center justify-center px-3.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#2787FF] to-[#00E5FF] border border-[#00E5FF]/40 shadow-sm"
               >
                 Discuss Project
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/90 hover:text-white transition-colors cursor-pointer"
+                className="p-3 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/90 hover:text-white transition-colors cursor-pointer"
                 aria-label="Toggle navigation menu"
                 aria-expanded={mobileMenuOpen}
               >
@@ -249,7 +249,7 @@ export const Navbar = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -16, scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              className={`pointer-events-auto absolute left-4 right-4 sm:left-6 sm:right-6 rounded-2xl bg-[#020B18]/95 backdrop-blur-2xl border border-[#00E5FF]/30 p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_30px_rgba(0,229,255,0.15)] flex flex-col gap-3 lg:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto ${
+              className={`pointer-events-auto absolute left-4 right-4 sm:left-6 sm:right-6 rounded-2xl bg-[#020B18]/95 backdrop-blur-2xl border border-[#00E5FF]/30 p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_30px_rgba(0,229,255,0.15)] flex flex-col gap-3 lg:hidden max-h-[calc(100dvh-7rem)] overflow-y-auto ${
                 isScrolled ? "top-[70px] sm:top-[76px]" : "top-[86px] sm:top-[96px]"
               }`}
             >

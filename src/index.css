@@ -1562,7 +1562,13 @@ h6 {
   }
 }
 
-@media (max-width:900px) {
+/* The hero only stacks below Tailwind's `lg` (1024px) breakpoint. Between
+   901-1023px it used to stay in the desktop 46/54 split, squeezing the 52px
+   headline into a ~400px column while the art box grew to ~700px tall with the
+   image pinned to its bottom. That range covers phones in landscape (~915px)
+   and portrait tablets, so they now get the single-column hero. Desktop
+   (>=1024px) keeps the exact same two-column design. */
+@media (max-width:1023px) {
   .home-hero {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -1572,6 +1578,17 @@ h6 {
 
   .home-hero-art {
     min-height: 400px;
+    /* Cap the art to the photo so the floating quote/availability cards stay
+       anchored to the image instead of drifting into empty space when the
+       column is wider than the 560px art.
+
+       NOTE: every child of this box is absolutely positioned (glow, orbits,
+       build note, quote, availability, photo), so the box has zero in-flow
+       content. A definite width is required here — `margin-inline: auto`
+       alone can collapse a grid item with auto width to 0 and hide the photo
+       entirely. */
+    width: min(720px, 100%);
+    margin-inline: auto;
     display: flex;
     justify-content: center;
     overflow: visible;

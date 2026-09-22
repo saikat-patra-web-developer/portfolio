@@ -214,7 +214,9 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
               >
                 {/* Header: Stars & Source Badge */}
                 <div className="space-y-3.5">
-                  <div className="flex items-center justify-between gap-2">
+                  {/* flex-wrap: at ~320-340px the 5 stars + source pill exceed
+                      the card width, so the pill drops to its own line. */}
+                  <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5">
                     {/* Star Rating */}
                     <div className="flex items-center gap-1">
                       {[...Array(testimonial.rating || 5)].map((_, i) => (

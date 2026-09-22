@@ -168,7 +168,7 @@ export const Footer = ({ showCta = true }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Connect on LinkedIn"
-                className="w-9 h-9 rounded-xl bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/80 hover:text-[#00E5FF] hover:border-[#00E5FF] hover:shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all"
+                className="w-11 h-11 sm:w-9 sm:h-9 rounded-xl bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/80 hover:text-[#00E5FF] hover:border-[#00E5FF] hover:shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all"
               >
                 <LinkedInIcon className="w-4 h-4" />
               </a>
@@ -177,7 +177,7 @@ export const Footer = ({ showCta = true }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow on GitHub"
-                className="w-9 h-9 rounded-xl bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/80 hover:text-[#00E5FF] hover:border-[#00E5FF] hover:shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all"
+                className="w-11 h-11 sm:w-9 sm:h-9 rounded-xl bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/80 hover:text-[#00E5FF] hover:border-[#00E5FF] hover:shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all"
               >
                 <GitHubIcon className="w-4 h-4" />
               </a>
@@ -186,7 +186,7 @@ export const Footer = ({ showCta = true }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
-                className="w-9 h-9 rounded-xl bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/80 hover:text-emerald-400 hover:border-emerald-500/40 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all"
+                className="w-11 h-11 sm:w-9 sm:h-9 rounded-xl bg-[#03152B] border border-[#00E5FF]/20 flex items-center justify-center text-white/80 hover:text-emerald-400 hover:border-emerald-500/40 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all"
               >
                 <WhatsAppIcon className="w-4 h-4" />
               </a>
@@ -202,7 +202,7 @@ export const Footer = ({ showCta = true }) => {
 
           <button
             onClick={scrollToTop}
-            className="w-8 h-8 rounded-full bg-[#03152B] border border-[#00E5FF]/30 text-[#00E5FF] hover:bg-[#00E5FF]/20 hover:text-white flex items-center justify-center transition-all cursor-pointer"
+            className="w-11 h-11 sm:w-8 sm:h-8 rounded-full bg-[#03152B] border border-[#00E5FF]/30 text-[#00E5FF] hover:bg-[#00E5FF]/20 hover:text-white flex items-center justify-center transition-all cursor-pointer"
             aria-label="Scroll back to top"
             title="Back to Top"
           >

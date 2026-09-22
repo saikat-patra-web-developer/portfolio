@@ -65,7 +65,7 @@ export const ReviewsSection = ({
         <div className="inline-flex items-center p-1 rounded-xl border border-white/10 self-start sm:self-auto shadow-inner">
           <button
             onClick={() => setViewMode("3d")}
-            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${viewMode === "3d"
+            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 min-h-[42px] sm:min-h-0 rounded-lg text-xs font-semibold transition-all cursor-pointer ${viewMode === "3d"
               ? "bg-gradient-to-r from-[#00E5FF] to-[#2787FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
               : "text-white/70 hover:text-white hover:bg-white/5"
               }`}
@@ -78,7 +78,7 @@ export const ReviewsSection = ({
 
           <button
             onClick={() => setViewMode("grid")}
-            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${viewMode === "grid"
+            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 min-h-[42px] sm:min-h-0 rounded-lg text-xs font-semibold transition-all cursor-pointer ${viewMode === "grid"
               ? "bg-gradient-to-r from-[#00E5FF] to-[#2787FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
               : "text-white/70 hover:text-white hover:bg-white/5"
               }`}
@@ -104,7 +104,7 @@ export const ReviewsSection = ({
             </div>
 
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                   {googleReviewStats.rating}
                 </span>

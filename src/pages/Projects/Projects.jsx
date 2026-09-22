@@ -1,3 +1,4 @@
+import { Lock } from "lucide-react";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { ProjectCard } from "../../components/project/ProjectCard";
 import {
@@ -31,6 +32,14 @@ export const Projects = () => {
           <p className="text-base sm:text-lg text-white/80 leading-relaxed">
             A library of real-world web applications, custom CRM platforms, and high-performance business websites. Each case study details the client's challenge, the technical solution, and measurable business outcomes.
           </p>
+
+          {/* NDA note */}
+          <div className="inline-flex items-start gap-2 px-4 py-2.5 rounded-xl bg-[#00E5FF]/[0.06] border border-[#00E5FF]/20 text-left max-w-2xl mx-auto">
+            <Lock className="w-3.5 h-3.5 text-[#00E5FF] shrink-0 mt-0.5" />
+            <p className="text-xs sm:text-[13px] text-white/70 leading-relaxed">
+              <span className="font-semibold text-white/90">Note:</span> Not all projects can be showcased here — some are under NDA (Non-Disclosure Agreement) and cannot be publicly disclosed. Detailed walkthroughs of those can be shared privately on request.
+            </p>
+          </div>
         </section>
 
         {/* ======================================================== */}

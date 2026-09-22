@@ -82,12 +82,6 @@ export const ServiceDetails = () => {
 
           {/* LEFT — Title block */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shadow-[0_0_20px_rgba(0,229,255,0.15)]">
-                <IconComp className="w-6 h-6" />
-              </div>
-            </div>
-
             <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
               {service.title}
             </h1>
@@ -127,14 +121,15 @@ export const ServiceDetails = () => {
           <div className="relative w-full rounded-2xl overflow-hidden border border-[#00E5FF]/20 bg-gradient-to-br from-[#031c38]/90 to-[#0b0720]/90 p-8 sm:p-12 flex flex-col items-center justify-center gap-6 shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_40px_rgba(0,229,255,0.08)]">
             <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-[#00E5FF]/06 blur-3xl pointer-events-none" />
             <div className="absolute -bottom-12 -left-12 w-44 h-44 rounded-full bg-[#7B3CFF]/08 blur-3xl pointer-events-none" />
-            <div className="relative w-24 h-24 rounded-3xl bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shadow-[0_0_40px_rgba(0,229,255,0.2)]">
-              <IconComp className="w-12 h-12" />
-            </div>
-            <div className="relative text-center space-y-2">
-              <div className="text-xs font-mono font-bold text-[#00E5FF] uppercase tracking-widest">
-                Service {service.number} of {coreServices.length}
+            {/* Hero icon */}
+            <div className="relative w-28 h-28">
+              <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-[#00E5FF]/40 to-[#7B3CFF]/40 blur-2xl opacity-60 pointer-events-none" />
+              <div className="relative w-28 h-28 rounded-[28px] bg-gradient-to-br from-[#00E5FF]/25 via-[#041227] to-[#7B3CFF]/25 border border-[#00E5FF]/45 flex items-center justify-center text-[#00E5FF] shadow-[0_0_60px_rgba(0,229,255,0.3),inset_0_1px_0_rgba(255,255,255,0.18)]">
+                <IconComp className="w-14 h-14" strokeWidth={1.75} />
               </div>
-              <div className="text-lg font-black text-white leading-snug max-w-xs">
+            </div>
+            <div className="relative text-center">
+              <div className="text-lg sm:text-xl font-black text-white leading-snug max-w-xs">
                 {service.title}
               </div>
             </div>

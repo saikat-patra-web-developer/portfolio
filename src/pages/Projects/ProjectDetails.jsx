@@ -71,7 +71,7 @@ export const ProjectDetails = () => {
           as="nav"
           immediate
           amount={0.4}
-          className="flex items-center gap-1.5 text-xs text-white/45 pt-1"
+          className="flex flex-wrap items-center gap-1.5 text-xs text-white/45 pt-1"
         >
           <Link to="/" className="hover:text-[#00E5FF] transition-colors">Home</Link>
           <ChevronRight className="w-3 h-3 shrink-0" />

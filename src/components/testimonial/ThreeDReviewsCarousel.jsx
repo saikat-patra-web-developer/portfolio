@@ -281,7 +281,7 @@ export const ThreeDReviewsCarousel = ({ reviews = [] }) => {
           <button
             key={idx}
             onClick={() => setActiveIndex(idx)}
-            className={`h-2 rounded-full transition-all duration-200 cursor-pointer ${idx === activeIndex
+            className={`relative h-2 rounded-full transition-all duration-200 cursor-pointer max-lg:after:content-[''] max-lg:after:absolute max-lg:after:left-[-3px] max-lg:after:right-[-3px] max-lg:after:-top-3 max-lg:after:-bottom-3 ${idx === activeIndex
               ? "w-7 bg-gradient-to-r from-[#00E5FF] to-[#2787FF] shadow-[0_0_12px_rgba(0,229,255,0.7)]"
               : "w-2 bg-white/20 hover:bg-white/40"
               }`}

@@ -171,7 +171,7 @@ export const ReviewsSection = ({
             <div className="text-center pt-2">
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-[#00E5FF] bg-[#00E5FF]/10 hover:bg-[#00E5FF]/20 border border-[#00E5FF]/30 transition-all duration-200 shadow-sm group cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-2.5 min-h-[42px] sm:min-h-0 rounded-full text-xs sm:text-sm font-semibold text-[#00E5FF] bg-[#00E5FF]/10 hover:bg-[#00E5FF]/20 border border-[#00E5FF]/30 transition-all duration-200 shadow-sm group cursor-pointer"
               >
                 <span>
                   {isExpanded

@@ -38,7 +38,7 @@ export const NeonButton = ({
 
   const content = (
     <>
-      <span>{children}</span>
+      <span className="inline-flex items-center gap-2 whitespace-nowrap shrink-0">{children}</span>
       {icon && (
         <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
       )}

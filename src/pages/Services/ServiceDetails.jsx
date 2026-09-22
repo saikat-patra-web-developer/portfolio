@@ -108,7 +108,7 @@ export const ServiceDetails = () => {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3 pt-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
               <NeonButton
                 to={`/contact?service=${encodeURIComponent(service.title)}`}
                 variant="primary"
@@ -116,7 +116,7 @@ export const ServiceDetails = () => {
               >
                 Discuss This Service
               </NeonButton>
-              <NeonButton to="/services" variant="secondary" size="md">
+              <NeonButton to="/services" variant="secondary" size="md" icon={false}>
                 <ArrowLeft className="w-4 h-4 shrink-0" />
                 <span>All Services</span>
               </NeonButton>

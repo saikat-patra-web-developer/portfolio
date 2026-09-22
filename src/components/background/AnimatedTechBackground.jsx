@@ -60,8 +60,8 @@ export const AnimatedTechBackground = () => {
       {/* 2. Hexagonal cyber grid */}
       <HexGrid />
 
-      {/* 3. Subtle HUD rings (desktop only, disabled in reduced motion) */}
-      {!isMobile && !prefersReducedMotion && <HudRings />}
+      {/* 3. Subtle HUD rings (disabled in reduced motion) */}
+      {!prefersReducedMotion && <HudRings />}
 
       {/* 4. Connected particle network (scaled down for performance) */}
       <Particles mousePos={mousePos} isMobile={isMobile} prefersReducedMotion={prefersReducedMotion} />

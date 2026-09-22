@@ -51,11 +51,17 @@ export const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close dropdown on route change
+  // Route change: close the drawer + desktop dropdown, but sync the mobile
+  // submenu to the current route — deep pages (/services/<slug>) must reveal
+  // their owning section as soon as the menu opens, not force a second tap.
   useEffect(() => {
     setServicesOpen(false);
     setMobileMenuOpen(false);
-    setMobileServicesOpen(false);
+    setMobileServicesOpen(
+      navLinks.some(
+        (link) => link.hasDropdown && location.pathname.startsWith(link.path)
+      )
+    );
   }, [location.pathname]);
 
   useEffect(() => {
@@ -308,7 +314,10 @@ export const Navbar = () => {
                                         <Icon className="w-3.5 h-3.5" />
                                       </div>
                                       <div className="min-w-0">
-                                        <div className="text-xs font-semibold truncate">{svc.title}</div>
+                                        {/* Wrap instead of truncate: long
+                                            service names must stay readable
+                                            at 360px. */}
+                                        <div className="text-xs font-semibold leading-snug">{svc.title}</div>
                                       </div>
                                     </Link>
                                   );

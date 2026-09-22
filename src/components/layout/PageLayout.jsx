@@ -42,9 +42,12 @@ export const PageLayout = ({
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    const cleanPath = pathname === "/" ? "" : pathname;
-    const currentUrl = `https://inqly.online${cleanPath}`;
+    const currentUrl = pathname === "/" ? "https://inqly.online/" : `https://inqly.online${pathname}`;
     canonical.setAttribute("href", currentUrl);
+
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((link) => {
+      link.setAttribute("href", currentUrl);
+    });
 
     // Dynamic Open Graph & Twitter meta updates
     const updateMeta = (attr, key, content) => {

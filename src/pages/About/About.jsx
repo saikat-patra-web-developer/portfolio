@@ -27,8 +27,8 @@ import {
 export const About = () => {
   return (
     <PageLayout
-      title="About Saikat Patra | Full Stack Web Developer"
-      description="Learn about Saikat Patra, a Full Stack Web Developer with 7+ years of experience engineering custom web applications, bespoke CRM platforms, and business automation."
+      title="About Saikat Patra | Expert Full Stack Web Developer"
+      description="Meet Saikat Patra, a full stack developer in Howrah with 7+ years of experience building custom web applications, CRM platforms, and business automation."
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
         {/* ======================================================== */}

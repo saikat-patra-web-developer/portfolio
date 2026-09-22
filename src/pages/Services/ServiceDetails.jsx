@@ -66,8 +66,8 @@ export const ServiceDetails = () => {
 
   return (
     <PageLayout
-      title={`${service.title} | Services | Saikat Patra`}
-      description={service.shortDesc}
+      title={service.seoTitle}
+      description={service.seoDescription}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 space-y-14">
 

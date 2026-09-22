@@ -11,6 +11,41 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://inqly.online/services/custom-web-applications</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inqly.online/services/crm-business-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inqly.online/services/high-performance-business-websites</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inqly.online/services/api-third-party-integrations</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inqly.online/services/ai-tool-implementation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inqly.online/services/mobile-app-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inqly.online/services/seo-geo-optimization</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://inqly.online/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

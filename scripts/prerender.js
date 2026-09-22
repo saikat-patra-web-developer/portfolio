@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { coreServices } from "../src/data/services.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -69,11 +70,11 @@ const sharedFaqSchema = {
   ]
 };
 
-const routes = [
+const staticRoutes = [
   {
     path: "/",
-    title: "Saikat Patra | Full Stack Web Developer – React, Laravel & Custom CRM",
-    description: "Independent Full Stack Web Developer with 7+ years experience specializing in custom React and Laravel web applications, bespoke CRM platforms, and business automation.",
+    title: "Hire an Expert Full Stack Web Developer | Saikat Patra",
+    description: "Hire Saikat Patra for custom web development, React and Laravel applications, CRM systems, API integrations, and business automation worldwide.",
     schema: sharedFaqSchema,
     bodyContent: `
       <main>
@@ -164,8 +165,8 @@ const routes = [
   },
   {
     path: "/services",
-    title: "Web, Mobile, AI & SEO Engineering Services | Saikat Patra",
-    description: "Full-stack web applications, custom CRM platforms, AI tool implementation, cross-platform iOS & Android mobile apps, and SEO/GEO search optimization.",
+    title: "Web Development & Custom CRM Services | Saikat Patra",
+    description: "Custom web development, CRM systems, business automation, API integrations, mobile apps, and SEO/GEO services for clients worldwide.",
     schema: sharedFaqSchema,
     bodyContent: `
       <main>
@@ -386,7 +387,7 @@ const routes = [
   },
   {
     path: "/projects/sspr-valve-manufacturing",
-    title: "SSPR Valve Manufacturing Industrial Catalog Case Study | Saikat Patra",
+    title: "Industrial Valve Website Case Study | Saikat Patra",
     description: "Industrial engineering digital platform and product catalog for SSPR Valve Manufacturing Pvt Ltd (SR Valve) highlighting 15+ years of flow control manufacturing.",
     bodyContent: `
       <main>
@@ -490,8 +491,8 @@ const routes = [
   },
   {
     path: "/about",
-    title: "About Saikat Patra | Full Stack Web Developer",
-    description: "Learn about Saikat Patra, an independent Full Stack Web Developer with 7+ years of experience engineering custom web applications, bespoke CRM platforms, and business automation workflows.",
+    title: "About Saikat Patra | Expert Full Stack Web Developer",
+    description: "Meet Saikat Patra, a full stack developer in Howrah with 7+ years of experience building custom web applications, CRM platforms, and business automation.",
     bodyContent: `
       <main>
         <article>
@@ -541,7 +542,7 @@ const routes = [
   {
     path: "/skills",
     title: "Technical Skills & Architecture Patterns | Saikat Patra",
-    description: "Full stack technical skills and engineering frameworks mastered by Saikat Patra: React, Next.js, Laravel, PHP, MySQL, Tailwind CSS, REST APIs, and Cloudflare Workers.",
+    description: "Explore Saikat Patra's production skills in React, Laravel, PHP, MySQL, TypeScript, APIs, cloud deployment, and scalable software architecture.",
     bodyContent: `
       <main>
         <article>
@@ -565,8 +566,8 @@ const routes = [
   },
   {
     path: "/contact",
-    title: "Get in Touch Directly | Saikat Patra - Full Stack Web Developer",
-    description: "Skip the long forms. Reach out directly to Saikat Patra via WhatsApp, direct phone, or email for web development, custom CRMs, and business automation.",
+    title: "Hire Saikat Patra | Expert Full Stack Web Developer",
+    description: "Contact Saikat Patra for custom web development, CRM systems, React and Laravel applications, API integrations, and business automation worldwide.",
     bodyContent: `
       <main>
         <header>
@@ -618,9 +619,54 @@ const routes = [
   }
 ];
 
+const serviceRoutes = coreServices.map((service) => ({
+  path: `/services/${service.slug}`,
+  title: service.seoTitle,
+  description: service.seoDescription,
+  schema: {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `https://inqly.online/services/${service.slug}#service`,
+    name: service.title,
+    description: service.shortDesc,
+    serviceType: service.title,
+    provider: { "@id": "https://inqly.online/#service" },
+    areaServed: [
+      { "@type": "City", name: "Howrah" },
+      { "@type": "State", name: "West Bengal" },
+      { "@type": "Place", name: "Worldwide remote clients" }
+    ],
+    url: `https://inqly.online/services/${service.slug}`,
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      url: `https://inqly.online/contact?service=${encodeURIComponent(service.title)}`
+    }
+  },
+  bodyContent: `
+    <main>
+      <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/services">Services</a> &rsaquo; ${service.title}</nav>
+      <article>
+        <header>
+          <h1>${service.title}</h1>
+          <p>${service.shortDesc}</p>
+          <p>Available from Howrah, West Bengal for worldwide remote projects.</p>
+        </header>
+        <section><h2>The Business Problem</h2><p>${service.problem}</p></section>
+        <section><h2>What I Build</h2><p>${service.whatIBuild}</p></section>
+        <section><h2>Business Benefits</h2><p>${service.businessBenefit}</p></section>
+        <section><h2>Typical Features</h2><ul>${service.typicalFunctionality.map((item) => `<li>${item}</li>`).join("")}</ul></section>
+        <section><h2>Technology Stack</h2><p>${service.technologies.join(", ")}</p></section>
+        <p><a href="/contact?service=${encodeURIComponent(service.title)}">Discuss your ${service.title.toLowerCase()} project</a></p>
+      </article>
+    </main>
+  `
+}));
+
+const routes = [...staticRoutes, ...serviceRoutes];
+
 for (const route of routes) {
-  const cleanPath = route.path === "/" ? "" : route.path;
-  const canonicalUrl = `https://inqly.online${cleanPath}`;
+  const canonicalUrl = route.path === "/" ? "https://inqly.online/" : `https://inqly.online${route.path}`;
 
   let html = template;
 
@@ -637,6 +683,10 @@ for (const route of routes) {
   html = html.replace(
     /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i,
     `<link rel="canonical" href="${canonicalUrl}" />`
+  );
+  html = html.replaceAll(
+    /<link\s+rel="alternate"\s+hreflang="([^"]+)"\s+href="[^"]*"\s*\/?>/gi,
+    (_, language) => `<link rel="alternate" hreflang="${language}" href="${canonicalUrl}" />`
   );
 
   // Replace Open Graph metadata
@@ -666,6 +716,43 @@ for (const route of routes) {
     /<meta\s+name="twitter:url"\s+content="[^"]*"\s*\/?>/i,
     `<meta name="twitter:url" content="${canonicalUrl}" />`
   );
+
+  const pathParts = route.path.split("/").filter(Boolean);
+  const breadcrumbItems = [{ "@type": "ListItem", position: 1, name: "Home", item: "https://inqly.online/" }];
+  if (pathParts.length > 1) {
+    const parentName = pathParts[0] === "services" ? "Services" : "Projects";
+    breadcrumbItems.push({ "@type": "ListItem", position: 2, name: parentName, item: `https://inqly.online/${pathParts[0]}` });
+  }
+  if (route.path !== "/") {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: breadcrumbItems.length + 1,
+      name: route.title.split("|")[0].trim(),
+      item: canonicalUrl
+    });
+  }
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: route.title,
+        description: route.description,
+        isPartOf: { "@id": "https://inqly.online/#website" },
+        about: { "@id": "https://inqly.online/#service" },
+        inLanguage: "en-IN",
+        primaryImageOfPage: { "@id": "https://inqly.online/assets/images/saikat-patra-social.png" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbItems
+      }
+    ]
+  };
+  const pageSchemaTag = `\n    <!-- Page and Breadcrumb Structured Data -->\n    <script type="application/ld+json">\n    ${JSON.stringify(pageSchema, null, 2)}\n    </script>\n  </head>`;
+  html = html.replace("</head>", pageSchemaTag);
 
   // Inject route-specific schema if present
   if (route.schema) {

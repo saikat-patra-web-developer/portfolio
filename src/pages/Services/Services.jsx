@@ -40,8 +40,8 @@ export const Services = () => {
 
   return (
     <PageLayout
-      title="Web, Mobile, AI & SEO Engineering Services | Saikat Patra"
-      description="Full-stack web applications, custom CRM platforms, AI tool implementation, cross-platform iOS & Android mobile apps, and SEO/GEO search optimization."
+      title="Web Development & Custom CRM Services | Saikat Patra"
+      description="Custom web development, CRM systems, business automation, API integrations, mobile apps, and SEO/GEO services for clients worldwide."
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
         {/* ======================================================== */}

@@ -17,7 +17,7 @@ export const Skills = () => {
   return (
     <PageLayout
       title="Technical Skills & Architecture | Saikat Patra"
-      description="Full stack technical skills, engineering frameworks, and architecture specializations mastered by Saikat Patra: React, Next.js, Laravel, PHP, MySQL, and Tailwind CSS."
+      description="Explore Saikat Patra's production skills in React, Laravel, PHP, MySQL, TypeScript, APIs, cloud deployment, and scalable software architecture."
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
         {/* ======================================================== */}

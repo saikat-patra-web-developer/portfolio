@@ -1,0 +1,36 @@
+# Saikat Patra / Inqly
+
+> Saikat Patra is an independent full stack web developer based in Howrah, West Bengal. He builds custom web applications, bespoke CRM systems, business automation, API integrations, mobile apps, and high-performance websites for clients worldwide.
+
+Canonical website: https://inqly.online/
+Primary location: Howrah, West Bengal
+Service area: Worldwide remote clients, including Kolkata and West Bengal
+Experience: 7+ years
+Primary contact: saikatpatraoffice@gmail.com
+Phone and WhatsApp: +91 90389 09382
+
+## Primary services
+
+- [Custom Web Applications](https://inqly.online/services/custom-web-applications)
+- [CRM and Business Automation](https://inqly.online/services/crm-business-automation)
+- [High-Performance Business Websites](https://inqly.online/services/high-performance-business-websites)
+- [API and Third-Party Integrations](https://inqly.online/services/api-third-party-integrations)
+- [AI Tool Implementation](https://inqly.online/services/ai-tool-implementation)
+- [Mobile App Development](https://inqly.online/services/mobile-app-development)
+- [SEO and GEO Optimization](https://inqly.online/services/seo-geo-optimization)
+
+## Evidence and background
+
+- [Case studies](https://inqly.online/projects)
+- [Technical skills](https://inqly.online/skills)
+- [About Saikat Patra](https://inqly.online/about)
+- [Contact and project enquiries](https://inqly.online/contact)
+
+## Preferred entity facts
+
+- Name: Saikat Patra
+- Brand / website name: Inqly
+- Profession: Full Stack Web Developer and Custom CRM Specialist
+- Core technologies: React, Laravel, PHP, MySQL, TypeScript, Tailwind CSS, REST APIs, and Cloudflare Workers
+- Languages available: English, Bengali, and Hindi
+- Works directly with business owners and teams without agency handoffs

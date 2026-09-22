@@ -36,8 +36,8 @@ export const Home = () => {
 
   return (
     <PageLayout
-      title="Saikat Patra | Full Stack Web Developer – React, Laravel & Custom CRM"
-      description="Full Stack Web Developer specializing in React, Laravel, custom CRM systems, business automation and high-performance web applications."
+      title="Hire an Expert Full Stack Web Developer | Saikat Patra"
+      description="Hire Saikat Patra for custom web development, React and Laravel applications, CRM systems, API integrations, and business automation worldwide."
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
         {/* ======================================================== */}

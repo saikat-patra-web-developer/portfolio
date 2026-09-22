@@ -102,8 +102,8 @@ export const Contact = () => {
 
   return (
     <PageLayout
-      title="Get in Touch Directly | Saikat Patra - Full Stack Web Developer"
-      description="Skip the long forms. Reach out directly to Saikat Patra via WhatsApp, direct phone, or email for web development, custom CRMs, and business automation."
+      title="Hire Saikat Patra | Expert Full Stack Web Developer"
+      description="Contact Saikat Patra for custom web development, CRM systems, React and Laravel applications, API integrations, and business automation worldwide."
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
 

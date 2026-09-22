@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
@@ -27,6 +27,7 @@ import {
 import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
 import { Reveal } from "../../components/ui/Reveal";
+import { useSearchParams } from "react-router-dom";
 import { NeonButton } from "../../components/ui/NeonButton";
 import { profileData } from "../../data/profile";
 import {
@@ -39,6 +40,20 @@ import {
 export const Contact = () => {
   const [copiedField, setCopiedField] = useState(null);
   const [showBookingModal, setShowBookingModal] = useState(false);
+  const [searchParams] = useSearchParams();
+  const requestedService = searchParams.get("service");
+
+  // Close the booking modal on Escape for keyboard accessibility.
+  useEffect(() => {
+    if (!showBookingModal) return undefined;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setShowBookingModal(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [showBookingModal]);
 
   const handleCopy = (text, fieldId) => {
     if (navigator?.clipboard?.writeText) {
@@ -136,6 +151,19 @@ export const Contact = () => {
               </span>
             ))}
           </motion.div>
+
+          {requestedService && (
+            <motion.div
+              variants={staggerItem}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#052A4A]/60 border border-[#00E5FF]/35 text-xs text-white"
+            >
+              <MessageSquare className="w-3.5 h-3.5 text-[#00E5FF]" />
+              <span>
+                Inquiring about:{" "}
+                <strong className="text-[#00E5FF] font-semibold">{requestedService}</strong>
+              </span>
+            </motion.div>
+          )}
         </motion.section>
 
         {/* ======================================================== */}
@@ -789,7 +817,7 @@ export const Contact = () => {
                     <span className="block text-[11px] text-white/50">Instant scheduling via chat</span>
                   </div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all" />
+                <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all" />
               </a>
 
               <a
@@ -803,7 +831,7 @@ export const Contact = () => {
                     <span className="block text-[11px] text-white/50">Send meeting proposal</span>
                   </div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#00E5FF] group-hover:translate-x-0.5 transition-all" />
+                <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-[#00E5FF] group-hover:translate-x-0.5 transition-all" />
               </a>
 
               <a
@@ -817,7 +845,7 @@ export const Contact = () => {
                     <span className="block text-[11px] text-white/50">+91 90389 09382</span>
                   </div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#A855F7] group-hover:translate-x-0.5 transition-all" />
+                <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-[#A855F7] group-hover:translate-x-0.5 transition-all" />
               </a>
             </div>
 

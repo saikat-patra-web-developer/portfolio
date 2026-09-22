@@ -12,9 +12,13 @@ export const PageLayout = ({
   useEffect(() => {
     // Scroll restoration
     if (window.location.hash) {
-      const element = document.querySelector(window.location.hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      try {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } catch {
+        // A malformed hash must never crash navigation.
       }
     } else {
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });

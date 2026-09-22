@@ -126,13 +126,13 @@ export const Footer = ({ showCta = true }) => {
                     href={`mailto:${profileData.directEmail || "saikatpatra300@gmail.com"}`}
                     className="text-white hover:text-[#00E5FF] transition-colors font-mono text-xs"
                   >
-                    {profileData.directEmail || "saikatpatra300@gmail.com"} <span className="text-[10px] text-white/40 font-sans">(Direct)</span>
+                    {profileData.directEmail || "saikatpatra300@gmail.com"} <span className="text-[10px] text-white/60 font-sans">(Direct)</span>
                   </a>
                   <a
                     href={`mailto:${profileData.businessEmail || "saikatpatraoffice@gmail.com"}`}
                     className="text-white hover:text-[#00E5FF] transition-colors font-mono text-xs"
                   >
-                    {profileData.businessEmail || "saikatpatraoffice@gmail.com"} <span className="text-[10px] text-white/40 font-sans">(Business)</span>
+                    {profileData.businessEmail || "saikatpatraoffice@gmail.com"} <span className="text-[10px] text-white/60 font-sans">(Business)</span>
                   </a>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export const Footer = ({ showCta = true }) => {
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#00E5FF] transition-colors text-xs"
                   >
-                    {profileData.secondaryPhone || "+91 89022 73136"} <span className="text-[10px] text-white/40 font-sans">(Secondary)</span>
+                    {profileData.secondaryPhone || "+91 89022 73136"} <span className="text-[10px] text-white/60 font-sans">(Secondary)</span>
                   </a>
                 </div>
               </div>

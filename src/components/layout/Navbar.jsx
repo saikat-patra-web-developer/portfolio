@@ -144,7 +144,7 @@ export const Navbar = () => {
                         >
                           {/* Header row */}
                           <div className="flex items-center justify-between px-2 pb-3 border-b border-white/8 mb-3">
-                            <span className="text-[10px] font-bold text-white/35 uppercase tracking-widest">All Services</span>
+                            <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest">All Services</span>
                             <Link
                               to="/services"
                               onClick={() => setServicesOpen(false)}
@@ -177,7 +177,7 @@ export const Navbar = () => {
                                     <div className="text-xs font-bold text-white leading-snug group-hover:text-[#00E5FF] transition-colors line-clamp-1">
                                       {svc.title}
                                     </div>
-                                    <div className="text-[10px] text-white/45 leading-snug mt-0.5 line-clamp-1">
+                                    <div className="text-[10px] text-white/60 leading-snug mt-0.5 line-clamp-1">
                                       {svc.shortDesc}
                                     </div>
                                   </div>

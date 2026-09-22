@@ -30,7 +30,7 @@ export const ServiceCard = ({ service, delay = 0 }) => {
             <IconComponent className="w-6 h-6" />
           </div>
           {number && (
-            <span className="text-sm font-mono font-bold text-white/30 group-hover:text-[#00E5FF]/70 transition-colors duration-200">
+            <span className="text-sm font-mono font-bold text-white/55 group-hover:text-[#00E5FF]/70 transition-colors duration-200">
               {number}
             </span>
           )}

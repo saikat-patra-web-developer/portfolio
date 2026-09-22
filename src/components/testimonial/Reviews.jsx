@@ -283,7 +283,7 @@ export default function Reviews() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[9px] text-white/45 mt-1 font-medium">{collageData.front.bottomLeftSub}</p>
+                    <p className="text-[9px] text-white/60 mt-1 font-medium">{collageData.front.bottomLeftSub}</p>
                   </div>
                 </div>
 
@@ -304,7 +304,7 @@ export default function Reviews() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[8px] text-white/45 mt-0.5 font-medium truncate">{collageData.front.bottomLeftSub}</p>
+                    <p className="text-[8px] text-white/60 mt-0.5 font-medium truncate">{collageData.front.bottomLeftSub}</p>
                   </div>
                 </div>
 
@@ -395,7 +395,7 @@ export default function Reviews() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[9px] text-white/45 mt-1 font-medium">{collageData.back.bottomLeftSub}</p>
+                    <p className="text-[9px] text-white/60 mt-1 font-medium">{collageData.back.bottomLeftSub}</p>
                   </div>
                 </div>
 
@@ -416,7 +416,7 @@ export default function Reviews() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[8px] text-white/45 mt-0.5 font-medium truncate">{collageData.back.bottomLeftSub}</p>
+                    <p className="text-[8px] text-white/60 mt-0.5 font-medium truncate">{collageData.back.bottomLeftSub}</p>
                   </div>
                 </div>
 
@@ -493,7 +493,7 @@ export default function Reviews() {
                         <p className="text-[10px] text-white/50 font-semibold uppercase tracking-wider">{review.role}</p>
                       </div>
                     </div>
-                    <span className="text-[10px] font-semibold text-white/45 group-hover:text-[#00E5FF] transition-colors">
+                    <span className="text-[10px] font-semibold text-white/60 group-hover:text-[#00E5FF] transition-colors">
                       {'On-Time Delivery'} <CheckCircle2 className="w-3 h-3 text-emerald-400 ml-1" />
                     </span>
                   </footer>

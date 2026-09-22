@@ -78,7 +78,7 @@ export const ServiceDetails = () => {
           as="nav"
           immediate
           amount={0.4}
-          className="flex items-center gap-1.5 text-xs text-white/45 pt-1 flex-wrap"
+          className="flex items-center gap-1.5 text-xs text-white/60 pt-1 flex-wrap"
         >
           <Link to="/" className="hover:text-[#00E5FF] transition-colors">Home</Link>
           <ChevronRight className="w-3 h-3 shrink-0" />
@@ -172,7 +172,7 @@ export const ServiceDetails = () => {
         {/* CHALLENGE & WHAT I BUILD                                      */}
         {/* ============================================================ */}
         <Reveal as="section" amount={0.12} className="space-y-5">
-          <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+          <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
             The Problem &amp; My Solution
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -205,7 +205,7 @@ export const ServiceDetails = () => {
         {/* ============================================================ */}
         {service.typicalFunctionality && service.typicalFunctionality.length > 0 && (
           <Reveal as="section" amount={0.12} className="space-y-5">
-            <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+            <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
               Typical Functionality &amp; Capabilities
             </h2>
             <Stagger
@@ -231,7 +231,7 @@ export const ServiceDetails = () => {
         {/* BUSINESS BENEFIT                                              */}
         {/* ============================================================ */}
         <Reveal as="section" amount={0.15} className="space-y-5">
-          <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+          <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
             Business Outcome &amp; ROI
           </h2>
           <div className="relative p-6 rounded-2xl border border-[#00E5FF]/25 overflow-hidden">
@@ -254,7 +254,7 @@ export const ServiceDetails = () => {
         {/* TECHNOLOGIES                                                  */}
         {/* ============================================================ */}
         <Reveal as="section" amount={0.15} className="space-y-5">
-          <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+          <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
             Core Technologies
           </h2>
           <Stagger as="div" className="flex flex-wrap gap-2" amount={0.2} stagger={0.04}>
@@ -274,7 +274,7 @@ export const ServiceDetails = () => {
         {/* ============================================================ */}
         {service.relatedCaseStudy && (
           <Reveal as="section" amount={0.15} className="space-y-5">
-            <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+            <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
               Related Case Study
             </h2>
             <div className="relative p-6 rounded-2xl border border-[#7B3CFF]/25 overflow-hidden">
@@ -347,7 +347,7 @@ export const ServiceDetails = () => {
               <ArrowLeft className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <div className="text-[10px] text-white/38 uppercase tracking-widest mb-0.5">Previous Service</div>
+              <div className="text-[10px] text-white/60 uppercase tracking-widest mb-0.5">Previous Service</div>
               <div className="text-sm font-bold text-white truncate group-hover:text-[#00E5FF] transition-colors">
                 {prevService.title}
               </div>
@@ -359,7 +359,7 @@ export const ServiceDetails = () => {
             className="group flex items-center justify-end gap-4 p-5 rounded-2xl border border-white/10 hover:border-[#00E5FF]/40 hover:bg-[#031c38]/60 transition-all duration-300 text-right"
           >
             <div className="min-w-0">
-              <div className="text-[10px] text-white/38 uppercase tracking-widest mb-0.5">Next Service</div>
+              <div className="text-[10px] text-white/60 uppercase tracking-widest mb-0.5">Next Service</div>
               <div className="text-sm font-bold text-white truncate group-hover:text-[#00E5FF] transition-colors">
                 {nextService.title}
               </div>

@@ -71,7 +71,7 @@ export const ProjectDetails = () => {
           as="nav"
           immediate
           amount={0.4}
-          className="flex flex-wrap items-center gap-1.5 text-xs text-white/45 pt-1"
+          className="flex flex-wrap items-center gap-1.5 text-xs text-white/60 pt-1"
         >
           <Link to="/" className="hover:text-[#00E5FF] transition-colors">Home</Link>
           <ChevronRight className="w-3 h-3 shrink-0" />
@@ -108,7 +108,7 @@ export const ProjectDetails = () => {
                 <div className="flex items-start gap-2.5">
                   <Building2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[10px] text-white/38 uppercase tracking-wider">Client</div>
+                    <div className="text-[10px] text-white/60 uppercase tracking-wider">Client</div>
                     <div className="text-sm font-semibold text-white leading-snug">{project.client}</div>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export const ProjectDetails = () => {
                 <div className="flex items-start gap-2.5">
                   <Tag className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[10px] text-white/38 uppercase tracking-wider">Industry</div>
+                    <div className="text-[10px] text-white/60 uppercase tracking-wider">Industry</div>
                     <div className="text-sm font-semibold text-white leading-snug">{project.industry}</div>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export const ProjectDetails = () => {
                 <div className="flex items-start gap-2.5">
                   <User className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[10px] text-white/38 uppercase tracking-wider">My Role</div>
+                    <div className="text-[10px] text-white/60 uppercase tracking-wider">My Role</div>
                     <div className="text-sm font-semibold text-white leading-snug">{project.role}</div>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export const ProjectDetails = () => {
                 <div className="flex items-start gap-2.5">
                   <Calendar className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[10px] text-white/38 uppercase tracking-wider">Year</div>
+                    <div className="text-[10px] text-white/60 uppercase tracking-wider">Year</div>
                     <div className="text-sm font-semibold text-white">{project.year}</div>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ export const ProjectDetails = () => {
         {/* CHALLENGE & SOLUTION                                          */}
         {/* ============================================================ */}
         <Reveal as="section" amount={0.12} className="space-y-5">
-          <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+          <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
             Challenge &amp; Solution
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -206,7 +206,7 @@ export const ProjectDetails = () => {
         {/* ============================================================ */}
         {project.keyFeatures && project.keyFeatures.length > 0 && (
           <Reveal as="section" amount={0.12} className="space-y-5">
-            <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+            <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
               Key Features
             </h2>
             <Stagger
@@ -233,7 +233,7 @@ export const ProjectDetails = () => {
         {/* ============================================================ */}
         {project.architecture && (
           <Reveal as="section" amount={0.15} className="space-y-5">
-            <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+            <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
               Technical Architecture
             </h2>
             <div className="relative p-6 rounded-2xl border border-[#7B3CFF]/25 overflow-hidden">
@@ -256,7 +256,7 @@ export const ProjectDetails = () => {
         {/* ============================================================ */}
         {(project.results || project.result) && (
           <Reveal as="section" amount={0.15} className="space-y-5">
-            <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+            <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
               Business Impact
             </h2>
             <div className="relative p-6 rounded-2xl border border-[#00E5FF]/25 overflow-hidden">
@@ -280,7 +280,7 @@ export const ProjectDetails = () => {
         {/* TECHNOLOGIES                                                  */}
         {/* ============================================================ */}
         <Reveal as="section" amount={0.15} className="space-y-5">
-          <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
+          <h2 className="text-[11px] font-bold text-white/60 uppercase tracking-widest">
             Technologies &amp; Tools
           </h2>
           <Stagger as="div" className="flex flex-wrap gap-2" amount={0.2} stagger={0.04}>
@@ -312,7 +312,7 @@ export const ProjectDetails = () => {
               <ArrowLeft className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <div className="text-[10px] text-white/38 uppercase tracking-widest mb-0.5">Previous</div>
+              <div className="text-[10px] text-white/60 uppercase tracking-widest mb-0.5">Previous</div>
               <div className="text-sm font-bold text-white truncate group-hover:text-[#00E5FF] transition-colors">
                 {prevProject.title}
               </div>
@@ -324,7 +324,7 @@ export const ProjectDetails = () => {
             className="group flex items-center justify-end gap-4 p-5 rounded-2xl border border-white/10 hover:border-[#00E5FF]/40 hover:bg-[#031c38]/60 transition-all duration-300 text-right"
           >
             <div className="min-w-0">
-              <div className="text-[10px] text-white/38 uppercase tracking-widest mb-0.5">Next</div>
+              <div className="text-[10px] text-white/60 uppercase tracking-widest mb-0.5">Next</div>
               <div className="text-sm font-bold text-white truncate group-hover:text-[#00E5FF] transition-colors">
                 {nextProject.title}
               </div>

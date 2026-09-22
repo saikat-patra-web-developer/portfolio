@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
   MapPin,
@@ -26,7 +27,14 @@ import {
 } from "../../components/ui/SocialIcons";
 import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
+import { Reveal } from "../../components/ui/Reveal";
 import { profileData } from "../../data/profile";
+import {
+  EASE,
+  staggerContainer,
+  staggerItem,
+  staggerDelay
+} from "../../animation/motion";
 
 export const Contact = () => {
   const [copiedField, setCopiedField] = useState(null);
@@ -87,39 +95,61 @@ export const Contact = () => {
         {/* ======================================================== */}
         {/* HEADER SECTION                                           */}
         {/* ======================================================== */}
-        <section className="relative pt-4 sm:pt-8 text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase">
+        <motion.section
+          className="relative pt-4 sm:pt-8 text-center max-w-3xl mx-auto space-y-4"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer(0.08, 0.08)}
+        >
+          <motion.div
+            variants={staggerItem}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase"
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
             <span>DIRECT CHANNELS</span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+          <motion.h1
+            variants={staggerItem}
+            className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight"
+          >
             Get in Touch{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#A855F7]">
               Directly.
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto">
+          <motion.p
+            variants={staggerItem}
+            className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto"
+          >
             Skip the long forms. Reach out directly through any of my verified communication channels for immediate project consultation and fast response.
-          </p>
+          </motion.p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70">
+          <motion.div
+            variants={staggerItem}
+            className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70"
+          >
             {["Fast Response Guaranteed", "Direct Senior Engineer", "WhatsApp & Direct Phone", "Remote Worldwide"].map((item) => (
               <span key={item} className="px-3 py-1 rounded-full bg-[#03152B] border border-white/10">
                 &bull; {item}
               </span>
             ))}
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* ======================================================== */}
         {/* ROW 1: 4 DIRECT COMMUNICATION CHANNELS                   */}
         {/* ======================================================== */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <Reveal
+          as="section"
+          amount={0.1}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5"
+        >
           {/* CARD 1: INSTANT CHAT (PRIMARY) */}
           <GlassCard
             glow="cyan"
+            delay={staggerDelay(0, 4)}
             className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/50 flex flex-col justify-between space-y-4 rounded-2xl"
           >
             <div className="space-y-3.5">
@@ -179,6 +209,7 @@ export const Contact = () => {
           {/* CARD 2: INSTANT CHAT (SECONDARY) */}
           <GlassCard
             glow="cyan"
+            delay={staggerDelay(1, 4)}
             className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/50 flex flex-col justify-between space-y-4 rounded-2xl"
           >
             <div className="space-y-3.5">
@@ -238,6 +269,7 @@ export const Contact = () => {
           {/* CARD 3: BUSINESS ENQUIRIES */}
           <GlassCard
             glow="both"
+            delay={staggerDelay(2, 4)}
             className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/50 flex flex-col justify-between space-y-4 rounded-2xl"
           >
             <div className="space-y-3.5">
@@ -287,6 +319,7 @@ export const Contact = () => {
           {/* CARD 4: DIRECT EMAIL */}
           <GlassCard
             glow="purple"
+            delay={staggerDelay(3, 4)}
             className="p-5 sm:p-6 border-[#A855F7]/20 hover:border-[#A855F7]/50 flex flex-col justify-between space-y-4 rounded-2xl"
           >
             <div className="space-y-3.5">
@@ -332,15 +365,20 @@ export const Contact = () => {
               </a>
             </div>
           </GlassCard>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* ROW 2: AVAILABILITY & LOCATION + PROFESSIONAL NETWORKS   */}
         {/* ======================================================== */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
+        <Reveal
+          as="section"
+          amount={0.1}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5"
+        >
           {/* AVAILABILITY & LOCATION */}
           <GlassCard
             glow="cyan"
+            delay={staggerDelay(0, 2)}
             className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="flex items-start gap-3.5">
@@ -399,6 +437,7 @@ export const Contact = () => {
           {/* PROFESSIONAL NETWORKS */}
           <GlassCard
             glow="purple"
+            delay={staggerDelay(1, 2)}
             className="p-5 sm:p-6 border-[#A855F7]/20 hover:border-[#A855F7]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="flex items-start gap-3.5">
@@ -467,15 +506,20 @@ export const Contact = () => {
               </a>
             </div>
           </GlassCard>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* ROW 3: BOOK A MEETING + PROJECT INQUIRIES + MY LOCATION  */}
         {/* ======================================================== */}
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5">
+        <Reveal
+          as="section"
+          amount={0.1}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5"
+        >
           {/* CARD 1: BOOK A MEETING */}
           <GlassCard
             glow="cyan"
+            delay={staggerDelay(0, 3)}
             className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3.5">
@@ -514,6 +558,7 @@ export const Contact = () => {
           {/* CARD 2: PROJECT INQUIRY TYPES */}
           <GlassCard
             glow="cyan"
+            delay={staggerDelay(1, 3)}
             className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3.5">
@@ -543,6 +588,7 @@ export const Contact = () => {
           {/* CARD 3: MY LOCATION */}
           <GlassCard
             glow="both"
+            delay={staggerDelay(2, 3)}
             className="p-5 sm:p-6 border-[#00E5FF]/20 hover:border-[#00E5FF]/40 rounded-2xl flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3">
@@ -604,13 +650,21 @@ export const Contact = () => {
               </li>
             </ul>
           </GlassCard>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* ROW 4: OUR COMMITMENT / WHY WORK WITH ME?                */}
         {/* ======================================================== */}
-        <section className="pt-6 sm:pt-10 border-t border-white/10 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <Reveal
+          as="section"
+          amount={0.08}
+          className="pt-6 sm:pt-10 border-t border-white/10 space-y-6"
+        >
+          <Reveal
+            delay={0.05}
+            amount={0.4}
+            className="flex flex-col sm:flex-row sm:items-end justify-between gap-4"
+          >
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-[11px] font-bold tracking-wider uppercase">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
@@ -631,13 +685,14 @@ export const Contact = () => {
               <span>View My Work</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#00E5FF] group-hover:translate-x-1 transition-transform" />
             </Link>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {commitmentCards.map((card) => (
+            {commitmentCards.map((card, idx) => (
               <GlassCard
                 key={card.title}
                 glow="cyan"
+                delay={staggerDelay(idx, 4)}
                 className="p-5 border-[#00E5FF]/15 hover:border-[#00E5FF]/40 rounded-xl space-y-3"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#00E5FF]/10 border border-[#00E5FF]/25 flex items-center justify-center">
@@ -652,16 +707,35 @@ export const Contact = () => {
               </GlassCard>
             ))}
           </div>
-        </section>
+        </Reveal>
 
       </div>
 
       {/* ======================================================== */}
       {/* BOOKING MODAL                                            */}
       {/* ======================================================== */}
-      {showBookingModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-          <div className="relative w-full max-w-md p-6 rounded-3xl bg-[#03152B] border border-[#00E5FF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(0,229,255,0.2)] space-y-5">
+      <AnimatePresence>
+        {showBookingModal && (
+          <motion.div
+            key="booking-modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.22, ease: EASE }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={() => setShowBookingModal(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 24, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 16, scale: 0.97 }}
+              transition={{ duration: 0.3, delay: 0.05, ease: EASE }}
+              onClick={(e) => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Schedule an Intro Call"
+              className="relative w-full max-w-md p-6 rounded-3xl bg-[#03152B] border border-[#00E5FF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(0,229,255,0.2)] space-y-5"
+            >
             <button
               onClick={() => setShowBookingModal(false)}
               className="absolute top-5 right-5 p-2 rounded-full bg-[#020B18] border border-white/10 text-white/60 hover:text-white transition-colors cursor-pointer"
@@ -738,9 +812,10 @@ export const Contact = () => {
                 Cancel and close
               </button>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
+      </AnimatePresence>
     </PageLayout>
   );
 };

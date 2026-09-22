@@ -18,6 +18,7 @@ import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
 import { NeonButton } from "../../components/ui/NeonButton";
 import { TechIcon } from "../../components/ui/TechIcon";
+import { Reveal, Stagger, StaggerItem } from "../../components/ui/Reveal";
 import { coreServices } from "../../data/services";
 
 const serviceIcons = {
@@ -39,7 +40,12 @@ export const ServiceDetails = () => {
   if (!service) {
     return (
       <PageLayout title="Service Not Found | Saikat Patra">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 space-y-4">
+        <Reveal
+          as="div"
+          immediate
+          amount={0.2}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 space-y-4"
+        >
           <h1 className="text-3xl font-bold text-white">Service Not Found</h1>
           <p className="text-white/60 text-sm">
             The service page you are looking for does not exist or has been relocated.
@@ -49,7 +55,7 @@ export const ServiceDetails = () => {
               View All Services
             </NeonButton>
           </div>
-        </div>
+        </Reveal>
       </PageLayout>
     );
   }
@@ -68,13 +74,18 @@ export const ServiceDetails = () => {
         {/* ============================================================ */}
         {/* BREADCRUMB                                                    */}
         {/* ============================================================ */}
-        <nav className="flex items-center gap-1.5 text-xs text-white/45 pt-1 flex-wrap">
+        <Reveal
+          as="nav"
+          immediate
+          amount={0.4}
+          className="flex items-center gap-1.5 text-xs text-white/45 pt-1 flex-wrap"
+        >
           <Link to="/" className="hover:text-[#00E5FF] transition-colors">Home</Link>
           <ChevronRight className="w-3 h-3 shrink-0" />
           <Link to="/services" className="hover:text-[#00E5FF] transition-colors">Services</Link>
           <ChevronRight className="w-3 h-3 shrink-0" />
           <span className="text-white/70 truncate">{service.title}</span>
-        </nav>
+        </Reveal>
 
         {/* ============================================================ */}
         {/* HERO — Left: text  |  Right: icon card                       */}
@@ -82,7 +93,7 @@ export const ServiceDetails = () => {
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
 
           {/* LEFT — Title block */}
-          <div className="space-y-6">
+          <Reveal as="div" immediate delay={0.05} amount={0.15} className="space-y-6">
             <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
               {service.title}
             </h1>
@@ -92,16 +103,16 @@ export const ServiceDetails = () => {
             </p>
 
             {/* Quick capability pills */}
-            <div className="flex flex-wrap gap-2 pt-1">
+            <Stagger as="div" className="flex flex-wrap gap-2 pt-1" amount={0.2} stagger={0.05} delayChildren={0.35}>
               {service.capabilities.map((cap) => (
-                <span
+                <StaggerItem
                   key={cap}
                   className="px-3 py-1.5 rounded-lg bg-[#03152B] border border-[#00E5FF]/20 text-white/80 text-xs font-semibold"
                 >
                   {cap}
-                </span>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
               <NeonButton
@@ -116,10 +127,18 @@ export const ServiceDetails = () => {
                 <span>All Services</span>
               </NeonButton>
             </div>
-          </div>
+          </Reveal>
 
           {/* RIGHT — Decorative card */}
-          <div className="relative w-full rounded-2xl overflow-hidden border border-[#00E5FF]/20 bg-gradient-to-br from-[#031c38]/90 to-[#0b0720]/90 p-8 sm:p-12 flex flex-col items-center justify-center gap-6 shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_40px_rgba(0,229,255,0.08)]">
+          <Reveal
+            as="div"
+            immediate
+            delay={0.2}
+            x={44}
+            amount={0.15}
+            duration={0.8}
+            className="relative w-full rounded-2xl overflow-hidden border border-[#00E5FF]/20 bg-gradient-to-br from-[#031c38]/90 to-[#0b0720]/90 p-8 sm:p-12 flex flex-col items-center justify-center gap-6 shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_40px_rgba(0,229,255,0.08)]"
+          >
             <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-[#00E5FF]/06 blur-3xl pointer-events-none" />
             <div className="absolute -bottom-12 -left-12 w-44 h-44 rounded-full bg-[#7B3CFF]/08 blur-3xl pointer-events-none" />
             {/* Hero icon */}
@@ -146,13 +165,13 @@ export const ServiceDetails = () => {
                 </span>
               ))}
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* ============================================================ */}
         {/* CHALLENGE & WHAT I BUILD                                      */}
         {/* ============================================================ */}
-        <section className="space-y-5">
+        <Reveal as="section" amount={0.12} className="space-y-5">
           <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
             The Problem &amp; My Solution
           </h2>
@@ -179,34 +198,39 @@ export const ServiceDetails = () => {
               <p className="text-sm text-white/72 leading-relaxed">{service.whatIBuild}</p>
             </GlassCard>
           </div>
-        </section>
+        </Reveal>
 
         {/* ============================================================ */}
         {/* TYPICAL FUNCTIONALITY                                         */}
         {/* ============================================================ */}
         {service.typicalFunctionality && service.typicalFunctionality.length > 0 && (
-          <section className="space-y-5">
+          <Reveal as="section" amount={0.12} className="space-y-5">
             <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
               Typical Functionality &amp; Capabilities
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Stagger
+              as="div"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+              amount={0.1}
+              stagger={0.06}
+            >
               {service.typicalFunctionality.map((feat, i) => (
-                <div
+                <StaggerItem
                   key={i}
                   className="flex items-start gap-3 p-4 rounded-xl border border-[#00E5FF]/10 hover:border-[#00E5FF]/30 transition-colors"
                 >
                   <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
                   <span className="text-sm text-white/78 leading-relaxed">{feat}</span>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
-          </section>
+            </Stagger>
+          </Reveal>
         )}
 
         {/* ============================================================ */}
         {/* BUSINESS BENEFIT                                              */}
         {/* ============================================================ */}
-        <section className="space-y-5">
+        <Reveal as="section" amount={0.15} className="space-y-5">
           <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
             Business Outcome &amp; ROI
           </h2>
@@ -224,32 +248,32 @@ export const ServiceDetails = () => {
               </div>
             </div>
           </div>
-        </section>
+        </Reveal>
 
         {/* ============================================================ */}
         {/* TECHNOLOGIES                                                  */}
         {/* ============================================================ */}
-        <section className="space-y-5">
+        <Reveal as="section" amount={0.15} className="space-y-5">
           <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
             Core Technologies
           </h2>
-          <div className="flex flex-wrap gap-2">
+          <Stagger as="div" className="flex flex-wrap gap-2" amount={0.2} stagger={0.04}>
             {service.technologies.map((t) => (
-              <span
+              <StaggerItem
                 key={t}
                 className="px-3.5 py-1.5 rounded-lg bg-[#03152B] border border-[#00E5FF]/20 hover:border-[#00E5FF]/50 text-white/85 text-xs font-semibold transition-colors cursor-default"
               >
                 {t}
-              </span>
+              </StaggerItem>
             ))}
-          </div>
-        </section>
+          </Stagger>
+        </Reveal>
 
         {/* ============================================================ */}
         {/* RELATED CASE STUDY                                            */}
         {/* ============================================================ */}
         {service.relatedCaseStudy && (
-          <section className="space-y-5">
+          <Reveal as="section" amount={0.15} className="space-y-5">
             <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
               Related Case Study
             </h2>
@@ -274,13 +298,17 @@ export const ServiceDetails = () => {
                 </NeonButton>
               </div>
             </div>
-          </section>
+          </Reveal>
         )}
 
         {/* ============================================================ */}
         {/* CTA BANNER                                                    */}
         {/* ============================================================ */}
-        <section className="relative p-8 sm:p-10 rounded-3xl border border-[#00E5FF]/20 overflow-hidden text-center space-y-4">
+        <Reveal
+          as="section"
+          amount={0.2}
+          className="relative p-8 sm:p-10 rounded-3xl border border-[#00E5FF]/20 overflow-hidden text-center space-y-4"
+        >
           <div className="absolute inset-0 bg-gradient-to-br from-[#00E5FF]/05 to-[#7B3CFF]/05 pointer-events-none" />
           <h3 className="relative text-xl sm:text-2xl font-black text-white">
             Ready to Build {service.title}?
@@ -300,12 +328,17 @@ export const ServiceDetails = () => {
               See My Work
             </NeonButton>
           </div>
-        </section>
+        </Reveal>
 
         {/* ============================================================ */}
         {/* PREV / NEXT SERVICE NAVIGATION                                */}
         {/* ============================================================ */}
-        <div className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <Reveal
+          as="div"
+          amount={0.2}
+          delay={0.05}
+          className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        >
           <Link
             to={`/services/${prevService.slug}`}
             className="group flex items-center gap-4 p-5 rounded-2xl border border-white/10 hover:border-[#00E5FF]/40 hover:bg-[#031c38]/60 transition-all duration-300"
@@ -335,7 +368,7 @@ export const ServiceDetails = () => {
               <ArrowRight className="w-4 h-4" />
             </div>
           </Link>
-        </div>
+        </Reveal>
 
       </div>
     </PageLayout>

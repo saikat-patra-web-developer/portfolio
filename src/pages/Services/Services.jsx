@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   CheckCircle2,
   AlertCircle,
@@ -15,8 +16,14 @@ import {
 import { PageLayout } from "../../components/layout/PageLayout";
 import { SectionHeading } from "../../components/ui/SectionHeading";
 import { GlassCard } from "../../components/ui/GlassCard";
+import { Reveal, Stagger, StaggerItem } from "../../components/ui/Reveal";
 import { FaqSection } from "../../components/faq/FaqSection";
 import { coreServices, developmentProcess } from "../../data/services";
+import {
+  staggerContainer,
+  staggerItem,
+  staggerDelay
+} from "../../animation/motion";
 
 const serviceIcons = {
   code: Code,
@@ -39,42 +46,61 @@ export const Services = () => {
         {/* ======================================================== */}
         {/* SERVICES HERO                                            */}
         {/* ======================================================== */}
-        <section className="relative pt-4 sm:pt-8 text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase">
+        <motion.section
+          className="relative pt-4 sm:pt-8 text-center max-w-3xl mx-auto space-y-4"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer(0.08, 0.08)}
+        >
+          <motion.div
+            variants={staggerItem}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase"
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
             <span>COMMERCIAL SERVICES</span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+          <motion.h1
+            variants={staggerItem}
+            className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight"
+          >
             Custom Web &amp; Mobile Software Built to{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#A855F7]">
               Accelerate Your Business.
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-base sm:text-lg text-white/80 leading-relaxed">
+          <motion.p
+            variants={staggerItem}
+            className="text-base sm:text-lg text-white/80 leading-relaxed"
+          >
             I help businesses replace manual spreadsheets, fragmented SaaS subscriptions, and slow websites with fast, dependable custom software built on React, Laravel, AI, and mobile frameworks.
-          </p>
+          </motion.p>
 
-          <div className="pt-3 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70">
+          <motion.div
+            variants={staggerItem}
+            className="pt-3 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70"
+          >
             {["Full Code Ownership", "No Per-User Licensing", "AI & Workflow Automation", "iOS & Android Apps", "SEO & GEO", "Direct Senior Engineer"].map((item) => (
               <span key={item} className="px-3 py-1 rounded-full bg-[#03152B] border border-white/10">
                 &bull; {item}
               </span>
             ))}
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* ======================================================== */}
         {/* DEEP-DIVE INTO 4 CORE SERVICES                           */}
         {/* ======================================================== */}
-        <section className="space-y-12 sm:space-y-16">
+        <Reveal as="section" amount={0.12} className="space-y-12 sm:space-y-16">
           {coreServices.map((service) => {
             const IconComp = serviceIcons[service.icon] || Code;
             return (
-              <div
+              <Reveal
+                as="div"
                 key={service.id}
                 id={service.id}
+                amount={0.12}
                 className="scroll-mt-28 p-6 sm:p-10 rounded-3xl border border-[#00E5FF]/25 shadow-[0_15px_40px_rgba(0,0,0,0.6)]"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -137,14 +163,18 @@ export const Services = () => {
                       <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-3 text-[#00E5FF]">
                         Typical Functionality & Capabilities
                       </h3>
-                      <ul className="space-y-2">
+                      <Stagger as="ul" className="space-y-2" amount={0.1}>
                         {service.typicalFunctionality.map((feat, i) => (
-                          <li key={i} className="flex items-start gap-2.5 text-xs text-white/80">
+                          <StaggerItem
+                            as="li"
+                            key={i}
+                            className="flex items-start gap-2.5 text-xs text-white/80"
+                          >
                             <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
                             <span>{feat}</span>
-                          </li>
+                          </StaggerItem>
                         ))}
-                      </ul>
+                      </Stagger>
                     </div>
 
                     {/* Technologies Used */}
@@ -152,16 +182,17 @@ export const Services = () => {
                       <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5 text-[#00E5FF]">
                         Core Technologies
                       </h3>
-                      <div className="flex flex-wrap gap-1.5">
+                      <Stagger as="div" className="flex flex-wrap gap-1.5" amount={0.1} stagger={0.05}>
                         {service.technologies.map((tech) => (
-                          <span
+                          <StaggerItem
+                            as="span"
                             key={tech}
                             className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#020B18] text-white/80 border border-white/10"
                           >
                             {tech}
-                          </span>
+                          </StaggerItem>
                         ))}
-                      </div>
+                      </Stagger>
                     </div>
 
                     {/* Related Case Study Reference */}
@@ -208,15 +239,15 @@ export const Services = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* 4-STEP PROCESS ROADMAP                                   */}
         {/* ======================================================== */}
-        <section>
+        <Reveal as="section" amount={0.1}>
           <SectionHeading
             badge="OUR WORKFLOW"
             title="How We Work Together"
@@ -224,8 +255,12 @@ export const Services = () => {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {developmentProcess.map((item) => (
-              <GlassCard key={item.step} className="p-6 text-center border-[#00E5FF]/20 flex flex-col justify-between">
+            {developmentProcess.map((item, idx) => (
+              <GlassCard
+                key={item.step}
+                delay={staggerDelay(idx, 4)}
+                className="p-6 text-center border-[#00E5FF]/20 flex flex-col justify-between"
+              >
                 <div>
                   <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 mx-auto mb-3.5 flex items-center justify-center font-mono font-bold text-sm text-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]">
                     {item.step}
@@ -243,7 +278,7 @@ export const Services = () => {
               </GlassCard>
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* FAQ ACCORDION                                            */}

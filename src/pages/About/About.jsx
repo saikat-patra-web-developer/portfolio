@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Award,
   Briefcase,
@@ -13,9 +14,15 @@ import { SectionHeading } from "../../components/ui/SectionHeading";
 import { GlassCard } from "../../components/ui/GlassCard";
 import { NeonButton } from "../../components/ui/NeonButton";
 import { StatCard } from "../../components/ui/StatCard";
+import { Reveal } from "../../components/ui/Reveal";
 import { ReviewsSection } from "../../components/testimonial/ReviewsSection";
 import { profileData } from "../../data/profile";
 import { skillsData } from "../../data/skills";
+import {
+  staggerContainer,
+  staggerItem,
+  staggerDelay
+} from "../../animation/motion";
 
 export const About = () => {
   return (
@@ -30,45 +37,65 @@ export const About = () => {
         {/* ======================================================== */}
         {/* HERO SECTION                                             */}
         {/* ======================================================== */}
-        <section className="relative pt-4 sm:pt-8 text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase">
+        <motion.section
+          className="relative pt-4 sm:pt-8 text-center max-w-3xl mx-auto space-y-4"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer(0.08, 0.08)}
+        >
+          <motion.div
+            variants={staggerItem}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-wider uppercase"
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
             <span>ABOUT SAIKAT PATRA</span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+          <motion.h1
+            variants={staggerItem}
+            className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight"
+          >
             Full Stack Developer Specializing in{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#2787FF] to-[#A855F7]">
               Custom Business Systems.
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto">
+          <motion.p
+            variants={staggerItem}
+            className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto"
+          >
             {profileData.aboutBio}
-          </p>
+          </motion.p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70">
+          <motion.div
+            variants={staggerItem}
+            className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70"
+          >
             {["7+ Years Experience", "80+ Projects Completed", "Direct Senior Engineer", "Based in Howrah, India"].map((item) => (
               <span key={item} className="px-3 py-1 rounded-full bg-[#03152B] border border-white/10">
                 &bull; {item}
               </span>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
+          <motion.div
+            variants={staggerItem}
+            className="pt-3 flex flex-wrap items-center justify-center gap-3"
+          >
             <NeonButton to="/contact" variant="primary" size="md">
               Discuss Your Project
             </NeonButton>
             <NeonButton to="/projects" variant="secondary" size="md">
               View My Work
             </NeonButton>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* ======================================================== */}
         {/* SHORT STORY & BACKGROUND                                 */}
         {/* ======================================================== */}
-        <section id="story">
+        <Reveal as="section" id="story" amount={0.1}>
           <SectionHeading
             badge="MY BACKGROUND"
             title="Behind the Code"
@@ -77,7 +104,7 @@ export const About = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Visual Photo Card (Cols 1-5) */}
-            <div className="lg:col-span-5 flex justify-center">
+            <Reveal as="div" delay={0.08} amount={0.25} className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-[360px] rounded-3xl p-1 bg-gradient-to-br from-[#00E5FF]/40 via-[#2787FF]/20 to-[#7B3CFF]/40 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(0,229,255,0.2)]">
                 <div className="relative rounded-[22px] overflow-hidden bg-[#020B18]">
                   <img
@@ -100,7 +127,7 @@ export const About = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Story & Philosophy (Cols 6-12) */}
             <div className="lg:col-span-7">
@@ -121,12 +148,12 @@ export const About = () => {
               </GlassCard>
             </div>
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* PROVEN TRACK RECORD & CREDIBILITY                        */}
         {/* ======================================================== */}
-        <section>
+        <Reveal as="section" amount={0.1}>
           <SectionHeading
             badge="CREDIBILITY"
             title="By the Numbers"
@@ -134,17 +161,17 @@ export const About = () => {
           />
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
-            <StatCard value="80+" label="Projects Completed" icon={Briefcase} />
-            <StatCard value="50+" label="Happy Clients" icon={Users} />
-            <StatCard value="7+" label="Years Experience" icon={Award} />
-            <StatCard value="4.9" label="Google Rating (51 Reviews)" icon={Star} highlight={true} />
+            <StatCard value="80+" label="Projects Completed" icon={Briefcase} delay={staggerDelay(0, 4)} />
+            <StatCard value="50+" label="Happy Clients" icon={Users} delay={staggerDelay(1, 4)} />
+            <StatCard value="7+" label="Years Experience" icon={Award} delay={staggerDelay(2, 4)} />
+            <StatCard value="4.9" label="Google Rating (51 Reviews)" icon={Star} highlight={true} delay={staggerDelay(3, 4)} />
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* CORE STRENGTHS / DIFFERENTIATORS                         */}
         {/* ======================================================== */}
-        <section>
+        <Reveal as="section" amount={0.1}>
           <SectionHeading
             badge="STRENGTHS"
             title="Why Work With Me"
@@ -156,6 +183,7 @@ export const About = () => {
               <GlassCard
                 key={item.title}
                 glow="cyan"
+                delay={staggerDelay(idx, 4)}
                 className="p-6 border-[#00E5FF]/20 flex flex-col justify-between"
               >
                 <div>
@@ -172,13 +200,13 @@ export const About = () => {
               </GlassCard>
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* INTEGRATED CORE TECHNOLOGY STACK                         */}
         {/* ======================================================== */}
-        <section>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <Reveal as="section" amount={0.1}>
+          <Reveal amount={0.3} className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3">
                 <span>TECHNICAL CAPABILITIES</span>
@@ -199,13 +227,14 @@ export const About = () => {
               <span>View Full Technical Arsenal</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4">
-            {skillsData.coreStack.map((tech) => (
+            {skillsData.coreStack.map((tech, idx) => (
               <GlassCard
                 key={tech.name}
                 hoverEffect={true}
+                delay={staggerDelay(idx, 4)}
                 className="p-4 border-[#00E5FF]/20 text-center"
               >
                 <div className="w-2.5 h-2.5 rounded-full bg-[#00E5FF] mx-auto mb-2" />
@@ -218,12 +247,12 @@ export const About = () => {
               </GlassCard>
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* MY WORKING APPROACH (4 STEPS)                            */}
         {/* ======================================================== */}
-        <section>
+        <Reveal as="section" amount={0.1}>
           <SectionHeading
             badge="METHODOLOGY"
             title="My Working Approach"
@@ -231,9 +260,10 @@ export const About = () => {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {profileData.process.map((step) => (
+            {profileData.process.map((step, idx) => (
               <GlassCard
                 key={step.step}
+                delay={staggerDelay(idx, 4)}
                 className="p-6 text-center border-[#00E5FF]/20 flex flex-col justify-between"
               >
                 <div>
@@ -253,7 +283,7 @@ export const About = () => {
               </GlassCard>
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* REVIEWS & TESTIMONIALS                                   */}

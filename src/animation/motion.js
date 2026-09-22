@@ -9,10 +9,16 @@
 /**
  * Smooth "expo-out" curve: quick departure, long gentle settle.
  * Reads as premium and never feels bouncy or playful in a commercial context.
+ *
+ * Typed as a 4-tuple so framer-motion's `ease` accepts it from TSX files.
+ *
+ * @type {readonly [number, number, number, number]}
  */
 export const EASE = [0.22, 1, 0.36, 1];
 
-/** Slightly snappier curve for micro-interactions (buttons, chips, toggles). */
+/** Slightly snappier curve for micro-interactions (buttons, chips, toggles). *
+ * @type {readonly [number, number, number, number]}
+ */
 export const SNAP_EASE = [0.16, 1, 0.3, 1];
 
 /**

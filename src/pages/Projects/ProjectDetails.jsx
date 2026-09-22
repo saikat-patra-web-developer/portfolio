@@ -15,6 +15,7 @@ import {
 import { PageLayout } from "../../components/layout/PageLayout";
 import { GlassCard } from "../../components/ui/GlassCard";
 import { NeonButton } from "../../components/ui/NeonButton";
+import { Reveal, Stagger, StaggerItem } from "../../components/ui/Reveal";
 import { projectsData } from "../../data/projects";
 
 export const ProjectDetails = () => {
@@ -33,7 +34,12 @@ export const ProjectDetails = () => {
   if (!project) {
     return (
       <PageLayout title="Case Study Not Found | Saikat Patra">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 space-y-4">
+        <Reveal
+          as="div"
+          immediate
+          amount={0.2}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 space-y-4"
+        >
           <h1 className="text-3xl font-bold text-white">Case Study Not Found</h1>
           <p className="text-white/60 text-sm">
             The project case study you are looking for does not exist or has been relocated.
@@ -43,7 +49,7 @@ export const ProjectDetails = () => {
               Return to Project Library
             </NeonButton>
           </div>
-        </div>
+        </Reveal>
       </PageLayout>
     );
   }
@@ -61,13 +67,18 @@ export const ProjectDetails = () => {
         {/* ============================================================ */}
         {/* BREADCRUMB                                                    */}
         {/* ============================================================ */}
-        <nav className="flex items-center gap-1.5 text-xs text-white/45 pt-1">
+        <Reveal
+          as="nav"
+          immediate
+          amount={0.4}
+          className="flex items-center gap-1.5 text-xs text-white/45 pt-1"
+        >
           <Link to="/" className="hover:text-[#00E5FF] transition-colors">Home</Link>
           <ChevronRight className="w-3 h-3 shrink-0" />
           <Link to="/projects" className="hover:text-[#00E5FF] transition-colors">Projects</Link>
           <ChevronRight className="w-3 h-3 shrink-0" />
           <span className="text-white/70 truncate">{project.title}</span>
-        </nav>
+        </Reveal>
 
         {/* ============================================================ */}
         {/* HERO — Left: text  |  Right: image                           */}
@@ -75,7 +86,7 @@ export const ProjectDetails = () => {
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
 
           {/* LEFT — Title block */}
-          <div className="space-y-6">
+          <Reveal as="div" immediate delay={0.05} amount={0.15} className="space-y-6">
             {/* Category badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[#00E5FF] text-[11px] font-bold tracking-widest uppercase">
               {project.category}
@@ -132,24 +143,32 @@ export const ProjectDetails = () => {
             </div>
 
 
-          </div>
+          </Reveal>
 
           {/* RIGHT — Screenshot */}
-          <div className="w-full rounded-2xl overflow-hidden border border-[#00E5FF]/25 shadow-[0_20px_60px_rgba(0,0,0,0.7),0_0_40px_rgba(0,229,255,0.12)] bg-[#03152B]">
+          <Reveal
+            as="div"
+            immediate
+            delay={0.2}
+            x={44}
+            amount={0.15}
+            duration={0.8}
+            className="w-full rounded-2xl overflow-hidden border border-[#00E5FF]/25 shadow-[0_20px_60px_rgba(0,0,0,0.7),0_0_40px_rgba(0,229,255,0.12)] bg-[#03152B]"
+          >
             <img
               src={project.thumbnail}
               alt={`${project.title} screenshot`}
               className="w-full h-full object-cover object-top"
               loading="eager"
             />
-          </div>
+          </Reveal>
         </section>
 
 
         {/* ============================================================ */}
         {/* CHALLENGE & SOLUTION                                          */}
         {/* ============================================================ */}
-        <section className="space-y-5">
+        <Reveal as="section" amount={0.12} className="space-y-5">
           <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
             Challenge &amp; Solution
           </h2>
@@ -180,35 +199,40 @@ export const ProjectDetails = () => {
               </p>
             </GlassCard>
           </div>
-        </section>
+        </Reveal>
 
         {/* ============================================================ */}
         {/* KEY FEATURES                                                  */}
         {/* ============================================================ */}
         {project.keyFeatures && project.keyFeatures.length > 0 && (
-          <section className="space-y-5">
+          <Reveal as="section" amount={0.12} className="space-y-5">
             <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
               Key Features
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Stagger
+              as="div"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+              amount={0.1}
+              stagger={0.06}
+            >
               {project.keyFeatures.map((feat, i) => (
-                <div
+                <StaggerItem
                   key={i}
                   className="flex items-start gap-3 p-4 rounded-xl border border-[#00E5FF]/10 hover:border-[#00E5FF]/30 transition-colors"
                 >
                   <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
                   <span className="text-sm text-white/78 leading-relaxed">{feat}</span>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
-          </section>
+            </Stagger>
+          </Reveal>
         )}
 
         {/* ============================================================ */}
         {/* TECHNICAL ARCHITECTURE                                        */}
         {/* ============================================================ */}
         {project.architecture && (
-          <section className="space-y-5">
+          <Reveal as="section" amount={0.15} className="space-y-5">
             <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
               Technical Architecture
             </h2>
@@ -224,14 +248,14 @@ export const ProjectDetails = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </Reveal>
         )}
 
         {/* ============================================================ */}
         {/* BUSINESS IMPACT                                               */}
         {/* ============================================================ */}
         {(project.results || project.result) && (
-          <section className="space-y-5">
+          <Reveal as="section" amount={0.15} className="space-y-5">
             <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
               Business Impact
             </h2>
@@ -249,32 +273,37 @@ export const ProjectDetails = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </Reveal>
         )}
 
         {/* ============================================================ */}
         {/* TECHNOLOGIES                                                  */}
         {/* ============================================================ */}
-        <section className="space-y-5">
+        <Reveal as="section" amount={0.15} className="space-y-5">
           <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
             Technologies &amp; Tools
           </h2>
-          <div className="flex flex-wrap gap-2">
+          <Stagger as="div" className="flex flex-wrap gap-2" amount={0.2} stagger={0.04}>
             {project.technologies.map((t) => (
-              <span
+              <StaggerItem
                 key={t}
                 className="px-3.5 py-1.5 rounded-lg bg-[#03152B] border border-[#00E5FF]/20 hover:border-[#00E5FF]/50 text-white/85 text-xs font-semibold transition-colors cursor-default"
               >
                 {t}
-              </span>
+              </StaggerItem>
             ))}
-          </div>
-        </section>
+          </Stagger>
+        </Reveal>
 
         {/* ============================================================ */}
         {/* PREV / NEXT NAVIGATION                                        */}
         {/* ============================================================ */}
-        <div className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <Reveal
+          as="div"
+          amount={0.2}
+          delay={0.05}
+          className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        >
           <Link
             to={`/projects/${prevProject.slug}`}
             className="group flex items-center gap-4 p-5 rounded-2xl border border-white/10 hover:border-[#00E5FF]/40 hover:bg-[#031c38]/60 transition-all duration-300"
@@ -304,7 +333,7 @@ export const ProjectDetails = () => {
               <ArrowRight className="w-4 h-4" />
             </div>
           </Link>
-        </div>
+        </Reveal>
 
       </div>
     </PageLayout>

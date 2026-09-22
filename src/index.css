@@ -18,6 +18,30 @@ body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
 }
+
+/* Custom cursor (src/components/ui/CustomCursor.jsx): while the themed
+   cursor is active, hide the native pointer everywhere on the site. */
+html.site-cursor,
+html.site-cursor * {
+  cursor: none !important;
+}
+
+/* …but keep the precise native caret in text fields and the pointer
+   affordance on selects / disabled controls. */
+html.site-cursor input,
+html.site-cursor textarea,
+html.site-cursor [contenteditable="true"] {
+  cursor: text !important;
+}
+
+html.site-cursor select {
+  cursor: pointer !important;
+}
+
+html.site-cursor button:disabled,
+html.site-cursor [aria-disabled="true"] {
+  cursor: not-allowed !important;
+}
 /* Global scroll behavior: smooth scroll is applied programmatically to specific anchor targets and back-to-top buttons to avoid hijacking route transitions */
 
 /* The references use a compact, information-rich desktop canvas. */

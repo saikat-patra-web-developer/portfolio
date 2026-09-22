@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import { AnimatedTechBackground } from "./components/background/AnimatedTechBackground";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
+import { CustomCursor } from "./components/ui/CustomCursor";
 import { NavigationProvider } from "./context/NavigationContext";
 import { useNavigation } from "./context/useNavigation";
 
@@ -65,6 +66,9 @@ const AppContent = () => {
 
       {/* 4. Global Consistent Footer */}
       <Footer showCta={location.pathname !== "/contact"} />
+
+      {/* 5. Themed custom cursor (desktop only) */}
+      <CustomCursor />
     </div>
   );
 };

@@ -86,9 +86,6 @@ export const Services = () => {
                         <IconComp className="w-6 h-6" />
                       </div>
                       <div>
-                        <span className="text-xs font-mono font-bold text-[#00E5FF] tracking-wider uppercase">
-                          Service {service.number}
-                        </span>
                         <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white">
                           {service.title}
                         </h2>

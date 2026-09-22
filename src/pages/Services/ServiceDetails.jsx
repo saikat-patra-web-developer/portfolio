@@ -86,9 +86,6 @@ export const ServiceDetails = () => {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shadow-[0_0_20px_rgba(0,229,255,0.15)]">
                 <IconComp className="w-6 h-6" />
               </div>
-              <span className="text-xs font-mono font-bold text-[#00E5FF] tracking-widest uppercase">
-                Service {service.number}
-              </span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">

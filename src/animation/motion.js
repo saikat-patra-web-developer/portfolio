@@ -16,11 +16,6 @@
  */
 export const EASE = [0.22, 1, 0.36, 1];
 
-/** Slightly snappier curve for micro-interactions (buttons, chips, toggles). *
- * @type {readonly [number, number, number, number]}
- */
-export const SNAP_EASE = [0.16, 1, 0.3, 1];
-
 /**
  * Scroll-reveal props for any `motion.*` element.
  *
@@ -124,26 +119,3 @@ export const staggerItemLeft = {
  */
 export const staggerDelay = (index, columns = 3, step = 0.08) =>
   (index % columns) * step;
-
-/**
- * Infinite gentle vertical bob for floating UI chrome
- * (availability badge, quote card, hero art).
- */
-export const floatY = (amplitude = 8, duration = 4.5) => ({
-  y: [0, -amplitude, 0],
-  transition: {
-    duration,
-    repeat: Infinity,
-    ease: "easeInOut"
-  }
-});
-
-/** Slow, non-repeating-feel pulse for glow accents. */
-export const pulseScale = (min = 0.97, max = 1.03, duration = 3.5) => ({
-  scale: [min, max, min],
-  transition: {
-    duration,
-    repeat: Infinity,
-    ease: "easeInOut"
-  }
-});

@@ -197,8 +197,6 @@ export const coreServices = [
   }
 ];
 
-export const servicesData = coreServices;
-
 export const developmentProcess = [
   {
     step: "01",

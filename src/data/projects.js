@@ -271,14 +271,6 @@ export const projectsData = [
   }
 ];
 
-export const projectCategories = [
-  { id: "all", label: "All Projects" },
-  { id: "web-apps", label: "Web Applications" },
-  { id: "custom-solutions", label: "CRM & Automation" },
-  { id: "business-websites", label: "Business Websites" },
-  { id: "ecommerce", label: "E-commerce" }
-];
-
 export const projectImpactStats = [
   { value: "80+", label: "Projects Completed" },
   { value: "50+", label: "Happy Clients" },

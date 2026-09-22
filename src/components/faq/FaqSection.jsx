@@ -71,9 +71,10 @@ export const FaqSection = ({
       <GlassCard
         key={faq.id}
         hoverEffect={false}
+        delay={Math.min(overallIndex, 4) * 0.06}
         className={`border transition-all duration-200 overflow-hidden ${isOpen
-            ? "border-[#00E5FF]/50  shadow-[0_0_25px_rgba(0,229,255,0.12)]"
-            : "border-[#00E5FF]/20 hover:border-[#00E5FF]/40 bg-[#03152B]/60"
+          ? "border-[#00E5FF]/50  shadow-[0_0_25px_rgba(0,229,255,0.12)]"
+          : "border-[#00E5FF]/20 hover:border-[#00E5FF]/40"
           }`}
       >
         <button
@@ -121,7 +122,13 @@ export const FaqSection = ({
   };
 
   return (
-    <section className={`faq-section ${className}`}>
+    <motion.section
+      className={`faq-section ${className}`}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.08 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    >
       {/* Header */}
       <SectionHeading
         badge={badge}
@@ -145,7 +152,7 @@ export const FaqSection = ({
       </div>
 
       {/* Quick Inquiry / Conversion Card */}
-      <div className="mt-8 sm:mt-10 p-5 sm:p-7 rounded-2xl border border-[#00E5FF]/25 bg-gradient-to-r from-[#03152B]/95 via-[#041d3a]/80 to-[#03152B]/95 shadow-[0_10px_35px_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-center justify-between gap-5">
+      <div className="mt-8 sm:mt-10 p-5 sm:p-7 rounded-2xl border border-[#00E5FF]/25 shadow-[0_10px_35px_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-center justify-between gap-5">
         <div className="flex items-center gap-4 text-center md:text-left">
           <div className="w-12 h-12 rounded-xl bg-[#00E5FF]/15 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shrink-0 mx-auto md:mx-0">
             <HelpCircle className="w-6 h-6" />
@@ -181,7 +188,7 @@ export const FaqSection = ({
           </NeonButton>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

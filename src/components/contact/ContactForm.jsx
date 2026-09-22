@@ -95,7 +95,7 @@ export const ContactForm = ({ preselectedService = "" }) => {
   };
 
   return (
-    <div className="rounded-3xl bg-[#03152B]/90 border border-[#00E5FF]/25 p-6 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
+    <div className="rounded-3xl border border-[#00E5FF]/25 p-6 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
       {/* Form Header */}
       <div className="flex items-center gap-3.5 mb-6">
         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00E5FF]/20 to-[#7B3CFF]/20 border border-[#00E5FF]/35 flex items-center justify-center text-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.2)]">
@@ -149,11 +149,10 @@ export const ContactForm = ({ preselectedService = "" }) => {
                 placeholder="e.g. John Smith"
                 aria-required="true"
                 aria-invalid={!!errors.name}
-                className={`w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#020B18]/80 border text-white text-xs sm:text-sm placeholder-white/35 focus:outline-none transition-all ${
-                  errors.name
-                    ? "border-rose-500/80 focus:border-rose-400"
-                    : "border-[#00E5FF]/20 focus:border-[#00E5FF] focus:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
-                }`}
+                className={`w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#020B18]/80 border text-white text-xs sm:text-sm placeholder-white/35 focus:outline-none transition-all ${errors.name
+                  ? "border-rose-500/80 focus:border-rose-400"
+                  : "border-[#00E5FF]/20 focus:border-[#00E5FF] focus:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
+                  }`}
               />
             </div>
             {errors.name && (
@@ -177,11 +176,10 @@ export const ContactForm = ({ preselectedService = "" }) => {
                 placeholder="john@company.com"
                 aria-required="true"
                 aria-invalid={!!errors.email}
-                className={`w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#020B18]/80 border text-white text-xs sm:text-sm placeholder-white/35 focus:outline-none transition-all ${
-                  errors.email
-                    ? "border-rose-500/80 focus:border-rose-400"
-                    : "border-[#00E5FF]/20 focus:border-[#00E5FF] focus:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
-                }`}
+                className={`w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#020B18]/80 border text-white text-xs sm:text-sm placeholder-white/35 focus:outline-none transition-all ${errors.email
+                  ? "border-rose-500/80 focus:border-rose-400"
+                  : "border-[#00E5FF]/20 focus:border-[#00E5FF] focus:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
+                  }`}
               />
             </div>
             {errors.email && (
@@ -276,11 +274,10 @@ export const ContactForm = ({ preselectedService = "" }) => {
             placeholder="Tell me a bit about your business, current operational bottlenecks, what features you need, or any timeline requirements..."
             aria-required="true"
             aria-invalid={!!errors.message}
-            className={`w-full p-4 rounded-xl bg-[#020B18]/80 border text-white text-xs sm:text-sm placeholder-white/35 focus:outline-none transition-all resize-none ${
-              errors.message
-                ? "border-rose-500/80 focus:border-rose-400"
-                : "border-[#00E5FF]/20 focus:border-[#00E5FF] focus:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
-            }`}
+            className={`w-full p-4 rounded-xl bg-[#020B18]/80 border text-white text-xs sm:text-sm placeholder-white/35 focus:outline-none transition-all resize-none ${errors.message
+              ? "border-rose-500/80 focus:border-rose-400"
+              : "border-[#00E5FF]/20 focus:border-[#00E5FF] focus:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
+              }`}
           />
           {errors.message && (
             <p className="text-[11px] text-rose-400 mt-1">{errors.message}</p>

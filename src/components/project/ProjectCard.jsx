@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { GlassCard } from "../ui/GlassCard";
 
-export const ProjectCard = ({ project, featuredLayout = false }) => {
+export const ProjectCard = ({ project, featuredLayout = false, delay = 0 }) => {
   const {
     title,
     slug,
@@ -21,6 +21,7 @@ export const ProjectCard = ({ project, featuredLayout = false }) => {
   return (
     <GlassCard
       glow="both"
+      delay={delay}
       className={`overflow-hidden flex flex-col h-full border-[#00E5FF]/20 group transition-all duration-300 ${featuredLayout ? "" : ""
         }`}
     >

@@ -1,12 +1,13 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { AnimatedTechBackground } from "./components/background/AnimatedTechBackground";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { CustomCursor } from "./components/ui/CustomCursor";
 import { NavigationProvider } from "./context/NavigationContext";
 import { useNavigation } from "./context/useNavigation";
+import { EASE } from "./animation/motion";
 
 // Lazy-load pages for optimal code splitting & fast initial render
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -21,12 +22,18 @@ const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 // Full-screen loader — used for both hard refresh & menu route transitions
 const FullScreenLoader = () => (
-  <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020B18]">
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.2, ease: EASE }}
+    className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020B18]"
+  >
     <div className="relative w-12 h-12" role="status" aria-label="Loading page">
       <div className="absolute inset-0 rounded-full border-2 border-[#00E5FF]/20 border-t-[#00E5FF] animate-spin" />
       <div className="absolute inset-2 rounded-full border-2 border-[#7B3CFF]/20 border-b-[#A855F7] animate-spin [animation-direction:reverse]" />
     </div>
-  </div>
+  </motion.div>
 );
 
 const AppContent = () => {
@@ -75,11 +82,13 @@ const AppContent = () => {
 
 export function App() {
   return (
-    <BrowserRouter>
-      <NavigationProvider>
-        <AppContent />
-      </NavigationProvider>
-    </BrowserRouter>
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <NavigationProvider>
+          <AppContent />
+        </NavigationProvider>
+      </BrowserRouter>
+    </MotionConfig>
   );
 }
 

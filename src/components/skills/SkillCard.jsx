@@ -20,13 +20,14 @@ const iconMap = {
   link: LinkIcon
 };
 
-export const SkillCard = ({ cluster }) => {
+export const SkillCard = ({ cluster, delay = 0 }) => {
   const { title, description, icon, technologies = [] } = cluster;
   const IconComponent = iconMap[icon] || Monitor;
 
   return (
     <GlassCard
       glow="both"
+      delay={delay}
       className="p-6 sm:p-7 flex flex-col justify-between h-full border-[#00E5FF]/20 group transition-all duration-300"
     >
       <div>

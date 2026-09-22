@@ -13,13 +13,14 @@ const iconMap = {
   search: Search
 };
 
-export const ServiceCard = ({ service }) => {
+export const ServiceCard = ({ service, delay = 0 }) => {
   const { number, title, shortDesc, capabilities = [], icon, id } = service;
   const IconComponent = iconMap[icon] || Code;
 
   return (
     <GlassCard
       glow="cyan"
+      delay={delay}
       className="p-6 sm:p-7 flex flex-col justify-between h-full border-[#00E5FF]/20 group transition-all duration-300"
     >
       <div>

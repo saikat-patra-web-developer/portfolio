@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Star,
   ExternalLink,
@@ -14,6 +15,7 @@ import { SectionHeading } from "../ui/SectionHeading";
 import { TestimonialCard } from "./TestimonialCard";
 import { ThreeDReviewsCarousel } from "./ThreeDReviewsCarousel";
 import { testimonialsData, googleReviewStats } from "../../data/testimonials";
+import { revealProps, staggerDelay } from "../../animation/motion";
 
 const GoogleGIcon = ({ className = "w-5 h-5" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none">
@@ -50,7 +52,7 @@ export const ReviewsSection = ({
     : testimonialsData.slice(0, initialCount);
 
   return (
-    <section id="reviews" className="space-y-8">
+    <motion.section id="reviews" className="space-y-8" {...revealProps({ amount: 0.08 })}>
       {/* Section Header with View Mode Switcher */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <SectionHeading
@@ -60,14 +62,13 @@ export const ReviewsSection = ({
         />
 
         {/* View Mode Toggle: 3D Rotating Showcase vs Grid View */}
-        <div className="inline-flex items-center p-1 rounded-xl bg-[#03152B]/90 border border-white/10 self-start sm:self-auto shadow-inner">
+        <div className="inline-flex items-center p-1 rounded-xl border border-white/10 self-start sm:self-auto shadow-inner">
           <button
             onClick={() => setViewMode("3d")}
-            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              viewMode === "3d"
-                ? "bg-gradient-to-r from-[#00E5FF] to-[#2787FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
-                : "text-white/70 hover:text-white hover:bg-white/5"
-            }`}
+            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${viewMode === "3d"
+              ? "bg-gradient-to-r from-[#00E5FF] to-[#2787FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
+              : "text-white/70 hover:text-white hover:bg-white/5"
+              }`}
             title="Showcase Slider"
             aria-label="Showcase Slider"
           >
@@ -77,11 +78,10 @@ export const ReviewsSection = ({
 
           <button
             onClick={() => setViewMode("grid")}
-            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              viewMode === "grid"
-                ? "bg-gradient-to-r from-[#00E5FF] to-[#2787FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
-                : "text-white/70 hover:text-white hover:bg-white/5"
-            }`}
+            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${viewMode === "grid"
+              ? "bg-gradient-to-r from-[#00E5FF] to-[#2787FF] text-[#020B18] font-bold shadow-[0_0_15px_rgba(0,229,255,0.4)]"
+              : "text-white/70 hover:text-white hover:bg-white/5"
+              }`}
             title="Classic Grid View"
             aria-label="Classic Grid View"
           >
@@ -157,8 +157,12 @@ export const ReviewsSection = ({
       ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {displayedReviews.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+            {displayedReviews.map((testimonial, idx) => (
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                delay={staggerDelay(idx, 3, 0.08)}
+              />
             ))}
           </div>
 
@@ -184,7 +188,7 @@ export const ReviewsSection = ({
           )}
         </>
       )}
-    </section>
+    </motion.section>
   );
 };
 

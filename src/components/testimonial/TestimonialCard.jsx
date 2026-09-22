@@ -23,7 +23,7 @@ const GoogleGIcon = ({ className = "w-3.5 h-3.5" }) => (
   </svg>
 );
 
-export const TestimonialCard = ({ testimonial }) => {
+export const TestimonialCard = ({ testimonial, delay = 0 }) => {
   const {
     author,
     rating = 5,
@@ -39,6 +39,7 @@ export const TestimonialCard = ({ testimonial }) => {
   return (
     <GlassCard
       glow={isGoogle ? "cyan" : "blue"}
+      delay={delay}
       className="p-5 sm:p-6 flex flex-col justify-between h-full border-[#00E5FF]/15 hover:border-[#00E5FF]/50 group transition-all duration-300 relative overflow-hidden"
     >
       <div className="space-y-3.5">

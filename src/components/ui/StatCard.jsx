@@ -77,10 +77,12 @@ export const StatCard = ({
   icon: Icon,
   className = "",
   highlight = false,
+  delay = 0,
   href
 }) => {
   const CardContent = (
     <GlassCard
+      delay={delay}
       className={`p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 transition-all duration-300 ${
         highlight
           ? "border-[#00E5FF]/40 bg-[#031c38]/75 shadow-[0_0_25px_rgba(0,229,255,0.15)]"

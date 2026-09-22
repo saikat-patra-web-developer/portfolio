@@ -33,7 +33,7 @@ export const RouteLoader = ({ isVisible }) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="relative z-10 flex flex-col items-center gap-3.5 px-6 py-5 rounded-2xl bg-[#03152B]/90 border border-[#00E5FF]/30 shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_30px_rgba(0,229,255,0.2)] backdrop-blur-xl pointer-events-auto"
+        className="relative z-10 flex flex-col items-center gap-3.5 px-6 py-5 rounded-2xl border border-[#00E5FF]/30 shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_30px_rgba(0,229,255,0.2)] backdrop-blur-xl pointer-events-auto"
       >
         {/* Dual Orbit Spinning Rings */}
         <div className="relative w-12 h-12 flex items-center justify-center">

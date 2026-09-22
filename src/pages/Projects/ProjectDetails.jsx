@@ -194,7 +194,7 @@ export const ProjectDetails = () => {
               {project.keyFeatures.map((feat, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 p-4 rounded-xl bg-[#03152B]/70 border border-[#00E5FF]/10 hover:border-[#00E5FF]/30 transition-colors"
+                  className="flex items-start gap-3 p-4 rounded-xl border border-[#00E5FF]/10 hover:border-[#00E5FF]/30 transition-colors"
                 >
                   <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
                   <span className="text-sm text-white/78 leading-relaxed">{feat}</span>
@@ -212,7 +212,7 @@ export const ProjectDetails = () => {
             <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
               Technical Architecture
             </h2>
-            <div className="relative p-6 rounded-2xl bg-gradient-to-br from-[#0d1a30]/90 to-[#0b0720]/90 border border-[#7B3CFF]/25 overflow-hidden">
+            <div className="relative p-6 rounded-2xl border border-[#7B3CFF]/25 overflow-hidden">
               <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[#7B3CFF]/08 blur-3xl pointer-events-none" />
               <div className="relative flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-[#7B3CFF]/20 border border-[#7B3CFF]/35 flex items-center justify-center text-[#A855F7] shrink-0 mt-0.5">
@@ -235,7 +235,7 @@ export const ProjectDetails = () => {
             <h2 className="text-[11px] font-bold text-white/35 uppercase tracking-widest">
               Business Impact
             </h2>
-            <div className="relative p-6 rounded-2xl bg-gradient-to-br from-[#031c38]/90 to-[#050d1a]/90 border border-[#00E5FF]/25 overflow-hidden">
+            <div className="relative p-6 rounded-2xl border border-[#00E5FF]/25 overflow-hidden">
               <div className="absolute -bottom-10 -left-10 w-44 h-44 rounded-full bg-[#00E5FF]/08 blur-3xl pointer-events-none" />
               <div className="relative flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-[#00E5FF]/12 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shrink-0 mt-0.5">
@@ -277,7 +277,7 @@ export const ProjectDetails = () => {
         <div className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Link
             to={`/projects/${prevProject.slug}`}
-            className="group flex items-center gap-4 p-5 rounded-2xl bg-[#03152B]/50 border border-white/10 hover:border-[#00E5FF]/40 hover:bg-[#031c38]/60 transition-all duration-300"
+            className="group flex items-center gap-4 p-5 rounded-2xl border border-white/10 hover:border-[#00E5FF]/40 hover:bg-[#031c38]/60 transition-all duration-300"
           >
             <div className="w-9 h-9 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/20 flex items-center justify-center text-[#00E5FF] shrink-0 group-hover:bg-[#00E5FF]/20 transition-colors">
               <ArrowLeft className="w-4 h-4" />
@@ -292,7 +292,7 @@ export const ProjectDetails = () => {
 
           <Link
             to={`/projects/${nextProject.slug}`}
-            className="group flex items-center justify-end gap-4 p-5 rounded-2xl bg-[#03152B]/50 border border-white/10 hover:border-[#00E5FF]/40 hover:bg-[#031c38]/60 transition-all duration-300 text-right"
+            className="group flex items-center justify-end gap-4 p-5 rounded-2xl border border-white/10 hover:border-[#00E5FF]/40 hover:bg-[#031c38]/60 transition-all duration-300 text-right"
           >
             <div className="min-w-0">
               <div className="text-[10px] text-white/38 uppercase tracking-widest mb-0.5">Next</div>

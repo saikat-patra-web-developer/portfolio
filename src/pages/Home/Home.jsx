@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Award,
@@ -17,10 +18,18 @@ import { ServiceCard } from "../../components/service/ServiceCard";
 import { ProjectCard } from "../../components/project/ProjectCard";
 import { ReviewsSection } from "../../components/testimonial/ReviewsSection";
 import { GlassCard } from "../../components/ui/GlassCard";
+import { Reveal } from "../../components/ui/Reveal";
 import { FaqSection } from "../../components/faq/FaqSection";
 import { profileData } from "../../data/profile";
 import { coreServices } from "../../data/services";
 import { projectsData } from "../../data/projects";
+import {
+  EASE,
+  staggerContainer,
+  staggerItem,
+  staggerItemLeft,
+  staggerDelay
+} from "../../animation/motion";
 
 export const Home = () => {
   // Top 3 featured case studies
@@ -36,20 +45,33 @@ export const Home = () => {
         {/* SECTION 1 — HERO                                         */}
         {/* ======================================================== */}
         <section className="home-hero">
-          <div className="home-hero-copy">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3.5">
+          <motion.div
+            className="home-hero-copy"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer(0.09, 0.12)}
+          >
+            <motion.div
+              variants={staggerItem}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-wider uppercase mb-3.5"
+            >
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
               <span>Full Stack Web Developer</span>
-            </div>
-            <h1>
+            </motion.div>
+
+            <motion.h1 variants={staggerItem}>
               I Build Custom Web Apps & CRM Systems That{" "}
               <span>Make Businesses Run Better.</span>
-            </h1>
-            <p>
-              {profileData.bio}
-            </p>
+            </motion.h1>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 mt-6">
+            <motion.p variants={staggerItem}>
+              {profileData.bio}
+            </motion.p>
+
+            <motion.div
+              variants={staggerItem}
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 mt-6"
+            >
               <NeonButton to="/contact" variant="primary" className="w-full sm:w-auto">
                 Discuss Your Project
               </NeonButton>
@@ -65,19 +87,27 @@ export const Home = () => {
                 </span>
                 <span>My Story</span>
               </Link>
-            </div>
+            </motion.div>
 
-            <div className="home-highlights">
+            <motion.div
+              className="home-highlights"
+              variants={staggerContainer(0.06, 0.45)}
+            >
               {["Custom Web Applications", "Bespoke CRM Systems", "Business Automation", "React & Laravel"].map((item) => (
-                <span key={item}>
+                <motion.span key={item} variants={staggerItemLeft}>
                   <CheckCircle2 />
                   {item}
-                </span>
+                </motion.span>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="home-hero-art">
+          <motion.div
+            className="home-hero-art"
+            initial={{ opacity: 0, x: 44, scale: 0.97 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.95, delay: 0.3, ease: EASE }}
+          >
             <div className="home-art-glow" aria-hidden="true" />
             <div className="home-orbit home-orbit-one" aria-hidden="true" />
             <div className="home-orbit home-orbit-two" aria-hidden="true" />
@@ -111,42 +141,46 @@ export const Home = () => {
               </span>
               <ArrowRight className="w-3 h-3 text-[#00E5FF]" />
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* ======================================================== */}
         {/* SECTION 2 — TRUST / PROOF BAR                            */}
         {/* ======================================================== */}
-        <section aria-label="Verified Track Record">
+        <Reveal as="section" amount={0.15} aria-label="Verified Track Record">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
             <StatCard
               value="80+"
               label="Projects Completed"
               icon={Briefcase}
+              delay={staggerDelay(0, 4)}
             />
             <StatCard
               value="50+"
               label="Happy Clients"
               icon={Users}
+              delay={staggerDelay(1, 4)}
             />
             <StatCard
               value="7+"
               label="Years Experience"
               icon={Award}
+              delay={staggerDelay(2, 4)}
             />
             <StatCard
               value="4.9"
               label="Google Rating (51 Reviews)"
               icon={Star}
               highlight={true}
+              delay={staggerDelay(3, 4)}
             />
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* SECTION 3 — CORE SERVICES                                */}
         {/* ======================================================== */}
-        <section id="services">
+        <Reveal as="section" amount={0.1} id="services">
           <SectionHeading
             badge="CORE SERVICES"
             title="What I Build"
@@ -156,16 +190,16 @@ export const Home = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreServices.slice(0, 3).map((service) => (
-              <ServiceCard key={service.id} service={service} />
+            {coreServices.slice(0, 3).map((service, idx) => (
+              <ServiceCard key={service.id} service={service} delay={staggerDelay(idx, 3, 0.09)} />
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* SECTION 4 — FEATURED CASE STUDIES                        */}
         {/* ======================================================== */}
-        <section id="case-studies">
+        <Reveal as="section" amount={0.1} id="case-studies">
           <SectionHeading
             badge="PROVEN IMPACT"
             title="Featured Case Studies"
@@ -175,16 +209,21 @@ export const Home = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} featuredLayout={true} />
+            {featuredProjects.map((project, idx) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                featuredLayout={true}
+                delay={staggerDelay(idx, 3, 0.09)}
+              />
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* SECTION 5 — WHY WORK WITH ME                             */}
         {/* ======================================================== */}
-        <section>
+        <Reveal as="section" amount={0.1}>
           <SectionHeading
             badge="WHY CHOOSE ME"
             title="Why Work With Me"
@@ -196,6 +235,7 @@ export const Home = () => {
               <GlassCard
                 key={diff.title}
                 glow="cyan"
+                delay={staggerDelay(idx, 4)}
                 className="p-6 flex flex-col justify-between border-[#00E5FF]/20"
               >
                 <div>
@@ -212,12 +252,12 @@ export const Home = () => {
               </GlassCard>
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* SECTION 6 — PROCESS                                      */}
         {/* ======================================================== */}
-        <section>
+        <Reveal as="section" amount={0.1}>
           <SectionHeading
             badge="HOW IT WORKS"
             title="A Simple, Proven Process"
@@ -225,9 +265,10 @@ export const Home = () => {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {profileData.process.map((step) => (
+            {profileData.process.map((step, idx) => (
               <GlassCard
                 key={step.step}
+                delay={staggerDelay(idx, 4)}
                 className="p-6 text-center border-[#00E5FF]/20 flex flex-col justify-between"
               >
                 <div>
@@ -247,7 +288,7 @@ export const Home = () => {
               </GlassCard>
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* SECTION 7 — REVIEWS & TESTIMONIALS                       */}
@@ -263,7 +304,11 @@ export const Home = () => {
         {/* ======================================================== */}
         {/* SECTION 8 — ABOUT PREVIEW                                */}
         {/* ======================================================== */}
-        <section className="p-6 sm:p-10 rounded-3xl border border-[#00E5FF]/25 shadow-[0_15px_40px_rgba(0,0,0,0.6)]">
+        <Reveal
+          as="section"
+          amount={0.12}
+          className="p-6 sm:p-10 rounded-3xl border border-[#00E5FF]/25 shadow-[0_15px_40px_rgba(0,0,0,0.6)]"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Photo */}
             <div className="lg:col-span-4 flex justify-center">
@@ -297,7 +342,7 @@ export const Home = () => {
               </div>
             </div>
           </div>
-        </section>
+        </Reveal>
 
         {/* ======================================================== */}
         {/* SECTION 9 — FAQ                                          */}

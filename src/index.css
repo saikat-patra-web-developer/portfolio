@@ -1852,3 +1852,157 @@ h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 229, 255, 0.55);
 }
+
+/* ================================================================
+   MOTION UTILITIES
+   Ambient / looping animations that complement the Framer Motion
+   reveals. Kept in CSS so they run off the main thread.
+   ================================================================ */
+
+/* Gentle vertical bob for floating UI chrome. */
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* Orbit rings keep their baked-in tilt while the node travels around. */
+@keyframes orbit-one {
+  from {
+    transform: rotate(-18deg);
+  }
+  to {
+    transform: rotate(342deg);
+  }
+}
+
+@keyframes orbit-two {
+  from {
+    transform: rotate(17deg);
+  }
+  to {
+    transform: rotate(377deg);
+  }
+}
+
+/* Light sweep that crosses a CTA on hover. */
+@keyframes shine-sweep {
+  from {
+    left: -60%;
+  }
+  to {
+    left: 130%;
+  }
+}
+
+/* Underline bar scale helper (motion-driven, defined here for reference). */
+
+.home-orbit-one {
+  animation: orbit-one 44s linear infinite;
+}
+
+.home-orbit-two {
+  animation: orbit-two 60s linear infinite reverse;
+}
+
+.home-art-glow {
+  animation: pulse-scale 5s ease-in-out infinite;
+}
+
+@keyframes pulse-scale {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+.home-availability {
+  animation: float-soft 4.5s ease-in-out infinite;
+}
+
+.home-quote {
+  animation: float-slow 6s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.home-build-note {
+  animation: float-soft 7s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+/* --- CTA shine sweep -------------------------------------------------- */
+.cta-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cta-shine::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -60%;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-18deg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.cta-shine:hover::after,
+.cta-shine:focus-visible::after {
+  animation: shine-sweep 0.85s ease-out;
+  opacity: 1;
+}
+
+/* Section heading accent rule is animated in Framer Motion instead. */
+
+/* ================================================================
+   REDUCED MOTION
+   Everything above — plus Tailwind's built-ins — stands down for
+   users who ask their OS for less motion. Framer Motion is handled
+   separately via <MotionConfig reducedMotion="user"> in App.tsx.
+   ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .home-orbit-one {
+    transform: rotate(-18deg);
+  }
+
+  .home-orbit-two {
+    transform: rotate(17deg);
+  }
+}

@@ -16,7 +16,7 @@ import { NeonButton } from "../../components/ui/NeonButton";
 import { StatCard } from "../../components/ui/StatCard";
 import { ServiceCard } from "../../components/service/ServiceCard";
 import { ProjectCard } from "../../components/project/ProjectCard";
-import { ReviewsSection } from "../../components/testimonial/ReviewsSection";
+import Reviews from "../../components/testimonial/Reviews";
 import { GlassCard } from "../../components/ui/GlassCard";
 import { Reveal } from "../../components/ui/Reveal";
 import { FaqSection } from "../../components/faq/FaqSection";
@@ -293,13 +293,7 @@ export const Home = () => {
         {/* ======================================================== */}
         {/* SECTION 7 — REVIEWS & TESTIMONIALS                       */}
         {/* ======================================================== */}
-        <ReviewsSection
-          initialCount={6}
-          showFilters={true}
-          badge="CLIENT FEEDBACK"
-          title="What Clients Say"
-          subtitle="Authentic feedback and verified reviews from business owners, founders, and teams."
-        />
+        <Reviews />
 
         {/* ======================================================== */}
         {/* SECTION 8 — ABOUT PREVIEW                                */}

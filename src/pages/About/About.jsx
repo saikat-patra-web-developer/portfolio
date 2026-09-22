@@ -15,7 +15,7 @@ import { GlassCard } from "../../components/ui/GlassCard";
 import { NeonButton } from "../../components/ui/NeonButton";
 import { StatCard } from "../../components/ui/StatCard";
 import { Reveal } from "../../components/ui/Reveal";
-import { ReviewsSection } from "../../components/testimonial/ReviewsSection";
+import Reviews from "../../components/testimonial/Reviews";
 import { profileData } from "../../data/profile";
 import { skillsData } from "../../data/skills";
 import {
@@ -288,13 +288,7 @@ export const About = () => {
         {/* ======================================================== */}
         {/* REVIEWS & TESTIMONIALS                                   */}
         {/* ======================================================== */}
-        <ReviewsSection
-          initialCount={6}
-          showFilters={true}
-          badge="AUTHENTIC FEEDBACK"
-          title="Client Reviews & Testimonials"
-          subtitle="Real reviews and verifiable feedback from Google Business Profile and direct project clients."
-        />
+        <Reviews />
       </div>
     </PageLayout>
   );
